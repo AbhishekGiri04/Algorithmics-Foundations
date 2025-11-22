@@ -1,282 +1,479 @@
-<h1 align="center">💻 CodeVault — Personal Learning & Development Repository</h1>
+<div align="center">
 
-<p align="center">
-  🚀 A structured, personal repository designed for continuous learning and skill development in <b>computer science</b> and programming through daily contributions and organized practice.
-</p>
+# 💻 CodeVault — Personal Learning & Development Repository
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/>
-  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Data_Structures-FF6B6B?style=for-the-badge&logo=databricks&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Algorithms-4ECDC4?style=for-the-badge&logo=algolia&logoColor=white"/>
-</p>
-<br>
+*A structured, personal repository designed for continuous learning and skill development in **computer science** and programming through daily contributions and organized practice.*
 
 ---
 
-## 📖 Problem Statement
-Many developers struggle with consistent learning habits, lack organized reference materials for coding concepts, have difficulty tracking progress over time, and need a structured approach to skill development in the rapidly evolving tech landscape.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![Data Structures](https://img.shields.io/badge/Data_Structures-FF6B6B?style=for-the-badge&logo=databricks&logoColor=white)
+![Algorithms](https://img.shields.io/badge/Algorithms-4ECDC4?style=for-the-badge&logo=algolia&logoColor=white)
 
-<br>
+![GitHub Stars](https://img.shields.io/github/stars/AbhishekGiri04/CodeVault?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/AbhishekGiri04/CodeVault?style=social)
+![GitHub Watchers](https://img.shields.io/github/watchers/AbhishekGiri04/CodeVault?style=social)
+
+</div>
 
 ---
 
-## 💡 Our Solution
-CodeVault is a comprehensive learning repository built to:
+## 🎯 **Mission Statement**
 
-- 📚 Maintain daily learning discipline with consistent GitHub contributions
-- 🎯 Build a comprehensive collection of coding knowledge and reference materials
-- 🌍 Organize practice exercises by data structures, algorithms, and programming concepts
-- 📈 Track personal growth and learning journey over time
-- 💾 Serve as a showcase for coding skills and organization for recruiters and peers
-<br>
+> *"Transforming daily learning into a structured journey of continuous growth and skill mastery in computer science and programming."*
 
----  
+CodeVault addresses the common challenges developers face: **inconsistent learning habits**, **scattered reference materials**, **difficulty tracking progress**, and the need for a **structured approach** to skill development in our rapidly evolving tech landscape.
 
-## 🚀 Features
+---
 
-✅  **Daily learning notes** with structured documentation and insights  
-✅  **Organized practice exercises** categorized by data structures and algorithms  
-✅  **Mini-projects showcase** demonstrating practical application of concepts  
-✅  **Progress tracking** with consistent GitHub streak maintenance  
-✅  **Reference library** for quick revision and knowledge retention  
-✅  **Interview preparation** materials and coding practice solutions  
-✅  **Portfolio showcase** highlighting coding skills and organization
+## 💡 **Our Solution**
 
-<br>
+<table>
+<tr>
+<td width="50%">
 
----  
+### 🎯 **Core Objectives**
+- 📚 **Daily Learning Discipline** — Consistent GitHub contributions
+- 🏗️ **Comprehensive Knowledge Base** — Organized coding references
+- 📊 **Structured Practice** — Categorized by DS&A concepts
+- 📈 **Progress Tracking** — Measurable learning journey
+- 💼 **Portfolio Showcase** — Professional skill demonstration
 
-## 🛠️ Tech Stack & Topics
+</td>
+<td width="50%">
+
+### 🚀 **Key Benefits**
+- ⚡ **Accelerated Learning** — Structured approach to mastery
+- 🧠 **Enhanced Problem-Solving** — Pattern recognition skills
+- 💪 **Interview Readiness** — Comprehensive preparation
+- 🌟 **Professional Growth** — Demonstrable skill progression
+- 🤝 **Community Impact** — Shareable learning resources
+
+</td>
+</tr>
+</table>
+
+---
+
+## ✨ **Features & Capabilities**
+
+<div align="center">
+
+| Feature | Description | Status |
+|:--------|:------------|:-------|
+| **📝 Daily Learning Notes** | Structured documentation with insights | ✅ Active |
+| **🎯 Organized Practice** | Categorized by data structures & algorithms | ✅ Active |
+| **🚀 Mini-Projects** | Practical application demonstrations | 🔄 In Progress |
+| **📊 Progress Tracking** | GitHub streak & milestone monitoring | ✅ Active |
+| **📚 Reference Library** | Quick revision & knowledge retention | ✅ Active |
+| **💼 Interview Prep** | Coding practice & solution patterns | ✅ Active |
+| **🎨 Portfolio Showcase** | Professional skill & organization display | ✅ Active |
+
+</div>
+
+---
+
+## 🛠️ **Technology Stack & Learning Areas**
 
 <div align="center">
 
 <table>
 <thead>
 <tr>
-<th>💻 Technology/Topic</th>
-<th>⚙️ Description</th>
+<th width="30%">💻 Technology/Topic</th>
+<th width="50%">⚙️ Description & Applications</th>
+<th width="20%">📊 Proficiency</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><img src="https://img.shields.io/badge/Data_Structures-FF6B6B?style=for-the-badge&logo=databricks&logoColor=white"/></td>
-<td>Arrays, Linked Lists, Stacks, Queues, Trees, Graphs</td>
+<td>Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Tables</td>
+<td>🟡 Learning</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/Algorithms-4ECDC4?style=for-the-badge&logo=algolia&logoColor=white"/></td>
-<td>Sorting, Searching, Dynamic Programming, Greedy</td>
-</tr>
-<tr>
-<td><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/></td>
-<td>Core programming language for problem solving</td>
-</tr>
-<tr>
-<td><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/></td>
-<td>Web development and modern programming concepts</td>
-</tr>
-<tr>
-<td><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/></td>
-<td>Object-oriented programming and enterprise solutions</td>
+<td>Sorting, Searching, Dynamic Programming, Greedy, Graph Algorithms</td>
+<td>🟡 Learning</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"/></td>
-<td>System programming and performance optimization</td>
+<td>System programming, performance optimization, competitive programming</td>
+<td>🟢 Active</td>
 </tr>
 <tr>
-<td><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/></td>
-<td>Version control and collaborative development</td>
+<td><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/></td>
+<td>Core programming, data science, automation, rapid prototyping</td>
+<td>🔵 Planned</td>
+</tr>
+<tr>
+<td><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/></td>
+<td>Web development, modern frameworks, full-stack applications</td>
+<td>🔵 Planned</td>
+</tr>
+<tr>
+<td><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/></td>
+<td>Object-oriented programming, enterprise solutions, Android development</td>
+<td>🔵 Planned</td>
 </tr>
 </tbody>
 </table>
 
 </div>
 
-<br>
-
 ---
 
-## 📁 Repository Structure
+## 📁 **Repository Architecture**
 
 ```
 CodeVault/
-├── 📄 README.md                    # 📖 Repository overview and documentation
-├── 📄 .gitignore                   # 🚫 Git ignore rules
-├── 📂 daily-notes/                 # 📚 Daily learning notes and insights
-│   ├── 📄 day1.md                 # 📝 DSA Fundamentals and Classification
-│   └── 📄 day2.md                 # 📝 Array Data Structure Deep Dive
-├── 📂 practice/                    # 🎯 Problem-solving exercises
-│   ├── 📂 array/                   # 📊 Array-based problems and solutions
-│   │   ├── 📄 day1                 # 🔍 LeetCode 1480 - Running Sum solution
-│   │   └── 📄 day1.cpp             # 🔍 C++ implementation
-│   └── 📂 string/                  # 🔤 String manipulation problems
-│       ├── 📄 day2                 # 🔄 LeetCode 344 - Reverse String solution
-│       └── 📄 day2.cpp             # 🔄 C++ implementation with stack
-└── 📂 projects/                    # 🚀 Mini-projects and implementations
+├── 📄 README.md                              # 📖 Comprehensive project documentation
+├── 📄 .gitignore                             # 🚫 Version control ignore rules
+├── 📂 learning-notes/                        # 📚 Daily learning documentation
+│   ├── 📄 01-dsa-fundamentals.md            # 🎯 Data Structures & Algorithms Foundation
+│   └── 📄 02-arrays-deep-dive.md            # 🔢 Array Data Structure Mastery
+├── 📂 coding-practice/                       # 💻 Problem-solving implementations
+│   ├── 📂 array/                            # 📊 Array-based algorithmic challenges
+│   │   └── 📄 running-sum-1d-array.cpp      # 🔍 LeetCode 1480: Prefix Sum Technique
+│   └── 📂 string/                           # 🔤 String manipulation & processing
+│       └── 📄 reverse-string-two-pointers.cpp # 🔄 LeetCode 344: Two-Pointer Technique
+├── 📂 mini-projects/                         # 🚀 Practical application projects
+└── 📂 resources/                             # 📚 Learning materials & references
 ```
-<br>
 
 ---
 
-## 📊 Learning Progress
+## 📊 **Learning Progress Dashboard**
 
 <div align="center">
 
-| 📈 Metric | 📊 Progress |
-|:----------|:------------|
-| **Daily Streak** | 🔥 Day 2 - Consistent! |
-| **Problems Solved** | 🎯 2 (LeetCode 1480, 344) |
-| **Concepts Covered** | 📚 DSA Fundamentals, Arrays |
-| **Projects Built** | 🚀 0 (Coming soon) |
-| **Notes Written** | 📝 2 (DSA + Arrays) |
-| **Skills Developed** | 💪 Array Operations, String Manipulation |
+### 🎯 **Current Metrics**
+
+<table>
+<tr>
+<td align="center" width="16.66%">
+<img src="https://img.shields.io/badge/Daily_Streak-2_Days-FF6B6B?style=for-the-badge&logo=fire&logoColor=white"/><br>
+<strong>🔥 Consistency</strong>
+</td>
+<td align="center" width="16.66%">
+<img src="https://img.shields.io/badge/Problems_Solved-2-4ECDC4?style=for-the-badge&logo=checkmark&logoColor=white"/><br>
+<strong>🎯 Practice</strong>
+</td>
+<td align="center" width="16.66%">
+<img src="https://img.shields.io/badge/Concepts_Covered-2-45B7D1?style=for-the-badge&logo=book&logoColor=white"/><br>
+<strong>📚 Learning</strong>
+</td>
+<td align="center" width="16.66%">
+<img src="https://img.shields.io/badge/Projects_Built-0-FFA07A?style=for-the-badge&logo=rocket&logoColor=white"/><br>
+<strong>🚀 Building</strong>
+</td>
+<td align="center" width="16.66%">
+<img src="https://img.shields.io/badge/Notes_Written-2-98D8C8?style=for-the-badge&logo=edit&logoColor=white"/><br>
+<strong>📝 Documentation</strong>
+</td>
+<td align="center" width="16.66%">
+<img src="https://img.shields.io/badge/Skills_Developed-3-F7DC6F?style=for-the-badge&logo=star&logoColor=white"/><br>
+<strong>💪 Growth</strong>
+</td>
+</tr>
+</table>
+
+### 📈 **Detailed Progress**
+
+| 📊 Category | 🎯 Current Status | 📈 Progress | 🎪 Next Milestone |
+|:------------|:------------------|:------------|:-------------------|
+| **🔥 Daily Streak** | Day 2 - Building momentum! | ████████░░ 80% | Reach 7-day streak |
+| **🎯 LeetCode Problems** | 2 solved (Easy: 2, Medium: 0) | ██░░░░░░░░ 20% | Solve 10 problems |
+| **📚 Core Concepts** | DSA Fundamentals, Arrays | ███░░░░░░░ 30% | Complete Linked Lists |
+| **🚀 Mini Projects** | Planning phase | ░░░░░░░░░░ 0% | Build first calculator |
+| **📝 Learning Notes** | 2 comprehensive guides | ████░░░░░░ 40% | Document 5 topics |
+| **💪 Technical Skills** | Array ops, String manipulation, Two pointers | ███░░░░░░░ 30% | Master recursion |
 
 </div>
 
-<br>
+---
+
+## 🎯 **Learning Objectives & Roadmap**
+
+<table>
+<tr>
+<td width="50%">
+
+### 🎯 **Short-term Goals (1-3 months)**
+- [ ] **📊 Data Structure Mastery**
+  - ✅ Arrays & Strings
+  - [ ] Linked Lists & Pointers
+  - [ ] Stacks & Queues
+  - [ ] Trees & Binary Search Trees
+- [ ] **⚡ Algorithm Proficiency**
+  - ✅ Two Pointers
+  - ✅ Prefix Sum
+  - [ ] Sliding Window
+  - [ ] Binary Search
+- [ ] **🎯 Problem Solving**
+  - [ ] Solve 50+ LeetCode problems
+  - [ ] Master 10+ patterns
+  - [ ] Complete 3 mini-projects
+
+</td>
+<td width="50%">
+
+### 🚀 **Long-term Vision (3-12 months)**
+- [ ] **🏗️ Advanced Topics**
+  - [ ] Dynamic Programming
+  - [ ] Graph Algorithms
+  - [ ] System Design Basics
+  - [ ] Competitive Programming
+- [ ] **💼 Career Readiness**
+  - [ ] Interview preparation
+  - [ ] Portfolio development
+  - [ ] Open source contributions
+  - [ ] Technical blog writing
+- [ ] **🌟 Expertise Development**
+  - [ ] Mentor other learners
+  - [ ] Create educational content
+  - [ ] Contribute to tech community
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🎯 Learning Objectives
+## 📚 **Daily Learning Methodology**
 
-* **Data Structures Mastery** — Complete understanding of arrays, linked lists, trees, graphs, and hash tables
-* **Algorithm Proficiency** — Sorting, searching, dynamic programming, and greedy algorithm implementations
-* **Problem-Solving Skills** — Regular practice with coding challenges and competitive programming
-* **Code Quality** — Writing clean, efficient, and well-documented code solutions
-* **Project Development** — Building practical applications to demonstrate learned concepts
-* **Interview Preparation** — Maintaining readiness for technical interviews and assessments
+<div align="center">
 
-<br>
+### 🔄 **Structured Learning Cycle**
 
----
+</div>
 
-## 📚 Daily Learning Routine
-
-```bash
-# Daily workflow
-1. 📝 Write daily notes on new concepts learned
-2. 🎯 Solve 1-2 coding problems in practice/
-3. 💻 Work on ongoing mini-projects
-4. 📖 Review and update documentation
-5. 🔄 Commit changes to maintain GitHub streak
-6. 🧠 Reflect on learning progress and insights
+```mermaid
+graph LR
+    A[📖 Study Concept] --> B[📝 Take Notes]
+    B --> C[💻 Code Practice]
+    C --> D[🧪 Test & Debug]
+    D --> E[📊 Analyze Complexity]
+    E --> F[🔄 Review & Reflect]
+    F --> G[📤 Commit & Push]
+    G --> A
 ```
 
-<br>
+### 📋 **Daily Workflow Checklist**
+
+- [ ] **📖 Conceptual Learning** — Study new DS/Algorithm topic (30-45 min)
+- [ ] **📝 Documentation** — Write comprehensive notes with examples
+- [ ] **💻 Practical Coding** — Solve 1-2 related problems
+- [ ] **🧪 Testing & Validation** — Verify solutions with multiple test cases
+- [ ] **📊 Complexity Analysis** — Analyze time/space complexity
+- [ ] **🔄 Code Review** — Refactor and optimize solutions
+- [ ] **📤 Version Control** — Commit with descriptive messages
+- [ ] **🧠 Reflection** — Document learnings and insights
 
 ---
 
-## 🚀 Getting Started
+## 🚀 **Getting Started Guide**
 
-### 📌 Prerequisites
-- ✅ **Git** for version control
-- ✅ **Code Editor** (VS Code, PyCharm, etc.)
-- ✅ **Programming Languages** (Python, Java, JavaScript, C++)
-- ✅ **Learning Mindset** and consistency
+### 📋 **Prerequisites**
 
-<br>
+<table>
+<tr>
+<td width="25%">
 
-### 🔧 Setup Instructions
+#### 🛠️ **Development Tools**
+- Git & GitHub
+- Code Editor (VS Code)
+- C++ Compiler (GCC/Clang)
+- Terminal/Command Line
+
+</td>
+<td width="25%">
+
+#### 📚 **Knowledge Base**
+- Basic programming concepts
+- Problem-solving mindset
+- Mathematical foundations
+- Logical thinking skills
+
+</td>
+<td width="25%">
+
+#### 🎯 **Learning Mindset**
+- Consistency over intensity
+- Growth mindset
+- Patience with complexity
+- Collaborative learning
+
+</td>
+<td width="25%">
+
+#### ⏰ **Time Commitment**
+- 1-2 hours daily
+- Regular practice schedule
+- Weekend deep dives
+- Consistent documentation
+
+</td>
+</tr>
+</table>
+
+### 🔧 **Quick Setup**
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/AbhishekGiri04/CodeVault.git
 cd CodeVault
 
-# Create your daily note (topic-based naming)
-echo "# Day 1 - Arrays and Basic Algorithms" > daily-notes/day1.md
+# 2. Explore the structure
+ls -la
+tree . # (if tree command is available)
 
-# Start coding practice
-cd practice
-# Create topic folders and solve problems
+# 3. Start your learning journey
+cd learning-notes
+cat 01-dsa-fundamentals.md
 
-# Commit daily progress
+# 4. Practice coding
+cd ../coding-practice/array
+g++ -o solution running-sum-1d-array.cpp
+./solution
+
+# 5. Create your first contribution
+echo "# Day 3 - My Learning Notes" > ../learning-notes/03-my-topic.md
 git add .
-git commit -m "Day 1: Arrays and basic algorithms"
+git commit -m "Day 3: Learning [Your Topic]"
 git push origin main
 ```
 
-<br>
-
 ---
 
-## 📖 Core Learning Areas
-
-* **Arrays & Strings** — Fundamental data manipulation and string processing
-* **Linked Lists** — Dynamic data structures and pointer manipulation
-* **Stacks & Queues** — LIFO and FIFO data structure implementations
-* **Trees & Graphs** — Hierarchical and network data structure algorithms
-* **Dynamic Programming** — Optimization problems and memoization techniques
-* **Sorting & Searching** — Efficient algorithm implementations and analysis
-* **System Design** — Scalable architecture and design pattern concepts
-* **Object-Oriented Programming** — Design principles and best practices
-
-<br>
-
----
-
-## 🏆 Achievements & Milestones
-
-- **📅 Daily Consistency** — Maintaining regular learning and contribution habits
-- **🎯 Problem Solving** — Growing collection of solved coding challenges
-- **📚 Knowledge Base** — Comprehensive notes and reference materials
-- **🚀 Project Portfolio** — Practical implementations and mini-applications
-- **💼 Interview Ready** — Prepared for technical assessments and discussions
-- **🌱 Continuous Growth** — Evolving skills and expanding knowledge areas
-
-<br>
-
----
-
-## 🌱 Future Learning Goals
-- 📱 **Mobile Development** — iOS and Android application development
-
-- 🌐 **Web Technologies** — Full-stack development with modern frameworks
-
-- 🤖 **Machine Learning** — AI algorithms and data science applications
-
-- ☁️ **Cloud Computing** — AWS, Azure, and distributed systems
-
-- 🔐 **Cybersecurity** — Security principles and ethical hacking
-
-- 📊 **Data Engineering** — Big data processing and pipeline development
-
-  <br>
-
-  ---  
-
-## 📞 Connect & Collaborate  
-
-> 💬 *Interested in learning together or discussing coding concepts?*  
-> Let's connect and share our programming journey!
+## 🏆 **Achievements & Milestones**
 
 <div align="center">
 
-<b>👤 Abhishek Giri</b>  
-<a href="https://www.linkedin.com/in/abhishek-giri04/">
-  <img src="https://img.shields.io/badge/Connect%20on-LinkedIn-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn - Abhishek Giri"/>
-</a>  
-<a href="https://github.com/abhishekgiri04">
-  <img src="https://img.shields.io/badge/Follow%20on-GitHub-black?style=for-the-badge&logo=github" alt="GitHub - Abhishek Giri"/>
-</a>  
-<a href="https://t.me/AbhishekGiri7">
-  <img src="https://img.shields.io/badge/Chat%20on-Telegram-blue?style=for-the-badge&logo=telegram" alt="Telegram - Abhishek Giri"/>
-</a>
+### 🎖️ **Current Achievements**
 
-<br/>
+![Achievement](https://img.shields.io/badge/🎯_First_Problem-LeetCode_1480-success?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/🔄_Two_Pointers-LeetCode_344-success?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/📚_DSA_Foundation-Completed-success?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/🔥_2_Day_Streak-Active-orange?style=for-the-badge)
+
+### 🎯 **Upcoming Milestones**
+
+</div>
+
+| 🏆 Milestone | 📊 Progress | 🎯 Target | 🏁 Reward |
+|:-------------|:------------|:----------|:-----------|
+| **First Week Streak** | 2/7 days | 7 days | 🎉 Celebration post |
+| **10 Problems Solved** | 2/10 problems | 10 problems | 🏅 LinkedIn update |
+| **First Mini Project** | 0/1 projects | 1 project | 🚀 Portfolio addition |
+| **50 GitHub Commits** | 4/50 commits | 50 commits | 📊 Progress analysis |
+| **5 Core Topics** | 2/5 topics | 5 topics | 📚 Knowledge milestone |
 
 ---
 
-**💻 Built with ❤️ for Continuous Learning**  
-*Transforming Knowledge Through Daily Practice and Dedication*
+## 🌱 **Future Learning Horizons**
+
+<table>
+<tr>
+<td width="33%">
+
+### 📱 **Application Development**
+- **Mobile Development**
+  - iOS (Swift)
+  - Android (Kotlin/Java)
+  - Cross-platform (React Native)
+- **Web Technologies**
+  - Frontend frameworks
+  - Backend development
+  - Full-stack applications
+
+</td>
+<td width="33%">
+
+### 🤖 **Emerging Technologies**
+- **Artificial Intelligence**
+  - Machine Learning algorithms
+  - Deep Learning frameworks
+  - Natural Language Processing
+- **Cloud Computing**
+  - AWS/Azure platforms
+  - Microservices architecture
+  - DevOps practices
+
+</td>
+<td width="33%">
+
+### 🔐 **Specialized Domains**
+- **Cybersecurity**
+  - Ethical hacking
+  - Security protocols
+  - Penetration testing
+- **Data Engineering**
+  - Big data processing
+  - Pipeline development
+  - Database optimization
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📞 **Connect & Collaborate**
+
+<div align="center">
+
+> 💬 *"Learning is a journey best shared with others. Let's connect and grow together in our programming adventure!"*
+
+### 🤝 **Professional Network**
+
+<a href="https://www.linkedin.com/in/abhishek-giri04/">
+  <img src="https://img.shields.io/badge/Connect_on-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+</a>
+<a href="https://github.com/abhishekgiri04">
+  <img src="https://img.shields.io/badge/Follow_on-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+</a>
+<a href="https://t.me/AbhishekGiri7">
+  <img src="https://img.shields.io/badge/Chat_on-Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
+</a>
+
+### 📧 **Collaboration Opportunities**
+- 🤝 **Study Partners** — Join daily learning sessions
+- 💡 **Code Reviews** — Share knowledge and feedback
+- 🚀 **Project Collaboration** — Build amazing things together
+- 📚 **Knowledge Sharing** — Exchange learning resources
+
+---
+
+### 💝 **Support This Journey**
+
+If you find CodeVault helpful for your learning journey:
+
+⭐ **Star this repository** to show your support  
+🍴 **Fork it** to create your own learning path  
+📢 **Share it** with fellow developers  
+🐛 **Report issues** to help improve the content  
+💡 **Suggest improvements** through pull requests
 
 </div>
 
 ---
 
 <div align="center">
+
+### 🎯 **Repository Statistics**
+
+![GitHub repo size](https://img.shields.io/github/repo-size/AbhishekGiri04/CodeVault?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/AbhishekGiri04/CodeVault?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/AbhishekGiri04/CodeVault?style=for-the-badge)
+
+---
+
+**💻 Built with ❤️ for Continuous Learning & Growth**  
+*"Every expert was once a beginner. Every pro was once an amateur. Every icon was once an unknown."*
 
 **© 2025 CodeVault - Personal Learning Repository. All Rights Reserved.**
 
