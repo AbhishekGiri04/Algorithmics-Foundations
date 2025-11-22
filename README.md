@@ -105,11 +105,15 @@ CodeVault/
 ├── 📄 README.md                    # 📖 Repository overview and documentation
 ├── 📄 .gitignore                   # 🚫 Git ignore rules
 ├── 📂 daily-notes/                 # 📚 Daily learning notes and insights
-│   └── 📄 day1.md                 # 📝 DSA Fundamentals and Classification
+│   ├── 📄 day1.md                 # 📝 DSA Fundamentals and Classification
+│   └── 📄 day2.md                 # 📝 Array Data Structure Deep Dive
 ├── 📂 practice/                    # 🎯 Problem-solving exercises
-│   └── 📂 array/                   # 📊 Array-based problems and solutions
-│       ├── 📄 day1                 # 🔍 LeetCode 1480 - Running Sum solution
-│       └── 📄 day1.cpp             # 🔍 C++ implementation
+│   ├── 📂 array/                   # 📊 Array-based problems and solutions
+│   │   ├── 📄 day1                 # 🔍 LeetCode 1480 - Running Sum solution
+│   │   └── 📄 day1.cpp             # 🔍 C++ implementation
+│   └── 📂 string/                  # 🔤 String manipulation problems
+│       ├── 📄 day2                 # 🔄 LeetCode 344 - Reverse String solution
+│       └── 📄 day2.cpp             # 🔄 C++ implementation with stack
 └── 📂 projects/                    # 🚀 Mini-projects and implementations
 ```
 <br>
@@ -122,12 +126,12 @@ CodeVault/
 
 | 📈 Metric | 📊 Progress |
 |:----------|:------------|
-| **Daily Streak** | 🔥 Day 1 - Started! |
-| **Problems Solved** | 🎯 1 (LeetCode 1480) |
-| **Concepts Covered** | 📚 DSA Fundamentals |
+| **Daily Streak** | 🔥 Day 2 - Consistent! |
+| **Problems Solved** | 🎯 2 (LeetCode 1480, 344) |
+| **Concepts Covered** | 📚 DSA Fundamentals, Arrays |
 | **Projects Built** | 🚀 0 (Coming soon) |
-| **Notes Written** | 📝 1 (DSA Overview) |
-| **Skills Developed** | 💪 Array Operations |
+| **Notes Written** | 📝 2 (DSA + Arrays) |
+| **Skills Developed** | 💪 Array Operations, String Manipulation |
 
 </div>
 
