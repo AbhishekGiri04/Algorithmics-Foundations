@@ -107,7 +107,7 @@ CodeVault addresses the common challenges developers face: **inconsistent learni
 <tr>
 <td><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/></td>
 <td>Core programming, data science, automation, rapid prototyping</td>
-<td>🔵 Planned</td>
+<td>🟢 Active</td>
 </tr>
 <tr>
 <td><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/></td>
@@ -142,14 +142,16 @@ CodeVault/
 │   ├── 📄 trees-complete-guide.md           # 🌳 Tree Data Structure Mastery
 │   ├── 📄 graphs-complete-guide.md          # 🕸️ Graph Data Structure Mastery
 │   ├── 📄 sorting-algorithms-complete-guide.md # 🔃 Sorting Algorithms Mastery
-│   └── 📄 searching-algorithms-complete-guide.md # 🔍 Searching Algorithms Mastery
+│   ├── 📄 searching-algorithms-complete-guide.md # 🔍 Searching Algorithms Mastery
+│   └── 📄 dynamic-programming-complete-guide.md # 🧠 Dynamic Programming Mastery
 ├── 📂 coding-practice/                       # 💻 Problem-solving implementations
 │   ├── 📂 array/                            # 📊 Array-based algorithmic challenges
 │   │   ├── 📄 leetcode-1480-running-sum.cpp  # 🔍 LeetCode 1480: Prefix Sum Technique
 │   │   ├── 📄 leetcode-1-two-sum.cpp         # 🎯 LeetCode 1: Hash Map Technique
 │   │   ├── 📄 leetcode-74-search-2d-matrix.cpp # 🔍 LeetCode 74: Binary Search Matrix
 │   │   ├── 📄 leetcode-75-sort-colors.cpp      # 🎨 LeetCode 75: Dutch National Flag
-│   │   └── 📄 leetcode-33-search-rotated-array.cpp # 🔄 LeetCode 33: Modified Binary Search
+│   │   ├── 📄 leetcode-33-search-rotated-array.cpp # 🔄 LeetCode 33: Modified Binary Search
+│   │   └── 📄 leetcode-2141-maximum-running-time.py # 🔋 LeetCode 2141: Binary Search + Greedy
 │   ├── 📂 string/                           # 🔤 String manipulation & processing
 │   │   └── 📄 leetcode-344-reverse-string.cpp # 🔄 LeetCode 344: Two-Pointer Technique
 │   └── 📂 math/                             # 🧮 Mathematical & number problems
@@ -172,15 +174,15 @@ CodeVault/
 <table>
 <tr>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Daily_Streak-11_Days-FF6B6B?style=for-the-badge&logo=fire&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Daily_Streak-12_Days-FF6B6B?style=for-the-badge&logo=fire&logoColor=white"/><br>
 <strong>🔥 Consistency</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Problems_Solved-10-4ECDC4?style=for-the-badge&logo=checkmark&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Problems_Solved-11-4ECDC4?style=for-the-badge&logo=checkmark&logoColor=white"/><br>
 <strong>🎯 Practice</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Concepts_Covered-10-45B7D1?style=for-the-badge&logo=book&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Concepts_Covered-11-45B7D1?style=for-the-badge&logo=book&logoColor=white"/><br>
 <strong>📚 Learning</strong>
 </td>
 <td align="center" width="16.66%">
@@ -188,11 +190,11 @@ CodeVault/
 <strong>🚀 Building</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Notes_Written-10-98D8C8?style=for-the-badge&logo=edit&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Notes_Written-11-98D8C8?style=for-the-badge&logo=edit&logoColor=white"/><br>
 <strong>📝 Documentation</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Skills_Developed-11-F7DC6F?style=for-the-badge&logo=star&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Skills_Developed-12-F7DC6F?style=for-the-badge&logo=star&logoColor=white"/><br>
 <strong>💪 Growth</strong>
 </td>
 </tr>
@@ -202,11 +204,11 @@ CodeVault/
 
 | 📊 Category | 🎯 Current Status | 📈 Progress | 🎪 Next Milestone |
 |:------------|:------------------|:------------|:-------------------|
-| **🔥 Daily Streak** | Day 11 - Momentum building! | ██████████ 100% | Two weeks target |
-| **🎯 LeetCode Problems** | 10 solved (Easy: 5, Medium: 5) | ██████████ 100% | 🎉 MILESTONE ACHIEVED! |
-| **📚 Core Concepts** | DSA, Arrays, Strings, Linked Lists, Stacks, Queues, Trees, Graphs, Sorting, Searching | ██████████ 100% | Advanced algorithms |
+| **🔥 Daily Streak** | Day 12 - Consistent progress! | ██████████ 100% | Two weeks target |
+| **🎯 LeetCode Problems** | 11 solved (Easy: 5, Medium: 5, Hard: 1) | ██████████ 100% | 15 problems next |
+| **📚 Core Concepts** | DSA, Arrays, Strings, Linked Lists, Stacks, Queues, Trees, Graphs, Sorting, Searching, DP | ██████████ 100% | Advanced DP patterns |
 | **🚀 Mini Projects** | Planning phase | ░░░░░░░░░░ 0% | Build first calculator |
-| **📝 Learning Notes** | 10 comprehensive guides | ██████████ 100% | Advanced algorithms |
+| **📝 Learning Notes** | 11 comprehensive guides | ██████████ 100% | Advanced algorithms |
 | **💪 Technical Skills** | Binary Search, Linear Search, Algorithm Templates, Optimization | ██████████ 100% | Dynamic Programming |
 
 </div>
@@ -387,6 +389,8 @@ git push origin main
 ![Achievement](https://img.shields.io/badge/🔟_10_Days_Streak-ACHIEVED-gold?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/🎯_10_Problems-MILESTONE-gold?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/🔄_Binary_Search-Advanced-success?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/🧠_Dynamic_Programming-Started-success?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/🐍_Python-First_Solution-success?style=for-the-badge)
 
 ### 🎯 **Upcoming Milestones**
 
@@ -526,12 +530,14 @@ If you find CodeVault helpful for your learning journey:
 | **Day 9** | 2025-01-XX | Sorting mastery | Sorting Algorithms Guide | LeetCode 202 |
 | **Day 10** | 2025-01-XX | Searching mastery | Searching Algorithms Guide | - |
 | **Day 11** | 2025-01-XX | Advanced Binary Search | Modified Binary Search | LeetCode 33 |
+| **Day 12** | 2025-01-XX | Dynamic Programming + Python | DP Fundamentals, Binary Search | LeetCode 2141 |
 
 ### 🏆 **Major Milestones Achieved**
 
 - 🎉 **First Week Complete** - 7 consecutive days of learning
 - 📚 **10 Core Topics Mastered** - Complete DSA foundation
-- 🎯 **10 Problems Solved** - 🎉 MILESTONE ACHIEVED!
+- 🎯 **11 Problems Solved** - Including first Hard problem!
+- 🐍 **Python Added** - Multi-language practice started
 - 📝 **10 Comprehensive Guides** - Professional documentation
 - 🚀 **Advanced Algorithms** - Ready for complex topics
 - 🔟 **10-Day Streak** - Double digits milestone achieved!
