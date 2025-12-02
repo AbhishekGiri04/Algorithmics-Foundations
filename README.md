@@ -143,7 +143,8 @@ CodeVault/
 │   ├── 📄 graphs-complete-guide.md          # 🕸️ Graph Data Structure Mastery
 │   ├── 📄 sorting-algorithms-complete-guide.md # 🔃 Sorting Algorithms Mastery
 │   ├── 📄 searching-algorithms-complete-guide.md # 🔍 Searching Algorithms Mastery
-│   └── 📄 dynamic-programming-complete-guide.md # 🧠 Dynamic Programming Mastery
+│   ├── 📄 dynamic-programming-complete-guide.md # 🧠 Dynamic Programming Mastery
+│   └── 📄 hashing-complete-guide.md         # 🔐 Hashing Fundamentals Mastery
 ├── 📂 coding-practice/                       # 💻 Problem-solving implementations
 │   ├── 📂 array/                            # 📊 Array-based algorithmic challenges
 │   │   ├── 📄 leetcode-1480-running-sum.cpp  # 🔍 LeetCode 1480: Prefix Sum Technique
@@ -174,7 +175,7 @@ CodeVault/
 <table>
 <tr>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Daily_Streak-12_Days-FF6B6B?style=for-the-badge&logo=fire&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Daily_Streak-13_Days-FF6B6B?style=for-the-badge&logo=fire&logoColor=white"/><br>
 <strong>🔥 Consistency</strong>
 </td>
 <td align="center" width="16.66%">
@@ -182,7 +183,7 @@ CodeVault/
 <strong>🎯 Practice</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Concepts_Covered-11-45B7D1?style=for-the-badge&logo=book&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Concepts_Covered-12-45B7D1?style=for-the-badge&logo=book&logoColor=white"/><br>
 <strong>📚 Learning</strong>
 </td>
 <td align="center" width="16.66%">
@@ -190,11 +191,11 @@ CodeVault/
 <strong>🚀 Building</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Notes_Written-11-98D8C8?style=for-the-badge&logo=edit&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Notes_Written-12-98D8C8?style=for-the-badge&logo=edit&logoColor=white"/><br>
 <strong>📝 Documentation</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Skills_Developed-12-F7DC6F?style=for-the-badge&logo=star&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Skills_Developed-13-F7DC6F?style=for-the-badge&logo=star&logoColor=white"/><br>
 <strong>💪 Growth</strong>
 </td>
 </tr>
@@ -204,11 +205,11 @@ CodeVault/
 
 | 📊 Category | 🎯 Current Status | 📈 Progress | 🎪 Next Milestone |
 |:------------|:------------------|:------------|:-------------------|
-| **🔥 Daily Streak** | Day 12 - Consistent progress! | ██████████ 100% | Two weeks target |
+| **🔥 Daily Streak** | Day 13 - Consistent progress! | ██████████ 100% | Two weeks target |
 | **🎯 LeetCode Problems** | 11 solved (Easy: 5, Medium: 5, Hard: 1) | ██████████ 100% | 15 problems next |
-| **📚 Core Concepts** | DSA, Arrays, Strings, Linked Lists, Stacks, Queues, Trees, Graphs, Sorting, Searching, DP | ██████████ 100% | Advanced DP patterns |
+| **📚 Core Concepts** | DSA, Arrays, Strings, Linked Lists, Stacks, Queues, Trees, Graphs, Sorting, Searching, DP, Hashing | ██████████ 100% | Advanced patterns |
 | **🚀 Mini Projects** | Planning phase | ░░░░░░░░░░ 0% | Build first calculator |
-| **📝 Learning Notes** | 11 comprehensive guides | ██████████ 100% | Advanced algorithms |
+| **📝 Learning Notes** | 12 comprehensive guides | ██████████ 100% | Advanced algorithms |
 | **💪 Technical Skills** | Binary Search, Linear Search, Algorithm Templates, Optimization | ██████████ 100% | Dynamic Programming |
 
 </div>
@@ -391,6 +392,8 @@ git push origin main
 ![Achievement](https://img.shields.io/badge/🔄_Binary_Search-Advanced-success?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/🧠_Dynamic_Programming-Started-success?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/🐍_Python-First_Solution-success?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/🔐_Hashing-Mastered-success?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/📚_12_Topics-COMPLETE-gold?style=for-the-badge)
 
 ### 🎯 **Upcoming Milestones**
 
@@ -401,8 +404,8 @@ git push origin main
 | **First Week Streak** | 7/7 days | 7 days | 🎉 ACHIEVED! Celebration post |
 | **10 Problems Solved** | 10/10 problems | 10 problems | 🎉 ACHIEVED! LinkedIn update |
 | **First Mini Project** | 0/1 projects | 1 project | 🚀 Portfolio addition |
-| **50 GitHub Commits** | 4/50 commits | 50 commits | 📊 Progress analysis |
-| **5 Core Topics** | 5/5 topics | 5 topics | 📚 Knowledge milestone |
+| **50 GitHub Commits** | 15/50 commits | 50 commits | 📊 Progress analysis |
+| **10 Core Topics** | 12/12 topics | 12 topics | 🎉 ACHIEVED! Knowledge milestone |
 
 ---
 
@@ -519,18 +522,19 @@ If you find CodeVault helpful for your learning journey:
 
 | Day | Date | Commit | Topics Covered | Problems Solved |
 |:---:|:----:|:-------|:---------------|:----------------|
-| **Day 1** | 2025-01-XX | Initial repo setup | DSA Fundamentals | - |
-| **Day 2** | 2025-01-XX | Array mastery | Arrays Deep Dive | LeetCode 1480 |
-| **Day 3** | 2025-01-XX | String fundamentals | String Complete Guide | LeetCode 344 |
-| **Day 4** | 2025-01-XX | Linked Lists mastery | Linked Lists Guide | LeetCode 1, 9 |
-| **Day 5** | 2025-01-XX | Stack mastery | Stack Complete Guide | LeetCode 74 |
-| **Day 6** | 2025-01-XX | Queue mastery | Queue Complete Guide | LeetCode 7 |
-| **Day 7** | 2025-01-XX | Tree mastery | Tree Complete Guide | LeetCode 75 |
-| **Day 8** | 2025-01-XX | Graph mastery | Graph Complete Guide | LeetCode 1492 |
-| **Day 9** | 2025-01-XX | Sorting mastery | Sorting Algorithms Guide | LeetCode 202 |
-| **Day 10** | 2025-01-XX | Searching mastery | Searching Algorithms Guide | - |
-| **Day 11** | 2025-01-XX | Advanced Binary Search | Modified Binary Search | LeetCode 33 |
-| **Day 12** | 2025-01-XX | Dynamic Programming + Python | DP Fundamentals, Binary Search | LeetCode 2141 |
+| **Day 1** | 2025-11-21 | Initial repo setup | DSA Fundamentals | - |
+| **Day 2** | 2025-11-22 | Array mastery | Arrays Deep Dive | LeetCode 1480 |
+| **Day 3** | 2025-11-23 | String fundamentals | String Complete Guide | LeetCode 344 |
+| **Day 4** | 2025-11-24 | Linked Lists mastery | Linked Lists Guide | LeetCode 1, 9 |
+| **Day 5** | 2025-11-25 | Stack mastery | Stack Complete Guide | LeetCode 74 |
+| **Day 6** | 2025-11-26 | Queue mastery | Queue Complete Guide | LeetCode 7 |
+| **Day 7** | 2025-11-27 | Tree mastery | Tree Complete Guide | LeetCode 75 |
+| **Day 8** | 2025-11-28 | Graph mastery | Graph Complete Guide | LeetCode 1492 |
+| **Day 9** | 2025-11-29 | Sorting mastery | Sorting Algorithms Guide | LeetCode 202 |
+| **Day 10** | 2025-11-30 | Searching mastery | Searching Algorithms Guide | - |
+| **Day 11** | 2025-12-01 | Advanced Binary Search | Modified Binary Search | LeetCode 33 |
+| **Day 12** | 2025-12-02 | Dynamic Programming + Python | DP Fundamentals, Binary Search | LeetCode 2141 |
+| **Day 13** | 2025-12-03 | Hashing Fundamentals | Hash Tables, Collision Handling | - |
 
 ### 🏆 **Major Milestones Achieved**
 
@@ -538,6 +542,8 @@ If you find CodeVault helpful for your learning journey:
 - 📚 **10 Core Topics Mastered** - Complete DSA foundation
 - 🎯 **11 Problems Solved** - Including first Hard problem!
 - 🐍 **Python Added** - Multi-language practice started
+- 🔐 **Hashing Mastered** - 12 core topics completed
+- 📊 **15 Commits** - Consistent daily contributions
 - 📝 **10 Comprehensive Guides** - Professional documentation
 - 🚀 **Advanced Algorithms** - Ready for complex topics
 - 🔟 **10-Day Streak** - Double digits milestone achieved!
