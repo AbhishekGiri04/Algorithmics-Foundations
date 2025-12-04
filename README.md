@@ -167,7 +167,7 @@ CodeVault/
 │       └── 📄 leetcode-202-happy-number.cpp   # 😊 LeetCode 202: Cycle Detection
 ├── 📂 mini-projects/                         # 🚀 Practical application projects
 └── 📂 resources/                             # 📚 Learning materials & references
-    └── 📄 README.md                          # 🎥 Curated video playlists & tutorials
+    └── 📄 learning-resources.md              # 🎥 Video playlists (Striver, CodeWithHarry)
 ```
 
 ---
@@ -422,63 +422,6 @@ git push origin main
 
 ---
 
-## 📚 **Learning Resources**
-
-<div align="center">
-
-### 🎥 **Curated Video Playlists**
-
-We've compiled high-quality learning resources to accelerate your DSA journey!
-
-</div>
-
-<table>
-<tr>
-<td width="50%">
-
-### 🎯 **Striver's A2Z DSA Course**
-
-**Creator:** Raj Vikramaditya  
-**Level:** Beginner to Advanced
-
-**Features:**
-- Complete DSA coverage
-- Interview-focused content
-- Multiple solution approaches
-- Complexity analysis
-
-🔗 **[View Playlist](https://youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz)**
-
-</td>
-<td width="50%">
-
-### 📖 **Code With Harry DSA**
-
-**Creator:** Haris Khan  
-**Level:** Beginner Friendly
-
-**Features:**
-- Easy explanations
-- Hindi/English support
-- Practical examples
-- Complete implementations
-
-🔗 **[View Playlist](https://youtube.com/playlist?list=PLu0W_9lII9ahIappRPN0MCAgtOu3lQjQi)**
-
-</td>
-</tr>
-</table>
-
-<div align="center">
-
-**📂 [View All Resources →](./resources/README.md)**
-
-*Detailed learning paths, study tips, and additional resources available in the resources folder*
-
-</div>
-
----
-
 ## 🌱 **Future Learning Horizons**
 
 <table>
@@ -550,6 +493,11 @@ We've compiled high-quality learning resources to accelerate your DSA journey!
 - 💡 **Code Reviews** — Share knowledge and feedback
 - 🚀 **Project Collaboration** — Build amazing things together
 - 📚 **Knowledge Sharing** — Exchange learning resources
+
+### 📚 **Learning Resources**
+- 🎥 **[Video Playlists](./resources/learning-resources.md)** — Striver & CodeWithHarry courses
+- 📖 **Study Materials** — Curated tutorials and references
+- 🎯 **Learning Paths** — Structured roadmaps for DSA mastery
 
 ---
 
