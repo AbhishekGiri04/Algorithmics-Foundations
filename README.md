@@ -145,7 +145,8 @@ CodeVault/
 │   ├── 📄 searching-algorithms-complete-guide.md # 🔍 Searching Algorithms Mastery
 │   ├── 📄 dynamic-programming-complete-guide.md # 🧠 Dynamic Programming Mastery
 │   ├── 📄 hashing-complete-guide.md         # 🔐 Hashing Fundamentals Mastery
-│   └── 📄 heap-priority-queue-complete-guide.md # 📦 Heap & Priority Queue Mastery
+│   ├── 📄 heap-priority-queue-complete-guide.md # 📦 Heap & Priority Queue Mastery
+│   └── 📄 recursion-complete-guide.md        # 🔁 Recursion Fundamentals Mastery
 ├── 📂 coding-practice/                       # 💻 Problem-solving implementations
 │   ├── 📂 array/                            # 📊 Array-based algorithmic challenges
 │   │   ├── 📄 leetcode-1480-running-sum.cpp  # 🔍 LeetCode 1480: Prefix Sum Technique
@@ -157,7 +158,8 @@ CodeVault/
 │   │   ├── 📄 leetcode-3623-count-trapezoids.java # 🔢 LeetCode 3623: Combinatorics + Hash Map
 │   │   └── 📄 leetcode-3625-count-trapezoids-ii.java # 🔺 LeetCode 3625: Advanced Geometry
 │   ├── 📂 string/                           # 🔤 String manipulation & processing
-│   │   └── 📄 leetcode-344-reverse-string.cpp # 🔄 LeetCode 344: Two-Pointer Technique
+│   │   ├── 📄 leetcode-344-reverse-string.cpp # 🔄 LeetCode 344: Two-Pointer Technique
+│   │   └── 📄 leetcode-2211-count-collisions.py # 🚗 LeetCode 2211: Greedy String Processing
 │   └── 📂 math/                             # 🧮 Mathematical & number problems
 │       ├── 📄 leetcode-9-palindrome-number.cpp # 🔢 LeetCode 9: Number Manipulation
 │       ├── 📄 leetcode-7-reverse-integer.cpp   # 🔄 LeetCode 7: Integer Reversal
@@ -178,15 +180,15 @@ CodeVault/
 <table>
 <tr>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Daily_Streak-14_Days-FF6B6B?style=for-the-badge&logo=fire&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Daily_Streak-15_Days-FF6B6B?style=for-the-badge&logo=fire&logoColor=white"/><br>
 <strong>🔥 Consistency</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Problems_Solved-13-4ECDC4?style=for-the-badge&logo=checkmark&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Problems_Solved-14-4ECDC4?style=for-the-badge&logo=checkmark&logoColor=white"/><br>
 <strong>🎯 Practice</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Concepts_Covered-13-45B7D1?style=for-the-badge&logo=book&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Concepts_Covered-14-45B7D1?style=for-the-badge&logo=book&logoColor=white"/><br>
 <strong>📚 Learning</strong>
 </td>
 <td align="center" width="16.66%">
@@ -194,11 +196,11 @@ CodeVault/
 <strong>🚀 Building</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Notes_Written-13-98D8C8?style=for-the-badge&logo=edit&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Notes_Written-14-98D8C8?style=for-the-badge&logo=edit&logoColor=white"/><br>
 <strong>📝 Documentation</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Skills_Developed-14-F7DC6F?style=for-the-badge&logo=star&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Skills_Developed-15-F7DC6F?style=for-the-badge&logo=star&logoColor=white"/><br>
 <strong>💪 Growth</strong>
 </td>
 </tr>
@@ -208,11 +210,11 @@ CodeVault/
 
 | 📊 Category | 🎯 Current Status | 📈 Progress | 🎪 Next Milestone |
 |:------------|:------------------|:------------|:-------------------|
-| **🔥 Daily Streak** | Day 14 - Two weeks achieved! | ██████████ 100% | 🎉 MILESTONE! |
-| **🎯 LeetCode Problems** | 13 solved (Easy: 5, Medium: 6, Hard: 2) | ██████████ 100% | 15 problems next |
-| **📚 Core Concepts** | DSA, Arrays, Strings, Linked Lists, Stacks, Queues, Trees, Graphs, Sorting, Searching, DP, Hashing, Heap | ██████████ 100% | Advanced patterns |
+| **🔥 Daily Streak** | Day 15 - Momentum strong! | ██████████ 100% | 20 days target |
+| **🎯 LeetCode Problems** | 14 solved (Easy: 5, Medium: 7, Hard: 2) | ██████████ 100% | 15 problems next |
+| **📚 Core Concepts** | DSA, Arrays, Strings, Linked Lists, Stacks, Queues, Trees, Graphs, Sorting, Searching, DP, Hashing, Heap, Recursion | ██████████ 100% | Advanced patterns |
 | **🚀 Mini Projects** | Planning phase | ░░░░░░░░░░ 0% | Build first calculator |
-| **📝 Learning Notes** | 13 comprehensive guides | ██████████ 100% | Advanced algorithms |
+| **📝 Learning Notes** | 14 comprehensive guides | ██████████ 100% | Advanced algorithms |
 | **💪 Technical Skills** | Binary Search, Linear Search, Algorithm Templates, Optimization | ██████████ 100% | Dynamic Programming |
 
 </div>
@@ -401,6 +403,8 @@ git push origin main
 ![Achievement](https://img.shields.io/badge/📦_Heap-Mastered-success?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/🎉_Two_Weeks-ACHIEVED-gold?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/🔴_2_Hard_Problems-SOLVED-gold?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/🔁_Recursion-Mastered-success?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/📚_14_Topics-COMPLETE-gold?style=for-the-badge)
 
 ### 🎯 **Upcoming Milestones**
 
@@ -412,8 +416,8 @@ git push origin main
 | **Two Week Streak** | 14/14 days | 14 days | 🎉 ACHIEVED! Milestone reached |
 | **10 Problems Solved** | 13/10 problems | 10 problems | 🎉 ACHIEVED! LinkedIn update |
 | **First Mini Project** | 0/1 projects | 1 project | 🚀 Portfolio addition |
-| **50 GitHub Commits** | 18/50 commits | 50 commits | 📊 Progress analysis |
-| **10 Core Topics** | 13/13 topics | 13 topics | 🎉 ACHIEVED! Knowledge milestone |
+| **50 GitHub Commits** | 20/50 commits | 50 commits | 📊 Progress analysis |
+| **10 Core Topics** | 14/14 topics | 14 topics | 🎉 ACHIEVED! Knowledge milestone |
 
 ---
 
@@ -544,17 +548,18 @@ If you find CodeVault helpful for your learning journey:
 | **Day 12** | 2025-12-02 | Dynamic Programming + Python | DP Fundamentals, Binary Search | LeetCode 2141 |
 | **Day 13** | 2025-12-03 | Hashing + Java | Hash Tables, Combinatorics | LeetCode 3623 |
 | **Day 14** | 2025-12-04 | Heap & Priority Queue + Java | Heap Operations, Advanced Geometry | LeetCode 3625 |
+| **Day 15** | 2025-12-05 | Recursion + Python | Recursion Fundamentals, Greedy | LeetCode 2211 |
 
 ### 🏆 **Major Milestones Achieved**
 
 - 🎉 **First Week Complete** - 7 consecutive days of learning
 - 📚 **10 Core Topics Mastered** - Complete DSA foundation
-- 🎯 **13 Problems Solved** - Including 2 Hard problems!
+- 🎯 **14 Problems Solved** - Including 2 Hard problems!
 - 🐍 **Python Added** - Multi-language practice started
 - ☕ **Java Added** - Three languages mastered
-- 📦 **Heap Mastered** - 13 core topics completed
-- 🎉 **Two Weeks Streak** - 14 consecutive days!
-- 📊 **18 Commits** - Consistent daily contributions
+- 🔁 **Recursion Mastered** - 14 core topics completed
+- 🎉 **15 Days Streak** - Over two weeks!
+- 📊 **20 Commits** - Consistent daily contributions
 - 📝 **10 Comprehensive Guides** - Professional documentation
 - 🚀 **Advanced Algorithms** - Ready for complex topics
 - 🔟 **10-Day Streak** - Double digits milestone achieved!
