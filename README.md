@@ -383,33 +383,15 @@ git push origin main
 
 ### 🎖️ **Current Achievements**
 
-![Achievement](https://img.shields.io/badge/🎯_First_Problem-LeetCode_1480-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🔄_Two_Pointers-LeetCode_344-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/📚_DSA_Foundation-Completed-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🔥_4_Day_Streak-Active-orange?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🔗_Linked_Lists-Mastered-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/📚_Stacks-Mastered-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🚶_Queues-Mastered-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🌳_Trees-Mastered-success?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/🎉_First_Week-COMPLETE-gold?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🕸️_Graphs-Mastered-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🔃_Sorting-Mastered-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🔍_Searching-Mastered-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🔟_10_Days_Streak-ACHIEVED-gold?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🎯_10_Problems-MILESTONE-gold?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🔄_Binary_Search-Advanced-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🧠_Dynamic_Programming-Started-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🐍_Python-First_Solution-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🔐_Hashing-Mastered-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/📚_12_Topics-COMPLETE-gold?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/☕_Java-First_Solution-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/📦_Heap-Mastered-success?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/🔟_10_Days-ACHIEVED-gold?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/🎉_Two_Weeks-ACHIEVED-gold?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🔴_2_Hard_Problems-SOLVED-gold?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🔁_Recursion-Mastered-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/📚_14_Topics-COMPLETE-gold?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🔍_Backtracking-Reference-success?style=for-the-badge)
-![Achievement](https://img.shields.io/badge/🎯_15_Problems-MILESTONE-gold?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/🎯_15_Problems-SOLVED-gold?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/🔴_2_Hard-SOLVED-gold?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/📚_15_Topics-COMPLETE-gold?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/🐍_Python-Active-success?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/☕_Java-Active-success?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/C++-Active-success?style=for-the-badge)
 
 ### 🎯 **Upcoming Milestones**
 
@@ -417,13 +399,13 @@ git push origin main
 
 | 🏆 Milestone | 📊 Progress | 🎯 Target | 🏁 Reward |
 |:-------------|:------------|:----------|:-----------|
-| **First Week Streak** | 7/7 days | 7 days | 🎉 ACHIEVED! Celebration post |
-| **Two Week Streak** | 14/14 days | 14 days | 🎉 ACHIEVED! Milestone reached |
-| **10 Problems Solved** | 13/10 problems | 10 problems | 🎉 ACHIEVED! LinkedIn update |
-| **First Mini Project** | 0/1 projects | 1 project | 🚀 Portfolio addition |
-| **15 Problems Solved** | 15/15 problems | 15 problems | 🎉 ACHIEVED! Milestone reached |
-| **50 GitHub Commits** | 22/50 commits | 50 commits | 📊 Progress analysis |
-| **15 Core Topics** | 15/15 topics | 15 topics | 🎉 ACHIEVED! Knowledge milestone |
+| **First Week Streak** | 7/7 days | 7 days | 🎉 ACHIEVED |
+| **Two Week Streak** | 15/14 days | 14 days | 🎉 ACHIEVED |
+| **15 Problems Solved** | 15/15 problems | 15 problems | 🎉 ACHIEVED |
+| **15 Core Topics** | 15/15 topics | 15 topics | 🎉 ACHIEVED |
+| **20 Days Streak** | 15/20 days | 20 days | 🔥 In Progress |
+| **First Mini Project** | 0/1 projects | 1 project | 🚀 Planned |
+| **50 GitHub Commits** | 24/50 commits | 50 commits | 📊 In Progress |
 
 ---
 
@@ -566,12 +548,13 @@ If you find CodeVault helpful for your learning journey:
 - 🎉 **First Week Complete** - 7 consecutive days of learning
 - 📚 **10 Core Topics Mastered** - Complete DSA foundation
 - 🎯 **15 Problems Solved** - 🎉 MILESTONE ACHIEVED!
-- 🐍 **Python Added** - Multi-language practice started
-- ☕ **Java Added** - Three languages mastered
+- 🐍 **Python Added** - Multi-language practice
+- ☕ **Java Added** - Three languages mastered (C++, Python, Java)
 - 🔍 **Backtracking Added** - 15 core topics completed
 - 📦 **Heap Guide Updated** - Professional documentation
-- 🎉 **15 Days Streak** - Over two weeks!
-- 📊 **23 Commits** - Consistent daily contributions
+- 🎉 **15 Days Streak** - Over two weeks of consistency!
+- 📊 **24 Commits** - Steady daily contributions
+- 📚 **15 Comprehensive Guides** - Complete topic coverage
 - 📝 **10 Comprehensive Guides** - Professional documentation
 - 🚀 **Advanced Algorithms** - Ready for complex topics
 - 🔟 **10-Day Streak** - Double digits milestone achieved!
