@@ -163,7 +163,8 @@ CodeVault/
 │   ├── 📄 np-completeness-complete-guide.md # 🧠 NP-Completeness Theory Mastery
 │   ├── 📄 branch-bound-complete-guide.md # 🌳 Branch & Bound Optimization Mastery
 │   ├── 📄 randomized-algorithms-complete-guide.md # 🎲 Randomized Algorithms Mastery
-│   └── 📄 amortized-analysis-complete-guide.md # ⚖️ Amortized Analysis Mastery
+│   ├── 📄 amortized-analysis-complete-guide.md # ⚖️ Amortized Analysis Mastery
+│   └── 📄 fenwick-tree-complete-guide.md # 🌲 Fenwick Tree Mastery
 ├── 📂 coding-practice/                       # 💻 Problem-solving implementations
 │   ├── 📂 array/                            # 📊 Array-based algorithmic challenges
 │   │   ├── 📄 leetcode-1480-running-sum.cpp  # 🔍 LeetCode 1480: Prefix Sum Technique
@@ -199,7 +200,7 @@ CodeVault/
 <table>
 <tr>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Daily_Streak-31_Days-FF6B6B?style=for-the-badge&logo=fire&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Daily_Streak-32_Days-FF6B6B?style=for-the-badge&logo=fire&logoColor=white"/><br>
 <strong>🔥 Consistency</strong>
 </td>
 <td align="center" width="16.66%">
@@ -207,7 +208,7 @@ CodeVault/
 <strong>🎯 Practice</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Concepts_Covered-31-45B7D1?style=for-the-badge&logo=book&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Concepts_Covered-32-45B7D1?style=for-the-badge&logo=book&logoColor=white"/><br>
 <strong>📚 Learning</strong>
 </td>
 <td align="center" width="16.66%">
@@ -215,11 +216,11 @@ CodeVault/
 <strong>🚀 Building</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Notes_Written-31-98D8C8?style=for-the-badge&logo=edit&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Notes_Written-32-98D8C8?style=for-the-badge&logo=edit&logoColor=white"/><br>
 <strong>📝 Documentation</strong>
 </td>
 <td align="center" width="16.66%">
-<img src="https://img.shields.io/badge/Skills_Developed-31-F7DC6F?style=for-the-badge&logo=star&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Skills_Developed-32-F7DC6F?style=for-the-badge&logo=star&logoColor=white"/><br>
 <strong>💪 Growth</strong>
 </td>
 </tr>
@@ -229,12 +230,12 @@ CodeVault/
 
 | 📊 Category | 🎯 Current Status | 📈 Progress | 🎪 Next Milestone |
 |:------------|:------------------|:------------|:-------------------|
-| **🔥 Daily Streak** | Day 31 - Beyond 30-day milestone! | ██████████ 100% | 60 days target |
+| **🔥 Daily Streak** | Day 32 - Beyond 30-day milestone! | ██████████ 100% | 60 days target |
 | **🎯 LeetCode Problems** | 15 solved (Easy: 5, Medium: 8, Hard: 2) | ██████████ 100% | 🎉 15 ACHIEVED! |
-| **📚 Core Concepts** | DSA, Arrays, Strings, Linked Lists, Stacks, Queues, Trees, Graphs, Sorting, Searching, DP, Hashing, Heap, Recursion, Backtracking, Bit Manipulation, Tries, Complexity Analysis, Math for DSA, Huffman Coding, Advanced Trees, Topological Sort, Heavy-Light Decomposition, Mo's Algorithm, Binary Lifting & LCA, Algorithm Design Techniques, NP-Completeness, Branch & Bound, Randomized Algorithms, Amortized Analysis | ██████████ 100% | Advanced patterns |
+| **📚 Core Concepts** | DSA, Arrays, Strings, Linked Lists, Stacks, Queues, Trees, Graphs, Sorting, Searching, DP, Hashing, Heap, Recursion, Backtracking, Bit Manipulation, Tries, Complexity Analysis, Math for DSA, Huffman Coding, Advanced Trees, Topological Sort, Heavy-Light Decomposition, Mo's Algorithm, Binary Lifting & LCA, Algorithm Design Techniques, NP-Completeness, Branch & Bound, Randomized Algorithms, Amortized Analysis, Fenwick Tree | ██████████ 100% | Advanced patterns |
 | **🚀 Mini Projects** | Planning phase | ░░░░░░░░░░ 0% | Build first calculator |
-| **📝 Learning Notes** | 31 comprehensive guides | ██████████ 100% | Advanced algorithms |
-| **💪 Technical Skills** | Algorithm Design Paradigms, Problem-Solving Strategies, Optimization Techniques, Complexity Analysis, NP-Completeness Theory, Branch & Bound Optimization, Randomized Algorithms, Amortized Analysis | ██████████ 100% | System Design |
+| **📝 Learning Notes** | 32 comprehensive guides | ██████████ 100% | Advanced algorithms |
+| **💪 Technical Skills** | Algorithm Design Paradigms, Problem-Solving Strategies, Optimization Techniques, Complexity Analysis, NP-Completeness Theory, Branch & Bound Optimization, Randomized Algorithms, Amortized Analysis, Fenwick Tree | ██████████ 100% | System Design |
 
 </div>
 
@@ -411,6 +412,7 @@ git push origin main
 ![Achievement](https://img.shields.io/badge/🌳_Branch_Bound-MASTERED-gold?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/🎲_Randomized_Algorithms-MASTERED-gold?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/⚖️_Amortized_Analysis-MASTERED-gold?style=for-the-badge)
+![Achievement](https://img.shields.io/badge/🌲_Fenwick_Tree-MASTERED-gold?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/🎆_30_Day_Streak-MILESTONE-gold?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/🐍_Python-Active-success?style=for-the-badge)
 ![Achievement](https://img.shields.io/badge/☕_Java-Active-success?style=for-the-badge)
@@ -441,6 +443,7 @@ git push origin main
 | **29 Core Topics** | 29/29 topics | 29 topics | 🎉 ACHIEVED |
 | **30 Core Topics** | 30/30 topics | 30 topics | 🎉 ACHIEVED |
 | **31 Core Topics** | 31/31 topics | 31 topics | 🎉 ACHIEVED |
+| **32 Core Topics** | 32/32 topics | 32 topics | 🎉 ACHIEVED |
 | **20 Days Streak** | 20/20 days | 20 days | 🎉 ACHIEVED |
 | **30 Days Streak** | 30/30 days | 30 days | 🎆 MILESTONE ACHIEVED! |
 | **First Mini Project** | 0/1 projects | 1 project | 🚀 Next Goal |
@@ -598,6 +601,7 @@ If you find CodeVault helpful for your learning journey:
 | **Day 29** | 2025-12-19 | Branch & Bound Optimization | Systematic Search, Bounding Functions, Pruning Strategies | - |
 | **Day 30** | 2025-12-20 | Randomized Algorithms | Monte Carlo, Las Vegas, Probabilistic Data Structures | - |
 | **Day 31** | 2025-12-21 | Amortized Analysis | Aggregate, Accounting, Potential Methods | - |
+| **Day 32** | 2025-12-22 | Fenwick Tree | Binary Indexed Tree, Range Queries, Bit Manipulation | - |
 
 ### 🏆 **Major Milestones Achieved**
 
@@ -627,6 +631,7 @@ If you find CodeVault helpful for your learning journey:
 - 🌳 **Branch & Bound Mastered** - Systematic optimization expertise
 - 🎲 **Randomized Algorithms Mastered** - Probabilistic computing expertise
 - ⚖️ **Amortized Analysis Mastered** - Performance analysis expertise
+- 🌲 **Fenwick Tree Mastered** - Binary indexed tree expertise
 - 🎆 **30-Day Streak MILESTONE** - Consistent daily learning achievement!
 - 🔟 **10-Day Streak** - Double digits milestone achieved!
 
