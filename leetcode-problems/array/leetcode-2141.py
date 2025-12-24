@@ -1,12 +1,12 @@
 """
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                          LEETCODE PROBLEM SOLUTION                          ║
+║                          LEETCODE PROBLEM SOLUTION                           ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║ Problem ID    : 2141                                                         ║
-║ Problem Name  : Maximum Running Time of N Computers                        ║
-║ Difficulty    : Hard                                                        ║
-║ Topic         : Array, Binary Search, Greedy                               ║
-║ Company Tags  : Google, Amazon, Microsoft                                  ║
+║ Problem Name  : Maximum Running Time of N Computers                          ║
+║ Difficulty    : Hard                                                         ║
+║ Topic         : Array, Binary Search, Greedy                                 ║
+║ Company Tags  : Google, Amazon, Microsoft                                    ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📋 PROBLEM STATEMENT:
