@@ -53,7 +53,7 @@ mindmap
         Problem patterns
         Company insights
 
-%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'primaryTextColor':'#000000', 'primaryBorderColor':'#000000', 'lineColor':'#000000'}}}%%
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ff6b6b', 'primaryTextColor':'#ffffff', 'primaryBorderColor':'#ffffff', 'lineColor':'#333333', 'secondaryColor':'#4ecdc4', 'tertiaryColor':'#45b7d1', 'background':'#ffa500', 'mainBkg':'#ff6b6b', 'secondBkg':'#4ecdc4', 'tertiaryBkg':'#45b7d1'}}}%%
 ```
 
 ---
