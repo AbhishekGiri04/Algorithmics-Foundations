@@ -36,28 +36,27 @@
 ### 🔑 Key Features
 
 ```mermaid
-mindmap
-  root))🌲 Fenwick Tree((
-    ⚡ Efficient Operations
-      O(log n) updates
-      O(log n) queries
-      Fast prefix sums
-      Range operations
-    💾 Space Efficient
-      O(n) space complexity
-      Array-based structure
-      No extra pointers
-      Cache friendly
-    🔧 Implementation
-      Bit manipulation
-      LSB operations
-      Simple code
-      Elegant design
-    🎯 Applications
-      Dynamic arrays
-      Range sum queries
-      Frequency counting
-      Inversion counting
+flowchart TD
+    A["🌲 Fenwick Tree"] --> B["⚡ Efficient Operations"]
+    A --> C["💾 Space Efficient"]
+    A --> D["🔧 Implementation"]
+    A --> E["🎯 Applications"]
+    
+    B --> F["O(log n) updates"]
+    B --> G["O(log n) queries"]
+    B --> H["Fast prefix sums"]
+    
+    C --> I["O(n) space"]
+    C --> J["Array-based"]
+    C --> K["Cache friendly"]
+    
+    D --> L["Bit manipulation"]
+    D --> M["LSB operations"]
+    D --> N["Simple code"]
+    
+    E --> O["Range queries"]
+    E --> P["Frequency counting"]
+    E --> Q["Inversion counting"]
 ```
 
 ### 🌟 When to Use Fenwick Tree
@@ -220,17 +219,17 @@ public:
 ### 📊 Operation Visualization
 
 ```mermaid
-graph TD
+flowchart TD
     A[Update Operation] --> B[Start at index i]
-    B --> C[Add value to BIT[i]]
-    C --> D[i += i & (-i)]
+    B --> C[Add value to BIT i]
+    C --> D[i += i & -i]
     D --> E{i <= n?}
     E -->|Yes| C
     E -->|No| F[Done]
     
     G[Query Operation] --> H[Start at index i]
-    H --> I[Add BIT[i] to sum]
-    I --> J[i -= i & (-i)]
+    H --> I[Add BIT i to sum]
+    I --> J[i -= i & -i]
     J --> K{i > 0?}
     K -->|Yes| I
     K -->|No| L[Return sum]
