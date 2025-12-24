@@ -6,10 +6,6 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Advanced-red?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
 
-<img src="https://miro.medium.com/v2/resize:fit:1400/1*9FbVkz1HVa1kh4YBnD8sqA.png" alt="Binary Lifting Concept" width="700" height="450"/>
-
-<img src="https://scaler.com/topics/images/lowest-common-ancestor.webp" alt="Lowest Common Ancestor" width="650" height="400"/>
-
 *Master efficient tree traversal and ancestor queries for competitive programming and advanced tree algorithms*
 
 </div>
@@ -36,6 +32,10 @@
 ## 🎯 Introduction
 
 **Binary Lifting** is a preprocessing technique that enables efficient ancestor queries in trees by storing powers-of-2 ancestors. Combined with **LCA (Lowest Common Ancestor)** algorithms, it provides O(log n) solutions for tree traversal problems.
+
+<div align="center">
+<img src="https://miro.medium.com/v2/resize:fit:1400/1*9FbVkz1HVa1kh4YBnD8sqA.png" alt="Binary Lifting Concept" width="700" height="450"/>
+</div>
 
 ### 🔑 Key Innovation
 
@@ -89,6 +89,8 @@ mindmap
       Optimization problems
       State transitions
       Recursive solutions
+
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#2E86AB', 'primaryTextColor':'#ffffff', 'primaryBorderColor':'#ffffff', 'lineColor':'#4A4A4A', 'secondaryColor':'#A23B72', 'tertiaryColor':'#F18F01', 'background':'#C73E1D', 'mainBkg':'#2E86AB', 'secondBkg':'#A23B72', 'tertiaryBkg':'#F18F01'}}}%%
 ```
 
 - **LCA Queries**: Find common ancestors efficiently
@@ -104,11 +106,11 @@ mindmap
 
 **Lowest Common Ancestor (LCA)** of two nodes u and v is the deepest node that is an ancestor of both u and v.
 
-### 📊 Visual Example
-
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/LCA-Tree-Example.webp" alt="LCA Tree Example" width="600" height="400"/>
+<img src="https://scaler.com/topics/images/lowest-common-ancestor.webp" alt="Lowest Common Ancestor" width="600" height="400"/>
 </div>
+
+### 📊 Visual Example
 
 ```
         1
@@ -171,10 +173,6 @@ up[v][i] = 2^i steps above v
 
 ### 📊 Preprocessing Table
 
-<div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Binary-Lifting-Table.webp" alt="Binary Lifting Preprocessing Table" width="650" height="350"/>
-</div>
-
 ```
 Node:  1  2  3  4  5  6  7  8
 up[i][0]: -1 1  1  2  2  3  3  4
@@ -212,10 +210,6 @@ To jump k steps: combine jumps of 2^i1, 2^i2, etc.
 ## 💻 Implementation
 
 ### 🔧 Complete Binary Lifting Class
-
-<div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Binary-Lifting-Implementation.webp" alt="Binary Lifting Implementation" width="700" height="400"/>
-</div>
 
 ```cpp
 class BinaryLifting {
@@ -412,10 +406,6 @@ int distance(int u, int v) {
 
 ### 🔥 Path Queries
 
-<div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Tree-Path-Queries.webp" alt="Tree Path Queries" width="650" height="350"/>
-</div>
-
 ```cpp
 class PathQueries {
 private:
@@ -454,10 +444,6 @@ public:
 ```
 
 ### 🌳 Tree DP with Binary Lifting
-
-<div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Tree-DP-Binary-Lifting.webp" alt="Tree DP with Binary Lifting" width="600" height="350"/>
-</div>
 
 ```cpp
 class TreeDP {
