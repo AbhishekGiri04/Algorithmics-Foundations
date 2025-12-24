@@ -1,12 +1,12 @@
 /*
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                          LEETCODE PROBLEM SOLUTION                          ║
+║                          LEETCODE PROBLEM SOLUTION                           ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║ Problem ID    : 1480                                                         ║
-║ Problem Name  : Running Sum of 1d Array                                     ║
+║ Problem Name  : Running Sum of 1d Array                                      ║
 ║ Difficulty    : Easy                                                         ║
-║ Topic         : Array, Prefix Sum                                           ║
-║ Company Tags  : Amazon, Microsoft, Google                                   ║
+║ Topic         : Array, Prefix Sum                                            ║
+║ Company Tags  : Amazon, Microsoft, Google                                    ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📋 PROBLEM STATEMENT:
