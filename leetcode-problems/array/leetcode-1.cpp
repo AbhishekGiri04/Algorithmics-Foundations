@@ -1,12 +1,12 @@
 /*
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                          LEETCODE PROBLEM SOLUTION                          ║
+║                          LEETCODE PROBLEM SOLUTION                           ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║ Problem ID    : 1                                                            ║
 ║ Problem Name  : Two Sum                                                      ║
 ║ Difficulty    : Easy                                                         ║
-║ Topic         : Array, Hash Table                                           ║
-║ Company Tags  : Amazon, Apple, Google, Microsoft, Facebook                  ║
+║ Topic         : Array, Hash Table                                            ║
+║ Company Tags  : Amazon, Apple, Google, Microsoft, Facebook                   ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📋 PROBLEM STATEMENT:
