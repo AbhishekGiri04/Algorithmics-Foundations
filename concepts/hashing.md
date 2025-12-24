@@ -6,11 +6,7 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
 
-<img src="https://deen3evddmddt.cloudfront.net/uploads/content-images/what-is-hash-table.webp" alt="What is Hash Table" width="700" height="400"/>
-
-<img src="https://logicmojo.com/assets/dist/new_pages/images/Hashing%20Uses.jpg" alt="Hashing Uses and Applications" width="650" height="350"/>
-
-*Master hash tables for O(1) average-case operations*
+**Master hash tables for O(1) average-case operations**
 
 </div>
 
@@ -23,28 +19,33 @@
 ### 🔑 Hash Table Components
 
 ```mermaid
-mindmap
-  root))🔐 Hash Table((
-    📊 Hash Function
-      Maps keys to indices
-      Uniform distribution
-      Fast computation
-      Deterministic
-    📦 Buckets/Slots
-      Store key-value pairs
-      Fixed size array
-      Direct access
-      Memory efficient
-    ⚔️ Collision Resolution
-      Handle same index
-      Chaining method
-      Open addressing
-      Performance impact
-    📊 Load Factor
-      Size/Capacity ratio
-      Performance indicator
-      Resize trigger
-      Optimal: < 0.75
+flowchart TD
+    A["🔐 Hash Table"] --> B["📊 Hash Function"]
+    A --> C["📦 Buckets/Slots"]
+    A --> D["⚔️ Collision Resolution"]
+    A --> E["📊 Load Factor"]
+    
+    B --> F["Maps keys to indices"]
+    B --> G["Uniform distribution"]
+    B --> H["Fast computation"]
+    B --> I["Deterministic"]
+    
+    C --> J["Store key-value pairs"]
+    C --> K["Fixed size array"]
+    C --> L["Direct access"]
+    C --> M["Memory efficient"]
+    
+    D --> N["Handle same index"]
+    D --> O["Chaining method"]
+    D --> P["Open addressing"]
+    D --> Q["Performance impact"]
+    
+    E --> R["Size/Capacity ratio"]
+    E --> S["Performance indicator"]
+    E --> T["Resize trigger"]
+    E --> U["Optimal: < 0.75"]
+    
+    classDef default fill:#333,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 ### 💻 Basic Implementation
@@ -144,7 +145,7 @@ public:
 ## 🎯 Hash Functions
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Hash-Function-Properties.webp" alt="Hash Function Properties" width="650" height="350"/>
+<img src="https://miro.medium.com/v2/resize:fit:913/1*VDRVI-0EfU2v7c43k9IIeA.png" alt="Hash Functions" width="650" height="350"/>
 </div>
 
 ### 🔧 Hash Function Properties
@@ -224,7 +225,7 @@ public:
 ## 🎯 Collision Resolution
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Collision-Resolution-Techniques.webp" alt="Collision Resolution Techniques" width="700" height="400"/>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20241220115555333222/collision-in-hashing.webp" alt="Collision Resolution" width="700" height="400"/>
 </div>
 
 ### 🔧 Collision Resolution Strategies
@@ -341,36 +342,50 @@ private:
 
 ## 🎯 Applications
 
+<div align="center">
+<img src="https://deen3evddmddt.cloudfront.net/uploads/content-images/what-is-hash-table.webp" alt="What is Hash Table" width="700" height="400"/>
+</div>
+
+<div align="center">
+<img src="https://logicmojo.com/assets/dist/new_pages/images/Hashing%20Uses.jpg" alt="Hashing Uses and Applications" width="650" height="350"/>
+</div>
+
 ### 🔧 Hash Table Use Cases
 
 ```mermaid
-mindmap
-  root))🔐 Hash Table Applications((
-    📊 Database Indexing
-      Primary keys
-      Foreign keys
-      Query optimization
-      B+ tree alternatives
-    💾 Caching Systems
-      LRU Cache
-      Web caching
-      Memory caching
-      CDN systems
-    🔍 Search & Retrieval
-      Symbol tables
-      Dictionary lookup
-      Spell checkers
-      Autocomplete
-    🔢 Algorithm Optimization
-      Two Sum problems
-      Duplicate detection
-      Frequency counting
-      Set operations
-    🌐 Distributed Systems
-      Consistent hashing
-      Load balancing
-      Sharding
-      DHT systems
+flowchart TD
+    A["🔐 Hash Table Applications"] --> B["📊 Database Indexing"]
+    A --> C["💾 Caching Systems"]
+    A --> D["🔍 Search & Retrieval"]
+    A --> E["🔢 Algorithm Optimization"]
+    A --> F["🌐 Distributed Systems"]
+    
+    B --> G["Primary keys"]
+    B --> H["Foreign keys"]
+    B --> I["Query optimization"]
+    B --> J["B+ tree alternatives"]
+    
+    C --> K["LRU Cache"]
+    C --> L["Web caching"]
+    C --> M["Memory caching"]
+    C --> N["CDN systems"]
+    
+    D --> O["Symbol tables"]
+    D --> P["Dictionary lookup"]
+    D --> Q["Spell checkers"]
+    D --> R["Autocomplete"]
+    
+    E --> S["Two Sum problems"]
+    E --> T["Duplicate detection"]
+    E --> U["Frequency counting"]
+    E --> V["Set operations"]
+    
+    F --> W["Consistent hashing"]
+    F --> X["Load balancing"]
+    F --> Y["Sharding"]
+    F --> Z["DHT systems"]
+    
+    classDef default fill:#333,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 ```cpp
