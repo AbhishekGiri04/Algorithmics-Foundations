@@ -1,12 +1,12 @@
 """
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                          LEETCODE PROBLEM SOLUTION                          ║
+║                          LEETCODE PROBLEM SOLUTION                           ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║ Problem ID    : 2211                                                         ║
-║ Problem Name  : Count Collisions on a Road                                  ║
+║ Problem Name  : Count Collisions on a Road                                   ║
 ║ Difficulty    : Medium                                                       ║
-║ Topic         : String, Simulation, Greedy                                  ║
-║ Company Tags  : Amazon, Google                                              ║
+║ Topic         : String, Simulation, Greedy                                   ║
+║ Company Tags  : Amazon, Google                                               ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📋 PROBLEM STATEMENT:
