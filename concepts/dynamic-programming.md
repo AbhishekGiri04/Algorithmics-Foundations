@@ -73,6 +73,10 @@ flowchart TD
 
 ## 🏗️ Core Concepts
 
+<div align="center">
+<img src="https://scaler.com/topics/images/dp_staircase_two.webp" alt="Problem Identification" width="650" height="350"/>
+</div>
+
 ### 🎯 Essential Properties
 
 #### 1. Optimal Substructure
@@ -218,7 +222,7 @@ int minPathSum(vector<vector<int>>& grid) {
 ## 📝 Memoization Approach
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Memoization-Top-Down-DP.webp" alt="Memoization Top Down" width="650" height="350"/>
+<img src="https://storage.googleapis.com/algodailyrandomassets/curriculum/dynamic-programming/dp7a.png" alt="Memoization Approach" width="650" height="350"/>
 </div>
 
 ### 🎯 Top-Down Strategy
@@ -294,7 +298,7 @@ public:
 ## 📊 Tabulation Approach
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Tabulation-Bottom-Up-DP.webp" alt="Tabulation Bottom Up" width="650" height="350"/>
+<img src="https://files.codingninjas.in/article_images/memoization-vs-tabulation-1-1634917570.jpg" alt="Tabulation Approach" width="650" height="350"/>
 </div>
 
 ### 🎯 Bottom-Up Strategy
@@ -431,6 +435,10 @@ int rob(vector<int>& nums) {
 ---
 
 ## 🚀 Optimization Techniques
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Space-Optimization-in-DP.webp" alt="Bottom-Up Strategy" width="650" height="350"/>
+</div>
 
 ### 🎯 Space Optimization
 
