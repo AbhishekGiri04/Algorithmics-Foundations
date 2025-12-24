@@ -1,12 +1,12 @@
 /*
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                          LEETCODE PROBLEM SOLUTION                          ║
+║                          LEETCODE PROBLEM SOLUTION                           ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║ Problem ID    : 75                                                           ║
 ║ Problem Name  : Sort Colors                                                  ║
 ║ Difficulty    : Medium                                                       ║
-║ Topic         : Array, Two Pointers, Sorting                                ║
-║ Company Tags  : Amazon, Microsoft, Google, Facebook, Apple                  ║
+║ Topic         : Array, Two Pointers, Sorting                                 ║
+║ Company Tags  : Amazon, Microsoft, Google, Facebook, Apple                   ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📋 PROBLEM STATEMENT:
