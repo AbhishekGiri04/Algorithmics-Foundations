@@ -309,6 +309,470 @@ public:
             int start = i - lsb + 1;
             
             cout << "BIT[" << i << "] = " << BIT[i] 
+                 << " covers range [" << start << ", " << i << "]" << endl;
+        }
+    }
+};
+```
+
+### 🔥 Advanced Operations
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Fenwick-Tree-Advanced-Operations.webp" alt="Fenwick Tree Advanced Operations" width="650" height="350"/>
+</div>
+
+```cpp
+class AdvancedFenwickTree {
+private:
+    vector<long long> BIT;
+    int n;
+    
+public:
+    AdvancedFenwickTree(int size) : n(size) {
+        BIT.assign(n + 1, 0);
+    }
+    
+    // Range update: add val to range [l, r]
+    void rangeUpdate(int l, int r, int val) {
+        update(l, val);
+        update(r + 1, -val);
+    }
+    
+    // Point query after range updates
+    long long pointQuery(int i) {
+        return query(i);
+    }
+    
+    // Binary search on Fenwick Tree
+    int lowerBound(long long sum) {
+        int pos = 0;
+        int bitMask = 1;
+        
+        // Find highest power of 2 <= n
+        while (bitMask <= n) bitMask <<= 1;
+        bitMask >>= 1;
+        
+        while (bitMask > 0) {
+            int next = pos + bitMask;
+            if (next <= n && BIT[next] < sum) {
+                sum -= BIT[next];
+                pos = next;
+            }
+            bitMask >>= 1;
+        }
+        
+        return pos + 1;
+    }
+    
+private:
+    void update(int i, long long val) {
+        while (i <= n) {
+            BIT[i] += val;
+            i += i & (-i);
+        }
+    }
+    
+    long long query(int i) {
+        long long sum = 0;
+        while (i > 0) {
+            sum += BIT[i];
+            i -= i & (-i);
+        }
+        return sum;
+    }
+};
+```
+
+---
+
+## 🎆 Advanced Variants
+
+### 🔄 2D Fenwick Tree
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/2D-Fenwick-Tree.webp" alt="2D Fenwick Tree Structure" width="700" height="400"/>
+</div>
+
+```cpp
+class FenwickTree2D {
+private:
+    vector<vector<long long>> BIT;
+    int n, m;
+    
+public:
+    FenwickTree2D(int rows, int cols) : n(rows), m(cols) {
+        BIT.assign(n + 1, vector<long long>(m + 1, 0));
+    }
+    
+    void update(int x, int y, long long val) {
+        for (int i = x; i <= n; i += i & (-i)) {
+            for (int j = y; j <= m; j += j & (-j)) {
+                BIT[i][j] += val;
+            }
+        }
+    }
+    
+    long long query(int x, int y) {
+        long long sum = 0;
+        for (int i = x; i > 0; i -= i & (-i)) {
+            for (int j = y; j > 0; j -= j & (-j)) {
+                sum += BIT[i][j];
+            }
+        }
+        return sum;
+    }
+    
+    long long rangeQuery(int x1, int y1, int x2, int y2) {
+        return query(x2, y2) - query(x1 - 1, y2) - 
+               query(x2, y1 - 1) + query(x1 - 1, y1 - 1);
+    }
+};
+```
+
+### 🔢 Range Update Range Query
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Range-Update-Range-Query.webp" alt="Range Update Range Query with Fenwick Tree" width="650" height="350"/>
+</div>
+
+```cpp
+class RangeUpdateRangeQuery {
+private:
+    FenwickTree diff, diffIndex;
+    
+public:
+    RangeUpdateRangeQuery(int n) : diff(n), diffIndex(n) {}
+    
+    void rangeUpdate(int l, int r, long long val) {
+        diff.update(l, val);
+        diff.update(r + 1, -val);
+        diffIndex.update(l, val * (l - 1));
+        diffIndex.update(r + 1, -val * r);
+    }
+    
+    long long rangeQuery(int l, int r) {
+        return prefixSum(r) - prefixSum(l - 1);
+    }
+    
+private:
+    long long prefixSum(int i) {
+        return diff.query(i) * i - diffIndex.query(i);
+    }
+};
+```
+
+---
+
+## 🎯 Applications
+
+### 📊 Frequency Counting
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Fenwick-Tree-Frequency-Counting.webp" alt="Fenwick Tree for Frequency Counting" width="600" height="350"/>
+</div>
+
+```cpp
+class FrequencyCounter {
+private:
+    FenwickTree ft;
+    unordered_map<int, int> compressed;
+    vector<int> values;
+    
+public:
+    FrequencyCounter(vector<int>& nums) : ft(nums.size()) {
+        // Coordinate compression
+        values = nums;
+        sort(values.begin(), values.end());
+        values.erase(unique(values.begin(), values.end()), values.end());
+        
+        for (int i = 0; i < values.size(); i++) {
+            compressed[values[i]] = i + 1;
+        }
+    }
+    
+    void add(int val) {
+        int idx = compressed[val];
+        ft.update(idx, 1);
+    }
+    
+    void remove(int val) {
+        int idx = compressed[val];
+        ft.update(idx, -1);
+    }
+    
+    int countLessEqual(int val) {
+        auto it = upper_bound(values.begin(), values.end(), val);
+        if (it == values.begin()) return 0;
+        
+        int idx = compressed[*(--it)];
+        return ft.query(idx);
+    }
+    
+    int countRange(int l, int r) {
+        return countLessEqual(r) - countLessEqual(l - 1);
+    }
+};
+```
+
+### 🔄 Inversion Count
+
+```cpp
+class InversionCounter {
+public:
+    long long countInversions(vector<int>& arr) {
+        // Coordinate compression
+        vector<int> sorted = arr;
+        sort(sorted.begin(), sorted.end());
+        sorted.erase(unique(sorted.begin(), sorted.end()), sorted.end());
+        
+        unordered_map<int, int> compressed;
+        for (int i = 0; i < sorted.size(); i++) {
+            compressed[sorted[i]] = i + 1;
+        }
+        
+        FenwickTree ft(sorted.size());
+        long long inversions = 0;
+        
+        for (int i = arr.size() - 1; i >= 0; i--) {
+            int idx = compressed[arr[i]];
+            inversions += ft.query(idx - 1);
+            ft.update(idx, 1);
+        }
+        
+        return inversions;
+    }
+};
+```
+
+---
+
+## ⚖️ Comparison with Other Structures
+
+### 📊 Performance Comparison
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Data-Structure-Comparison.webp" alt="Data Structure Performance Comparison" width="700" height="400"/>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Data Structure</th>
+<th>Update</th>
+<th>Range Query</th>
+<th>Space</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Array</strong></td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>Very Easy</td>
+</tr>
+<tr>
+<td><strong>Prefix Sum</strong></td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>Easy</td>
+</tr>
+<tr>
+<td><strong>Fenwick Tree</strong></td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>O(n)</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Segment Tree</strong></td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>O(4n)</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td><strong>Square Root Decomposition</strong></td>
+<td>O(1)</td>
+<td>O(√n)</td>
+<td>O(n)</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+
+### 🎯 When to Use Fenwick Tree
+
+```
+✅ Use Fenwick Tree when:
+- Point updates and range sum queries
+- Space efficiency is important
+- Implementation simplicity preferred
+- Commutative operations (addition, XOR)
+
+❌ Avoid when:
+- Range updates frequently needed
+- Non-commutative operations
+- Complex query types (min/max)
+- Need lazy propagation
+```
+
+---
+
+## 🏆 Interview Problems
+
+### ✅ Common Problem Types
+
+1. **Range Sum Queries** - Basic Fenwick Tree usage
+2. **Count Inversions** - Coordinate compression + BIT
+3. **Count Smaller After Self** - Reverse iteration + BIT
+4. **Range Sum Query 2D** - 2D Fenwick Tree
+5. **Count of Range Sum** - Binary search on BIT
+
+### 🔥 Sample Problem: Count Smaller Numbers After Self
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Count-Smaller-After-Self.webp" alt="Count Smaller Numbers After Self" width="650" height="350"/>
+</div>
+
+```cpp
+class CountSmallerAfterSelf {
+public:
+    vector<int> countSmaller(vector<int>& nums) {
+        // Coordinate compression
+        vector<int> sorted = nums;
+        sort(sorted.begin(), sorted.end());
+        sorted.erase(unique(sorted.begin(), sorted.end()), sorted.end());
+        
+        unordered_map<int, int> compressed;
+        for (int i = 0; i < sorted.size(); i++) {
+            compressed[sorted[i]] = i + 1;
+        }
+        
+        FenwickTree ft(sorted.size());
+        vector<int> result(nums.size());
+        
+        // Process from right to left
+        for (int i = nums.size() - 1; i >= 0; i--) {
+            int idx = compressed[nums[i]];
+            result[i] = ft.query(idx - 1);
+            ft.update(idx, 1);
+        }
+        
+        return result;
+    }
+};
+```
+
+---
+
+## 💪 Best Practices
+
+### ✅ Implementation Guidelines
+
+```
+✓ Always use 1-indexed arrays for simplicity
+✓ Handle coordinate compression for large ranges
+✓ Use long long for sum operations to avoid overflow
+✓ Test with small examples first
+✓ Consider 0-indexed wrapper if needed
+✓ Validate input ranges
+```
+
+### 🔧 Optimization Tips
+
+```cpp
+// Fast I/O for competitive programming
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+
+// Use appropriate data types
+using ll = long long;
+vector<ll> BIT(n + 1, 0);
+
+// Coordinate compression template
+template<typename T>
+vector<int> compress(vector<T>& vals) {
+    vector<T> sorted = vals;
+    sort(sorted.begin(), sorted.end());
+    sorted.erase(unique(sorted.begin(), sorted.end()), sorted.end());
+    
+    vector<int> compressed(vals.size());
+    for (int i = 0; i < vals.size(); i++) {
+        compressed[i] = lower_bound(sorted.begin(), sorted.end(), vals[i]) - sorted.begin() + 1;
+    }
+    return compressed;
+}
+```
+
+### 😫 Common Pitfalls
+
+```
+✗ Using 0-indexed arrays (leads to infinite loops)
+✗ Forgetting coordinate compression for large values
+✗ Integer overflow in sum operations
+✗ Not handling empty ranges properly
+✗ Confusing update vs query operations
+```
+
+---
+
+## 🎓 Key Takeaways
+
+<div align="center">
+
+### 🌟 Master These Concepts
+
+</div>
+
+```
+1. 🌲 Fenwick Tree = Space-efficient data structure for prefix operations
+2. ⚡ O(log n) updates and queries vs O(n) naive approach
+3. 🔢 LSB operation (x & -x) is the core building block
+4. 📊 Each index covers range based on its binary representation
+5. 📊 Applications in counting, inversion problems, range queries
+6. 💾 Trade space O(n) for time O(log n)
+7. 🏆 Essential for competitive programming
+8. 🔧 Foundation for advanced data structures
+```
+
+---
+
+## 📚 Practice Resources
+
+- **Codeforces**: Fenwick Tree and BIT tags
+- **AtCoder**: Range query problems
+- **SPOJ**: Classical BIT problems
+- **LeetCode**: Range sum and counting problems
+
+---
+
+## 🎯 Interview Tips
+
+1. **Explain LSB Operation**: Show how x & (-x) works
+2. **Demonstrate Updates**: Walk through update propagation
+3. **Show Query Process**: Explain prefix sum calculation
+4. **Analyze Complexity**: Prove O(log n) operations
+5. **Handle Edge Cases**: Empty arrays, single elements
+6. **Compare Alternatives**: Fenwick vs Segment Tree vs Sqrt Decomposition
+
+---
+
+<div align="center">
+
+### 🔥 One-Line Summary
+
+**Fenwick Tree = Elegant data structure using bit manipulation for efficient prefix operations in O(log n) time and O(n) space**
+
+---
+
+**💻 Master Fenwick Trees, master efficient range operations!**
+
+*"In the world of data structures, Fenwick Tree is the perfect balance of simplicity and efficiency."*
+
+</div> 
                  << " (covers [" << start << ", " << i << "])" << endl;
         }
     }

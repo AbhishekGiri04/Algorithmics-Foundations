@@ -91,6 +91,10 @@ flowchart TD
 
 ### ✅ Hardware Independence
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Hardware-Independence-Complexity.webp" alt="Hardware Independence in Complexity Analysis" width="600" height="350"/>
+</div>
+
 ```mermaid
 flowchart LR
     A["Hardware Factors"] --> B["Variable Across Systems"]
@@ -120,6 +124,10 @@ Complexity analysis provides **machine-independent** performance metrics:
 | **OS** | Windows vs Linux | ✅ Consistent |
 
 ### 📊 Scalability Prediction
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Algorithm-Scalability-Growth.webp" alt="Algorithm Scalability and Growth Rates" width="650" height="400"/>
+</div>
 
 ```cpp
 // Example: Linear vs Quadratic Growth
@@ -169,6 +177,10 @@ flowchart TD
 ```
 
 ### 1️⃣ Big-O Notation (Upper Bound)
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Big-O-Notation-Graph.webp" alt="Big-O Notation Graphical Representation" width="600" height="350"/>
+</div>
 
 **Definition**: f(n) = O(g(n)) if there exist constants c > 0 and n₀ such that f(n) ≤ c·g(n) for all n ≥ n₀.
 
@@ -364,6 +376,10 @@ Even though resizing costs O(n), it happens infrequently (every power of 2), mak
 ---
 
 ## 🧮 Master Theorem
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Master-Theorem-Cases.webp" alt="Master Theorem Three Cases" width="700" height="400"/>
+</div>
 
 **Purpose**: Solve recurrence relations of the form T(n) = aT(n/b) + f(n).
 

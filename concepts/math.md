@@ -357,6 +357,10 @@ long long modInverse(long long a, long long mod) {
 
 ## 🔍 Prime Numbers & Sieve
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Sieve-of-Eratosthenes-Algorithm.webp" alt="Sieve of Eratosthenes Algorithm" width="700" height="400"/>
+</div>
+
 ### 🎯 Prime Check
 
 ```cpp
@@ -470,6 +474,10 @@ vector<bool> segmentedSieve(long long L, long long R) {
 ---
 
 ## ⚡ Fast Exponentiation
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Fast-Exponentiation-Binary.webp" alt="Fast Exponentiation Binary Method" width="650" height="350"/>
+</div>
 
 ### 🎯 Binary Exponentiation
 

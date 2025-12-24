@@ -154,7 +154,11 @@ flowchart LR
 4. **Maintain** current range [curL, curR]
 5. **Update** answer incrementally
 
-### 💻 Template Implementation
+### 🔧 Template Implementation
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Mos-Algorithm-Block-Decomposition.webp" alt="Mo's Algorithm Block Decomposition" width="650" height="400"/>
+</div>
 
 ```cpp
 class MosAlgorithm {
@@ -271,7 +275,11 @@ public:
 
 ---
 
-## 🔄 Mo's with Updates
+### 🔄 Mo's with Updates
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Mos-Algorithm-With-Updates.webp" alt="Mo's Algorithm with Updates (3D Mo's)" width="700" height="400"/>
+</div>
 
 ### 🎯 Problem Extension
 
@@ -371,9 +379,13 @@ public:
 
 ## 🌳 Mo's on Trees
 
-### 🎯 Tree to Array Conversion
+### 🌳 Tree to Array Conversion
 
 Use **Euler Tour** to convert tree queries to array range queries.
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Mos-Algorithm-Trees-Euler-Tour.webp" alt="Mo's Algorithm on Trees using Euler Tour" width="650" height="350"/>
+</div>
 
 ```cpp
 class TreeMo {

@@ -90,6 +90,10 @@ graph TD
 
 ### 🎯 Bubble Sort
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Bubble-Sort-Animation.webp" alt="Bubble Sort Animation" width="600" height="350"/>
+</div>
+
 ```mermaid
 graph LR
     A[Compare Adjacent] --> B[Swap if Wrong Order]
@@ -119,6 +123,10 @@ void bubbleSort(vector<int>& arr) {
 
 ### 🎯 Selection Sort
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Selection-Sort-Process.webp" alt="Selection Sort Process" width="600" height="350"/>
+</div>
+
 ```cpp
 void selectionSort(vector<int>& arr) {
     int n = arr.size();
@@ -143,6 +151,10 @@ void selectionSort(vector<int>& arr) {
 
 ### 🎯 Insertion Sort
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Insertion-Sort-Visualization.webp" alt="Insertion Sort Visualization" width="600" height="350"/>
+</div>
+
 ```cpp
 void insertionSort(vector<int>& arr) {
     for (int i = 1; i < arr.size(); i++) {
@@ -166,6 +178,10 @@ void insertionSort(vector<int>& arr) {
 ## ⚡ Efficient Sorting
 
 ### 🎯 Merge Sort
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Merge-Sort-Tree.webp" alt="Merge Sort Recursion Tree" width="650" height="400"/>
+</div>
 
 ```mermaid
 graph TD
@@ -214,6 +230,10 @@ private:
 
 ### 🎯 Quick Sort
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Quick-Sort-Partitioning-Example.webp" alt="Quick Sort Partitioning Example" width="650" height="400"/>
+</div>
+
 ```cpp
 class QuickSort {
 public:
@@ -253,6 +273,10 @@ private:
 ```
 
 ### 🎯 Heap Sort
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Heap-Sort-Process.webp" alt="Heap Sort Process" width="650" height="400"/>
+</div>
 
 ```cpp
 class HeapSort {
@@ -301,6 +325,10 @@ private:
 
 ### 🎯 Counting Sort
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Counting-Sort-Algorithm.webp" alt="Counting Sort Algorithm" width="650" height="350"/>
+</div>
+
 ```cpp
 void countingSort(vector<int>& arr) {
     if (arr.empty()) return;
@@ -334,6 +362,10 @@ void countingSort(vector<int>& arr) {
 ```
 
 ### 🎯 Radix Sort
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Radix-Sort-Example.webp" alt="Radix Sort Example" width="700" height="400"/>
+</div>
 
 ```cpp
 class RadixSort {

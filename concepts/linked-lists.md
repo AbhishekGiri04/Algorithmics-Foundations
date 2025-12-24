@@ -303,7 +303,11 @@ flowchart TD
     style E fill:#f3e5f5
 ```
 
-### 💻 Advanced Operations
+### 🔧 Advanced Operations
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Linked-List-Advanced-Operations.webp" alt="Advanced Linked List Operations" width="650" height="400"/>
+</div>
 
 ```cpp
 class LinkedListOperations {
@@ -410,6 +414,10 @@ public:
 
 ### 🎯 Two Pointer Technique
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Two-Pointer-Linked-List.webp" alt="Two Pointer Technique in Linked Lists" width="700" height="400"/>
+</div>
+
 ```mermaid
 flowchart TD
     A["🔗 Two Pointer Techniques"] --> B["🐌 Slow-Fast Pointers"]
@@ -505,6 +513,10 @@ private:
 ```
 
 ### 🎯 Dummy Node Technique
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Dummy-Node-Technique.webp" alt="Dummy Node Technique in Linked Lists" width="600" height="350"/>
+</div>
 
 ```cpp
 class DummyNodeTechniques {
@@ -657,6 +669,10 @@ public:
 ## 🎯 Common Problems
 
 ### 🔧 Classic Interview Problems
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Linked-List-Interview-Problems.webp" alt="Common Linked List Interview Problems" width="700" height="400"/>
+</div>
 
 ```cpp
 class LinkedListProblems {

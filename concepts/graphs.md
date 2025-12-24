@@ -6,16 +6,6 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Advanced-orange?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
 
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20251024112600799492/introduction_to_graphs.webp" alt="Introduction to Graphs" width="700" height="400"/>
-
-<img src="https://scaler.com/topics/images/detect-cycle-in-a-directed-graph-example2.webp" alt="Cycle Detection in Directed Graph" width="650" height="350"/>
-
-<img src="https://scaler.com/topics/images/directed-unweighted-graph.webp" alt="Directed Unweighted Graph" width="600" height="300"/>
-
-<img src="https://scaler.com/topics/images/Directed-Graphs.webp" alt="Directed Graphs Structure" width="650" height="350"/>
-
-<img src="https://scaler.com/topics/images/Weighted-Graph.webp" alt="Weighted Graph Example" width="700" height="400"/>
-
 *Master network structures and graph algorithms for complex relationship modeling*
 
 </div>
@@ -38,6 +28,10 @@
 ---
 
 ## 🎯 Introduction
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20251024112600799492/introduction_to_graphs.webp" alt="Introduction to Graphs" width="700" height="400"/>
+</div>
 
 **Graphs** are versatile data structures consisting of vertices (nodes) connected by edges, used to model relationships and networks in various domains.
 
@@ -84,9 +78,11 @@ mindmap
 
 ---
 
-## 🏗️ Graph Fundamentals
+### 🏗️ Graph Fundamentals
 
-### 🎯 Graph Types
+<div align="center">
+<img src="https://scaler.com/topics/images/directed-unweighted-graph.webp" alt="Directed Unweighted Graph" width="600" height="300"/>
+</div>
 
 ```mermaid
 flowchart TD
@@ -118,6 +114,10 @@ flowchart TD
     style D fill:#fce4ec
     style E fill:#f3e5f5
 ```
+
+<div align="center">
+<img src="https://scaler.com/topics/images/Directed-Graphs.webp" alt="Directed Graphs Structure" width="650" height="350"/>
+</div>
 
 ### 💻 Graph Implementation
 
@@ -250,6 +250,10 @@ public:
 ---
 
 ## 🔄 Graph Traversals
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Graph-Traversal-BFS-DFS.webp" alt="Graph Traversal BFS DFS" width="700" height="400"/>
+</div>
 
 ### 🎯 Traversal Algorithms
 
@@ -391,6 +395,10 @@ private:
 
 ## 🛣️ Shortest Path Algorithms
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Shortest-Path-Algorithms.webp" alt="Shortest Path Algorithms" width="700" height="350"/>
+</div>
+
 ### 🎯 Algorithm Selection
 
 ```mermaid
@@ -519,6 +527,10 @@ public:
 ---
 
 ## 🌳 Minimum Spanning Tree
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Minimum-Spanning-Tree-MST.webp" alt="Minimum Spanning Tree" width="650" height="350"/>
+</div>
 
 ### 🎯 MST Algorithms
 
@@ -726,6 +738,10 @@ private:
 
 ## 🔄 Cycle Detection
 
+<div align="center">
+<img src="https://scaler.com/topics/images/detect-cycle-in-a-directed-graph-example2.webp" alt="Cycle Detection in Directed Graph" width="650" height="350"/>
+</div>
+
 ### 🎯 Cycle Detection Methods
 
 ```mermaid
@@ -739,6 +755,10 @@ graph TD
     C --> F[DFS with Colors]
     C --> G[Topological Sort]
 ```
+
+<div align="center">
+<img src="https://scaler.com/topics/images/Weighted-Graph.webp" alt="Weighted Graph Example" width="700" height="400"/>
+</div>
 
 ### 💻 Implementation
 

@@ -14,6 +14,14 @@
 
 ---
 
+## 📑 Table of Contents
+
+1. [Introduction](#-introduction)
+2. [Applications](#-applications)
+3. [Best Practices](#-best-practices)
+
+---
+
 ## 🎯 Introduction
 
 **Stacks** follow the Last-In-First-Out (LIFO) principle where elements are added and removed from the same end called the "top".
@@ -101,6 +109,10 @@ public:
 
 ### 🔧 Expression Evaluation
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Expression-Evaluation-Stack.webp" alt="Expression Evaluation using Stack" width="650" height="350"/>
+</div>
+
 ```cpp
 class ExpressionEvaluator {
 public:
@@ -150,6 +162,10 @@ public:
 ```
 
 ### 🔧 Monotonic Stack
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Monotonic-Stack-Applications.webp" alt="Monotonic Stack Applications" width="600" height="350"/>
+</div>
 
 ```cpp
 class MonotonicStack {

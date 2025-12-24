@@ -8,19 +8,15 @@
 
 *Master sophisticated tree structures for high-performance data operations and system-level programming*
 
-<img src="https://cdn.sanity.io/images/oaglaatp/production/f26d524cf32b3f500ffefe5c94b2502ae772303b-6991x2018.webp?w=6991&h=2018&auto=format" alt="Advanced Trees Overview" width="700" height="200"/>
-
-<img src="https://www.scaler.com/topics/images/types%20of%20trees%20in%20data%20structure.webp" alt="Types of Trees" width="650" height="400"/>
-
-<img src="https://ik.imagekit.io/upgrad1/abroad-images/imageCompo/images/__visual_selection30GN4F.png?pr-true" alt="Tree Structures Visualization" width="600" height="350"/>
-
-<img src="https://scaler.com/topics/images/degenerate-binary-trees.webp" alt="Degenerate Binary Trees" width="550" height="300"/>
-
 </div>
 
 ---
 
 ## 🌳 Advanced Trees Classification
+
+<div align="center">
+<img src="https://cdn.sanity.io/images/oaglaatp/production/f26d524cf32b3f500ffefe5c94b2502ae772303b-6991x2018.webp?w=6991&h=2018&auto=format" alt="Advanced Trees Overview" width="700" height="200"/>
+</div>
 
 ```mermaid
 mindmap
@@ -57,7 +53,15 @@ mindmap
         Space efficient
 ```
 
+<div align="center">
+<img src="https://www.scaler.com/topics/images/types%20of%20trees%20in%20data%20structure.webp" alt="Types of Trees" width="650" height="400"/>
+</div>
+
 ### 🎯 Tree Selection Strategy
+
+<div align="center">
+<img src="https://ik.imagekit.io/upgrad1/abroad-images/imageCompo/images/__visual_selection30GN4F.png?pr-true" alt="Tree Structures Visualization" width="600" height="350"/>
+</div>
 
 ```mermaid
 flowchart TD
@@ -85,6 +89,10 @@ flowchart TD
     style H fill:#45b7d1
     style I fill:#dda0dd
 ```
+
+<div align="center">
+<img src="https://scaler.com/topics/images/degenerate-binary-trees.webp" alt="Degenerate Binary Trees" width="550" height="300"/>
+</div>
 
 ---
 

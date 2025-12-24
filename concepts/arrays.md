@@ -6,18 +6,6 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Fundamental-green?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
 
-<img src="https://deen3evddmddt.cloudfront.net/uploads/content-images/array-data-structure.webp" alt="Array Data Structure" width="700" height="400"/>
-
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Types-of-Arrays.webp" alt="Types of Arrays" width="650" height="350"/>
-
-<img src="https://scaler.com/topics/images/1-(1).webp" alt="Array Concepts" width="600" height="300"/>
-
-<img src="https://scaler.com/topics/images/2-example-of-1-d-array.webp" alt="1D Array Example" width="650" height="300"/>
-
-<img src="https://scaler.com/topics/images/jvm-implementation-of-2d-arrays.webp" alt="2D Array Implementation" width="700" height="350"/>
-
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScg5rmVw5NuFjNKCQWK6B-FeQh-DtuQulO_w&s" alt="Array Memory Layout" width="600" height="300"/>
-
 *Master the foundation of all data structures - Arrays and their operations*
 
 </div>
@@ -42,7 +30,15 @@
 
 ## 🎯 Introduction
 
+<div align="center">
+<img src="https://deen3evddmddt.cloudfront.net/uploads/content-images/array-data-structure.webp" alt="Array Data Structure" width="700" height="400"/>
+</div>
+
 **Arrays** are the most fundamental data structure in computer science, providing a collection of elements stored in contiguous memory locations. They serve as the building block for more complex data structures.
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Types-of-Arrays.webp" alt="Types of Arrays" width="650" height="350"/>
+</div>
 
 ### 🔑 Why Study Arrays?
 
@@ -95,6 +91,10 @@ flowchart TD
 
 ### 🏗️ Array Fundamentals
 
+<div align="center">
+<img src="https://scaler.com/topics/images/1-(1).webp" alt="Array Concepts" width="600" height="300"/>
+</div>
+
 ```mermaid
 flowchart TD
     A["Array Definition"] --> B["Collection of Elements"]
@@ -119,6 +119,10 @@ flowchart TD
     style A fill:#e3f2fd
     style F fill:#fff3e0
 ```
+
+<div align="center">
+<img src="https://scaler.com/topics/images/2-example-of-1-d-array.webp" alt="1D Array Example" width="650" height="300"/>
+</div>
 
 ### 🔧 Array Declaration
 
@@ -167,7 +171,15 @@ graph LR
 
 ## 🧠 Memory Layout
 
+<div align="center">
+<img src="https://scaler.com/topics/images/jvm-implementation-of-2d-arrays.webp" alt="2D Array Implementation" width="700" height="350"/>
+</div>
+
 ### 🎯 Contiguous Memory Allocation
+
+<div align="center">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScg5rmVw5NuFjNKCQWK6B-FeQh-DtuQulO_w&s" alt="Array Memory Layout" width="600" height="300"/>
+</div>
 
 ```mermaid
 flowchart LR
@@ -353,6 +365,10 @@ int binarySearch(vector<int>& arr, int target) {
 
 ### 🎯 Two Pointer Technique
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Two-Pointer-Technique.webp" alt="Two Pointer Technique" width="650" height="350"/>
+</div>
+
 ```mermaid
 graph LR
     A[Two Pointers] --> B[Same Direction]
@@ -402,6 +418,10 @@ int removeDuplicates(vector<int>& arr) {
 ```
 
 ### 🎯 Sliding Window Technique
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Sliding-Window-Technique.webp" alt="Sliding Window Technique" width="700" height="350"/>
+</div>
 
 ```mermaid
 graph TD
@@ -459,6 +479,10 @@ int longestSubarrayWithSumK(vector<int>& arr, int k) {
 ```
 
 ### 🎯 Prefix Sum Technique
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Prefix-Sum-Array.webp" alt="Prefix Sum Array" width="650" height="300"/>
+</div>
 
 ```mermaid
 graph TD

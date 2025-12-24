@@ -14,6 +14,15 @@
 
 ---
 
+## 📑 Table of Contents
+
+1. [Introduction](#-introduction)
+2. [Types of Queues](#-types-of-queues)
+3. [Applications](#-applications)
+4. [Best Practices](#-best-practices)
+
+---
+
 ## 🎯 Introduction
 
 **Queues** follow the First-In-First-Out (FIFO) principle where elements are added at the rear and removed from the front.
@@ -187,6 +196,10 @@ public:
 ## 🎯 Applications
 
 ### 🔧 BFS Traversal
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/BFS-Tree-Traversal.webp" alt="BFS Tree Traversal using Queue" width="650" height="400"/>
+</div>
 
 ```cpp
 class BFSTraversal {

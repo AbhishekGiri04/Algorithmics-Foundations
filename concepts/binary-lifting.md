@@ -106,6 +106,10 @@ mindmap
 
 ### 📊 Visual Example
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/LCA-Tree-Example.webp" alt="LCA Tree Example" width="600" height="400"/>
+</div>
+
 ```
         1
       /   \
@@ -167,6 +171,10 @@ up[v][i] = 2^i steps above v
 
 ### 📊 Preprocessing Table
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Binary-Lifting-Table.webp" alt="Binary Lifting Preprocessing Table" width="650" height="350"/>
+</div>
+
 ```
 Node:  1  2  3  4  5  6  7  8
 up[i][0]: -1 1  1  2  2  3  3  4
@@ -204,6 +212,10 @@ To jump k steps: combine jumps of 2^i1, 2^i2, etc.
 ## 💻 Implementation
 
 ### 🔧 Complete Binary Lifting Class
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Binary-Lifting-Implementation.webp" alt="Binary Lifting Implementation" width="700" height="400"/>
+</div>
 
 ```cpp
 class BinaryLifting {
@@ -400,6 +412,10 @@ int distance(int u, int v) {
 
 ### 🔥 Path Queries
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Tree-Path-Queries.webp" alt="Tree Path Queries" width="650" height="350"/>
+</div>
+
 ```cpp
 class PathQueries {
 private:
@@ -438,6 +454,10 @@ public:
 ```
 
 ### 🌳 Tree DP with Binary Lifting
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Tree-DP-Binary-Lifting.webp" alt="Tree DP with Binary Lifting" width="600" height="350"/>
+</div>
 
 ```cpp
 class TreeDP {

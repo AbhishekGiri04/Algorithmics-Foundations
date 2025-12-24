@@ -176,7 +176,11 @@ public:
 
 ---
 
-## 🎨 Types of Recursion
+## 🎯 Types of Recursion
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Types-of-Recursion-Detailed.webp" alt="Types of Recursion Detailed" width="700" height="400"/>
+</div>
 
 ### 🎯 Linear Recursion
 
@@ -436,6 +440,10 @@ public:
 ---
 
 ## 🌳 Tree Recursion
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Tree-Recursion-Examples.webp" alt="Tree Recursion Examples" width="650" height="350"/>
+</div>
 
 ### 🎯 Binary Tree Operations
 

@@ -6,10 +6,6 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Advanced-orange?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
 
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240319104901/dynamic-programming.webp" alt="Dynamic Programming Concept" width="700" height="400"/>
-
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20241223140520452888/Dynamic-Programming.webp" alt="Dynamic Programming Overview" width="650" height="350"/>
-
 *Master the art of solving complex problems by breaking them into optimal subproblems*
 
 </div>
@@ -33,7 +29,15 @@
 
 ## 🎯 Introduction
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240319104901/dynamic-programming.webp" alt="Dynamic Programming Concept" width="700" height="400"/>
+</div>
+
 **Dynamic Programming (DP)** is an algorithmic paradigm that solves complex problems by breaking them down into simpler subproblems and storing the results to avoid redundant calculations.
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20241223140520452888/Dynamic-Programming.webp" alt="Dynamic Programming Overview" width="650" height="350"/>
+</div>
 
 ### 🔑 Why Dynamic Programming?
 
@@ -145,6 +149,10 @@ flowchart TD
 
 ## 🔍 Problem Identification
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Dynamic-Programming-Problem-Types.webp" alt="DP Problem Types" width="700" height="400"/>
+</div>
+
 ### 🎯 DP Problem Patterns
 
 ```mermaid
@@ -230,6 +238,10 @@ int minPathSum(vector<vector<int>>& grid) {
 ---
 
 ## 📝 Memoization Approach
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Memoization-Top-Down-DP.webp" alt="Memoization Top Down" width="650" height="350"/>
+</div>
 
 ### 🎯 Top-Down Strategy
 
@@ -344,6 +356,10 @@ public:
 ---
 
 ## 📊 Tabulation Approach
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Tabulation-Bottom-Up-DP.webp" alt="Tabulation Bottom Up" width="650" height="350"/>
+</div>
 
 ### 🎯 Bottom-Up Strategy
 

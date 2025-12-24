@@ -2,8 +2,6 @@
 
 <div align="center">
 
-<img src="https://www.iquanta.in/blog/wp-content/uploads/2024/12/String-image-2.png" alt="String Processing" width="600" height="300"/>
-
 ![Strings](https://img.shields.io/badge/Strings-Text_Processing-17a2b8?style=for-the-badge&logo=text&logoColor=white)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
@@ -28,6 +26,10 @@
 ---
 
 ## 🎯 Introduction
+
+<div align="center">
+<img src="https://www.iquanta.in/blog/wp-content/uploads/2024/12/String-image-2.png" alt="String Processing" width="600" height="300"/>
+</div>
 
 **Strings** are sequences of characters that form the backbone of text processing, pattern matching, and data parsing in computer science.
 
@@ -183,6 +185,10 @@ public:
 
 ## 🔍 Pattern Matching
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/String-Pattern-Matching.webp" alt="String Pattern Matching" width="700" height="400"/>
+</div>
+
 ### 🎯 Naive Pattern Matching
 
 ```cpp
@@ -212,6 +218,10 @@ public:
 ```
 
 ### 🎯 KMP Algorithm
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/KMP-Algorithm.webp" alt="KMP Algorithm" width="650" height="350"/>
+</div>
 
 ```mermaid
 graph TD
@@ -347,6 +357,10 @@ public:
 ---
 
 ## ✂️ String Manipulation
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/String-Manipulation-Algorithms.webp" alt="String Manipulation" width="650" height="350"/>
+</div>
 
 ### 🎯 String Transformation
 

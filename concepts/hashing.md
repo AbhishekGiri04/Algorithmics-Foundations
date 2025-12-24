@@ -143,6 +143,10 @@ public:
 
 ## 🎯 Hash Functions
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Hash-Function-Properties.webp" alt="Hash Function Properties" width="650" height="350"/>
+</div>
+
 ### 🔧 Hash Function Properties
 
 ```mermaid
@@ -218,6 +222,10 @@ public:
 ---
 
 ## 🎯 Collision Resolution
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Collision-Resolution-Techniques.webp" alt="Collision Resolution Techniques" width="700" height="400"/>
+</div>
 
 ### 🔧 Collision Resolution Strategies
 

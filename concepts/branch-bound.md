@@ -112,6 +112,10 @@ mindmap
 ### 🌳 Branching
 Divide the problem into smaller subproblems by making decisions.
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Branch-and-Bound-Branching.webp" alt="Branch and Bound Branching Strategy" width="600" height="350"/>
+</div>
+
 ```cpp
 class BranchingStrategy {
 public:
@@ -147,6 +151,10 @@ private:
 ```
 
 ### 🎯 Bounding
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Branch-and-Bound-Bounding.webp" alt="Branch and Bound Bounding Function" width="650" height="400"/>
+</div>
 
 ```mermaid
 flowchart LR
@@ -192,6 +200,10 @@ protected:
 
 ### ✂️ Pruning
 Eliminate branches that cannot lead to better solutions.
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Branch-and-Bound-Pruning.webp" alt="Branch and Bound Pruning Strategy" width="600" height="350"/>
+</div>
 
 ```cpp
 class PruningStrategy {
@@ -454,6 +466,10 @@ public:
 ### 📝 Problem Statement
 Assign n jobs to n workers to minimize total cost, with each job assigned to exactly one worker.
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Job-Assignment-Problem.webp" alt="Job Assignment Problem Visualization" width="650" height="400"/>
+</div>
+
 ```cpp
 class JobAssignmentBB : public LCBranchAndBound {
 private:
@@ -573,6 +589,10 @@ void solveJobAssignmentExample() {
 
 ### 📝 Problem Statement
 Select items to maximize profit while staying within weight capacity, each item can be taken at most once.
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Knapsack-Branch-Bound.webp" alt="0/1 Knapsack using Branch and Bound" width="700" height="400"/>
+</div>
 
 ```cpp
 class KnapsackBB : public LCBranchAndBound {

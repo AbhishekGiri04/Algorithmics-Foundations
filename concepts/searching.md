@@ -108,7 +108,11 @@ public:
 
 ## 🎯 Binary Search
 
-### 💻 Basic Implementation
+### 🔧 Basic Implementation
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Binary-Search-Implementation.webp" alt="Binary Search Implementation Steps" width="650" height="400"/>
+</div>
 
 ```cpp
 class BinarySearch {
@@ -191,6 +195,10 @@ public:
 ```
 
 ### 🔧 Binary Search Variants
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Binary-Search-Variants.webp" alt="Binary Search Variants and Applications" width="700" height="400"/>
+</div>
 
 ```cpp
 class BinarySearchVariants {
@@ -287,6 +295,10 @@ public:
 
 ### 🔧 Interpolation Search
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Interpolation-Search.webp" alt="Interpolation Search vs Binary Search" width="600" height="350"/>
+</div>
+
 ```cpp
 int interpolationSearch(vector<int>& arr, int target) {
     int left = 0, right = arr.size() - 1;
@@ -348,6 +360,10 @@ int exponentialSearch(vector<int>& arr, int target) {
 ## 🎯 Search Applications
 
 ### 🔧 Binary Search on Answer
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Binary-Search-On-Answer.webp" alt="Binary Search on Answer Technique" width="650" height="350"/>
+</div>
 
 ```cpp
 class BinarySearchOnAnswer {

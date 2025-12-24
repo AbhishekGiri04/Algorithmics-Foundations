@@ -343,6 +343,10 @@ void dfsCollectWords(TrieNode* node, string currentWord, vector<string>& result)
 
 ## 🎓 Advanced Concepts
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Advanced-Trie-Concepts.webp" alt="Advanced Trie Concepts" width="700" height="400"/>
+</div>
+
 ### 🔢 Frequency Tracking
 
 ```cpp
@@ -581,6 +585,10 @@ bool wordBreak(string s, vector<string>& wordDict) {
 ---
 
 ## 🔢 Binary Trie
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Binary-Trie-XOR-Problems.webp" alt="Binary Trie for XOR Problems" width="650" height="350"/>
+</div>
 
 ### 🎯 For XOR Problems
 

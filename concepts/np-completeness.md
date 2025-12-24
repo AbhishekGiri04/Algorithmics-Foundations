@@ -13,17 +13,15 @@
 </div>
 
 ## 📋 Table of Contents
-- [Introduction](#introduction)
-- [Complexity Classes](#complexity-classes)
-- [P vs NP Problem](#p-vs-np-problem)
-- [NP-Hard Problems](#np-hard-problems)
-- [NP-Complete Problems](#np-complete-problems)
-- [Polynomial Time Reduction](#polynomial-time-reduction)
-- [Classic NP-Complete Problems](#classic-np-complete-problems)
-- [Proving NP-Completeness](#proving-np-completeness)
-- [Practical Implications](#practical-implications)
-- [Interview Problems](#interview-problems)
-- [Best Practices](#best-practices)
+- [Introduction](#-introduction)
+- [Complexity Classes](#-complexity-classes)
+- [P vs NP Problem](#-p-vs-np-problem)
+- [Polynomial Time Reduction](#-polynomial-time-reduction)
+- [Classic NP-Complete Problems](#-classic-np-complete-problems)
+- [Proving NP-Completeness](#-proving-np-completeness)
+- [Practical Implications](#-practical-implications)
+- [Interview Problems](#-interview-problems)
+- [Best Practices](#-best-practices)
 
 ---
 
@@ -81,6 +79,10 @@ graph TD
 ### 🟢 P (Polynomial Time)
 Problems solvable in polynomial time O(n^k) for some constant k.
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/P-Class-Problems.webp" alt="P Class Problems Examples" width="600" height="350"/>
+</div>
+
 **Characteristics:**
 - Efficient algorithms exist
 - Practical for large inputs
@@ -107,6 +109,10 @@ int dijkstra(vector<vector<int>>& graph, int src, int dest) {
 
 ### 🟡 NP (Nondeterministic Polynomial Time)
 Problems whose solutions can be **verified** in polynomial time.
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/NP-Class-Verification.webp" alt="NP Class Verification Process" width="650" height="400"/>
+</div>
 
 **Key Insight:** Easy to check, may be hard to find.
 
@@ -136,6 +142,10 @@ bool verifyHamiltonianPath(vector<int>& path, vector<vector<int>>& graph) {
 ### 🔴 NP-Hard
 Problems at least as hard as any NP problem.
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/NP-Hard-Problems.webp" alt="NP-Hard Problems Classification" width="600" height="350"/>
+</div>
+
 **Properties:**
 - May not be in NP
 - No polynomial-time verification required
@@ -148,6 +158,10 @@ Problems at least as hard as any NP problem.
 
 ### 🔥 NP-Complete
 Problems that are both in NP and NP-Hard.
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/NP-Complete-Intersection.webp" alt="NP-Complete as Intersection of NP and NP-Hard" width="650" height="400"/>
+</div>
 
 **Significance:**
 - Hardest problems in NP
@@ -188,6 +202,10 @@ Problem A reduces to problem B (A ≤_p B) if:
 - A can be transformed to B in polynomial time
 - Solution to B solves A
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Polynomial-Time-Reduction.webp" alt="Polynomial Time Reduction Process" width="650" height="350"/>
+</div>
+
 ### 🎯 Purpose
 - Prove NP-Hardness
 - Show relative difficulty
@@ -226,6 +244,10 @@ public:
 
 ### 1️⃣ SAT (Boolean Satisfiability)
 **First proven NP-Complete problem (Cook-Levin Theorem)**
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/SAT-Problem-Example.webp" alt="SAT Problem Example and Solution" width="650" height="400"/>
+</div>
 
 ```cpp
 class SATSolver {
@@ -300,6 +322,10 @@ private:
 ### 3️⃣ Traveling Salesman Problem (TSP)
 **Find shortest route visiting all cities exactly once**
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/TSP-Problem-Visualization.webp" alt="TSP Problem Visualization" width="700" height="400"/>
+</div>
+
 ```cpp
 class TSP {
 public:
@@ -360,6 +386,10 @@ public:
 
 ### 4️⃣ Vertex Cover
 **Find minimum set of vertices covering all edges**
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Vertex-Cover-Problem.webp" alt="Vertex Cover Problem Example" width="600" height="350"/>
+</div>
 
 ```cpp
 class VertexCover {
@@ -422,6 +452,10 @@ private:
 
 ### 5️⃣ Clique Problem
 **Find largest complete subgraph**
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Clique-Problem-Graph.webp" alt="Clique Problem in Graph" width="650" height="350"/>
+</div>
 
 ```cpp
 class Clique {
@@ -707,6 +741,11 @@ private:
 ## 🌍 Practical Implications
 
 ### 🔐 Cryptography
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Cryptography-NP-Problems.webp" alt="Cryptography and NP Problems" width="650" height="350"/>
+</div>
+
 ```cpp
 class RSACryptography {
 public:
@@ -759,6 +798,11 @@ private:
 ```
 
 ### 🎯 Approximation Algorithms
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Approximation-Algorithms-NP.webp" alt="Approximation Algorithms for NP Problems" width="700" height="400"/>
+</div>
+
 ```cpp
 class ApproximationAlgorithms {
 public:

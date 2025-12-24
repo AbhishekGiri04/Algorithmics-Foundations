@@ -2,8 +2,6 @@
 
 <div align="center">
 
-<img src="https://scaler-topics-articles-md.s3.us-west-2.amazonaws.com/tree-in-data-structure.webp" alt="Tree Data Structure" width="600" height="400"/>
-
 ![Trees](https://img.shields.io/badge/Trees-Hierarchical_Data_Structure-28a745?style=for-the-badge&logo=tree&logoColor=white)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
@@ -30,6 +28,10 @@
 ---
 
 ## 🎯 Introduction
+
+<div align="center">
+<img src="https://scaler-topics-articles-md.s3.us-west-2.amazonaws.com/tree-in-data-structure.webp" alt="Tree Data Structure" width="600" height="400"/>
+</div>
 
 **Trees** are hierarchical data structures consisting of nodes connected by edges, with one node designated as the root. They provide efficient organization and retrieval of data with natural hierarchical relationships.
 
@@ -192,6 +194,10 @@ all leaves at same level
 
 ### 💻 Binary Tree Operations
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Binary-Tree-Operations.webp" alt="Binary Tree Operations" width="700" height="400"/>
+</div>
+
 #### Basic Properties
 ```cpp
 class BinaryTreeOperations {
@@ -235,6 +241,10 @@ private:
 ---
 
 ## 🔄 Tree Traversals
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Tree-Traversal-Techniques.webp" alt="Tree Traversal Techniques" width="700" height="400"/>
+</div>
 
 ### 🎯 Traversal Methods
 
@@ -384,6 +394,10 @@ graph LR
 ---
 
 ## 🔍 Binary Search Trees
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Binary-Search-Tree-BST.webp" alt="Binary Search Tree" width="650" height="350"/>
+</div>
 
 ### 🎯 BST Properties
 

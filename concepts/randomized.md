@@ -187,8 +187,12 @@ public:
 
 ## 🎰 Monte Carlo Algorithms
 
-### 🔢 Miller-Rabin Primality Test
+### 🔧 Miller-Rabin Primality Test
 **Probabilistic primality testing**
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Miller-Rabin-Primality-Test.webp" alt="Miller-Rabin Primality Test Process" width="650" height="400"/>
+</div>
 
 ```cpp
 class MillerRabinTest {
@@ -285,6 +289,10 @@ void testPrimality() {
 
 ### 🎯 Monte Carlo Integration
 **Numerical integration using random sampling**
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Monte-Carlo-Integration.webp" alt="Monte Carlo Integration Visualization" width="600" height="350"/>
+</div>
 
 ```cpp
 class MonteCarloIntegration {
@@ -436,6 +444,10 @@ private:
 
 ### 🔄 Randomized QuickSort
 **Always correct, expected O(n log n)**
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Randomized-QuickSort.webp" alt="Randomized QuickSort Process" width="650" height="400"/>
+</div>
 
 ```cpp
 class RandomizedQuickSort {
@@ -621,6 +633,10 @@ void testRandomizedSelection() {
 
 ### 🎲 Bloom Filter
 **Space-efficient probabilistic membership testing**
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Bloom-Filter-Structure.webp" alt="Bloom Filter Data Structure" width="700" height="400"/>
+</div>
 
 ```cpp
 class BloomFilter {

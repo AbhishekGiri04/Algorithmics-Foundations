@@ -8,17 +8,15 @@
 
 *Master fundamental problem-solving paradigms for efficient algorithm design and competitive programming*
 
-<img src="https://repository-images.githubusercontent.com/312736455/cde37f79-89d1-4d6e-a287-83d184d17784" alt="Algorithm Design Overview" width="700" height="350"/>
-
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20251219123737199442/what_is_an_algorithm_.webp" alt="What is an Algorithm" width="600" height="400"/>
-
-<img src="https://cdn.educba.com/academy/wp-content/uploads/2019/05/types-of-algorithm.png" alt="Types of Algorithms" width="650" height="450"/>
-
 </div>
 
 ---
 
 ## 🎯 Algorithm Design Strategy Selection
+
+<div align="center">
+<img src="https://repository-images.githubusercontent.com/312736455/cde37f79-89d1-4d6e-a287-83d184d17784" alt="Algorithm Design Overview" width="700" height="350"/>
+</div>
 
 ```mermaid
 flowchart TD
@@ -127,6 +125,10 @@ mindmap
 
 ### 📊 Algorithm Complexity Landscape
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20251219123737199442/what_is_an_algorithm_.webp" alt="What is an Algorithm" width="600" height="400"/>
+</div>
+
 ```mermaid
 flowchart LR
     A["Algorithm Complexity"] --> B["Time Complexity"]
@@ -156,6 +158,10 @@ flowchart LR
     style I fill:#e17055
     style J fill:#d63031
 ```
+
+<div align="center">
+<img src="https://cdn.educba.com/academy/wp-content/uploads/2019/05/types-of-algorithm.png" alt="Types of Algorithms" width="650" height="450"/>
+</div>
 
 ### 🔄 Problem-Solving Flow
 

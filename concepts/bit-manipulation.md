@@ -339,6 +339,10 @@ Formula: n >> k = n ÷ 2^k
 
 ## 🎪 Essential Bit Tricks
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Essential-Bit-Manipulation-Tricks.webp" alt="Essential Bit Manipulation Tricks" width="700" height="400"/>
+</div>
+
 ```mermaid
 flowchart TD
     A["🎪 Essential Bit Tricks"] --> B["Check Even/Odd"]
@@ -509,6 +513,10 @@ int clearBitsMSBtoI(int n, int i) {
 ---
 
 ## 🎭 XOR Magic
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/XOR-Magic-Bit-Manipulation.webp" alt="XOR Magic in Bit Manipulation" width="650" height="350"/>
+</div>
 
 ### 🔥 Problem 1: Find Single Unique Number
 

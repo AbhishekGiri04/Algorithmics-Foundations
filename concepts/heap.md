@@ -14,6 +14,10 @@
 
 ## 🎯 Introduction
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Heap-Data-Structure.webp" alt="Heap Data Structure" width="700" height="400"/>
+</div>
+
 **Heap** is a complete binary tree that satisfies the heap property: parent nodes are either greater (max-heap) or smaller (min-heap) than their children.
 
 ### 🔑 Heap Properties
@@ -139,6 +143,10 @@ public:
 ---
 
 ## 🎯 Applications
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Heap-Applications.webp" alt="Heap Applications" width="650" height="350"/>
+</div>
 
 ### 🔧 Priority Queue Problems
 

@@ -201,6 +201,10 @@ flowchart TD
 
 ### 📊 **Classic D&C Algorithm**
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Binary-Search-Visualization.webp" alt="Binary Search Visualization" width="600" height="350"/>
+</div>
+
 <table>
 <tr>
 <td width="50%">
@@ -264,6 +268,10 @@ int binarySearch(int arr[], int n, int target) {
 
 ### 📊 **Stable Sorting Algorithm**
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Merge-Sort-Animation.webp" alt="Merge Sort Animation" width="650" height="400"/>
+</div>
+
 <table>
 <tr>
 <td width="50%">
@@ -316,6 +324,10 @@ int binarySearch(int arr[], int n, int target) {
 ## ⚡ **5. Quick Sort**
 
 ### 📊 **Fast In-Place Sorting**
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Quick-Sort-Pivot-Selection.webp" alt="Quick Sort Pivot Selection" width="600" height="350"/>
+</div>
 
 <table>
 <tr>

@@ -18,11 +18,24 @@
 
 ---
 
+## 📑 Table of Contents
+
+1. [Introduction](#-introduction)
+2. [Classic Problems](#-classic-problems)
+3. [Optimization Techniques](#-optimization-techniques)
+4. [Best Practices](#-best-practices)
+
+---
+
 ## 🎯 Introduction
 
 **Backtracking** is an algorithmic approach that incrementally builds solutions and abandons candidates that cannot lead to valid solutions.
 
 ### 🔑 Backtracking Framework
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Backtracking-Algorithm-Flowchart.webp" alt="Backtracking Algorithm Flowchart" width="600" height="400"/>
+</div>
 
 ```mermaid
 flowchart TD
@@ -127,6 +140,10 @@ mindmap
 
 ### 🔧 N-Queens Problem
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/N-Queens-Problem-Visualization.webp" alt="N-Queens Problem Visualization" width="650" height="400"/>
+</div>
+
 ```cpp
 class NQueens {
 public:
@@ -178,6 +195,10 @@ private:
 ```
 
 ### 🔧 Generate Permutations
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Permutations-Generation.webp" alt="Permutations Generation Process" width="600" height="350"/>
+</div>
 
 ```cpp
 class Permutations {
@@ -235,6 +256,10 @@ private:
 ```
 
 ### 🔧 Sudoku Solver
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Sudoku-Solver-Backtracking.webp" alt="Sudoku Solver using Backtracking" width="650" height="400"/>
+</div>
 
 ```cpp
 class SudokuSolver {
@@ -331,6 +356,10 @@ private:
 
 ### 🔧 Pruning Strategies
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Backtracking-Pruning-Strategies.webp" alt="Backtracking Pruning Strategies" width="600" height="350"/>
+</div>
+
 ```cpp
 class BacktrackingOptimizations {
 public:
@@ -364,6 +393,10 @@ private:
 ```
 
 ### 🔧 Memoization in Backtracking
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Memoization-in-Backtracking.webp" alt="Memoization in Backtracking" width="650" height="350"/>
+</div>
 
 ```cpp
 class MemoizedBacktracking {

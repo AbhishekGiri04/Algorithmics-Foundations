@@ -18,6 +18,16 @@
 
 ---
 
+## 📑 Table of Contents
+
+1. [Introduction](#-introduction)
+2. [Classic Problems](#-classic-problems)
+3. [Advanced Greedy Problems](#-advanced-greedy-problems)
+4. [When Greedy Works](#-when-greedy-works)
+5. [Best Practices](#-best-practices)
+
+---
+
 ## 🎯 Introduction
 
 **Greedy Algorithms** make locally optimal choices at each step, hoping to find a global optimum. They work when local optimal choices lead to global optimal solutions.
@@ -190,6 +200,10 @@ public:
 
 ### 🔧 Fractional Knapsack Strategy
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Fractional-Knapsack-Algorithm.webp" alt="Fractional Knapsack Algorithm" width="650" height="350"/>
+</div>
+
 ```mermaid
 flowchart TD
     A["Items with weight & value"] --> B["Calculate value/weight ratio"]
@@ -250,6 +264,10 @@ public:
 ```
 
 ### 🔧 Huffman Coding
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Huffman-Coding-Algorithm.webp" alt="Huffman Coding Algorithm" width="700" height="400"/>
+</div>
 
 ```cpp
 class HuffmanCoding {

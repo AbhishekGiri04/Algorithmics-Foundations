@@ -230,6 +230,10 @@ struct Compare {
 
 ### 🌳 Build Huffman Tree
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Huffman-Tree-Construction.webp" alt="Huffman Tree Construction Process" width="650" height="400"/>
+</div>
+
 ```cpp
 HuffmanNode* buildHuffmanTree(map<char, int>& frequencies) {
     priority_queue<HuffmanNode*, vector<HuffmanNode*>, Compare> minHeap;
@@ -273,6 +277,10 @@ void generateCodes(HuffmanNode* root, string code, map<char, string>& codes) {
 ```
 
 ### 🎯 Complete Huffman Coding
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Huffman-Encoding-Decoding.webp" alt="Huffman Encoding and Decoding Process" width="700" height="400"/>
+</div>
 
 ```cpp
 class HuffmanCoding {
@@ -338,6 +346,10 @@ public:
 ## 📊 Step-by-Step Example
 
 ### 🎯 Input Text: "ABRACADABRA"
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Huffman-Example-Tree.webp" alt="Huffman Tree Example for ABRACADABRA" width="600" height="350"/>
+</div>
 
 #### Step 1: Frequency Count
 ```

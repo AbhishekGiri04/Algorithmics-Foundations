@@ -86,6 +86,10 @@ flowchart TD
 
 ## 📊 What are Data Structures?
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Data-Structure-Classification.webp" alt="Data Structure Classification" width="700" height="400"/>
+</div>
+
 **Data Structures** are ways of organizing and storing data to enable efficient access and modification.
 
 ### 🎯 Classification of Data Structures
@@ -188,6 +192,10 @@ public:
 
 ## ⚡ What are Algorithms?
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Algorithm-Categories.webp" alt="Algorithm Categories" width="650" height="350"/>
+</div>
+
 **Algorithms** are step-by-step procedures for solving problems or performing computations.
 
 ### 🎯 Algorithm Categories
@@ -288,6 +296,10 @@ void bubbleSort(vector<int>& arr) {
 ---
 
 ## 📈 Algorithm Analysis
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Algorithm-Analysis-Methods.webp" alt="Algorithm Analysis Methods" width="650" height="350"/>
+</div>
 
 **Algorithm Analysis** helps us understand the efficiency and performance characteristics of algorithms.
 

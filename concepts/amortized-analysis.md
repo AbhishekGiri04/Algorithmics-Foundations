@@ -8,13 +8,15 @@
 
 *Master advanced performance analysis techniques for guaranteed algorithmic efficiency*
 
-<img src="https://i0.wp.com/vijinimallawaarachchi.com/wp-content/uploads/2017/05/capture31.png?fit=1200%2C794&ssl=1" alt="Amortized Analysis Visualization" width="700" height="400"/>
-
 </div>
 
 ---
 
 ## 🔄 Amortized Analysis Overview
+
+<div align="center">
+<img src="https://i0.wp.com/vijinimallawaarachchi.com/wp-content/uploads/2017/05/capture31.png?fit=1200%2C794&ssl=1" alt="Amortized Analysis Visualization" width="700" height="400"/>
+</div>
 
 ```mermaid
 mindmap

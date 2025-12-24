@@ -112,6 +112,10 @@ No valid ordering exists because:
 
 ## 🔄 Kahn's Algorithm (BFS)
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Kahns-Algorithm-BFS.webp" alt="Kahn's Algorithm BFS" width="700" height="400"/>
+</div>
+
 ### 🎯 Core Idea
 
 **Process nodes with zero incoming edges first**, then remove them and update dependencies.
@@ -200,6 +204,10 @@ Result: [0, 1, 2, 3]
 ---
 
 ## 🌳 DFS-Based Approach
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/DFS-Topological-Sort.webp" alt="DFS Topological Sort" width="650" height="350"/>
+</div>
 
 ### 🎯 Core Idea
 

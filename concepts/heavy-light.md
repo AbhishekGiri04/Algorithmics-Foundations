@@ -206,6 +206,10 @@ Light edges: 1→3, 3→6, 2→5
 
 ### 🔧 Step 1: Calculate Subtree Sizes
 
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/HLD-Subtree-Calculation.webp" alt="HLD Subtree Size Calculation" width="600" height="350"/>
+</div>
+
 ```cpp
 int calculateSubtreeSize(int u, int parent, vector<vector<int>>& adj, 
                         vector<int>& subtreeSize) {
@@ -222,6 +226,10 @@ int calculateSubtreeSize(int u, int parent, vector<vector<int>>& adj,
 ```
 
 ### 🔧 Step 2: Heavy-Light Decomposition
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/HLD-Chain-Formation.webp" alt="HLD Chain Formation Process" width="650" height="350"/>
+</div>
 
 ```cpp
 class HeavyLightDecomposition {
@@ -333,6 +341,10 @@ public:
 ## 📊 Segment Tree Integration
 
 ### 🔧 Segment Tree for HLD
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Segment-Tree-HLD-Integration.webp" alt="Segment Tree HLD Integration" width="700" height="400"/>
+</div>
 
 ```cpp
 class SegmentTree {
