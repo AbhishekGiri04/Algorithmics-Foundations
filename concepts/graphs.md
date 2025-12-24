@@ -67,6 +67,8 @@ mindmap
       Gene networks
       Evolutionary trees
       Metabolic pathways
+      
+  classDef default fill:#333,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 ### 📊 Graph Applications
