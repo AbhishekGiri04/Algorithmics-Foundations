@@ -4,12 +4,6 @@
 
 *Curated collection of high-quality educational content for mastering Data Structures & Algorithms*
 
-<img src="https://i.ytimg.com/vi/0bHoB32fuj0/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBzL5UZg5lNvDPO4thYFLPH8mbrVg" alt="DSA Learning Journey" width="700" height="400"/>
-
-<img src="https://i.ytimg.com/vi/1OTX-WXQHCQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAZo7uQyGzCanPf1qzC1LEXgcFchA" alt="Complete DSA Course" width="650" height="400"/>
-
----
-
 ![Resources](https://img.shields.io/badge/Category-Learning_Resources-FF6B6B?style=for-the-badge&logo=youtube&logoColor=white)
 ![Quality](https://img.shields.io/badge/Quality-Premium-4ECDC4?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-45B7D1?style=for-the-badge)
@@ -86,6 +80,8 @@ This directory contains carefully selected learning resources that have been ins
 
 **🔗 Link:** [Striver's A2Z DSA Course/Sheet](https://youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&si=gPpr1RIGaKjyKpxp)
 
+<img src="https://i.ytimg.com/vi/0bHoB32fuj0/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBzL5UZg5lNvDPO4thYFLPH8mbrVg" alt="DSA Learning Journey" width="500" height="280"/>
+
 **📋 Description:**  
 Comprehensive DSA course covering everything from basics to advanced topics. Includes detailed explanations, multiple approaches, and optimization techniques. Perfect for interview preparation and competitive programming.
 
@@ -125,6 +121,8 @@ Comprehensive DSA course covering everything from basics to advanced topics. Inc
 <td width="70%">
 
 **🔗 Link:** [Data Structures and Algorithms Course](https://youtube.com/playlist?list=PLu0W_9lII9ahIappRPN0MCAgtOu3lQjQi&si=gc92rZYK_6c2wvLs)
+
+<img src="https://i.ytimg.com/vi/1OTX-WXQHCQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAZo7uQyGzCanPf1qzC1LEXgcFchA" alt="Complete DSA Course" width="500" height="280"/>
 
 **📋 Description:**  
 Beginner-friendly DSA course with clear explanations and practical examples. Focuses on building strong fundamentals with hands-on coding. Great for students starting their DSA journey.
