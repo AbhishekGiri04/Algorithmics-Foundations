@@ -1,12 +1,12 @@
 /*
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                          LEETCODE PROBLEM SOLUTION                          ║
+║                          LEETCODE PROBLEM SOLUTION                           ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║ Problem ID    : 9                                                            ║
-║ Problem Name  : Palindrome Number                                           ║
+║ Problem Name  : Palindrome Number                                            ║
 ║ Difficulty    : Easy                                                         ║
-║ Topic         : Math, Number Manipulation                                   ║
-║ Company Tags  : Amazon, Apple, Microsoft, Google, Facebook                  ║
+║ Topic         : Math, Number Manipulation                                    ║
+║ Company Tags  : Amazon, Apple, Microsoft, Google, Facebook                   ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📋 PROBLEM STATEMENT:
