@@ -1,12 +1,12 @@
 /*
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                          LEETCODE PROBLEM SOLUTION                          ║
+║                          LEETCODE PROBLEM SOLUTION                           ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║ Problem ID    : 33                                                           ║
-║ Problem Name  : Search in Rotated Sorted Array                              ║
+║ Problem Name  : Search in Rotated Sorted Array                               ║
 ║ Difficulty    : Medium                                                       ║
-║ Topic         : Array, Binary Search                                        ║
-║ Company Tags  : Amazon, Microsoft, Facebook, Google, Apple                  ║
+║ Topic         : Array, Binary Search                                         ║
+║ Company Tags  : Amazon, Microsoft, Facebook, Google, Apple                   ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📋 PROBLEM STATEMENT:
