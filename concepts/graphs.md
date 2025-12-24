@@ -6,7 +6,9 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Advanced-orange?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
 
-*Master network structures and graph algorithms for complex relationship modeling*
+<img src="https://memgraph.com/images/blog/use-cases-of-the-shortest-path-algorithm/cover.png" alt="Graph Applications" width="700" height="400"/>
+
+**Master network structures and graph algorithms for complex relationship modeling**
 
 </div>
 
@@ -182,14 +184,14 @@ public:
 ### 🎯 Representation Methods
 
 ```mermaid
-graph LR
+flowchart LR
     A[Graph Representation] --> B[Adjacency Matrix]
     A --> C[Adjacency List]
     A --> D[Edge List]
     
-    B --> E[O(V²) space]
-    C --> F[O(V+E) space]
-    D --> G[O(E) space]
+    B --> E[OV² space]
+    C --> F[OV+E space]
+    D --> G[OE space]
 ```
 
 ### 💻 Implementation Comparison
@@ -252,7 +254,7 @@ public:
 ## 🔄 Graph Traversals
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Graph-Traversal-BFS-DFS.webp" alt="Graph Traversal BFS DFS" width="700" height="400"/>
+<img src="https://deen3evddmddt.cloudfront.net/uploads/content-images/bfs-vs-dfs.webp" alt="Graph Traversals" width="700" height="400"/>
 </div>
 
 ### 🎯 Traversal Algorithms
@@ -396,7 +398,7 @@ private:
 ## 🛣️ Shortest Path Algorithms
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Shortest-Path-Algorithms.webp" alt="Shortest Path Algorithms" width="700" height="350"/>
+<img src="https://i.sstatic.net/90Qwu.png" alt="Shortest Path Algorithms" width="700" height="350"/>
 </div>
 
 ### 🎯 Algorithm Selection
@@ -529,7 +531,7 @@ public:
 ## 🌳 Minimum Spanning Tree
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Minimum-Spanning-Tree-MST.webp" alt="Minimum Spanning Tree" width="650" height="350"/>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20200316173940/Untitled-Diagram66-3.jpg" alt="Minimum Spanning Tree" width="650" height="350"/>
 </div>
 
 ### 🎯 MST Algorithms
