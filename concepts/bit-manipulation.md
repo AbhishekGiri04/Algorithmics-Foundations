@@ -6,12 +6,6 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-yellow?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-High-red?style=for-the-badge)
 
-<img src="https://scaler.com/topics/images/steps-in-arithmetic-operation.webp" alt="Steps in Arithmetic Operations" width="600" height="350"/>
-
-<img src="https://scaler.com/topics/images/types-of-java-bitwise-operators-in-java.webp" alt="Types of Bitwise Operators" width="700" height="400"/>
-
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl8GE3LnW0r_nshc4EDM41o5T-zYLq0FXUgw&s" alt="Bit Manipulation Concepts" width="650" height="300"/>
-
 *Master the art of binary operations for ultra-efficient problem solving*
 
 </div>
@@ -59,6 +53,10 @@
 ---
 
 ## 🚀 Why Bit Manipulation?
+
+<div align="center">
+<img src="https://scaler.com/topics/images/steps-in-arithmetic-operation.webp" alt="Steps in Arithmetic Operations" width="600" height="350"/>
+</div>
 
 ### ✅ Advantages
 
@@ -153,6 +151,10 @@ MSB (Most Significant Bit)  ←  1101  →  LSB (Least Significant Bit)
 ---
 
 ## ⚙️ Bitwise Operators
+
+<div align="center">
+<img src="https://scaler.com/topics/images/types-of-java-bitwise-operators-in-java.webp" alt="Types of Bitwise Operators" width="700" height="400"/>
+</div>
 
 ```mermaid
 flowchart TD
@@ -249,6 +251,10 @@ Example:
 
 **Rule**: Result is 1 if bits are DIFFERENT
 
+<div align="center">
+<img src="https://cdn.shopify.com/s/files/1/0611/1644/9018/files/XOR_Logic_Gate_symbol_with_truth_table_480x480.jpg?v=1681931209" alt="XOR Logic Gate" width="400" height="300"/>
+</div>
+
 ```
 Truth Table:
 0 ^ 0 = 0
@@ -338,10 +344,6 @@ Formula: n >> k = n ÷ 2^k
 ---
 
 ## 🎪 Essential Bit Tricks
-
-<div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Essential-Bit-Manipulation-Tricks.webp" alt="Essential Bit Manipulation Tricks" width="700" height="400"/>
-</div>
 
 ```mermaid
 flowchart TD
@@ -514,10 +516,6 @@ int clearBitsMSBtoI(int n, int i) {
 
 ## 🎭 XOR Magic
 
-<div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/XOR-Magic-Bit-Manipulation.webp" alt="XOR Magic in Bit Manipulation" width="650" height="350"/>
-</div>
-
 ### 🔥 Problem 1: Find Single Unique Number
 
 **Problem**: Array where every element appears twice except one. Find the unique element.
@@ -584,6 +582,10 @@ vector<int> findTwoUnique(vector<int>& nums) {
 ---
 
 ## 🎯 Bit Masking
+
+<div align="center">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl8GE3LnW0r_nshc4EDM41o5T-zYLq0FXUgw&s" alt="Bit Manipulation Concepts" width="650" height="300"/>
+</div>
 
 **Bit Masking** uses bits to represent states, sets, or flags.
 
