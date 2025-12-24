@@ -156,14 +156,14 @@ int[] arr = new int[]{1, 2, 3, 4, 5}; // Explicit initialization
 ```mermaid
 graph LR
     subgraph "Memory Layout"
-        A[arr[0]] --> B[arr[1]]
-        B --> C[arr[2]]
-        C --> D[arr[3]]
-        D --> E[arr[4]]
+        A["arr[0]"] --> B["arr[1]"]
+        B --> C["arr[2]"]
+        C --> D["arr[3]"]
+        D --> E["arr[4]"]
     end
     
     subgraph "Address Calculation"
-        F[Base Address + Index × Element Size]
+        F["Base Address + Index × Element Size"]
     end
 ```
 
@@ -486,13 +486,13 @@ int longestSubarrayWithSumK(vector<int>& arr, int k) {
 
 ```mermaid
 graph TD
-    A[Prefix Sum] --> B[Build Prefix Array]
-    A --> C[Range Sum Queries]
-    A --> D[Subarray Problems]
+    A["Prefix Sum"] --> B["Build Prefix Array"]
+    A --> C["Range Sum Queries"]
+    A --> D["Subarray Problems"]
     
-    B --> E[prefix[i] = prefix[i-1] + arr[i]]
-    C --> F[sum(i,j) = prefix[j] - prefix[i-1]]
-    D --> G[Count subarrays with sum K]
+    B --> E["prefix[i] = prefix[i-1] + arr[i]"]
+    C --> F["sum(i,j) = prefix[j] - prefix[i-1]"]
+    D --> G["Count subarrays with sum K"]
 ```
 
 #### Implementation Examples
