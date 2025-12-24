@@ -23,27 +23,27 @@ mindmap
   root((Amortized<br/>Analysis))
     Methods
       Aggregate Method
-        Total cost / n operations
+        Total cost over n operations
         Simple calculation
         Direct approach
       Accounting Method
         Credit system
         Prepay operations
-        Banker's method
+        Bankers method
       Potential Method
         Energy function
         Mathematical rigor
-        State-based analysis
+        State based analysis
     Applications
       Dynamic Arrays
         Resize operations
-        O(1) amortized insertion
+        Amortized insertion
       Stack Operations
         Multipop analysis
         Credit per push
       Binary Counter
         Bit flip analysis
-        O(1) amortized increment
+        Amortized increment
       Advanced Structures
         Splay Trees
         Fibonacci Heaps
