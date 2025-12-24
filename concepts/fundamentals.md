@@ -87,7 +87,11 @@ flowchart TD
 ## 📊 What are Data Structures?
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Data-Structure-Classification.webp" alt="Data Structure Classification" width="700" height="400"/>
+<img src="https://miro.medium.com/1*uwyjXzk07mJbp_oLXWU_1g.png" alt="What are Data Structures" width="700" height="400"/>
+</div>
+
+<div align="center">
+<img src="https://scaler.com/topics/images/datat-structure-types-of-data-structure" alt="Data Structure Types" width="650" height="350"/>
 </div>
 
 **Data Structures** are ways of organizing and storing data to enable efficient access and modification.
@@ -193,7 +197,7 @@ public:
 ## ⚡ What are Algorithms?
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Algorithm-Categories.webp" alt="Algorithm Categories" width="650" height="350"/>
+<img src="https://miro.medium.com/1*OVBlrVqg_NMw0wggMnxQtA.png" alt="What are Algorithms" width="650" height="350"/>
 </div>
 
 **Algorithms** are step-by-step procedures for solving problems or performing computations.
@@ -298,7 +302,7 @@ void bubbleSort(vector<int>& arr) {
 ## 📈 Algorithm Analysis
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Algorithm-Analysis-Methods.webp" alt="Algorithm Analysis Methods" width="650" height="350"/>
+<img src="https://miro.medium.com/1*mhBtiIW6-XVmFzjISD42rw.jpeg" alt="Algorithm Analysis" width="650" height="350"/>
 </div>
 
 **Algorithm Analysis** helps us understand the efficiency and performance characteristics of algorithms.
@@ -377,13 +381,13 @@ public:
 ### 🎯 Common Big O Complexities
 
 ```mermaid
-graph TD
-    A[Big O Complexities] --> B[O(1) - Constant]
-    A --> C[O(log n) - Logarithmic]
-    A --> D[O(n) - Linear]
-    A --> E[O(n log n) - Linearithmic]
-    A --> F[O(n²) - Quadratic]
-    A --> G[O(2ⁿ) - Exponential]
+flowchart TD
+    A[Big O Complexities] --> B[O1 - Constant]
+    A --> C[Olog n - Logarithmic]
+    A --> D[On - Linear]
+    A --> E[On log n - Linearithmic]
+    A --> F[On² - Quadratic]
+    A --> G[O2ⁿ - Exponential]
     
     B --> H[Array access]
     C --> I[Binary search]
