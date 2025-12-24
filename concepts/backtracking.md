@@ -6,12 +6,6 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Advanced-orange?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-High-red?style=for-the-badge)
 
-<img src="https://scaler.com/topics/images/n-queen-problem-image-2.webp" alt="N-Queens Problem" width="600" height="350"/>
-
-<img src="https://scaler.com/topics/images/permutation-of-string-Image_1.webp" alt="Permutation Process" width="650" height="400"/>
-
-<img src="https://towardsdatascience.com/wp-content/uploads/2022/02/11wVvuJUuCTDMg-uT8g3ig.png" alt="Backtracking Tree" width="700" height="300"/>
-
 *Master systematic exploration of solution spaces with intelligent pruning*
 
 </div>
@@ -34,7 +28,7 @@
 ### 🔑 Backtracking Framework
 
 <div align="center">
-<img src="https://www.scaler.com/topics/images/pruning5.webp" alt="Backtracking Pruning" width="600" height="400"/>
+<img src="https://towardsdatascience.com/wp-content/uploads/2022/02/11wVvuJUuCTDMg-uT8g3ig.png" alt="Backtracking Tree" width="700" height="300"/>
 </div>
 
 ```mermaid
@@ -143,7 +137,7 @@ mindmap
 ### 🔧 N-Queens Problem
 
 <div align="center">
-<img src="https://miro.medium.com/v2/resize:fit:1400/0*KAua6t1Cqy5dqOd0.png" alt="N-Queens Solution Visualization" width="650" height="400"/>
+<img src="https://scaler.com/topics/images/n-queen-problem-image-2.webp" alt="N-Queens Problem" width="650" height="400"/>
 </div>
 
 ```cpp
@@ -197,6 +191,10 @@ private:
 ```
 
 ### 🔧 Generate Permutations
+
+<div align="center">
+<img src="https://scaler.com/topics/images/permutation-of-string-Image_1.webp" alt="Permutation Process" width="600" height="350"/>
+</div>
 
 ```cpp
 class Permutations {
@@ -255,6 +253,10 @@ private:
 
 ### 🔧 Sudoku Solver
 
+<div align="center">
+<img src="https://www.scaler.com/topics/images/pruning5.webp" alt="Backtracking Pruning" width="650" height="400"/>
+</div>
+
 ```cpp
 class SudokuSolver {
 public:
@@ -304,6 +306,10 @@ private:
 ```
 
 ### 🔧 Word Search
+
+<div align="center">
+<img src="https://miro.medium.com/v2/resize:fit:1400/0*KAua6t1Cqy5dqOd0.png" alt="Word Search Backtracking" width="650" height="400"/>
+</div>
 
 ```cpp
 class WordSearch {
