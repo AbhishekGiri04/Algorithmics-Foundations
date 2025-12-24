@@ -6,13 +6,7 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-High-red?style=for-the-badge)
 
-<img src="https://scaler.com/topics/images/Optimal-Substructure" alt="Optimal Substructure in Greedy Algorithms" width="600" height="350"/>
-
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_EJbWc5SdVpqsI6qxIWTwgY5AeYijRNyipA&s" alt="Greedy Algorithm Strategy" width="650" height="400"/>
-
-<img src="https://techvidvan.com/tutorials/wp-content/uploads/2021/06/Greedy-ALgorithms.jpg" alt="Greedy Algorithms Overview" width="700" height="450"/>
-
-*Master locally optimal choices that lead to globally optimal solutions*
+**Master locally optimal choices that lead to globally optimal solutions**
 
 </div>
 
@@ -201,7 +195,7 @@ public:
 ### 🔧 Fractional Knapsack Strategy
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Fractional-Knapsack-Algorithm.webp" alt="Fractional Knapsack Algorithm" width="650" height="350"/>
+<img src="https://www.hello-algo.com/en/chapter_greedy/fractional_knapsack_problem.assets/fractional_knapsack_example.png" alt="Fractional Knapsack Strategy" width="650" height="350"/>
 </div>
 
 ```mermaid
@@ -266,7 +260,7 @@ public:
 ### 🔧 Huffman Coding
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Huffman-Coding-Algorithm.webp" alt="Huffman Coding Algorithm" width="700" height="400"/>
+<img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfqVrC5IucGqiuBjT0_YOc8fwUOV_MeOSGHdN_eEhU9d2-y8qwJnTe5B08IONJ5bAg-hfIfy1Sctsa6j9UfiCFc7rIPt7jS7LVCRyfFadV6OLvG-Z-D9gZQpYTzUChdFPr7A5G-UA?key=6jD_E1UZr1WL4d_WTaNiXPaC" alt="Huffman Coding" width="700" height="400"/>
 </div>
 
 ```cpp
