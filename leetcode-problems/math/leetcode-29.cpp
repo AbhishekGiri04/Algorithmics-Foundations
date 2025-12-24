@@ -1,12 +1,12 @@
 /*
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                          LEETCODE PROBLEM SOLUTION                          ║
+║                          LEETCODE PROBLEM SOLUTION                           ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║ Problem ID    : 29                                                           ║
-║ Problem Name  : Divide Two Integers                                         ║
+║ Problem Name  : Divide Two Integers                                          ║
 ║ Difficulty    : Medium                                                       ║
-║ Topic         : Math, Bit Manipulation                                      ║
-║ Company Tags  : Amazon, Microsoft, Google, Facebook, Apple                  ║
+║ Topic         : Math, Bit Manipulation                                       ║
+║ Company Tags  : Amazon, Microsoft, Google, Facebook, Apple                   ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📋 PROBLEM STATEMENT:
