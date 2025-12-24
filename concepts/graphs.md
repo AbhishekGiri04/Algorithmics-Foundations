@@ -40,35 +40,39 @@
 ### 🔑 Why Study Graphs?
 
 ```mermaid
-mindmap
-  root))🕸️ Graphs Applications((
-    🌐 Social Networks
-      Friend connections
-      Influence propagation
-      Community detection
-      Recommendation systems
-    🗺️ Transportation
-      Route planning
-      Traffic optimization
-      Shortest paths
-      Network analysis
-    💻 Computer Networks
-      Internet topology
-      Network protocols
-      Load balancing
-      Fault tolerance
-    📅 Dependencies
-      Task scheduling
-      Build systems
-      Package management
-      Workflow optimization
-    🧬 Biology
-      Protein interactions
-      Gene networks
-      Evolutionary trees
-      Metabolic pathways
-      
-  classDef default fill:#333,stroke:#fff,stroke-width:2px,color:#fff
+flowchart TD
+    A["🕸️ Graphs Applications"] --> B["🌐 Social Networks"]
+    A --> C["🗺️ Transportation"]
+    A --> D["💻 Computer Networks"]
+    A --> E["📅 Dependencies"]
+    A --> F["🧬 Biology"]
+    
+    B --> G["Friend connections"]
+    B --> H["Influence propagation"]
+    B --> I["Community detection"]
+    B --> J["Recommendation systems"]
+    
+    C --> K["Route planning"]
+    C --> L["Traffic optimization"]
+    C --> M["Shortest paths"]
+    C --> N["Network analysis"]
+    
+    D --> O["Internet topology"]
+    D --> P["Network protocols"]
+    D --> Q["Load balancing"]
+    D --> R["Fault tolerance"]
+    
+    E --> S["Task scheduling"]
+    E --> T["Build systems"]
+    E --> U["Package management"]
+    E --> V["Workflow optimization"]
+    
+    F --> W["Protein interactions"]
+    F --> X["Gene networks"]
+    F --> Y["Evolutionary trees"]
+    F --> Z["Metabolic pathways"]
+    
+    classDef default fill:#333,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 ### 📊 Graph Applications
