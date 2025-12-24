@@ -1,12 +1,12 @@
 /*
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                          LEETCODE PROBLEM SOLUTION                          ║
+║                          LEETCODE PROBLEM SOLUTION                           ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║ Problem ID    : 202                                                          ║
-║ Problem Name  : Happy Number                                                ║
+║ Problem Name  : Happy Number                                                 ║
 ║ Difficulty    : Easy                                                         ║
-║ Topic         : Hash Table, Math, Two Pointers                             ║
-║ Company Tags  : Amazon, Apple, Google, Microsoft, Facebook                  ║
+║ Topic         : Hash Table, Math, Two Pointers                               ║
+║ Company Tags  : Amazon, Apple, Google, Microsoft, Facebook                   ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📋 PROBLEM STATEMENT:
