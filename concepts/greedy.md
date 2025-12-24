@@ -94,28 +94,33 @@ private:
 ### 📊 Greedy Problem Categories
 
 ```mermaid
-mindmap
-  root))🎯 Greedy Problems((
-    📅 Scheduling
-      Activity Selection
-      Job Scheduling
-      Task Assignment
-      Meeting Rooms
-    📦 Optimization
-      Fractional Knapsack
-      Coin Change
-      Minimum Spanning Tree
-      Shortest Path
-    🗜️ Compression
-      Huffman Coding
-      Data Encoding
-      File Compression
-      Optimal Codes
-    🔢 Graph Problems
-      Minimum Cut
-      Maximum Flow
-      Network Design
-      Resource Allocation
+flowchart TD
+    A["🎯 Greedy Problems"] --> B["📅 Scheduling"]
+    A --> C["📦 Optimization"]
+    A --> D["🗜️ Compression"]
+    A --> E["🔢 Graph Problems"]
+    
+    B --> F["Activity Selection"]
+    B --> G["Job Scheduling"]
+    B --> H["Task Assignment"]
+    B --> I["Meeting Rooms"]
+    
+    C --> J["Fractional Knapsack"]
+    C --> K["Coin Change"]
+    C --> L["Minimum Spanning Tree"]
+    C --> M["Shortest Path"]
+    
+    D --> N["Huffman Coding"]
+    D --> O["Data Encoding"]
+    D --> P["File Compression"]
+    D --> Q["Optimal Codes"]
+    
+    E --> R["Minimum Cut"]
+    E --> S["Maximum Flow"]
+    E --> T["Network Design"]
+    E --> U["Resource Allocation"]
+    
+    classDef default fill:#333,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 ### 🔧 Activity Selection Algorithm
@@ -192,6 +197,10 @@ public:
 
 ### 🔧 Fractional Knapsack
 
+<div align="center">
+<img src="https://scaler.com/topics/images/Optimal-Substructure" alt="Optimal Substructure in Greedy Algorithms" width="600" height="350"/>
+</div>
+
 ### 🔧 Fractional Knapsack Strategy
 
 <div align="center">
@@ -258,6 +267,10 @@ public:
 ```
 
 ### 🔧 Huffman Coding
+
+<div align="center">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_EJbWc5SdVpqsI6qxIWTwgY5AeYijRNyipA&s" alt="Greedy Algorithm Strategy" width="650" height="400"/>
+</div>
 
 <div align="center">
 <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfqVrC5IucGqiuBjT0_YOc8fwUOV_MeOSGHdN_eEhU9d2-y8qwJnTe5B08IONJ5bAg-hfIfy1Sctsa6j9UfiCFc7rIPt7jS7LVCRyfFadV6OLvG-Z-D9gZQpYTzUChdFPr7A5G-UA?key=6jD_E1UZr1WL4d_WTaNiXPaC" alt="Huffman Coding" width="700" height="400"/>
@@ -361,6 +374,10 @@ public:
 ---
 
 ## 🎯 Advanced Greedy Problems
+
+<div align="center">
+<img src="https://techvidvan.com/tutorials/wp-content/uploads/2021/06/Greedy-ALgorithms.jpg" alt="Greedy Algorithms Overview" width="700" height="450"/>
+</div>
 
 ### 🔧 Job Scheduling
 
