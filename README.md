@@ -37,7 +37,7 @@
 
 ### 🎯 Key Features
 
-- **📚 35+ Comprehensive Guides**: Complete coverage from fundamentals to advanced topics
+- **📚 36+ Comprehensive Guides**: Complete coverage from fundamentals to advanced topics
 - **💻 Multi-Language Implementation**: C++, Python, and Java solutions with detailed explanations
 - **🧠 15+ LeetCode Problems**: Real interview questions with step-by-step solutions
 - **📊 Complexity Analysis**: Time and space complexity analysis for every solution
@@ -66,6 +66,7 @@ Algorithmics-Foundations/
 │   ├── 🔐 hashing.md                 # Hash tables & collision handling
 │   ├── 📦 heap.md                    # Min/Max heap & priority queues
 │   ├── 🌳 tries.md                   # Trie data structure & applications
+│   ├── 🔗 disjoint-set-union.md     # Union-Find with path compression
 │   │
 │   ├── ⚡ ALGORITHMS
 │   ├── 🔃 sorting.md                 # All sorting algorithms
@@ -206,7 +207,7 @@ find . -name "leetcode-*.cpp" -o -name "leetcode-*.py" -o -name "leetcode-*.java
 
 | 🎯 Feature | 📊 Details | 🚀 Benefit |
 |------------|------------|-------------|
-| **📚 35+ Complete Guides** | Fundamentals to advanced topics | Comprehensive DSA mastery |
+| **📚 36+ Complete Guides** | Fundamentals to advanced topics | Comprehensive DSA mastery |
 | **💻 Multi-Language Solutions** | C++, Python, Java implementations | Language flexibility & comparison |
 | **🧠 15+ LeetCode Problems** | Easy to Hard difficulty levels | Interview preparation |
 | **📊 Complexity Analysis** | Time & space analysis for every solution | Optimization skills |
