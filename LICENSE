@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 Abhishek Giri - Algorithmics Foundations
+Copyright (c) 2026 Abhishek Giri
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,34 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-## 📄 About This License
-
-This project is licensed under the **MIT License** - one of the most permissive and widely-used open source licenses.
-
-### ✅ What You Can Do
-- ✓ **Commercial Use** - Use in commercial projects
-- ✓ **Modification** - Modify the source code
-- ✓ **Distribution** - Distribute copies
-- ✓ **Private Use** - Use privately
-- ✓ **Sublicense** - Grant sublicenses
-
-### 📋 What You Must Do
-- ► **Include License** - Include the original license and copyright notice
-- ► **Include Copyright** - Include the original copyright notice
-
-### 🚫 What You Cannot Do
-- ✗ **Hold Liable** - Hold the author liable for damages
-- ✗ **Use Trademark** - Use the author's trademarks
-
-### 🎯 Why MIT License?
-- **Industry Standard** - Used by major projects (React, Angular, Node.js)
-- **Simple & Clear** - Easy to understand terms
-- **Maximum Freedom** - Minimal restrictions on usage
-- **Commercial Friendly** - Perfect for both open source and commercial use
-
----
-
-**📚 Learn More**: [MIT License Explained](https://choosealicense.com/licenses/mit/)
