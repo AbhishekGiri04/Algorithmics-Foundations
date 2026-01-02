@@ -224,10 +224,15 @@ flowchart TD
     I --> M["Graphs, Trees<br/>Advanced DS"]
     J --> N["🎯 Mock Interviews<br/>System Design"]
     
-    style A fill:#ff6b6b
-    style N fill:#4ecdc4
-    style C fill:#ffa500
-    style D fill:#45b7d1
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef start fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef beginner fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef intermediate fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef advanced fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A,B start
+    class C,E,F beginner
+    class D,G,H intermediate
+    class I,J,K,L,M,N advanced
 ```
 
 ### 🗓️ **Structured Timeline**
@@ -287,9 +292,15 @@ flowchart LR
     F -->|"No"| A
     F -->|"Yes"| G["➡️ Next Topic"]
     
-    style A fill:#ff6b6b
-    style G fill:#4ecdc4
-    style F fill:#ffa500
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef start fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef complete fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A start
+    class B,C,D,E process
+    class F decision
+    class G complete
 ```
 
 ### 📚 **Resource Utilization Strategy**
@@ -307,9 +318,15 @@ flowchart TD
     I -->|"No"| E
     I -->|"Yes"| J["✅ Mark Complete"]
     
-    style A fill:#ff6b6b
-    style J fill:#4ecdc4
-    style I fill:#ffa500
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef start fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef complete fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A start
+    class B,C,D,E,F,G,H process
+    class I decision
+    class J complete
 ```
 
 ### 🌐 **Online Platforms**
@@ -376,10 +393,17 @@ flowchart TD
     F --> I["📈 100+ Medium Problems"]
     G --> J["📈 50+ Hard Problems"]
     
-    style A fill:#ff6b6b
-    style H fill:#4ecdc4
-    style I fill:#ffa500
-    style J fill:#45b7d1
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef journey fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef foundation fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef intermediate fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef advanced fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef problems fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A journey
+    class B,E foundation
+    class C,F intermediate
+    class D,G advanced
+    class H,I,J problems
 ```
 
 ### ✅ **Recommended Checklist**
