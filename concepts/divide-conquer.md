@@ -1,68 +1,39 @@
-# 🚀 Divide and Conquer – Complete Professional Guide
+# 🔪 Divide and Conquer — Complete Professional Guide
 
 <div align="center">
 
-*Mastering Problem Decomposition and Efficient Solutions*
+![Divide and Conquer](https://img.shields.io/badge/Divide_and_Conquer-Problem_Decomposition-FF6B6B?style=for-the-badge&logo=databricks&logoColor=white)
+![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=for-the-badge)
+![Importance](https://img.shields.io/badge/Importance-High-darkred?style=for-the-badge)
 
----
-
-![Divide and Conquer](https://img.shields.io/badge/Topic-Divide_and_Conquer-FF6B6B?style=for-the-badge&logo=databricks&logoColor=white)
-![Difficulty](https://img.shields.io/badge/Level-Intermediate-4ECDC4?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-45B7D1?style=for-the-badge)
+**Master the art of breaking problems into manageable pieces**
 
 </div>
 
 ---
 
-## 🎯 **Learning Objectives**
+## 📑 Table of Contents
 
-> *Master the art of breaking problems into manageable pieces*
-
-```mermaid
-flowchart TD
-    A["🎯 Learning Goals"] --> B["🔪 Understand D&C Paradigm"]
-    A --> C["🔍 Master Binary Search"]
-    A --> D["🔄 Learn Sorting Algorithms"]
-    A --> E["⚡ Apply to Complex Problems"]
-    
-    B --> F["Three-step process"]
-    B --> G["Recursive thinking"]
-    
-    C --> H["Search variants"]
-    C --> I["Optimization problems"]
-    
-    D --> J["Merge Sort"]
-    D --> K["Quick Sort"]
-    
-    E --> L["Real-world applications"]
-    E --> M["Performance analysis"]
-    
-    style A fill:#e3f2fd
-    style B fill:#c8e6c9
-    style C fill:#fff3e0
-    style D fill:#fce4ec
-    style E fill:#f3e5f5
-```
-
-- 🔪 Understand divide and conquer paradigm
-- 🔍 Master binary search and variants
-- 🔄 Learn merge sort and quick sort
-- ⚡ Apply D&C to solve complex problems
+1. [Introduction](#introduction)
+2. [Core Principles](#core-principles)
+3. [Binary Search](#binary-search)
+4. [Merge Sort](#merge-sort)
+5. [Quick Sort](#quick-sort)
+6. [Advanced Applications](#advanced-applications)
+7. [Implementation Guide](#implementation-guide)
+8. [Best Practices](#best-practices)
 
 ---
 
-## 📖 **1. What is Divide and Conquer?**
+## Introduction
+
+**Divide and Conquer** is a fundamental algorithmic paradigm that solves complex problems by breaking them into smaller, more manageable subproblems. This approach follows a three-step process: divide the problem, conquer the subproblems recursively, and combine the results.
 
 <div align="center">
-<img src="https://deen3evddmddt.cloudfront.net/uploads/content-images/divide-and-conquer-algorithm.webp" alt="Divide and Conquer Algorithm" width="700" height="400"/>
+<img src="https://deen3evddmddt.cloudfront.net/uploads/content-images/divide-and-conquer-algorithm.webp" alt="Divide and Conquer Algorithm" width="650" height="400"/>
 </div>
 
-<table>
-<tr>
-<td width="50%">
-
-### 🔪 **Core Concept**
-*Break problem into smaller subproblems*
+### Core Concept
 
 ```mermaid
 flowchart TD
@@ -85,498 +56,725 @@ flowchart TD
     
     L --> M["Final Solution"]
     
-    style A fill:#e3f2fd
-    style M fill:#c8e6c9
-```
-
-**Three Steps:**
-- 🔪 **Divide** - Split into subproblems
-- ⚔️ **Conquer** - Solve recursively
-- 🔗 **Combine** - Merge results
-
-</td>
-<td width="50%">
-
-### ⚡ **The D&C Formula**
-*Divide → Solve → Combine*
-
-<div align="center">
-<img src="https://deen3evddmddt.cloudfront.net/uploads/content-images/how-divide-and-conquer-algorithm-works.webp" alt="How Divide and Conquer Works" width="450" height="300"/>
-</div>
-
-**Process:**
-```
-Problem
-  ↓ Divide
-Subproblem₁  Subproblem₂
-  ↓ Conquer    ↓ Conquer
-Solution₁    Solution₂
-  ↓ Combine
-Final Solution
-```
-
-**Key Properties:**
-- 🔄 **Recursive** - Natural recursion
-- ⚡ **Efficient** - Reduces complexity
-- 📈 **Scalable** - Works on large inputs
-- 🔀 **Parallelizable** - Independent subproblems
-
-</td>
-</tr>
-</table>
-
-### 🌟 **Why D&C Matters?**
-
-```mermaid
-mindmap
-  root))🚀 Divide & Conquer Benefits((
-    ⚡ Efficiency
-      Reduces complexity
-      Better algorithms
-      Better than brute force
-      Optimal solutions
-    📊 Scalability
-      Handles large inputs
-      Production ready
-      Memory efficient
-      Predictable performance
-    🔄 Optimization
-      Eliminates redundancy
-      Focuses on essentials
-      Prunes search space
-      Smart problem solving
-    🔀 Parallelization
-      Independent subproblems
-      Multi-threading friendly
-      Distributed computing
-      Modern hardware utilization
-
-%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#2E86AB', 'primaryTextColor':'#ffffff', 'primaryBorderColor':'#ffffff', 'lineColor':'#4A4A4A', 'secondaryColor':'#A23B72', 'tertiaryColor':'#F18F01', 'background':'#C73E1D', 'mainBkg':'#2E86AB', 'secondBkg':'#A23B72', 'tertiaryBkg':'#F18F01'}}}%%
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef divide fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef conquer fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef combine fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A,B divide
+    class C,D,E,F,G,H conquer
+    class I,J,K,L,M combine
 ```
 
 ---
 
-## 🏗️ **2. Characteristics**
+## Core Principles
 
-### 📊 **Key Properties**
+### The Three-Step Process
 
 ```mermaid
 flowchart TD
-    A["🚀 Divide & Conquer Properties"] --> B["🔄 Recursive Nature"]
-    A --> C["⚡ Efficiency Gains"]
-    A --> D["📈 Scalability"]
-    A --> E["🔀 Parallelization"]
+    A["Divide and Conquer Paradigm"] --> B["🔪 Divide"]
+    A --> C["⚔️ Conquer"]
+    A --> D["🔗 Combine"]
     
-    B --> F["Natural recursion"]
-    B --> G["Clean code structure"]
-    B --> H["Base case handling"]
+    B --> E["Break into subproblems"]
+    B --> F["Reduce problem size"]
+    B --> G["Independent parts"]
     
-    C --> I["Reduces complexity"]
-    C --> J["O(n log n) common"]
-    C --> K["Better than brute force"]
+    C --> H["Solve recursively"]
+    C --> I["Base case handling"]
+    C --> J["Smaller instances"]
     
-    D --> L["Handles large inputs"]
-    D --> M["Production ready"]
-    D --> N["Memory efficient"]
+    D --> K["Merge solutions"]
+    D --> L["Build final result"]
+    D --> M["Efficient combination"]
     
-    E --> O["Independent subproblems"]
-    E --> P["Multi-threading friendly"]
-    E --> Q["Modern hardware utilization"]
-    
-    style A fill:#e3f2fd
-    style B fill:#c8e6c9
-    style C fill:#fff3e0
-    style D fill:#fce4ec
-    style E fill:#f3e5f5
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef paradigm fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef divide fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef conquer fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef combine fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A paradigm
+    class B,E,F,G divide
+    class C,H,I,J conquer
+    class D,K,L,M combine
 ```
 
+### Key Characteristics
+
 <div align="center">
+<img src="https://deen3evddmddt.cloudfront.net/uploads/content-images/how-divide-and-conquer-algorithm-works.webp" alt="How Divide and Conquer Works" width="650" height="400"/>
+</div>
 
 | Property | Description | Benefit |
-|:---------|:------------|:--------|
-| **🔄 Recursive** | Uses recursion naturally | Clean code |
-| **⚡ Efficient** | Reduces complexity | Fast execution |
+|----------|-------------|---------|
+| **🔄 Recursive** | Uses recursion naturally | Clean code structure |
+| **⚡ Efficient** | Reduces complexity | Better performance |
 | **📈 Scalable** | Works on large inputs | Production ready |
-| **🔀 Parallelizable** | Subproblems independent | Multi-threading |
-
-</div>
+| **🔀 Parallelizable** | Independent subproblems | Multi-threading friendly |
 
 ---
 
-## 🔍 **3. Binary Search**
+## Binary Search
 
-### 📊 **Classic D&C Algorithm**
+### Classic Divide and Conquer Algorithm
 
-<table>
-<tr>
-<td width="50%">
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20220309171621/BinarySearch.png" alt="Binary Search Visualization" width="650" height="400"/>
+</div>
 
-**Problem:**  
-Search in sorted array
+### Algorithm Framework
 
-**Approach:**
-1. Find middle element
-2. Compare with target
-3. Eliminate half
-4. Repeat
-
-**Time:** O(log n)  
-**Space:** O(1) iterative, O(log n) recursive
-
-</td>
-<td width="50%">
-
-**Implementation:**
-```cpp
-int binarySearch(int arr[], int n, int target) {
-    int left = 0, right = n - 1;
+```mermaid
+flowchart TD
+    A["Binary Search Process"] --> B["Find Middle Element"]
+    B --> C["Compare with Target"]
+    C --> D{"Target Found?"}
+    D -->|Yes| E["Return Index"]
+    D -->|No| F{"Target < Middle?"}
+    F -->|Yes| G["Search Left Half"]
+    F -->|No| H["Search Right Half"]
+    G --> I["Eliminate Right Half"]
+    H --> J["Eliminate Left Half"]
+    I --> B
+    J --> B
     
-    while (left <= right) {
-        int mid = left + (right - left) / 2;
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef result fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef eliminate fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A,B,C process
+    class D,F decision
+    class E result
+    class G,H,I,J eliminate
+```
+
+### Implementation
+
+```cpp
+class BinarySearch {
+public:
+    // Standard binary search
+    int search(vector<int>& arr, int target) {
+        int left = 0, right = arr.size() - 1;
         
-        if (arr[mid] == target)
-            return mid;
-        else if (arr[mid] < target)
-            left = mid + 1;
-        else
-            right = mid - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (arr[mid] == target) {
+                return mid;
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        
+        return -1; // Not found
     }
     
-    return -1;
-}
+    // Recursive implementation
+    int searchRecursive(vector<int>& arr, int target, int left, int right) {
+        if (left > right) return -1;
+        
+        int mid = left + (right - left) / 2;
+        
+        if (arr[mid] == target) {
+            return mid;
+        } else if (arr[mid] < target) {
+            return searchRecursive(arr, target, mid + 1, right);
+        } else {
+            return searchRecursive(arr, target, left, mid - 1);
+        }
+    }
+    
+    // Find first occurrence
+    int findFirst(vector<int>& arr, int target) {
+        int left = 0, right = arr.size() - 1;
+        int result = -1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (arr[mid] == target) {
+                result = mid;
+                right = mid - 1; // Continue searching left
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        
+        return result;
+    }
+};
 ```
 
-</td>
-</tr>
-</table>
+### Binary Search Variants
 
-### 🎯 **Binary Search Variants**
-
-<div align="center">
-
-| Variant | Purpose | Use Case |
-|:--------|:--------|:---------|
-| **First Occurrence** | Find leftmost match | Duplicates |
-| **Last Occurrence** | Find rightmost match | Duplicates |
-| **Lower Bound** | First ≥ target | Range queries |
-| **Upper Bound** | First > target | Range queries |
-| **Search on Answer** | Find optimal value | Optimization |
-
-</div>
-
----
-
-## 🔀 **4. Merge Sort**
-
-### 📊 **Stable Sorting Algorithm**
-
-<div align="center">
-<img src="https://www.programiz.com/sites/tutorial2program/files/stable-sorting.png" alt="Stable Sorting Algorithm" width="650" height="400"/>
-</div>
-
-<table>
-<tr>
-<td width="50%">
-
-**Algorithm:**
-1. Divide array into halves
-2. Recursively sort each half
-3. Merge sorted halves
-
-**Characteristics:**
-- ✅ Stable sort
-- ❌ Not in-place
-- ✅ Predictable performance
-- ✅ Good for linked lists
-
-</td>
-<td width="50%">
-
-**Example:**
-```
-[38, 27, 43, 3, 9]
-     ↓ Divide
-[38, 27]  [43, 3, 9]
-     ↓ Divide
-[38][27]  [43][3, 9]
-     ↓ Conquer
-[27, 38]  [3, 9, 43]
-     ↓ Combine
-[3, 9, 27, 38, 43]
+```mermaid
+flowchart TD
+    A["Binary Search Variants"] --> B["Standard Search"]
+    A --> C["First Occurrence"]
+    A --> D["Last Occurrence"]
+    A --> E["Lower Bound"]
+    A --> F["Upper Bound"]
+    A --> G["Search on Answer"]
+    
+    B --> H["Find exact match"]
+    C --> I["Find leftmost match"]
+    D --> J["Find rightmost match"]
+    E --> K["First >= target"]
+    F --> L["First > target"]
+    G --> M["Optimization problems"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef variant fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef standard fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef occurrence fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef bound fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef optimization fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A variant
+    class B,H standard
+    class C,D,I,J occurrence
+    class E,F,K,L bound
+    class G,M optimization
 ```
 
-</td>
-</tr>
-</table>
-
-### ⏱️ **Complexity Analysis**
-
-<div align="center">
-
-| Case | Time Complexity | Space Complexity |
-|:-----|:----------------|:-----------------|
-| **Best** | O(n log n) | O(n) |
-| **Average** | O(n log n) | O(n) |
-| **Worst** | O(n log n) | O(n) |
-
-</div>
-
 ---
 
-## ⚡ **5. Quick Sort**
+## Merge Sort
 
-### 📊 **Fast In-Place Sorting**
+### Stable Divide and Conquer Sorting
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240926172924/Heap-Sort-Recursive-Illustration.webp" alt="Fast In-Place Sorting" width="600" height="350"/>
+<img src="https://www.programiz.com/sites/tutorial2program/files/merge-sort-example_0.png" alt="Merge Sort Process" width="650" height="400"/>
 </div>
 
-<table>
-<tr>
-<td width="50%">
+### Algorithm Process
 
-**Algorithm:**
-1. Choose pivot element
-2. Partition around pivot
-3. Recursively sort partitions
-
-**Characteristics:**
-- ❌ Not stable
-- ✅ In-place
-- ✅ Fast average case
-- ❌ Worst case O(n²)
-
-</td>
-<td width="50%">
-
-**Pivot Strategies:**
-- **First Element** - Simple
-- **Last Element** - Common
-- **Random** - Avoids worst case
-- **Median of Three** - Best practice
-
-**Partitioning:**
-```
-[3, 7, 8, 5, 2, 1, 9, 6, 4]
-Pivot = 4
-[3, 2, 1] 4 [7, 8, 5, 9, 6]
+```mermaid
+flowchart TD
+    A["Merge Sort Process"] --> B["Divide Array"]
+    B --> C["Left Half"]
+    B --> D["Right Half"]
+    
+    C --> E["Recursively Sort Left"]
+    D --> F["Recursively Sort Right"]
+    
+    E --> G["Sorted Left"]
+    F --> H["Sorted Right"]
+    
+    G --> I["Merge Process"]
+    H --> I
+    
+    I --> J["Compare Elements"]
+    J --> K["Pick Smaller"]
+    K --> L["Add to Result"]
+    L --> M{"More Elements?"}
+    M -->|Yes| J
+    M -->|No| N["Final Sorted Array"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef divide fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef conquer fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef merge fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef result fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A,B,C,D divide
+    class E,F,G,H conquer
+    class I,J,K,L merge
+    class M,N result
 ```
 
-</td>
-</tr>
-</table>
+### Implementation
 
-### ⏱️ **Complexity Analysis**
+```cpp
+class MergeSort {
+public:
+    void mergeSort(vector<int>& arr, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+            
+            // Divide
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+            
+            // Conquer
+            merge(arr, left, mid, right);
+        }
+    }
+    
+private:
+    void merge(vector<int>& arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+        
+        // Create temporary arrays
+        vector<int> leftArr(n1), rightArr(n2);
+        
+        // Copy data to temporary arrays
+        for (int i = 0; i < n1; i++)
+            leftArr[i] = arr[left + i];
+        for (int j = 0; j < n2; j++)
+            rightArr[j] = arr[mid + 1 + j];
+        
+        // Merge the temporary arrays
+        int i = 0, j = 0, k = left;
+        
+        while (i < n1 && j < n2) {
+            if (leftArr[i] <= rightArr[j]) {
+                arr[k] = leftArr[i];
+                i++;
+            } else {
+                arr[k] = rightArr[j];
+                j++;
+            }
+            k++;
+        }
+        
+        // Copy remaining elements
+        while (i < n1) {
+            arr[k] = leftArr[i];
+            i++;
+            k++;
+        }
+        
+        while (j < n2) {
+            arr[k] = rightArr[j];
+            j++;
+            k++;
+        }
+    }
+};
+```
+
+### Merge Sort Characteristics
+
+| Aspect | Details |
+|--------|---------|
+| **Time Complexity** | O(n log n) - all cases |
+| **Space Complexity** | O(n) - for temporary arrays |
+| **Stability** | ✅ Stable |
+| **In-place** | ❌ No |
+| **Best for** | Linked lists, external sorting |
+
+---
+
+## Quick Sort
+
+### Fast In-Place Sorting
 
 <div align="center">
-
-| Case | Time Complexity | Space Complexity |
-|:-----|:----------------|:-----------------|
-| **Best** | O(n log n) | O(log n) |
-| **Average** | O(n log n) | O(log n) |
-| **Worst** | O(n²) | O(log n) |
-
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240926172924/Heap-Sort-Recursive-Illustration.webp" alt="Quick Sort Illustration" width="650" height="400"/>
 </div>
 
+### Algorithm Process
+
+```mermaid
+flowchart TD
+    A["Quick Sort Process"] --> B["Choose Pivot"]
+    B --> C["Partition Array"]
+    C --> D["Elements < Pivot"]
+    C --> E["Pivot"]
+    C --> F["Elements > Pivot"]
+    
+    D --> G["Recursively Sort Left"]
+    F --> H["Recursively Sort Right"]
+    
+    G --> I["Sorted Left Part"]
+    H --> J["Sorted Right Part"]
+    
+    I --> K["Combine Results"]
+    E --> K
+    J --> K
+    
+    K --> L["Final Sorted Array"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef pivot fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef partition fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef recursive fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef result fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A,B pivot
+    class C,D,E,F partition
+    class G,H,I,J recursive
+    class K,L result
+```
+
+### Implementation
+
+```cpp
+class QuickSort {
+public:
+    void quickSort(vector<int>& arr, int low, int high) {
+        if (low < high) {
+            // Partition the array
+            int pi = partition(arr, low, high);
+            
+            // Recursively sort elements before and after partition
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+    
+private:
+    int partition(vector<int>& arr, int low, int high) {
+        int pivot = arr[high]; // Choose last element as pivot
+        int i = low - 1; // Index of smaller element
+        
+        for (int j = low; j < high; j++) {
+            // If current element is smaller than or equal to pivot
+            if (arr[j] <= pivot) {
+                i++;
+                swap(arr[i], arr[j]);
+            }
+        }
+        
+        swap(arr[i + 1], arr[high]);
+        return i + 1;
+    }
+    
+    // Randomized version for better average case
+    void randomizedQuickSort(vector<int>& arr, int low, int high) {
+        if (low < high) {
+            // Randomly choose pivot
+            int randomIndex = low + rand() % (high - low + 1);
+            swap(arr[randomIndex], arr[high]);
+            
+            int pi = partition(arr, low, high);
+            randomizedQuickSort(arr, low, pi - 1);
+            randomizedQuickSort(arr, pi + 1, high);
+        }
+    }
+};
+```
+
+### Quick Sort vs Merge Sort
+
+```mermaid
+flowchart TD
+    A["Sorting Algorithm Comparison"] --> B["Quick Sort"]
+    A --> C["Merge Sort"]
+    
+    B --> D["✅ In-place"]
+    B --> E["✅ Fast average case"]
+    B --> F["❌ Not stable"]
+    B --> G["❌ O(n²) worst case"]
+    
+    C --> H["❌ Extra space O(n)"]
+    C --> I["✅ Stable"]
+    C --> J["✅ O(n log n) guaranteed"]
+    C --> K["✅ Predictable performance"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef comparison fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef quick fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef merge fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef pros fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef cons fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A comparison
+    class B,D,E quick
+    class C,H,I merge
+    class F,G,J,K pros
+```
+
 ---
 
-## 🆚 **6. Merge Sort vs Quick Sort**
+## Advanced Applications
+
+### Matrix Multiplication (Strassen's Algorithm)
+
+```mermaid
+flowchart TD
+    A["Strassen's Matrix Multiplication"] --> B["Divide Matrices"]
+    B --> C["2x2 Submatrices"]
+    C --> D["7 Multiplications"]
+    D --> E["Instead of 8"]
+    E --> F["Combine Results"]
+    F --> G["O(n^2.807)"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef algorithm fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef optimization fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef result fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A,B,C algorithm
+    class D,E optimization
+    class F,G result
+```
+
+### Closest Pair of Points
+
+```cpp
+class ClosestPair {
+public:
+    struct Point {
+        double x, y;
+    };
+    
+    double closestPairRec(vector<Point>& px, vector<Point>& py) {
+        int n = px.size();
+        
+        // Base case for small arrays
+        if (n <= 3) {
+            return bruteForce(px);
+        }
+        
+        // Divide
+        int mid = n / 2;
+        Point midPoint = px[mid];
+        
+        vector<Point> pyl(mid), pyr(n - mid);
+        int li = 0, ri = 0;
+        
+        for (int i = 0; i < n; i++) {
+            if (py[i].x <= midPoint.x && li < mid) {
+                pyl[li++] = py[i];
+            } else {
+                pyr[ri++] = py[i];
+            }
+        }
+        
+        // Conquer
+        double dl = closestPairRec(vector<Point>(px.begin(), px.begin() + mid), pyl);
+        double dr = closestPairRec(vector<Point>(px.begin() + mid, px.end()), pyr);
+        
+        double d = min(dl, dr);
+        
+        // Combine
+        vector<Point> strip;
+        for (int i = 0; i < n; i++) {
+            if (abs(py[i].x - midPoint.x) < d) {
+                strip.push_back(py[i]);
+            }
+        }
+        
+        return min(d, stripClosest(strip, d));
+    }
+    
+private:
+    double bruteForce(vector<Point>& points) {
+        double minDist = DBL_MAX;
+        for (int i = 0; i < points.size(); i++) {
+            for (int j = i + 1; j < points.size(); j++) {
+                minDist = min(minDist, distance(points[i], points[j]));
+            }
+        }
+        return minDist;
+    }
+    
+    double distance(Point p1, Point p2) {
+        return sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
+    }
+    
+    double stripClosest(vector<Point>& strip, double d) {
+        double minDist = d;
+        sort(strip.begin(), strip.end(), [](Point a, Point b) { return a.y < b.y; });
+        
+        for (int i = 0; i < strip.size(); i++) {
+            for (int j = i + 1; j < strip.size() && (strip[j].y - strip[i].y) < minDist; j++) {
+                minDist = min(minDist, distance(strip[i], strip[j]));
+            }
+        }
+        
+        return minDist;
+    }
+};
+```
+
+---
+
+## Implementation Guide
+
+### Generic Divide and Conquer Template
+
+```cpp
+template<typename T>
+class DivideConquerTemplate {
+public:
+    T solve(vector<T>& input, int left, int right) {
+        // Base case
+        if (left >= right) {
+            return baseCaseSolution(input, left, right);
+        }
+        
+        // Divide
+        int mid = left + (right - left) / 2;
+        
+        // Conquer
+        T leftResult = solve(input, left, mid);
+        T rightResult = solve(input, mid + 1, right);
+        
+        // Combine
+        return combine(leftResult, rightResult, input, left, mid, right);
+    }
+    
+private:
+    virtual T baseCaseSolution(vector<T>& input, int left, int right) = 0;
+    virtual T combine(T leftResult, T rightResult, vector<T>& input, 
+                     int left, int mid, int right) = 0;
+};
+```
+
+### Performance Analysis Framework
+
+```mermaid
+flowchart TD
+    A["D&C Performance Analysis"] --> B["Time Complexity"]
+    A --> C["Space Complexity"]
+    A --> D["Practical Considerations"]
+    
+    B --> E["Recurrence Relations"]
+    B --> F["Master Theorem"]
+    B --> G["Asymptotic Analysis"]
+    
+    C --> H["Recursive Stack"]
+    C --> I["Auxiliary Space"]
+    C --> J["Memory Efficiency"]
+    
+    D --> K["Cache Performance"]
+    D --> L["Parallelization"]
+    D --> M["Real-world Factors"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef analysis fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef time fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef space fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef practical fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A analysis
+    class B,E,F,G time
+    class C,H,I,J space
+    class D,K,L,M practical
+```
+
+---
+
+## Best Practices
+
+### Algorithm Selection Guidelines
+
+```mermaid
+flowchart TD
+    A["Choose D&C Algorithm"] --> B["Problem Characteristics"]
+    A --> C["Performance Requirements"]
+    A --> D["Resource Constraints"]
+    
+    B --> E["Divisible problem?"]
+    B --> F["Independent subproblems?"]
+    B --> G["Efficient combine step?"]
+    
+    C --> H["Time critical?"]
+    C --> I["Stability needed?"]
+    C --> J["Worst-case guarantees?"]
+    
+    D --> K["Memory limited?"]
+    D --> L["In-place required?"]
+    D --> M["Parallelization possible?"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef selection fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef characteristics fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef performance fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef constraints fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A selection
+    class B,E,F,G characteristics
+    class C,H,I,J performance
+    class D,K,L,M constraints
+```
+
+### Common Pitfalls and Solutions
+
+```cpp
+class DivideConquerBestPractices {
+public:
+    // ❌ Common Mistake: Inefficient base case
+    int inefficientRecursion(vector<int>& arr, int left, int right) {
+        if (left == right) return arr[left];
+        // This creates unnecessary recursive calls
+        int mid = (left + right) / 2;
+        return max(inefficientRecursion(arr, left, mid),
+                  inefficientRecursion(arr, mid + 1, right));
+    }
+    
+    // ✅ Better: Efficient base case handling
+    int efficientRecursion(vector<int>& arr, int left, int right) {
+        // Handle small cases directly
+        if (left == right) return arr[left];
+        if (left + 1 == right) return max(arr[left], arr[right]);
+        
+        int mid = left + (right - left) / 2;
+        return max(efficientRecursion(arr, left, mid),
+                  efficientRecursion(arr, mid + 1, right));
+    }
+    
+    // ❌ Common Mistake: Integer overflow in mid calculation
+    int overflowProne(int left, int right) {
+        return (left + right) / 2; // Can overflow
+    }
+    
+    // ✅ Better: Overflow-safe mid calculation
+    int overflowSafe(int left, int right) {
+        return left + (right - left) / 2; // Safe from overflow
+    }
+    
+    // ✅ Optimization: Iterative for tail recursion
+    int iterativeBinarySearch(vector<int>& arr, int target) {
+        int left = 0, right = arr.size() - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == target) return mid;
+            else if (arr[mid] < target) left = mid + 1;
+            else right = mid - 1;
+        }
+        
+        return -1;
+    }
+};
+```
+
+### Performance Optimization Tips
+
+| Technique | Description | When to Use |
+|-----------|-------------|-------------|
+| **Tail Recursion** | Convert to iteration | Stack overflow concerns |
+| **Memoization** | Cache subproblem results | Overlapping subproblems |
+| **Threshold Switching** | Use simple algorithm for small inputs | Overhead concerns |
+| **Parallelization** | Process subproblems concurrently | Multi-core systems |
+
+---
+
+## Summary
+
+**Divide and Conquer** is a powerful algorithmic paradigm that breaks complex problems into manageable pieces. Key insights:
+
+### Essential Concepts
+- **Three-Step Process**: Divide, conquer, and combine
+- **Recursive Nature**: Natural fit for recursive solutions
+- **Efficiency Gains**: Often achieves better time complexity
+- **Parallelization**: Independent subproblems enable parallel processing
+
+### Classic Applications
+- **Binary Search**: O(log n) searching in sorted data
+- **Merge Sort**: Stable O(n log n) sorting algorithm
+- **Quick Sort**: Fast average-case O(n log n) sorting
+- **Advanced Problems**: Matrix multiplication, closest pair
+
+### Best Practices
+- Choose appropriate base cases for efficiency
+- Use overflow-safe calculations
+- Consider iterative alternatives for tail recursion
+- Optimize for specific problem characteristics
+
+> **Master's Insight**: Divide and conquer transforms complex problems into simple, manageable pieces. The key is identifying how to divide effectively and combine efficiently.
+
+---
 
 <div align="center">
 
-| Feature | Merge Sort | Quick Sort |
-|:--------|:-----------|:-----------|
-| **Type** | Divide & Conquer | Divide & Conquer |
-| **Stability** | ✅ Stable | ❌ Not stable |
-| **In-place** | ❌ No | ✅ Yes |
-| **Best Case** | O(n log n) | O(n log n) |
-| **Worst Case** | O(n log n) | O(n²) |
-| **Space** | O(n) | O(log n) |
-| **Practical Speed** | Moderate | Very fast |
-| **Use Case** | Linked lists, stability | Arrays, speed |
+**🔪 Master Divide and Conquer • Break Down Complexity • Build Efficient Solutions**
 
-</div>
-
----
-
-## 🎯 **7. When to Use Which?**
-
-<table>
-<tr>
-<td width="50%">
-
-### 🔍 **Binary Search**
-
-**Use When:**
-- Data is sorted
-- Need O(log n) search
-- Finding boundaries
-- Optimization problems
-
-**Examples:**
-- Search in sorted array
-- Find peak element
-- Minimum in rotated array
-
-</td>
-<td width="50%">
-
-### 🔀 **Merge Sort**
-
-**Use When:**
-- Stability required
-- Linked list sorting
-- External sorting
-- Predictable performance
-
-**Examples:**
-- Sorting linked lists
-- Inversion count
-- External merge sort
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### ⚡ **Quick Sort**
-
-**Use When:**
-- Arrays to sort
-- Speed is priority
-- In-place sorting needed
-- Average case acceptable
-
-**Examples:**
-- General array sorting
-- Kth smallest element
-- Partition problems
-
-</td>
-<td width="50%">
-
-### 🔪 **General D&C**
-
-**Use When:**
-- Problem divisible
-- Subproblems independent
-- Combine step efficient
-- Recursion applicable
-
-**Examples:**
-- Matrix multiplication
-- Closest pair of points
-- Strassen's algorithm
-
-</td>
-</tr>
-</table>
-
----
-
-## 🌍 **8. Applications**
-
-<table>
-<tr>
-<td width="50%">
-
-### 🌐 **Real-World Uses**
-- 🗄️ Database searching
-- 📁 File sorting
-- 🔍 Search engines
-- 🎮 Game algorithms
-- 📊 Data analysis
-
-</td>
-<td width="50%">
-
-### 💻 **Algorithm Applications**
-- 🔢 Sorting algorithms
-- 🔍 Searching techniques
-- 🧮 Matrix operations
-- 📈 Optimization problems
-- 🎯 Competitive programming
-
-</td>
-</tr>
-</table>
-
----
-
-## 📘 **9. Classic D&C Problems**
-
-<div align="center">
-
-| Difficulty | Problem | Pattern | Priority |
-|:-----------|:--------|:--------|:---------|
-| **🟢 Easy** | Binary Search | Search | ⭐⭐⭐ |
-| **🟢 Easy** | Merge Two Sorted Arrays | Merge | ⭐⭐⭐ |
-| **🟡 Medium** | Merge Sort | Sorting | ⭐⭐⭐ |
-| **🟡 Medium** | Quick Sort | Sorting | ⭐⭐⭐ |
-| **🟡 Medium** | Kth Largest Element | Quick Select | ⭐⭐⭐ |
-| **🟡 Medium** | Search in Rotated Array | Binary Search | ⭐⭐ |
-| **🔴 Hard** | Median of Two Sorted Arrays | Binary Search | ⭐⭐ |
-| **🔴 Hard** | Count of Smaller After Self | Merge Sort | ⭐ |
-
-</div>
-
----
-
-## 🎯 **10. Key Takeaways**
-
-<div align="center">
-
-### 💡 **Essential Insights**
-
-</div>
-
-> 🔪 **Divide and Conquer**: Break problems into smaller pieces  
-> 🔍 **Binary Search**: O(log n) searching in sorted data  
-> 🔀 **Merge Sort**: Stable O(n log n) sorting  
-> ⚡ **Quick Sort**: Fast average O(n log n) sorting  
-> 🎯 **Choose Wisely**: Right algorithm for right problem  
-
----
-
-## 📚 **11. Next Steps**
-
-<table>
-<tr>
-<td width="50%">
-
-### 🎯 **Immediate Goals**
-- [ ] Implement binary search
-- [ ] Code merge sort
-- [ ] Practice quick sort
-- [ ] Solve 10+ D&C problems
-
-</td>
-<td width="50%">
-
-### 🚀 **Long-term Objectives**
-- [ ] Master all variants
-- [ ] Optimize implementations
-- [ ] Learn advanced D&C
-- [ ] Apply to real problems
-
-</td>
-</tr>
-</table>
-
----
-
-<div align="center">
-
-### 📊 **Learning Progress**
-
-![Progress](https://img.shields.io/badge/Completion-100%25-success?style=for-the-badge)
-![Time](https://img.shields.io/badge/Study_Time-2_Hours-blue?style=for-the-badge)
-![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=for-the-badge)
-
----
-
-**📅 Topic**: Divide and Conquer | **🎯 Focus**: Problem Decomposition | **⏰ Level**: Intermediate
-
-*"Divide and Conquer: The art of breaking complexity into simplicity"*
+*From Theory to Practice • Decomposition to Implementation • Understanding to Mastery*
 
 </div>
