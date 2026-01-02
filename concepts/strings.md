@@ -2,11 +2,11 @@
 
 <div align="center">
 
-![Strings](https://img.shields.io/badge/Strings-Text_Processing-17a2b8?style=for-the-badge&logo=text&logoColor=white)
-![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=for-the-badge)
-![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
+![Strings](https://img.shields.io/badge/Strings-Text_Processing-FF6B6B?style=for-the-badge&logo=databricks&logoColor=white)
+![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-4ECDC4?style=for-the-badge)
+![Importance](https://img.shields.io/badge/Importance-Critical-darkred?style=for-the-badge)
 
-*Master text processing and string manipulation algorithms*
+**Master text processing and string manipulation algorithms**
 
 </div>
 
@@ -14,59 +14,58 @@
 
 ## 📑 Table of Contents
 
-1. [Introduction](#-introduction)
-2. [String Fundamentals](#-string-fundamentals)
-3. [Pattern Matching](#-pattern-matching)
-4. [String Manipulation](#-string-manipulation)
-5. [Advanced Algorithms](#-advanced-algorithms)
-6. [String Hashing](#-string-hashing)
-7. [Common Patterns](#-common-patterns)
-8. [Best Practices](#-best-practices)
+1. [Introduction](#introduction)
+2. [String Fundamentals](#string-fundamentals)
+3. [Pattern Matching](#pattern-matching)
+4. [String Manipulation](#string-manipulation)
+5. [Advanced Algorithms](#advanced-algorithms)
+6. [String Hashing](#string-hashing)
+7. [Common Patterns](#common-patterns)
+8. [Best Practices](#best-practices)
 
 ---
 
-## 🎯 Introduction
+## Introduction
+
+**Strings** are sequences of characters that form the backbone of text processing, pattern matching, and data parsing in computer science. They are fundamental data structures used in everything from search engines to DNA sequencing.
 
 <div align="center">
-<img src="https://www.iquanta.in/blog/wp-content/uploads/2024/12/String-image-2.png" alt="String Processing" width="600" height="300"/>
+<img src="https://camo.githubusercontent.com/7f23890a3419401cd2528e66d52f158e2ce81c755b31640651521ec37b2cf91e/68747470733a2f2f7777772e697175616e74612e696e2f626c6f672f77702d636f6e74656e742f75706c6f6164732f323032342f31322f537472696e672d696d6167652d322e706e67" alt="String Processing" width="650" height="400"/>
 </div>
 
-**Strings** are sequences of characters that form the backbone of text processing, pattern matching, and data parsing in computer science.
-
-### 🔑 Why Study Strings?
+### Core Concept
 
 ```mermaid
-graph TD
-    A[Strings] --> B[Text Processing]
-    A --> C[Pattern Matching]
-    A --> D[Data Parsing]
-    A --> E[Bioinformatics]
+flowchart TD
+    A["🔤 String Processing"] --> B["Text Representation"]
+    A --> C["Pattern Matching"]
+    A --> D["String Manipulation"]
+    A --> E["Applications"]
     
-    B --> F[Search Engines]
-    C --> G[DNA Sequencing]
-    D --> H[Compilers]
-    E --> I[Genome Analysis]
-```
-
-### 🎆 String Algorithm Flow
-
-```mermaid
-graph TD
-    A[String Algorithms] --> B[Pattern Matching]
-    A --> C[String Manipulation]
-    A --> D[String Hashing]
+    B --> F["Character sequences"]
+    B --> G["Memory layout"]
     
-    B --> E[Naive O(nm)]
-    B --> F[KMP O(n+m)]
-    B --> G[Rabin-Karp O(n+m)]
+    C --> H["Search algorithms"]
+    C --> I["Regular expressions"]
     
-    C --> H[LCS]
-    C --> I[Edit Distance]
-    C --> J[Palindromes]
+    D --> J["Transformation"]
+    D --> K["Parsing"]
     
-    D --> K[Rolling Hash]
-    D --> L[Polynomial Hash]
-    D --> M[Substring Problems]
+    E --> L["Search engines"]
+    E --> M["Compilers"]
+    E --> N["Bioinformatics"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef strings fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef representation fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef matching fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef manipulation fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef applications fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A strings
+    class B,F,G representation
+    class C,H,I matching
+    class D,J,K manipulation
+    class E,L,M,N applications
 ```
 
 ### 📊 String Operations Complexity
@@ -80,7 +79,7 @@ graph TD
 
 ---
 
-## 🏗️ String Fundamentals
+## String Fundamentals
 
 ### 🎯 String Representation
 
@@ -183,11 +182,9 @@ public:
 
 ---
 
-## 🔍 Pattern Matching
+## Pattern Matching
 
-<div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/String-Pattern-Matching.webp" alt="String Pattern Matching" width="700" height="400"/>
-</div>
+
 
 ### 🎯 Naive Pattern Matching
 
@@ -219,9 +216,7 @@ public:
 
 ### 🎯 KMP Algorithm
 
-<div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/KMP-Algorithm.webp" alt="KMP Algorithm" width="650" height="350"/>
-</div>
+
 
 ```mermaid
 graph TD
@@ -356,11 +351,9 @@ public:
 
 ---
 
-## ✂️ String Manipulation
+## String Manipulation
 
-<div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/String-Manipulation-Algorithms.webp" alt="String Manipulation" width="650" height="350"/>
-</div>
+
 
 ### 🎯 String Transformation
 
@@ -511,7 +504,7 @@ public:
 
 ---
 
-## 🔐 String Hashing
+## String Hashing
 
 ### 🎯 Rolling Hash
 
@@ -594,7 +587,7 @@ private:
 
 ---
 
-## 🎨 Common Patterns
+## Common Patterns
 
 ### 🎯 Two Pointers Technique
 
@@ -713,7 +706,7 @@ public:
 
 ---
 
-## 🏆 Best Practices
+## Best Practices
 
 ### ✅ Do's
 
