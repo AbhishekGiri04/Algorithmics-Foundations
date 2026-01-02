@@ -1,4 +1,4 @@
-# 🎨 Algorithm Design Techniques — Complete Professional Guide
+# Algorithm Design Techniques — Complete Professional Guide
 
 <div align="center">
 
@@ -6,207 +6,189 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Fundamental-green?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
 
-*Master fundamental problem-solving paradigms for efficient algorithm design and competitive programming*
+**Master fundamental problem-solving paradigms for efficient algorithm design**
 
 </div>
 
 ---
 
-## 🎯 Algorithm Design Strategy Selection
+## Table of Contents
 
-<div align="center">
-<img src="https://repository-images.githubusercontent.com/312736455/cde37f79-89d1-4d6e-a287-83d184d17784" alt="Algorithm Design Overview" width="700" height="350"/>
-</div>
-
-```mermaid
-flowchart TD
-    A["Problem Analysis"] --> B{"Problem Characteristics"}
-    
-    B -->|"Small input size<br/>Correctness critical"| C["Brute Force"]
-    B -->|"Recursive structure<br/>Independent subproblems"| D["Divide & Conquer"]
-    B -->|"Optimal substructure<br/>Overlapping subproblems"| E["Dynamic Programming"]
-    B -->|"Greedy choice property<br/>Local optimum"| F["Greedy Method"]
-    B -->|"Constraint satisfaction<br/>Multiple solutions"| G["Backtracking"]
-    B -->|"Complex representation<br/>Transform problem"| H["Transform & Conquer"]
-    B -->|"Approximation acceptable<br/>Randomness beneficial"| I["Randomized"]
-    
-    C --> J["O(2^n), O(n!)"]
-    D --> K["O(n log n)"]
-    E --> L["O(n²), O(n³)"]
-    F --> M["O(n log n)"]
-    G --> N["O(2^n) with pruning"]
-    H --> O["Varies by transformation"]
-    I --> P["Expected performance"]
-    
-    style A fill:#ff6b6b
-    style C fill:#ffa500
-    style D fill:#4ecdc4
-    style E fill:#45b7d1
-    style F fill:#96ceb4
-    style G fill:#ffeaa7
-    style H fill:#dda0dd
-    style I fill:#fab1a0
-```
-
-## 📑 Table of Contents
-
-1. [🎯 Introduction](#-introduction)
-2. [💪 Brute Force](#-brute-force)
-3. [🔄 Divide & Conquer](#-divide--conquer)
-4. [📉 Decrease & Conquer](#-decrease--conquer)
-5. [🔄 Transform & Conquer](#-transform--conquer)
-6. [🎯 Greedy Method](#-greedy-method)
-7. [🧠 Dynamic Programming](#-dynamic-programming)
-8. [🔍 Backtracking](#-backtracking)
-9. [🌳 Branch & Bound](#-branch--bound)
-10. [🎲 Randomized Algorithms](#-randomized-algorithms)
-11. [📊 Comparison & Selection](#-comparison--selection)
-12. [💡 Best Practices](#-best-practices)
+1. [Introduction](#introduction)
+2. [Data Structures Overview](#data-structures-overview)
+3. [Algorithm Fundamentals](#algorithm-fundamentals)
+4. [Algorithm Types](#algorithm-types)
+5. [Brute Force](#brute-force)
+6. [Divide & Conquer](#divide--conquer)
+7. [Greedy Method](#greedy-method)
+8. [Dynamic Programming](#dynamic-programming)
+9. [Backtracking](#backtracking)
+10. [Best Practices](#best-practices)
 
 ---
 
-## 🎯 Introduction
+## Introduction
 
 **Algorithm Design Techniques** are fundamental problem-solving paradigms that provide systematic approaches to developing efficient algorithms. Each technique offers a unique strategy for tackling computational problems.
 
-### 🔑 Why Study Design Techniques?
-
-```
-🎯 Problem Classification    → Identify the right approach
-⚡ Efficiency Optimization  → Choose optimal strategy
-🧠 Pattern Recognition      → Apply proven methodologies
-💡 Creative Problem Solving → Combine multiple techniques
-🏆 Interview Success        → Demonstrate algorithmic thinking
-```
-
-### 📊 Algorithm Design Paradigms Overview
+### Why Study Design Techniques?
 
 ```mermaid
-mindmap
-  root((Algorithm Design<br/>Techniques))
-    Exhaustive Search
-      Brute Force
-        Try all possibilities
-        Simple implementation
-        High time complexity
-      Backtracking
-        Systematic search
-        Pruning invalid paths
-        State space exploration
-    Divide-Based
-      Divide & Conquer
-        Break into subproblems
-        Solve recursively
-        Combine solutions
-      Decrease & Conquer
-        Reduce problem size
-        Solve smaller instance
-        Extend solution
-    Optimization
-      Greedy
-        Local optimal choices
-        No backtracking
-        Fast execution
-      Dynamic Programming
-        Optimal substructure
-        Overlapping subproblems
-        Memoization
-    Transformation
-      Transform & Conquer
-        Change representation
-        Solve transformed problem
-        Convert back
-    Probabilistic
-      Randomized
-        Use random choices
-        Expected performance
-        Monte Carlo methods
-
-%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#2E86AB', 'primaryTextColor':'#ffffff', 'primaryBorderColor':'#ffffff', 'lineColor':'#4A4A4A', 'secondaryColor':'#A23B72', 'tertiaryColor':'#F18F01', 'background':'#C73E1D', 'mainBkg':'#2E86AB', 'secondBkg':'#A23B72', 'tertiaryBkg':'#F18F01'}}}%%
+flowchart TD
+    A["Algorithm Design Benefits"] --> B["Problem Classification"]
+    A --> C["Efficiency Optimization"]
+    A --> D["Pattern Recognition"]
+    A --> E["Creative Problem Solving"]
+    A --> F["Interview Success"]
+    
+    B --> G["Identify right approach"]
+    C --> H["Choose optimal strategy"]
+    D --> I["Apply proven methodologies"]
+    E --> J["Combine multiple techniques"]
+    F --> K["Demonstrate algorithmic thinking"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef benefit fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class G,H,I,J,K benefit
 ```
 
-### 📊 Algorithm Complexity Landscape
+---
+
+## Data Structures Overview
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20251219123737199442/what_is_an_algorithm_.webp" alt="What is an Algorithm" width="600" height="400"/>
+<img src="https://repository-images.githubusercontent.com/312736455/cde37f79-89d1-4d6e-a287-83d184d17784" alt="Data Structures Overview" width="700" height="400"/>
 </div>
 
+### Data Structure Classification
+
 ```mermaid
-flowchart LR
-    A["Algorithm Complexity"] --> B["Time Complexity"]
-    A --> C["Space Complexity"]
+flowchart TD
+    A["Data Structures"] --> B["Linear"]
+    A --> C["Non-Linear"]
     
-    B --> D["O(1) - Constant"]
-    B --> E["O(log n) - Logarithmic"]
-    B --> F["O(n) - Linear"]
-    B --> G["O(n log n) - Linearithmic"]
-    B --> H["O(n²) - Quadratic"]
-    B --> I["O(2^n) - Exponential"]
-    B --> J["O(n!) - Factorial"]
+    B --> D["Arrays"]
+    B --> E["Linked Lists"]
+    B --> F["Stacks"]
+    B --> G["Queues"]
     
-    D --> K["Hash table access"]
-    E --> L["Binary search"]
-    F --> M["Linear search"]
-    G --> N["Merge sort"]
-    H --> O["Bubble sort"]
-    I --> P["Subset enumeration"]
-    J --> Q["Permutation generation"]
+    C --> H["Trees"]
+    C --> I["Graphs"]
+    C --> J["Hash Tables"]
     
-    style D fill:#4ecdc4
-    style E fill:#96ceb4
-    style F fill:#ffeaa7
-    style G fill:#fab1a0
-    style H fill:#ff7675
-    style I fill:#e17055
-    style J fill:#d63031
+    H --> K["Binary Trees"]
+    H --> L["AVL Trees"]
+    H --> M["B-Trees"]
+    
+    I --> N["Directed"]
+    I --> O["Undirected"]
+    I --> P["Weighted"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef linear fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef nonlinear fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    class B,D,E,F,G linear
+    class C,H,I,J,K,L,M,N,O,P nonlinear
 ```
+
+---
+
+## Algorithm Fundamentals
+
+<div align="center">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20251219123737199442/what_is_an_algorithm_.webp" alt="What is an Algorithm" width="650" height="400"/>
+</div>
+
+### How Algorithms Work
+
+```mermaid
+flowchart TD
+    A["Problem Input"] --> B["Algorithm Processing"]
+    B --> C["Step-by-Step Execution"]
+    C --> D["Decision Making"]
+    D --> E["Data Manipulation"]
+    E --> F["Output Generation"]
+    
+    B --> G["Read Input"]
+    B --> H["Initialize Variables"]
+    B --> I["Apply Logic"]
+    
+    C --> J["Sequential Steps"]
+    C --> K["Conditional Branches"]
+    C --> L["Iterative Loops"]
+    
+    D --> M["Compare Values"]
+    D --> N["Choose Path"]
+    D --> O["Update State"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef process fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef step fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    class B,C,D,E process
+    class G,H,I,J,K,L,M,N,O step
+```
+
+---
+
+## Algorithm Types
 
 <div align="center">
 <img src="https://cdn.educba.com/academy/wp-content/uploads/2019/05/types-of-algorithm.png" alt="Types of Algorithms" width="650" height="450"/>
 </div>
 
-### 🔄 Problem-Solving Flow
+### Algorithm Categories
 
 ```mermaid
 flowchart TD
-    A["Problem Analysis"] --> B{"Problem Type?"}
+    A["Algorithm Types"] --> B["By Design Paradigm"]
+    A --> C["By Problem Domain"]
+    A --> D["By Complexity"]
     
-    B -->|"Search/Enumeration"| C["Brute Force<br/>Backtracking"]
-    B -->|"Recursive Structure"| D["Divide & Conquer<br/>Decrease & Conquer"]
-    B -->|"Optimization"| E["Greedy<br/>Dynamic Programming"]
-    B -->|"Complex Structure"| F["Transform & Conquer"]
-    B -->|"Approximation"| G["Randomized<br/>Heuristic"]
+    B --> E["Brute Force"]
+    B --> F["Divide & Conquer"]
+    B --> G["Greedy"]
+    B --> H["Dynamic Programming"]
+    B --> I["Backtracking"]
     
-    C --> H["Implementation"]
-    D --> H
-    E --> H
-    F --> H
-    G --> H
+    C --> J["Sorting Algorithms"]
+    C --> K["Searching Algorithms"]
+    C --> L["Graph Algorithms"]
+    C --> M["String Algorithms"]
+    C --> N["Numerical Algorithms"]
     
-    H --> I["Analysis & Testing"]
-    I --> J{"Satisfactory?"}
-    J -->|No| K["Try Different Technique"]
-    J -->|Yes| L["Solution Complete"]
-    K --> B
+    D --> O["Polynomial Time"]
+    D --> P["Exponential Time"]
+    D --> Q["Factorial Time"]
     
-    style A fill:#ff6b6b
-    style L fill:#4ecdc4
+    E --> R["Try all solutions"]
+    F --> S["Break into subproblems"]
+    G --> T["Local optimal choices"]
+    H --> U["Store subproblem results"]
+    I --> V["Trial and error with pruning"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef paradigm fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef domain fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef complexity fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class E,F,G,H,I paradigm
+    class J,K,L,M,N domain
+    class O,P,Q complexity
 ```
 
 ---
 
-## 💪 Brute Force
+## Brute Force
 
-### 🎯 Definition
+### Definition
 
 **Brute Force** is the most straightforward approach that examines all possible solutions to find the correct or optimal one.
 
-### 🔄 Brute Force Strategy Flow
+### Strategy Flow
 
 ```mermaid
 flowchart TD
-    A["Problem Instance"] --> B["Generate All<br/>Possible Solutions"]
-    B --> C["Evaluate Each<br/>Solution"]
+    A["Problem Instance"] --> B["Generate All Possible Solutions"]
+    B --> C["Evaluate Each Solution"]
     C --> D{"Valid Solution?"}
     D -->|Yes| E["Check if Optimal"]
     D -->|No| F["Discard"]
@@ -219,19 +201,14 @@ flowchart TD
     J -->|Yes| C
     J -->|No| K["Return Best Solution"]
     
-    style A fill:#ff6b6b
-    style K fill:#4ecdc4
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef startNode fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef endNode fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A startNode
+    class K endNode
 ```
 
-### 🔧 Core Strategy
-
-```
-1. Generate all possible solutions
-2. Evaluate each solution
-3. Select the valid/optimal solution
-```
-
-### 💻 Implementation Examples
+### Implementation Examples
 
 #### Linear Search
 ```cpp
@@ -246,22 +223,7 @@ int linearSearch(vector<int>& arr, int target) {
 // Time: O(n), Space: O(1)
 ```
 
-#### Bubble Sort
-```cpp
-void bubbleSort(vector<int>& arr) {
-    int n = arr.size();
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                swap(arr[j], arr[j + 1]);
-            }
-        }
-    }
-}
-// Time: O(n²), Space: O(1)
-```
-
-#### Subset Sum (Brute Force)
+#### Subset Sum
 ```cpp
 bool hasSubsetSum(vector<int>& arr, int target) {
     int n = arr.size();
@@ -281,33 +243,15 @@ bool hasSubsetSum(vector<int>& arr, int target) {
 // Time: O(2^n × n), Space: O(1)
 ```
 
-### 📊 Characteristics
-
-| Aspect | Description |
-|:-------|:------------|
-| **Complexity** | Usually O(n²), O(2^n), O(n!) |
-| **Correctness** | Always finds correct solution |
-| **Implementation** | Simple and straightforward |
-| **Scalability** | Poor for large inputs |
-
-### ✅ When to Use
-
-```
-✓ Small input sizes
-✓ No better algorithm known
-✓ Correctness is critical
-✓ Implementation simplicity needed
-```
-
 ---
 
-## 🔄 Divide & Conquer
+## Divide & Conquer
 
-### 🎯 Definition
+### Definition
 
 **Divide & Conquer** breaks a problem into smaller independent subproblems, solves them recursively, and combines the results.
 
-### 🔄 Divide & Conquer Execution Flow
+### Execution Flow
 
 ```mermaid
 flowchart TD
@@ -315,9 +259,9 @@ flowchart TD
     B -->|Yes| C["Solve Directly"]
     B -->|No| D["Divide into Subproblems"]
     
-    D --> E["Subproblem 1<br/>Size n/2"]
-    D --> F["Subproblem 2<br/>Size n/2"]
-    D --> G["...<br/>Size n/k"]
+    D --> E["Subproblem 1"]
+    D --> F["Subproblem 2"]
+    D --> G["Subproblem k"]
     
     E --> H["Recursive Solve"]
     F --> I["Recursive Solve"]
@@ -333,45 +277,16 @@ flowchart TD
     C --> O["Return Result"]
     N --> O
     
-    style A fill:#ff6b6b
-    style O fill:#4ecdc4
-    style N fill:#ffa500
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef divide fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef conquer fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef combine fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class D,E,F,G divide
+    class H,I,J conquer
+    class N combine
 ```
 
-### 🎯 Greedy Algorithm Decision Process
-
-```mermaid
-flowchart TD
-    A["Start with Empty Solution"] --> B["Select Next Element"]
-    B --> C["Apply Greedy Criterion"]
-    C --> D{"Element Feasible?"}
-    D -->|Yes| E["Add to Solution"]
-    D -->|No| F["Reject Element"]
-    E --> G{"Solution Complete?"}
-    F --> G
-    G -->|No| H["Consider Next Element"]
-    G -->|Yes| I["Return Solution"]
-    H --> B
-    
-    J["Greedy Properties"] --> K["Greedy Choice Property"]
-    J --> L["Optimal Substructure"]
-    K --> M["Local optimum leads to global"]
-    L --> N["Optimal solution contains optimal subsolutions"]
-    
-    style A fill:#ff6b6b
-    style I fill:#4ecdc4
-    style J fill:#ffa500
-```
-
-### 🔧 Core Strategy
-
-```
-1. Divide: Break problem into subproblems
-2. Conquer: Solve subproblems recursively
-3. Combine: Merge solutions
-```
-
-### 💻 Implementation Examples
+### Implementation Examples
 
 #### Merge Sort
 ```cpp
@@ -385,26 +300,6 @@ void mergeSort(vector<int>& arr, int left, int right) {
         
         // Combine
         merge(arr, left, mid, right);
-    }
-}
-
-void merge(vector<int>& arr, int left, int mid, int right) {
-    vector<int> temp(right - left + 1);
-    int i = left, j = mid + 1, k = 0;
-    
-    while (i <= mid && j <= right) {
-        if (arr[i] <= arr[j]) {
-            temp[k++] = arr[i++];
-        } else {
-            temp[k++] = arr[j++];
-        }
-    }
-    
-    while (i <= mid) temp[k++] = arr[i++];
-    while (j <= right) temp[k++] = arr[j++];
-    
-    for (int i = 0; i < k; i++) {
-        arr[left + i] = temp[i];
     }
 }
 // Time: O(n log n), Space: O(n)
@@ -429,218 +324,43 @@ int binarySearch(vector<int>& arr, int target, int left, int right) {
 // Time: O(log n), Space: O(log n)
 ```
 
-#### Maximum Subarray (Divide & Conquer)
-```cpp
-int maxSubarraySum(vector<int>& arr, int left, int right) {
-    if (left == right) return arr[left];
-    
-    int mid = left + (right - left) / 2;
-    
-    // Maximum sum in left and right halves
-    int leftSum = maxSubarraySum(arr, left, mid);
-    int rightSum = maxSubarraySum(arr, mid + 1, right);
-    
-    // Maximum sum crossing the middle
-    int leftMax = INT_MIN, sum = 0;
-    for (int i = mid; i >= left; i--) {
-        sum += arr[i];
-        leftMax = max(leftMax, sum);
-    }
-    
-    int rightMax = INT_MIN;
-    sum = 0;
-    for (int i = mid + 1; i <= right; i++) {
-        sum += arr[i];
-        rightMax = max(rightMax, sum);
-    }
-    
-    int crossSum = leftMax + rightMax;
-    
-    return max({leftSum, rightSum, crossSum});
-}
-// Time: O(n log n), Space: O(log n)
-```
-
-### 🎪 Dynamic Programming Strategy
-
-```mermaid
-flowchart TD
-    A["Problem Analysis"] --> B{"Has Optimal Substructure?"}
-    B -->|No| C["DP Not Applicable"]
-    B -->|Yes| D{"Has Overlapping Subproblems?"}
-    D -->|No| E["Use Divide & Conquer"]
-    D -->|Yes| F["Apply Dynamic Programming"]
-    
-    F --> G["Choose Approach"]
-    G --> H["Top-Down (Memoization)"]
-    G --> I["Bottom-Up (Tabulation)"]
-    
-    H --> J["Recursive + Cache"]
-    I --> K["Iterative + Table"]
-    
-    J --> L["Space: O(subproblems)"]
-    K --> L
-    L --> M["Time: O(subproblems × time per subproblem)"]
-    
-    style A fill:#ff6b6b
-    style F fill:#4ecdc4
-    style M fill:#96ceb4
-```
-
 ---
 
-## 📉 Decrease & Conquer
+## Greedy Method
 
-### 🎯 Definition
-
-**Decrease & Conquer** reduces the problem size by a small amount, solves the smaller problem, then extends the solution.
-
-### 🔧 Variants
-
-1. **Decrease by 1**: Reduce size by constant
-2. **Decrease by factor**: Reduce by constant factor
-3. **Variable decrease**: Reduction varies
-
-### 💻 Implementation Examples
-
-#### Insertion Sort (Decrease by 1)
-```cpp
-void insertionSort(vector<int>& arr) {
-    for (int i = 1; i < arr.size(); i++) {
-        int key = arr[i];
-        int j = i - 1;
-        
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
-    }
-}
-// Time: O(n²), Space: O(1)
-```
-
-#### Binary Search (Decrease by factor)
-```cpp
-int binarySearchIterative(vector<int>& arr, int target) {
-    int left = 0, right = arr.size() - 1;
-    
-    while (left <= right) {
-        int mid = left + (right - left) / 2;
-        
-        if (arr[mid] == target) return mid;
-        
-        if (arr[mid] < target) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
-    }
-    return -1;
-}
-// Time: O(log n), Space: O(1)
-```
-
-#### Euclidean GCD (Variable decrease)
-```cpp
-int gcd(int a, int b) {
-    if (b == 0) return a;
-    return gcd(b, a % b);
-}
-// Time: O(log(min(a,b))), Space: O(log(min(a,b)))
-```
-
----
-
-## 🔄 Transform & Conquer
-
-### 🎯 Definition
-
-**Transform & Conquer** transforms the problem into a simpler or more familiar form, then solves it efficiently.
-
-### 🔧 Types
-
-1. **Representation Change**: Modify data structure
-2. **Problem Reduction**: Convert to known problem
-3. **Preconditioning**: Preprocess for efficiency
-
-### 💻 Implementation Examples
-
-#### Heap Sort (Representation Change)
-```cpp
-class HeapSort {
-private:
-    void heapify(vector<int>& arr, int n, int i) {
-        int largest = i;
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
-        
-        if (left < n && arr[left] > arr[largest])
-            largest = left;
-        
-        if (right < n && arr[right] > arr[largest])
-            largest = right;
-        
-        if (largest != i) {
-            swap(arr[i], arr[largest]);
-            heapify(arr, n, largest);
-        }
-    }
-    
-public:
-    void sort(vector<int>& arr) {
-        int n = arr.size();
-        
-        // Transform array into heap
-        for (int i = n / 2 - 1; i >= 0; i--) {
-            heapify(arr, n, i);
-        }
-        
-        // Extract elements from heap
-        for (int i = n - 1; i > 0; i--) {
-            swap(arr[0], arr[i]);
-            heapify(arr, i, 0);
-        }
-    }
-};
-// Time: O(n log n), Space: O(1)
-```
-
-#### Balanced BST (Problem Reduction)
-```cpp
-TreeNode* sortedArrayToBST(vector<int>& nums, int left, int right) {
-    if (left > right) return nullptr;
-    
-    int mid = left + (right - left) / 2;
-    TreeNode* root = new TreeNode(nums[mid]);
-    
-    root->left = sortedArrayToBST(nums, left, mid - 1);
-    root->right = sortedArrayToBST(nums, mid + 1, right);
-    
-    return root;
-}
-// Time: O(n), Space: O(log n)
-```
-
----
-
-## 🎯 Greedy Method
-
-### 🎯 Definition
+### Definition
 
 **Greedy Method** makes locally optimal choices at each step, hoping to achieve a global optimum.
 
-### 🔧 Key Properties
+### Decision Process
 
-1. **Greedy Choice Property**: Local optimum leads to global optimum
-2. **Optimal Substructure**: Optimal solution contains optimal subsolutions
+```mermaid
+flowchart TD
+    A["Start with Empty Solution"] --> B["Select Next Element"]
+    B --> C["Apply Greedy Criterion"]
+    C --> D{"Element Feasible?"}
+    D -->|Yes| E["Add to Solution"]
+    D -->|No| F["Reject Element"]
+    E --> G{"Solution Complete?"}
+    F --> G
+    G -->|No| H["Consider Next Element"]
+    G -->|Yes| I["Return Solution"]
+    H --> B
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef startNode fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef endNode fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef processNode fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    class A startNode
+    class I endNode
+    class C,E,F processNode
+```
 
-### 💻 Implementation Examples
+### Implementation Examples
 
 #### Activity Selection
 ```cpp
 int activitySelection(vector<pair<int, int>>& activities) {
-    // Sort by finish time
     sort(activities.begin(), activities.end(), 
          [](const pair<int, int>& a, const pair<int, int>& b) {
              return a.second < b.second;
@@ -661,83 +381,43 @@ int activitySelection(vector<pair<int, int>>& activities) {
 // Time: O(n log n), Space: O(1)
 ```
 
-#### Fractional Knapsack
-```cpp
-double fractionalKnapsack(vector<pair<int, int>>& items, int capacity) {
-    // Sort by value/weight ratio
-    sort(items.begin(), items.end(), 
-         [](const pair<int, int>& a, const pair<int, int>& b) {
-             return (double)a.first/a.second > (double)b.first/b.second;
-         });
-    
-    double totalValue = 0;
-    int currentWeight = 0;
-    
-    for (auto& item : items) {
-        if (currentWeight + item.second <= capacity) {
-            totalValue += item.first;
-            currentWeight += item.second;
-        } else {
-            int remaining = capacity - currentWeight;
-            totalValue += item.first * ((double)remaining / item.second);
-            break;
-        }
-    }
-    
-    return totalValue;
-}
-// Time: O(n log n), Space: O(1)
-```
-
-#### Dijkstra's Algorithm
-```cpp
-vector<int> dijkstra(vector<vector<pair<int, int>>>& graph, int source) {
-    int n = graph.size();
-    vector<int> dist(n, INT_MAX);
-    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-    
-    dist[source] = 0;
-    pq.push({0, source});
-    
-    while (!pq.empty()) {
-        int u = pq.top().second;
-        pq.pop();
-        
-        for (auto& edge : graph[u]) {
-            int v = edge.first;
-            int weight = edge.second;
-            
-            if (dist[u] + weight < dist[v]) {
-                dist[v] = dist[u] + weight;
-                pq.push({dist[v], v});
-            }
-        }
-    }
-    
-    return dist;
-}
-// Time: O((V + E) log V), Space: O(V)
-```
-
 ---
 
-## 🎪 Dynamic Programming
+## Dynamic Programming
 
-### 🎯 Definition
+### Definition
 
 **Dynamic Programming** solves problems by breaking them into overlapping subproblems and storing results to avoid recomputation.
 
-### 🔧 Key Properties
+### Strategy Flow
 
-1. **Optimal Substructure**: Optimal solution contains optimal subsolutions
-2. **Overlapping Subproblems**: Same subproblems solved multiple times
+```mermaid
+flowchart TD
+    A["Problem Analysis"] --> B{"Has Optimal Substructure?"}
+    B -->|No| C["DP Not Applicable"]
+    B -->|Yes| D{"Has Overlapping Subproblems?"}
+    D -->|No| E["Use Divide & Conquer"]
+    D -->|Yes| F["Apply Dynamic Programming"]
+    
+    F --> G["Choose Approach"]
+    G --> H["Top-Down Memoization"]
+    G --> I["Bottom-Up Tabulation"]
+    
+    H --> J["Recursive + Cache"]
+    I --> K["Iterative + Table"]
+    
+    J --> L["Space: O(subproblems)"]
+    K --> L
+    L --> M["Time: O(subproblems × time per subproblem)"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef dp fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef approach fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    class F dp
+    class H,I,J,K approach
+```
 
-### 🔧 Approaches
-
-1. **Memoization (Top-Down)**: Recursive with caching
-2. **Tabulation (Bottom-Up)**: Iterative table filling
-
-### 💻 Implementation Examples
+### Implementation Examples
 
 #### Fibonacci (Memoization)
 ```cpp
@@ -782,36 +462,15 @@ int knapsack(vector<int>& weights, vector<int>& values, int capacity) {
 // Time: O(n × capacity), Space: O(n × capacity)
 ```
 
-#### Longest Common Subsequence
-```cpp
-int longestCommonSubsequence(string text1, string text2) {
-    int m = text1.length(), n = text2.length();
-    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
-    
-    for (int i = 1; i <= m; i++) {
-        for (int j = 1; j <= n; j++) {
-            if (text1[i-1] == text2[j-1]) {
-                dp[i][j] = dp[i-1][j-1] + 1;
-            } else {
-                dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
-            }
-        }
-    }
-    
-    return dp[m][n];
-}
-// Time: O(m × n), Space: O(m × n)
-```
-
 ---
 
-## 🔙 Backtracking
+## Backtracking
 
-### 🎯 Definition
+### Definition
 
 **Backtracking** builds solutions incrementally and abandons candidates that cannot lead to a valid solution.
 
-### 🔙 Backtracking Search Tree
+### Search Process
 
 ```mermaid
 flowchart TD
@@ -821,35 +480,28 @@ flowchart TD
     B --> E["Choice 1.3"]
     
     C --> F["Level 2: Second Choice"]
-    C --> G["❌ Pruned (Invalid)"]
+    C --> G["Pruned Invalid"]
     D --> H["Level 2: Second Choice"]
-    E --> I["❌ Pruned (Invalid)"]
+    E --> I["Pruned Invalid"]
     
     F --> J["Choice 2.1"]
     F --> K["Choice 2.2"]
     H --> L["Choice 2.3"]
     
-    J --> M["✓ Valid Solution"]
-    K --> N["❌ Dead End"]
-    L --> O["✓ Valid Solution"]
+    J --> M["Valid Solution"]
+    K --> N["Dead End"]
+    L --> O["Valid Solution"]
     
-    style A fill:#ff6b6b
-    style M fill:#4ecdc4
-    style O fill:#4ecdc4
-    style G fill:#ff7675
-    style I fill:#ff7675
-    style N fill:#ff7675
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef valid fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef invalid fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef pruned fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    class M,O valid
+    class G,I,N invalid
+    class F,H pruned
 ```
 
-### 🔧 Core Strategy
-
-```
-1. Choose: Make a choice
-2. Explore: Recursively explore
-3. Unchoose: Backtrack if needed
-```
-
-### 💻 Implementation Examples
+### Implementation Examples
 
 #### N-Queens Problem
 ```cpp
@@ -863,7 +515,7 @@ private:
             if (board[i][col] == 'Q') return false;
         }
         
-        // Check diagonal
+        // Check diagonals
         for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
             if (board[i][j] == 'Q') return false;
         }
@@ -900,304 +552,46 @@ public:
 // Time: O(N!), Space: O(N²)
 ```
 
-#### Subset Sum
-```cpp
-bool subsetSum(vector<int>& nums, int target, int index, int currentSum) {
-    if (currentSum == target) return true;
-    if (index >= nums.size() || currentSum > target) return false;
-    
-    // Include current element
-    if (subsetSum(nums, target, index + 1, currentSum + nums[index])) {
-        return true;
-    }
-    
-    // Exclude current element
-    return subsetSum(nums, target, index + 1, currentSum);
-}
-// Time: O(2^n), Space: O(n)
-```
-
 ---
 
-## 🌳 Branch & Bound
+## Best Practices
 
-### 🎯 Definition
+### Design Guidelines
 
-**Branch & Bound** is an optimization technique that systematically explores the solution space while pruning branches that cannot lead to optimal solutions.
-
-### 🔧 Core Components
-
-1. **Branching**: Generate child nodes
-2. **Bounding**: Calculate bounds
-3. **Pruning**: Eliminate non-promising branches
-
-### 💻 Implementation Example
-
-#### 0/1 Knapsack (Branch & Bound)
-```cpp
-struct Node {
-    int level, profit, weight;
-    double bound;
-};
-
-class KnapsackBB {
-private:
-    double calculateBound(Node u, int n, int capacity, 
-                         vector<int>& weights, vector<int>& values) {
-        if (u.weight >= capacity) return 0;
-        
-        double profitBound = u.profit;
-        int j = u.level + 1;
-        int totalWeight = u.weight;
-        
-        while (j < n && totalWeight + weights[j] <= capacity) {
-            totalWeight += weights[j];
-            profitBound += values[j];
-            j++;
-        }
-        
-        if (j < n) {
-            profitBound += (capacity - totalWeight) * 
-                          ((double)values[j] / weights[j]);
-        }
-        
-        return profitBound;
-    }
+```mermaid
+flowchart TD
+    A["Algorithm Design Process"] --> B["Problem Analysis"]
+    B --> C["Technique Selection"]
+    C --> D["Implementation"]
+    D --> E["Testing & Optimization"]
     
-public:
-    int knapsack(vector<int>& weights, vector<int>& values, int capacity) {
-        int n = weights.size();
-        
-        // Sort by value/weight ratio
-        vector<int> indices(n);
-        iota(indices.begin(), indices.end(), 0);
-        sort(indices.begin(), indices.end(), 
-             [&](int a, int b) {
-                 return (double)values[a]/weights[a] > (double)values[b]/weights[b];
-             });
-        
-        queue<Node> q;
-        Node u, v;
-        
-        u.level = -1;
-        u.profit = u.weight = 0;
-        u.bound = calculateBound(u, n, capacity, weights, values);
-        
-        q.push(u);
-        int maxProfit = 0;
-        
-        while (!q.empty()) {
-            u = q.front();
-            q.pop();
-            
-            if (u.bound > maxProfit) {
-                v.level = u.level + 1;
-                
-                // Include next item
-                v.weight = u.weight + weights[indices[v.level]];
-                v.profit = u.profit + values[indices[v.level]];
-                
-                if (v.weight <= capacity && v.profit > maxProfit) {
-                    maxProfit = v.profit;
-                }
-                
-                v.bound = calculateBound(v, n, capacity, weights, values);
-                if (v.bound > maxProfit) {
-                    q.push(v);
-                }
-                
-                // Exclude next item
-                v.weight = u.weight;
-                v.profit = u.profit;
-                v.bound = calculateBound(v, n, capacity, weights, values);
-                if (v.bound > maxProfit) {
-                    q.push(v);
-                }
-            }
-        }
-        
-        return maxProfit;
-    }
-};
+    B --> F["Understand constraints"]
+    B --> G["Identify patterns"]
+    B --> H["Consider edge cases"]
+    
+    C --> I["Match problem characteristics"]
+    C --> J["Consider complexity requirements"]
+    C --> K["Evaluate trade-offs"]
+    
+    D --> L["Write clean code"]
+    D --> M["Handle edge cases"]
+    D --> N["Add documentation"]
+    
+    E --> O["Test with examples"]
+    E --> P["Analyze complexity"]
+    E --> Q["Optimize if needed"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef phase fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef detail fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    class B,C,D,E phase
+    class F,G,H,I,J,K,L,M,N,O,P,Q detail
 ```
 
----
-
-## 🎲 Randomized Algorithms
-
-### 🎯 Definition
-
-**Randomized Algorithms** use random numbers to make decisions during execution, often achieving better average-case performance.
-
-### 🔧 Types
-
-1. **Monte Carlo**: May give wrong answer with small probability
-2. **Las Vegas**: Always correct, but running time varies
-
-### 💻 Implementation Examples
-
-#### Randomized Quick Sort
-```cpp
-class RandomizedQuickSort {
-private:
-    int randomPartition(vector<int>& arr, int low, int high) {
-        int randomIndex = low + rand() % (high - low + 1);
-        swap(arr[randomIndex], arr[high]);
-        return partition(arr, low, high);
-    }
-    
-    int partition(vector<int>& arr, int low, int high) {
-        int pivot = arr[high];
-        int i = low - 1;
-        
-        for (int j = low; j < high; j++) {
-            if (arr[j] <= pivot) {
-                i++;
-                swap(arr[i], arr[j]);
-            }
-        }
-        swap(arr[i + 1], arr[high]);
-        return i + 1;
-    }
-    
-    void quickSort(vector<int>& arr, int low, int high) {
-        if (low < high) {
-            int pi = randomPartition(arr, low, high);
-            quickSort(arr, low, pi - 1);
-            quickSort(arr, pi + 1, high);
-        }
-    }
-    
-public:
-    void sort(vector<int>& arr) {
-        srand(time(nullptr));
-        quickSort(arr, 0, arr.size() - 1);
-    }
-};
-// Average Time: O(n log n), Worst Time: O(n²)
-```
-
-#### Monte Carlo π Estimation
-```cpp
-double estimatePi(int numSamples) {
-    int insideCircle = 0;
-    srand(time(nullptr));
-    
-    for (int i = 0; i < numSamples; i++) {
-        double x = (double)rand() / RAND_MAX;
-        double y = (double)rand() / RAND_MAX;
-        
-        if (x * x + y * y <= 1.0) {
-            insideCircle++;
-        }
-    }
-    
-    return 4.0 * insideCircle / numSamples;
-}
-```
-
----
-
-## 🆚 Comparison & Selection
-
-### 📊 Technique Comparison
-
-<table>
-<thead>
-<tr>
-<th>Technique</th>
-<th>Key Idea</th>
-<th>Time Complexity</th>
-<th>Space Complexity</th>
-<th>Best For</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Brute Force</strong></td>
-<td>Try all possibilities</td>
-<td>O(2^n), O(n!)</td>
-<td>O(1)</td>
-<td>Small inputs, correctness</td>
-</tr>
-<tr>
-<td><strong>Divide & Conquer</strong></td>
-<td>Break and combine</td>
-<td>O(n log n)</td>
-<td>O(log n)</td>
-<td>Independent subproblems</td>
-</tr>
-<tr>
-<td><strong>Greedy</strong></td>
-<td>Local optimum</td>
-<td>O(n log n)</td>
-<td>O(1)</td>
-<td>Optimization problems</td>
-</tr>
-<tr>
-<td><strong>Dynamic Programming</strong></td>
-<td>Store subproblems</td>
-<td>O(n²), O(n³)</td>
-<td>O(n²)</td>
-<td>Overlapping subproblems</td>
-</tr>
-<tr>
-<td><strong>Backtracking</strong></td>
-<td>Trial and error</td>
-<td>O(2^n)</td>
-<td>O(n)</td>
-<td>Constraint satisfaction</td>
-</tr>
-<tr>
-<td><strong>Branch & Bound</strong></td>
-<td>Pruned search</td>
-<td>Variable</td>
-<td>O(2^n)</td>
-<td>Optimization with pruning</td>
-</tr>
-</tbody>
-</table>
-
-### 🎯 Selection Guidelines
+### Implementation Tips
 
 ```cpp
-// Decision Tree for Algorithm Selection
-if (problem_size <= 100) {
-    return "Brute Force";
-} else if (has_optimal_substructure && has_overlapping_subproblems) {
-    return "Dynamic Programming";
-} else if (has_greedy_choice_property && has_optimal_substructure) {
-    return "Greedy Method";
-} else if (can_be_divided_independently) {
-    return "Divide & Conquer";
-} else if (need_all_solutions) {
-    return "Backtracking";
-} else if (need_optimal_solution_with_pruning) {
-    return "Branch & Bound";
-} else {
-    return "Transform & Conquer or Randomized";
-}
-```
-
----
-
-## 💎 Best Practices
-
-### ✅ Design Guidelines
-
-```
-✓ Understand problem constraints and requirements
-✓ Identify the underlying problem structure
-✓ Consider multiple approaches before implementation
-✓ Analyze time and space complexity
-✓ Test with edge cases and large inputs
-✓ Document algorithm choice reasoning
-```
-
-### 🔧 Implementation Tips
-
-```cpp
-// Always consider the problem characteristics
+// Always consider problem characteristics
 class AlgorithmSelector {
 public:
     string selectTechnique(ProblemCharacteristics& problem) {
@@ -1222,70 +616,614 @@ public:
 };
 ```
 
-### 🚫 Common Pitfalls
+### Technique Comparison
 
-```
-✗ Using brute force for large inputs
-✗ Applying greedy without proving optimality
-✗ Not considering space complexity in DP
-✗ Excessive backtracking without pruning
-✗ Ignoring randomization benefits
-```
+| Technique | Key Idea | Time Complexity | Space Complexity | Best For |
+|-----------|----------|----------------|------------------|----------|
+| **Brute Force** | Try all possibilities | O(2^n), O(n!) | O(1) | Small inputs |
+| **Divide & Conquer** | Break and combine | O(n log n) | O(log n) | Independent subproblems |
+| **Greedy** | Local optimum | O(n log n) | O(1) | Optimization problems |
+| **Dynamic Programming** | Store subproblems | O(n²), O(n³) | O(n²) | Overlapping subproblems |
+| **Backtracking** | Trial and error | O(2^n) | O(n) | Constraint satisfaction |
 
 ---
 
-## 🎓 Key Takeaways
+## Advanced Algorithm Operations
+
+### Branch and Bound
+
+**Branch and Bound** systematically explores solution space by branching on choices and bounding to prune unpromising paths.
+
+```mermaid
+flowchart TD
+    A["Initial Problem"] --> B["Calculate Lower Bound"]
+    B --> C{"Bound < Best Solution?"}
+    C -->|No| D["Prune Branch"]
+    C -->|Yes| E{"Complete Solution?"}
+    E -->|Yes| F["Update Best Solution"]
+    E -->|No| G["Branch on Next Variable"]
+    G --> H["Subproblem 1"]
+    G --> I["Subproblem 2"]
+    H --> B
+    I --> B
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef prune fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef solution fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class D prune
+    class F solution
+```
+
+#### Traveling Salesman Problem
+```cpp
+class TSPBranchBound {
+private:
+    int n;
+    vector<vector<int>> graph;
+    int minCost = INT_MAX;
+    
+    int calculateBound(vector<bool>& visited, int currentCost, int level) {
+        int bound = currentCost;
+        
+        // Add minimum edges for unvisited vertices
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                int min1 = INT_MAX, min2 = INT_MAX;
+                for (int j = 0; j < n; j++) {
+                    if (i != j) {
+                        if (graph[i][j] < min1) {
+                            min2 = min1;
+                            min1 = graph[i][j];
+                        } else if (graph[i][j] < min2) {
+                            min2 = graph[i][j];
+                        }
+                    }
+                }
+                bound += (min1 + min2) / 2;
+            }
+        }
+        
+        return bound;
+    }
+    
+    void tspUtil(vector<bool>& visited, int currentCost, int level, int currentVertex) {
+        if (level == n) {
+            if (graph[currentVertex][0] != 0) {
+                minCost = min(minCost, currentCost + graph[currentVertex][0]);
+            }
+            return;
+        }
+        
+        for (int i = 0; i < n; i++) {
+            if (!visited[i] && graph[currentVertex][i] != 0) {
+                int newCost = currentCost + graph[currentVertex][i];
+                int bound = calculateBound(visited, newCost, level + 1);
+                
+                if (bound < minCost) {
+                    visited[i] = true;
+                    tspUtil(visited, newCost, level + 1, i);
+                    visited[i] = false;
+                }
+            }
+        }
+    }
+    
+public:
+    int solveTSP(vector<vector<int>>& adjMatrix) {
+        graph = adjMatrix;
+        n = graph.size();
+        vector<bool> visited(n, false);
+        visited[0] = true;
+        
+        tspUtil(visited, 0, 1, 0);
+        return minCost;
+    }
+};
+// Time: O(n!), Space: O(n)
+```
+
+### Randomized Algorithms
+
+**Randomized Algorithms** use random choices during execution to achieve good average-case performance.
+
+```mermaid
+flowchart TD
+    A["Randomized Algorithm Types"] --> B["Las Vegas"]
+    A --> C["Monte Carlo"]
+    
+    B --> D["Always Correct"]
+    B --> E["Random Runtime"]
+    D --> F["QuickSort with Random Pivot"]
+    E --> G["Randomized Binary Search Tree"]
+    
+    C --> H["Fixed Runtime"]
+    C --> I["Probabilistic Correctness"]
+    H --> J["Monte Carlo Integration"]
+    I --> K["Randomized Primality Testing"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef lasvegas fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef montecarlo fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    class B,D,E,F,G lasvegas
+    class C,H,I,J,K montecarlo
+```
+
+#### Randomized QuickSort
+```cpp
+class RandomizedQuickSort {
+private:
+    random_device rd;
+    mt19937 gen;
+    
+    int randomizedPartition(vector<int>& arr, int low, int high) {
+        uniform_int_distribution<> dis(low, high);
+        int randomIndex = dis(gen);
+        swap(arr[randomIndex], arr[high]);
+        
+        return partition(arr, low, high);
+    }
+    
+    int partition(vector<int>& arr, int low, int high) {
+        int pivot = arr[high];
+        int i = low - 1;
+        
+        for (int j = low; j < high; j++) {
+            if (arr[j] <= pivot) {
+                i++;
+                swap(arr[i], arr[j]);
+            }
+        }
+        swap(arr[i + 1], arr[high]);
+        return i + 1;
+    }
+    
+    void quickSortUtil(vector<int>& arr, int low, int high) {
+        if (low < high) {
+            int pi = randomizedPartition(arr, low, high);
+            quickSortUtil(arr, low, pi - 1);
+            quickSortUtil(arr, pi + 1, high);
+        }
+    }
+    
+public:
+    RandomizedQuickSort() : gen(rd()) {}
+    
+    void sort(vector<int>& arr) {
+        quickSortUtil(arr, 0, arr.size() - 1);
+    }
+};
+// Average Time: O(n log n), Worst Time: O(n²), Space: O(log n)
+```
+
+### Approximation Algorithms
+
+**Approximation Algorithms** provide near-optimal solutions for NP-hard problems with guaranteed performance ratios.
+
+```mermaid
+flowchart TD
+    A["Approximation Algorithm Design"] --> B["Problem Analysis"]
+    B --> C["Approximation Ratio"]
+    C --> D["Algorithm Design"]
+    D --> E["Performance Guarantee"]
+    
+    B --> F["NP-Hard Problem"]
+    B --> G["Optimal Solution Intractable"]
+    
+    C --> H["α-approximation"]
+    C --> I["ALG(I) ≤ α × OPT(I)"]
+    
+    D --> J["Greedy Approach"]
+    D --> K["Linear Programming"]
+    D --> L["Local Search"]
+    
+    E --> M["Polynomial Time"]
+    E --> N["Quality Guarantee"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef analysis fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef design fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef guarantee fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class B,F,G analysis
+    class D,J,K,L design
+    class E,M,N guarantee
+```
+
+#### Vertex Cover Approximation
+```cpp
+class VertexCoverApprox {
+public:
+    vector<int> approximateVertexCover(int V, vector<pair<int, int>>& edges) {
+        vector<bool> covered(edges.size(), false);
+        vector<bool> inCover(V, false);
+        vector<int> result;
+        
+        for (int i = 0; i < edges.size(); i++) {
+            if (!covered[i]) {
+                int u = edges[i].first;
+                int v = edges[i].second;
+                
+                // Add both vertices to cover
+                if (!inCover[u]) {
+                    result.push_back(u);
+                    inCover[u] = true;
+                }
+                if (!inCover[v]) {
+                    result.push_back(v);
+                    inCover[v] = true;
+                }
+                
+                // Mark all edges incident to u or v as covered
+                for (int j = 0; j < edges.size(); j++) {
+                    if (edges[j].first == u || edges[j].first == v ||
+                        edges[j].second == u || edges[j].second == v) {
+                        covered[j] = true;
+                    }
+                }
+            }
+        }
+        
+        return result;
+    }
+};
+// Time: O(E²), Space: O(V + E)
+// Approximation Ratio: 2
+```
+
+### Parallel Algorithms
+
+**Parallel Algorithms** utilize multiple processors to solve problems faster through concurrent execution.
+
+```mermaid
+flowchart TD
+    A["Parallel Algorithm Design"] --> B["Problem Decomposition"]
+    B --> C["Task Partitioning"]
+    C --> D["Synchronization"]
+    D --> E["Result Combination"]
+    
+    B --> F["Data Parallelism"]
+    B --> G["Task Parallelism"]
+    
+    C --> H["Static Partitioning"]
+    C --> I["Dynamic Load Balancing"]
+    
+    D --> J["Barriers"]
+    D --> K["Locks"]
+    D --> L["Message Passing"]
+    
+    E --> M["Reduction Operations"]
+    E --> N["Gather/Scatter"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef decomp fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef sync fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef combine fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class B,F,G decomp
+    class D,J,K,L sync
+    class E,M,N combine
+```
+
+#### Parallel Merge Sort
+```cpp
+#include <thread>
+#include <future>
+
+class ParallelMergeSort {
+private:
+    void merge(vector<int>& arr, int left, int mid, int right) {
+        vector<int> leftArr(arr.begin() + left, arr.begin() + mid + 1);
+        vector<int> rightArr(arr.begin() + mid + 1, arr.begin() + right + 1);
+        
+        int i = 0, j = 0, k = left;
+        
+        while (i < leftArr.size() && j < rightArr.size()) {
+            if (leftArr[i] <= rightArr[j]) {
+                arr[k++] = leftArr[i++];
+            } else {
+                arr[k++] = rightArr[j++];
+            }
+        }
+        
+        while (i < leftArr.size()) arr[k++] = leftArr[i++];
+        while (j < rightArr.size()) arr[k++] = rightArr[j++];
+    }
+    
+    void parallelMergeSortUtil(vector<int>& arr, int left, int right, int depth) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+            
+            if (depth > 0) {
+                // Parallel execution
+                auto leftFuture = async(launch::async, 
+                    [this, &arr, left, mid, depth]() {
+                        parallelMergeSortUtil(arr, left, mid, depth - 1);
+                    });
+                
+                parallelMergeSortUtil(arr, mid + 1, right, depth - 1);
+                leftFuture.wait();
+            } else {
+                // Sequential execution
+                parallelMergeSortUtil(arr, left, mid, 0);
+                parallelMergeSortUtil(arr, mid + 1, right, 0);
+            }
+            
+            merge(arr, left, mid, right);
+        }
+    }
+    
+public:
+    void sort(vector<int>& arr) {
+        int maxDepth = log2(thread::hardware_concurrency());
+        parallelMergeSortUtil(arr, 0, arr.size() - 1, maxDepth);
+    }
+};
+// Time: O(n log n), Parallel Time: O(n log n / p), Space: O(n)
+```
+
+### Online Algorithms
+
+**Online Algorithms** process input sequentially without knowledge of future inputs, making decisions with partial information.
+
+```mermaid
+flowchart TD
+    A["Online Algorithm Characteristics"] --> B["Sequential Input"]
+    A --> C["Immediate Decisions"]
+    A --> D["No Future Knowledge"]
+    
+    B --> E["Process one item at a time"]
+    C --> F["Cannot revise decisions"]
+    D --> G["Competitive analysis"]
+    
+    G --> H["Competitive Ratio"]
+    H --> I["ALG / OPT ≤ c"]
+    
+    I --> J["Paging Algorithms"]
+    I --> K["Load Balancing"]
+    I --> L["Scheduling"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef char fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef analysis fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef apps fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class B,C,D,E,F char
+    class G,H,I analysis
+    class J,K,L apps
+```
+
+#### LRU Cache Implementation
+```cpp
+class LRUCache {
+private:
+    struct Node {
+        int key, value;
+        Node* prev;
+        Node* next;
+        Node(int k = 0, int v = 0) : key(k), value(v), prev(nullptr), next(nullptr) {}
+    };
+    
+    int capacity;
+    unordered_map<int, Node*> cache;
+    Node* head;
+    Node* tail;
+    
+    void addNode(Node* node) {
+        node->prev = head;
+        node->next = head->next;
+        head->next->prev = node;
+        head->next = node;
+    }
+    
+    void removeNode(Node* node) {
+        node->prev->next = node->next;
+        node->next->prev = node->prev;
+    }
+    
+    void moveToHead(Node* node) {
+        removeNode(node);
+        addNode(node);
+    }
+    
+    Node* popTail() {
+        Node* lastNode = tail->prev;
+        removeNode(lastNode);
+        return lastNode;
+    }
+    
+public:
+    LRUCache(int capacity) : capacity(capacity) {
+        head = new Node();
+        tail = new Node();
+        head->next = tail;
+        tail->prev = head;
+    }
+    
+    int get(int key) {
+        if (cache.find(key) != cache.end()) {
+            Node* node = cache[key];
+            moveToHead(node);
+            return node->value;
+        }
+        return -1;
+    }
+    
+    void put(int key, int value) {
+        if (cache.find(key) != cache.end()) {
+            Node* node = cache[key];
+            node->value = value;
+            moveToHead(node);
+        } else {
+            Node* newNode = new Node(key, value);
+            
+            if (cache.size() >= capacity) {
+                Node* tail_node = popTail();
+                cache.erase(tail_node->key);
+                delete tail_node;
+            }
+            
+            cache[key] = newNode;
+            addNode(newNode);
+        }
+    }
+};
+// Time: O(1) for get and put, Space: O(capacity)
+```
+
+## Algorithm Complexity Analysis
+
+### Complexity Classes
+
+```mermaid
+flowchart TD
+    A["Complexity Classes"] --> B["P"]
+    A --> C["NP"]
+    A --> D["NP-Complete"]
+    A --> E["NP-Hard"]
+    
+    B --> F["Polynomial Time"]
+    B --> G["Deterministic"]
+    
+    C --> H["Nondeterministic Polynomial"]
+    C --> I["Verifiable in P"]
+    
+    D --> J["In NP"]
+    D --> K["NP-Hard"]
+    D --> L["Representative Problems"]
+    
+    E --> M["At least as hard as NP"]
+    E --> N["May not be in NP"]
+    
+    L --> O["SAT"]
+    L --> P["3-SAT"]
+    L --> Q["Hamiltonian Path"]
+    L --> R["Traveling Salesman"]
+    L --> S["Knapsack"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef p fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef np fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef npc fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef nph fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class B,F,G p
+    class C,H,I np
+    class D,J,K,L,O,P,Q,R,S npc
+    class E,M,N nph
+```
+
+### Performance Comparison
+
+| Algorithm Type | Best Case | Average Case | Worst Case | Space | Stability |
+|----------------|-----------|--------------|------------|-------|----------|
+| **Bubble Sort** | O(n) | O(n²) | O(n²) | O(1) | Stable |
+| **Quick Sort** | O(n log n) | O(n log n) | O(n²) | O(log n) | Unstable |
+| **Merge Sort** | O(n log n) | O(n log n) | O(n log n) | O(n) | Stable |
+| **Heap Sort** | O(n log n) | O(n log n) | O(n log n) | O(1) | Unstable |
+| **Radix Sort** | O(d(n+k)) | O(d(n+k)) | O(d(n+k)) | O(n+k) | Stable |
+| **Binary Search** | O(1) | O(log n) | O(log n) | O(1) | N/A |
+| **DFS/BFS** | O(V+E) | O(V+E) | O(V+E) | O(V) | N/A |
+| **Dijkstra** | O(V²) | O(V²) | O(V²) | O(V) | N/A |
+| **Floyd-Warshall** | O(V³) | O(V³) | O(V³) | O(V²) | N/A |
+
+## Problem-Solving Framework
+
+### Systematic Approach
+
+```mermaid
+flowchart TD
+    A["Problem Statement"] --> B["Understand Requirements"]
+    B --> C["Identify Constraints"]
+    C --> D["Choose Data Structure"]
+    D --> E["Select Algorithm Technique"]
+    E --> F["Design Solution"]
+    F --> G["Analyze Complexity"]
+    G --> H["Implement & Test"]
+    H --> I["Optimize if Needed"]
+    
+    B --> J["Input/Output format"]
+    B --> K["Edge cases"]
+    B --> L["Expected behavior"]
+    
+    C --> M["Time limits"]
+    C --> N["Space limits"]
+    C --> O["Input size"]
+    
+    E --> P["Brute Force"]
+    E --> Q["Divide & Conquer"]
+    E --> R["Dynamic Programming"]
+    E --> S["Greedy"]
+    E --> T["Backtracking"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef understand fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef design fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef implement fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class B,C,J,K,L,M,N,O understand
+    class D,E,F,P,Q,R,S,T design
+    class G,H,I implement
+```
+
+### Decision Tree for Technique Selection
+
+```cpp
+class TechniqueSelector {
+public:
+    string selectOptimalTechnique(ProblemCharacteristics problem) {
+        // Check for specific problem patterns
+        if (problem.needsAllSolutions) {
+            return "Backtracking";
+        }
+        
+        if (problem.hasOptimalSubstructure) {
+            if (problem.hasOverlappingSubproblems) {
+                return "Dynamic Programming";
+            }
+            if (problem.hasGreedyChoiceProperty) {
+                return "Greedy Method";
+            }
+            if (problem.canBeDividedIndependently) {
+                return "Divide & Conquer";
+            }
+        }
+        
+        if (problem.isNPHard && problem.needsApproximation) {
+            return "Approximation Algorithm";
+        }
+        
+        if (problem.hasRandomness || problem.needsAverageCase) {
+            return "Randomized Algorithm";
+        }
+        
+        if (problem.isOnline) {
+            return "Online Algorithm";
+        }
+        
+        if (problem.canUseParallelism) {
+            return "Parallel Algorithm";
+        }
+        
+        return "Brute Force";
+    }
+};
+```
+
+## Summary
+
+Algorithm design techniques provide systematic approaches to problem-solving:
+
+**Fundamental Techniques**: Master brute force, divide & conquer, greedy, dynamic programming, and backtracking  
+**Advanced Methods**: Understand branch & bound, randomized, approximation, parallel, and online algorithms  
+**Problem Classification**: Identify the right approach for each problem type  
+**Complexity Analysis**: Analyze time and space requirements for optimal solutions  
+**Implementation Skills**: Write clean, efficient code with proper error handling  
+**Optimization Strategies**: Apply multiple techniques and choose the best approach  
+**Interview Readiness**: Demonstrate algorithmic thinking and design skills  
+
+**Key Insight**: "The right technique can transform an intractable problem into an elegant solution"
+
+---
 
 <div align="center">
 
-### 🌟 Master These Concepts
+**Master Design Techniques, Master Problem Solving**
 
-</div>
-
-```
-1. 💪 Brute Force = Simple but inefficient exhaustive search
-2. 🔄 Divide & Conquer = Break, solve, combine strategy
-3. 📉 Decrease & Conquer = Reduce size incrementally
-4. 🔄 Transform & Conquer = Change problem representation
-5. 🎯 Greedy = Local optimum choices for global optimum
-6. 🎪 Dynamic Programming = Optimal substructure + overlapping subproblems
-7. 🔙 Backtracking = Systematic trial and error with pruning
-8. 🌳 Branch & Bound = Optimized backtracking with bounds
-9. 🎲 Randomized = Use randomness for better average performance
-```
-
----
-
-## 📚 Practice Resources
-
-- **LeetCode**: Algorithm technique tags
-- **GeeksforGeeks**: Design technique tutorials
-- **Codeforces**: Competitive programming problems
-- **CLRS**: Comprehensive algorithm textbook
-
----
-
-## 🎯 Interview Tips
-
-1. **Identify Pattern**: Recognize which technique fits the problem
-2. **Justify Choice**: Explain why you chose a specific approach
-3. **Analyze Complexity**: Always discuss time and space complexity
-4. **Consider Alternatives**: Mention other possible approaches
-5. **Optimize**: Discuss potential improvements and trade-offs
-6. **Code Clean**: Implement with clear, readable code
-
----
-
-<div align="center">
-
-### 🔥 One-Line Summary
-
-**Algorithm Design Techniques = Fundamental problem-solving paradigms providing systematic approaches for efficient algorithm development and optimization**
-
----
-
-**💻 Master design techniques, master problem solving!**
-
-*"In the art of algorithm design, choosing the right technique is half the battle won."*
+*Where systematic thinking meets algorithmic elegance*
 
 </div>
