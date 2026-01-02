@@ -1,4 +1,4 @@
-# 🔢 Bit Manipulation — Complete Professional Guide
+# Bit Manipulation — Complete Professional Guide
 
 <div align="center">
 
@@ -6,155 +6,125 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-yellow?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-High-red?style=for-the-badge)
 
-*Master the art of binary operations for ultra-efficient problem solving*
+**Master the art of binary operations for ultra-efficient problem solving**
 
 </div>
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-1. [Introduction](#-introduction)
-2. [Why Bit Manipulation?](#-why-bit-manipulation)
-3. [Binary Representation Basics](#-binary-representation-basics)
-4. [Bitwise Operators](#-bitwise-operators)
-5. [Essential Bit Tricks](#-essential-bit-tricks)
-6. [XOR Magic](#-xor-magic)
-7. [Bit Masking](#-bit-masking)
-8. [Common Patterns](#-common-patterns)
-9. [Interview Problems](#-interview-problems)
-10. [Complexity Analysis](#-complexity-analysis)
-11. [Best Practices](#-best-practices)
+1. [Introduction](#introduction)
+2. [Binary Fundamentals](#binary-fundamentals)
+3. [Bitwise Operators](#bitwise-operators)
+4. [XOR Magic](#xor-magic)
+5. [Essential Bit Tricks](#essential-bit-tricks)
+6. [Practical Applications](#practical-applications)
+7. [Common Patterns](#common-patterns)
+8. [Best Practices](#best-practices)
 
 ---
 
-## 🎯 Introduction
+## Introduction
 
-**Bit Manipulation** is a low-level programming technique that operates directly on binary representations of numbers. It's one of the most powerful tools in a programmer's arsenal for writing highly optimized code.
+**Bit Manipulation** is a low-level programming technique that operates directly on binary representations of numbers. It's one of the most powerful tools for writing highly optimized code with O(1) time complexity for most operations.
 
-### 🔑 Key Concepts
-
-- **Bit**: The smallest unit of data (0 or 1)
-- **Binary**: Base-2 number system used by computers
-- **Bitwise Operations**: Direct manipulation of bits
-- **Performance**: O(1) time complexity for most operations
-
-### 💡 Real-World Applications
-
-| Domain | Application |
-|:-------|:------------|
-| **Systems Programming** | Memory management, flags, permissions |
-| **Cryptography** | Encryption algorithms, hash functions |
-| **Graphics** | Color manipulation, image processing |
-| **Networking** | IP address operations, packet headers |
-| **Competitive Programming** | Fast arithmetic, state compression |
-| **Embedded Systems** | Hardware control, register manipulation |
-
----
-
-## 🚀 Why Bit Manipulation?
-
-<div align="center">
-<img src="https://scaler.com/topics/images/steps-in-arithmetic-operation.webp" alt="Steps in Arithmetic Operations" width="600" height="350"/>
-</div>
-
-### ✅ Advantages
+### Why Bit Manipulation?
 
 ```mermaid
 flowchart TD
-    A["🔢 Bit Manipulation Benefits"] --> B["🔥 Ultra-Fast Performance"]
-    A --> C["💾 Memory Efficient"]
-    A --> D["⚡ CPU-Level Operations"]
-    A --> E["🎯 Elegant Solutions"]
-    A --> F["🔐 Security Applications"]
+    A["Bit Manipulation Benefits"] --> B["Ultra-Fast Performance"]
+    A --> C["Memory Efficient"]
+    A --> D["CPU-Level Operations"]
+    A --> E["Elegant Solutions"]
     
-    B --> G["O(1) operations"]
-    B --> H["Hardware optimized"]
-    B --> I["No function calls"]
+    B --> F["O(1) operations"]
+    B --> G["Hardware optimized"]
+    B --> H["No function calls"]
     
-    C --> J["Compact representation"]
-    C --> K["State compression"]
-    C --> L["Flag systems"]
+    C --> I["Compact representation"]
+    C --> J["State compression"]
+    C --> K["Flag systems"]
     
-    D --> M["Direct hardware support"]
-    D --> N["Assembly level"]
-    D --> O["Processor instructions"]
+    D --> L["Direct hardware support"]
+    D --> M["Assembly level"]
+    D --> N["Processor instructions"]
     
-    E --> P["Simple code"]
-    E --> Q["Complex problems"]
-    E --> R["Mathematical elegance"]
+    E --> O["Simple code"]
+    E --> P["Complex problems"]
+    E --> Q["Mathematical elegance"]
     
-    F --> S["Cryptographic operations"]
-    F --> T["Hash functions"]
-    F --> U["Encryption algorithms"]
-    
-    style A fill:#e3f2fd
-    style B fill:#c8e6c9
-    style C fill:#fff3e0
-    style D fill:#fce4ec
-    style E fill:#f3e5f5
-    style F fill:#e8f5e8
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef benefits fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef performance fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef efficiency fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef hardware fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef elegance fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A benefits
+    class B,F,G,H performance
+    class C,I,J,K efficiency
+    class D,L,M,N hardware
+    class E,O,P,Q elegance
 ```
-
-### 📊 Performance Comparison
-
-| Operation | Normal Approach | Bit Manipulation |
-|:----------|:----------------|:-----------------|
-| Check Even/Odd | `n % 2 == 0` | `n & 1` |
-| Multiply by 2 | `n * 2` | `n << 1` |
-| Divide by 2 | `n / 2` | `n >> 1` |
-| Power of 2 Check | Loop/Log | `n & (n-1) == 0` |
-| Swap Numbers | Temp variable | XOR trick |
 
 ---
 
-## 📐 Binary Representation Basics
-
-### 🔢 Decimal to Binary Conversion
-
-```
-Decimal → Binary
-
-0  →  0000
-1  →  0001
-2  →  0010
-3  →  0011
-4  →  0100
-5  →  0101
-6  →  0110
-7  →  0111
-8  →  1000
-15 →  1111
-```
-
-### 📍 Bit Positions
-
-```
-Number: 13 (Decimal)
-Binary: 1101
-
-Position:  3  2  1  0
-Bit:       1  1  0  1
-Value:     8  4  0  1  = 13
-
-MSB (Most Significant Bit)  ←  1101  →  LSB (Least Significant Bit)
-```
-
-### 🎯 Important Terminology
-
-- **MSB**: Leftmost bit (highest value)
-- **LSB**: Rightmost bit (lowest value)
-- **Set Bit**: Bit with value 1
-- **Clear Bit**: Bit with value 0
-- **Bit Position**: Index from right (0-indexed)
-
----
-
-## ⚙️ Bitwise Operators
+## Binary Fundamentals
 
 <div align="center">
-<img src="https://scaler.com/topics/images/types-of-java-bitwise-operators-in-java.webp" alt="Types of Bitwise Operators" width="700" height="400"/>
+<img src="https://camo.githubusercontent.com/bb35819d5d508be9d2665293e769023248f90c38557871084fbc2536a818006d/68747470733a2f2f7363616c65722e636f6d2f746f706963732f696d616765732f73746570732d696e2d61726974686d657469632d6f7065726174696f6e2e77656270" alt="Steps in Arithmetic Operations" width="650" height="350"/>
 </div>
+
+### Binary Representation
+
+```mermaid
+flowchart LR
+    A["Decimal Numbers"] --> B["Binary Conversion"]
+    B --> C["Bit Positions"]
+    C --> D["Value Calculation"]
+    
+    E["0 → 0000"] --> F["Position Values"]
+    E["5 → 0101"] --> F
+    E["15 → 1111"] --> F
+    
+    F --> G["Position: 3 2 1 0"]
+    G --> H["Values: 8 4 2 1"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef examples fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef positions fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A,B,C,D process
+    class E examples
+    class F,G,H positions
+```
+
+### Key Terminology
+
+**MSB (Most Significant Bit)**: Leftmost bit with highest value  
+**LSB (Least Significant Bit)**: Rightmost bit with lowest value  
+**Set Bit**: Bit with value 1  
+**Clear Bit**: Bit with value 0  
+**Bit Position**: Index from right (0-indexed)  
+
+### Performance Comparison
+
+| Operation | Traditional | Bit Manipulation | Speedup |
+|-----------|-------------|------------------|---------|
+| Check Even/Odd | `n % 2 == 0` | `n & 1` | 2-3x faster |
+| Multiply by 2 | `n * 2` | `n << 1` | 5-10x faster |
+| Divide by 2 | `n / 2` | `n >> 1` | 3-5x faster |
+| Power of 2 Check | Loop/Log | `n & (n-1) == 0` | 100x faster |
+
+---
+
+## Bitwise Operators
+
+<div align="center">
+<img src="https://camo.githubusercontent.com/3427d206dc1107fa2f58d8ea00be3037225cb3477156ac123b0c5de10bbb6d2d/68747470733a2f2f7363616c65722e636f6d2f746f706963732f696d616765732f74797065732d6f662d6a6176612d626974776973652d6f70657261746f72732d696e2d6a6176612e77656270" alt="Types of Bitwise Operators" width="700" height="400"/>
+</div>
+
+### Operator Overview
 
 ```mermaid
 flowchart TD
@@ -166,435 +136,361 @@ flowchart TD
     A --> G["Right Shift (>>)"]
     
     B --> H["Both bits must be 1"]
-    B --> I["Masking operations"]
-    B --> J["Check/clear bits"]
+    C --> I["Any bit is 1"]
+    D --> J["Bits are different"]
+    E --> K["Flip all bits"]
+    F --> L["Multiply by 2^k"]
+    G --> M["Divide by 2^k"]
     
-    C --> K["Any bit is 1"]
-    C --> L["Set bits"]
-    C --> M["Combine flags"]
+    H --> N["Masking, Check bits"]
+    I --> O["Set bits, Combine flags"]
+    J --> P["Toggle, Find unique"]
+    K --> Q["Create masks"]
+    L --> R["Fast multiplication"]
+    M --> S["Fast division"]
     
-    D --> N["Bits are different"]
-    D --> O["Toggle bits"]
-    D --> P["Find unique elements"]
-    
-    E --> Q["Flip all bits"]
-    E --> R["Create masks"]
-    E --> S["Complement operations"]
-    
-    F --> T["Multiply by 2^k"]
-    F --> U["Position bits"]
-    F --> V["Create powers"]
-    
-    G --> W["Divide by 2^k"]
-    G --> X["Extract higher bits"]
-    G --> Y["Reduce numbers"]
-    
-    style A fill:#e3f2fd
-    style B fill:#ffcdd2
-    style C fill:#c8e6c9
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#f3e5f5
-    style G fill:#e8f5e8
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef operators fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef rules fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef applications fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A,B,C,D,E,F,G operators
+    class H,I,J,K,L,M rules
+    class N,O,P,Q,R,S applications
 ```
 
-### 1️⃣ AND Operator (&)
+### AND Operator (&)
 
 **Rule**: Result is 1 only if BOTH bits are 1
 
-```
-Truth Table:
-0 & 0 = 0
-0 & 1 = 0
-1 & 0 = 0
-1 & 1 = 1
+```cpp
+// Truth Table: 0&0=0, 0&1=0, 1&0=0, 1&1=1
+// Example: 5 & 3 = 0101 & 0011 = 0001 = 1
 
-Example:
-  5 & 3
-  0101
-& 0011
-------
-  0001  →  1
+// Use Cases:
+bool isEven(int n) { return (n & 1) == 0; }
+bool isBitSet(int n, int pos) { return (n & (1 << pos)) != 0; }
+int clearBit(int n, int pos) { return n & ~(1 << pos); }
 ```
 
-**✅ Use Cases:**
-- Check if bit is set
-- Clear specific bits
-- Check even/odd: `n & 1`
-- Extract specific bits (masking)
-
-### 2️⃣ OR Operator (|)
+### OR Operator (|)
 
 **Rule**: Result is 1 if ANY bit is 1
 
-```
-Truth Table:
-0 | 0 = 0
-0 | 1 = 1
-1 | 0 = 1
-1 | 1 = 1
+```cpp
+// Truth Table: 0|0=0, 0|1=1, 1|0=1, 1|1=1
+// Example: 5 | 3 = 0101 | 0011 = 0111 = 7
 
-Example:
-  5 | 3
-  0101
-| 0011
-------
-  0111  →  7
+// Use Cases:
+int setBit(int n, int pos) { return n | (1 << pos); }
+int combineFlags(int flag1, int flag2) { return flag1 | flag2; }
 ```
 
-**✅ Use Cases:**
-- Set specific bits
-- Combine bit flags
-- Union operations
+### XOR Operator (^)
 
-### 3️⃣ XOR Operator (^)
+<div align="center">
+<img src="https://camo.githubusercontent.com/0e1566dd8540832eb97193b22a129d34d539860841cbcb9212b2743cbf1d5fce/68747470733a2f2f63646e2e73686f706966792e636f6d2f732f66696c65732f312f303631312f313634342f393031382f66696c65732f584f525f4c6f6769635f476174655f73796d626f6c5f776974685f74727574685f7461626c655f343830783438302e6a70673f763d31363831393331323039" alt="XOR Logic Gate with Truth Table" width="450" height="350"/>
+</div>
 
 **Rule**: Result is 1 if bits are DIFFERENT
 
-<div align="center">
-<img src="https://cdn.shopify.com/s/files/1/0611/1644/9018/files/XOR_Logic_Gate_symbol_with_truth_table_480x480.jpg?v=1681931209" alt="XOR Logic Gate" width="400" height="300"/>
-</div>
+```cpp
+// Truth Table: 0^0=0, 0^1=1, 1^0=1, 1^1=0
+// Example: 5 ^ 3 = 0101 ^ 0011 = 0110 = 6
 
-```
-Truth Table:
-0 ^ 0 = 0
-0 ^ 1 = 1
-1 ^ 0 = 1
-1 ^ 1 = 0
+// XOR Properties:
+// a ^ a = 0 (Self-cancellation)
+// a ^ 0 = a (Identity)
+// a ^ b = b ^ a (Commutative)
+// (a ^ b) ^ c = a ^ (b ^ c) (Associative)
 
-Example:
-  5 ^ 3
-  0101
-^ 0011
-------
-  0110  →  6
-```
-
-**✅ Use Cases:**
-- Find unique elements
-- Swap without temp variable
-- Toggle bits
-- Detect differences
-
-**🔥 XOR Properties:**
-```
-a ^ a = 0        (Self-cancellation)
-a ^ 0 = a        (Identity)
-a ^ b = b ^ a    (Commutative)
-(a ^ b) ^ c = a ^ (b ^ c)  (Associative)
+// Use Cases:
+int toggleBit(int n, int pos) { return n ^ (1 << pos); }
+void swapNumbers(int& a, int& b) { a ^= b; b ^= a; a ^= b; }
+int findUnique(vector<int>& arr) {
+    int result = 0;
+    for (int x : arr) result ^= x;
+    return result;
+}
 ```
 
-### 4️⃣ NOT Operator (~)
+### Shift Operators
 
-**Rule**: Flips all bits (1→0, 0→1)
+```cpp
+// Left Shift (<<): Multiply by 2^k
+int multiplyBy4(int n) { return n << 2; } // n * 2^2 = n * 4
 
+// Right Shift (>>): Divide by 2^k
+int divideBy8(int n) { return n >> 3; } // n / 2^3 = n / 8
+
+// Create powers of 2
+int powerOf2(int k) { return 1 << k; } // 2^k
 ```
-Example:
-~5
-  00000101
-  ↓
-  11111010  →  -6 (in 2's complement)
-```
-
-**✅ Use Cases:**
-- Bit inversion
-- Creating masks
-- Complement operations
-
-### 5️⃣ Left Shift (<<)
-
-**Rule**: Shifts bits left, fills with 0
-
-```
-Example:
-5 << 1
-  0101  →  1010  (10)
-
-5 << 2
-  0101  →  10100  (20)
-
-Formula: n << k = n × 2^k
-```
-
-**✅ Use Cases:**
-- Fast multiplication by powers of 2
-- Create bit masks
-- Position bits
-
-### 6️⃣ Right Shift (>>)
-
-**Rule**: Shifts bits right, discards LSB
-
-```
-Example:
-5 >> 1
-  0101  →  0010  (2)
-
-5 >> 2
-  0101  →  0001  (1)
-
-Formula: n >> k = n ÷ 2^k
-```
-
-**✅ Use Cases:**
-- Fast division by powers of 2
-- Extract higher bits
-- Reduce numbers
 
 ---
 
-## 🎪 Essential Bit Tricks
+## XOR Magic
+
+### XOR Properties and Applications
 
 ```mermaid
 flowchart TD
-    A["🎪 Essential Bit Tricks"] --> B["Check Even/Odd"]
-    A --> C["Set/Clear/Toggle Bits"]
-    A --> D["Power of 2 Operations"]
-    A --> E["Count Set Bits"]
-    A --> F["Remove Rightmost Set Bit"]
+    A["XOR Magic Properties"] --> B["Self Cancellation"]
+    A --> C["Identity Property"]
+    A --> D["Commutative"]
+    A --> E["Associative"]
     
-    B --> G["n & 1"]
-    B --> H["O(1) operation"]
+    B --> F["a ^ a = 0"]
+    C --> G["a ^ 0 = a"]
+    D --> H["a ^ b = b ^ a"]
+    E --> I["(a ^ b) ^ c = a ^ (b ^ c)"]
     
-    C --> I["Set: n | (1 << i)"]
-    C --> J["Clear: n & ~(1 << i)"]
-    C --> K["Toggle: n ^ (1 << i)"]
+    F --> J["Find unique elements"]
+    G --> K["Preserve values"]
+    H --> L["Order doesn't matter"]
+    I --> M["Group operations"]
     
-    D --> L["Check: n & (n-1) == 0"]
-    D --> M["Most important trick"]
-    
-    E --> N["Brian Kernighan's"]
-    E --> O["O(set bits)"]
-    
-    F --> P["n & (n-1)"]
-    F --> Q["Core operation"]
-    
-    style A fill:#e3f2fd
-    style B fill:#c8e6c9
-    style C fill:#fff3e0
-    style D fill:#fce4ec
-    style E fill:#f3e5f5
-    style F fill:#e8f5e8
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef properties fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef rules fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef applications fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A,B,C,D,E properties
+    class F,G,H,I rules
+    class J,K,L,M applications
 ```
 
-### 1. Check Even or Odd
+### Classic XOR Problems
 
 ```cpp
-// Traditional
-if (n % 2 == 0) // even
-
-// Bit Manipulation ⚡
-if (n & 1) // odd
-else       // even
-```
-
-**Logic**: LSB is 1 for odd, 0 for even
-
----
-
-### 2. Check if i-th Bit is Set
-
-```cpp
-bool isSet(int n, int i) {
-    return (n & (1 << i)) != 0;
-}
-
-// Example: Check if 2nd bit of 5 (0101) is set
-// 5 & (1 << 2) = 0101 & 0100 = 0100 ≠ 0 → TRUE
-```
-
----
-
-### 3. Set i-th Bit
-
-```cpp
-int setBit(int n, int i) {
-    return n | (1 << i);
-}
-
-// Example: Set 1st bit of 5 (0101)
-// 5 | (1 << 1) = 0101 | 0010 = 0111 = 7
-```
-
----
-
-### 4. Clear i-th Bit
-
-```cpp
-int clearBit(int n, int i) {
-    return n & ~(1 << i);
-}
-
-// Example: Clear 2nd bit of 5 (0101)
-// 5 & ~(1 << 2) = 0101 & 1011 = 0001 = 1
-```
-
----
-
-### 5. Toggle i-th Bit
-
-```cpp
-int toggleBit(int n, int i) {
-    return n ^ (1 << i);
-}
-
-// Example: Toggle 0th bit of 5 (0101)
-// 5 ^ (1 << 0) = 0101 ^ 0001 = 0100 = 4
-```
-
----
-
-### 6. Remove Rightmost Set Bit
-
-```cpp
-int removeRightmostSetBit(int n) {
-    return n & (n - 1);
-}
-
-// Example: 12 (1100)
-// 12 & 11 = 1100 & 1011 = 1000 = 8
-```
-
-**🔥 Most Important Trick!**
-
----
-
-### 7. Check if Power of Two
-
-```cpp
-bool isPowerOfTwo(int n) {
-    return n > 0 && (n & (n - 1)) == 0;
-}
-
-// Power of 2 has only ONE set bit
-// 8 = 1000, 8-1 = 0111, 1000 & 0111 = 0000
-```
-
----
-
-### 8. Count Set Bits (Brian Kernighan's Algorithm)
-
-```cpp
-int countSetBits(int n) {
-    int count = 0;
-    while (n) {
-        n = n & (n - 1);  // Remove rightmost set bit
-        count++;
-    }
-    return count;
-}
-
-// Time: O(number of set bits)
-```
-
----
-
-### 9. Get Rightmost Set Bit
-
-```cpp
-int getRightmostSetBit(int n) {
-    return n & -n;
-}
-
-// Example: 12 (1100)
-// -12 in 2's complement = 0100
-// 1100 & 0100 = 0100 = 4
-```
-
----
-
-### 10. Clear All Bits from MSB to i-th Bit
-
-```cpp
-int clearBitsMSBtoI(int n, int i) {
-    int mask = (1 << i) - 1;
-    return n & mask;
-}
-```
-
----
-
-## 🎭 XOR Magic
-
-### 🔥 Problem 1: Find Single Unique Number
-
-**Problem**: Array where every element appears twice except one. Find the unique element.
-
-```cpp
-int findUnique(vector<int>& nums) {
+// Problem 1: Find Single Unique Number
+// Array where every element appears twice except one
+int findSingle(vector<int>& nums) {
     int result = 0;
     for (int num : nums) {
-        result ^= num;
+        result ^= num; // Duplicates cancel out
     }
     return result;
 }
 
-// Example: [4, 1, 2, 1, 2]
-// 4 ^ 1 ^ 2 ^ 1 ^ 2 = 4
-// (1 ^ 1) = 0, (2 ^ 2) = 0, 4 ^ 0 = 4
-```
-
-**Time**: O(n) | **Space**: O(1)
-
----
-
-### 🔥 Problem 2: Swap Two Numbers Without Temp
-
-```cpp
-void swap(int& a, int& b) {
-    a = a ^ b;
-    b = a ^ b;  // b = (a ^ b) ^ b = a
-    a = a ^ b;  // a = (a ^ b) ^ a = b
+// Problem 2: Swap Without Temporary Variable
+void swapXOR(int& a, int& b) {
+    if (a != b) { // Avoid self-assignment
+        a ^= b;
+        b ^= a;
+        a ^= b;
+    }
 }
 
-// Example: a=5, b=3
-// a = 5 ^ 3 = 6
-// b = 6 ^ 3 = 5
-// a = 6 ^ 5 = 3
-```
-
----
-
-### 🔥 Problem 3: Find Two Unique Numbers
-
-**Problem**: Array where every element appears twice except two. Find both unique elements.
-
-```cpp
+// Problem 3: Find Two Unique Numbers
 vector<int> findTwoUnique(vector<int>& nums) {
     int xorAll = 0;
     for (int num : nums) xorAll ^= num;
     
     // Find rightmost set bit
-    int rightmostBit = xorAll & -xorAll;
+    int rightBit = xorAll & -xorAll;
     
     int num1 = 0, num2 = 0;
     for (int num : nums) {
-        if (num & rightmostBit)
+        if (num & rightBit) {
             num1 ^= num;
-        else
+        } else {
             num2 ^= num;
+        }
     }
-    
     return {num1, num2};
 }
 ```
 
 ---
 
-## 🎯 Bit Masking
+## Essential Bit Tricks
 
-<div align="center">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl8GE3LnW0r_nshc4EDM41o5T-zYLq0FXUgw&s" alt="Bit Manipulation Concepts" width="650" height="300"/>
-</div>
+### Core Operations
 
-**Bit Masking** uses bits to represent states, sets, or flags.
+```mermaid
+flowchart TD
+    A["Essential Bit Tricks"] --> B["Check Operations"]
+    A --> C["Modify Operations"]
+    A --> D["Count Operations"]
+    A --> E["Special Tricks"]
+    
+    B --> F["Even/Odd: n & 1"]
+    B --> G["Power of 2: n & (n-1) == 0"]
+    B --> H["Bit Set: n & (1 << i)"]
+    
+    C --> I["Set Bit: n | (1 << i)"]
+    C --> J["Clear Bit: n & ~(1 << i)"]
+    C --> K["Toggle Bit: n ^ (1 << i)"]
+    
+    D --> L["Count Set Bits"]
+    D --> M["Brian Kernighan's Algorithm"]
+    
+    E --> N["Remove Rightmost: n & (n-1)"]
+    E --> O["Get Rightmost: n & -n"]
+    E --> P["Isolate Rightmost: n ^ (n-1)"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef category fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef check fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef modify fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef count fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef special fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A category
+    class B,F,G,H check
+    class C,I,J,K modify
+    class D,L,M count
+    class E,N,O,P special
+```
 
-### Example: Subset Generation
+### Implementation Examples
 
 ```cpp
-void generateSubsets(vector<int>& nums) {
+class BitTricks {
+public:
+    // 1. Check if number is even
+    bool isEven(int n) {
+        return (n & 1) == 0;
+    }
+    
+    // 2. Check if power of 2
+    bool isPowerOf2(int n) {
+        return n > 0 && (n & (n - 1)) == 0;
+    }
+    
+    // 3. Count set bits (Brian Kernighan's Algorithm)
+    int countSetBits(int n) {
+        int count = 0;
+        while (n) {
+            n &= (n - 1); // Remove rightmost set bit
+            count++;
+        }
+        return count;
+    }
+    
+    // 4. Get rightmost set bit
+    int getRightmostSetBit(int n) {
+        return n & -n;
+    }
+    
+    // 5. Remove rightmost set bit
+    int removeRightmostSetBit(int n) {
+        return n & (n - 1);
+    }
+    
+    // 6. Check if i-th bit is set
+    bool isBitSet(int n, int i) {
+        return (n & (1 << i)) != 0;
+    }
+    
+    // 7. Set i-th bit
+    int setBit(int n, int i) {
+        return n | (1 << i);
+    }
+    
+    // 8. Clear i-th bit
+    int clearBit(int n, int i) {
+        return n & ~(1 << i);
+    }
+    
+    // 9. Toggle i-th bit
+    int toggleBit(int n, int i) {
+        return n ^ (1 << i);
+    }
+    
+    // 10. Fast multiplication/division by powers of 2
+    int multiplyBy2Power(int n, int k) {
+        return n << k; // n * 2^k
+    }
+    
+    int divideBy2Power(int n, int k) {
+        return n >> k; // n / 2^k
+    }
+};
+```
+
+---
+
+## Practical Applications
+
+<div align="center">
+<img src="https://www.fastercapital.com/i/Bitwise-Operators--Bitwise-Operators-in-VBA--Manipulating-Bits-for-Advanced-Coding--Practical-Applications-of-Bitwise-Operators-in-VBA.webp" alt="Practical Applications of Bitwise Operators" width="650" height="400"/>
+</div>
+
+### Real-World Use Cases
+
+```mermaid
+flowchart TD
+    A["Practical Applications"] --> B["System Programming"]
+    A --> C["Graphics & Gaming"]
+    A --> D["Cryptography"]
+    A --> E["Networking"]
+    A --> F["Competitive Programming"]
+    
+    B --> G["Memory management"]
+    B --> H["File permissions"]
+    B --> I["Hardware control"]
+    
+    C --> J["Color manipulation"]
+    C --> K["Sprite masking"]
+    C --> L["Collision detection"]
+    
+    D --> M["Encryption algorithms"]
+    D --> N["Hash functions"]
+    D --> O["Random number generation"]
+    
+    E --> P["IP address operations"]
+    E --> Q["Packet headers"]
+    E --> R["Protocol flags"]
+    
+    F --> S["State compression"]
+    F --> T["Fast arithmetic"]
+    F --> U["Subset enumeration"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef domain fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef system fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef graphics fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef crypto fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef network fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef competitive fill:#e1f5fe,stroke:#0277bd,stroke-width:2px,color:#000
+    class A domain
+    class B,G,H,I system
+    class C,J,K,L graphics
+    class D,M,N,O crypto
+    class E,P,Q,R network
+    class F,S,T,U competitive
+```
+
+### Implementation Examples
+
+```cpp
+// 1. Permission System
+class PermissionSystem {
+    enum Permission {
+        READ = 1 << 0,    // 001
+        WRITE = 1 << 1,   // 010
+        EXECUTE = 1 << 2  // 100
+    };
+    
+    int userPermissions = 0;
+    
+public:
+    void grantPermission(Permission perm) {
+        userPermissions |= perm;
+    }
+    
+    void revokePermission(Permission perm) {
+        userPermissions &= ~perm;
+    }
+    
+    bool hasPermission(Permission perm) {
+        return (userPermissions & perm) != 0;
+    }
+};
+
+// 2. Subset Generation
+void generateAllSubsets(vector<int>& nums) {
     int n = nums.size();
-    int totalSubsets = 1 << n;  // 2^n
+    int totalSubsets = 1 << n; // 2^n
     
     for (int mask = 0; mask < totalSubsets; mask++) {
         cout << "{ ";
@@ -603,194 +499,239 @@ void generateSubsets(vector<int>& nums) {
                 cout << nums[i] << " ";
             }
         }
-        cout << "}\n";
+        cout << "}" << endl;
     }
 }
 
-// For [1,2,3]:
-// mask=0 (000) → {}
-// mask=1 (001) → {1}
-// mask=2 (010) → {2}
-// mask=3 (011) → {1,2}
-// ...
-```
-
-### Example: Permission System
-
-```cpp
-const int READ = 1 << 0;    // 001
-const int WRITE = 1 << 1;   // 010
-const int EXECUTE = 1 << 2; // 100
-
-int permissions = 0;
-
-// Grant permissions
-permissions |= READ;
-permissions |= WRITE;
-
-// Check permission
-if (permissions & READ) {
-    cout << "Can read\n";
-}
-
-// Revoke permission
-permissions &= ~WRITE;
-```
-
----
-
-## 🎨 Common Patterns
-
-### Pattern 1: Iterate Through All Subsets
-
-```cpp
-for (int mask = 0; mask < (1 << n); mask++) {
-    // Process subset represented by mask
-}
-```
-
----
-
-### Pattern 2: Check All Bits
-
-```cpp
-for (int i = 0; i < 32; i++) {
-    if (n & (1 << i)) {
-        // i-th bit is set
+// 3. Fast Exponentiation
+long long fastPower(long long base, long long exp) {
+    long long result = 1;
+    while (exp > 0) {
+        if (exp & 1) { // If exp is odd
+            result *= base;
+        }
+        base *= base;
+        exp >>= 1; // Divide exp by 2
     }
+    return result;
+}
+
+// 4. Color Manipulation (RGB)
+class ColorManipulation {
+public:
+    // Extract RGB components
+    int getRed(int color) { return (color >> 16) & 0xFF; }
+    int getGreen(int color) { return (color >> 8) & 0xFF; }
+    int getBlue(int color) { return color & 0xFF; }
+    
+    // Create color from RGB
+    int createColor(int r, int g, int b) {
+        return (r << 16) | (g << 8) | b;
+    }
+    
+    // Blend colors
+    int blendColors(int color1, int color2) {
+        int r = (getRed(color1) + getRed(color2)) / 2;
+        int g = (getGreen(color1) + getGreen(color2)) / 2;
+        int b = (getBlue(color1) + getBlue(color2)) / 2;
+        return createColor(r, g, b);
+    }
+};
+```
+
+---
+
+## Common Patterns
+
+### Pattern Recognition
+
+```mermaid
+flowchart TD
+    A["Common Bit Patterns"] --> B["Single Number Problems"]
+    A --> C["Subset Problems"]
+    A --> D["Power of 2 Problems"]
+    A --> E["Bit Counting Problems"]
+    A --> F["State Compression"]
+    
+    B --> G["Use XOR properties"]
+    C --> H["Use bitmask iteration"]
+    D --> I["Use n & (n-1) trick"]
+    E --> J["Use Brian Kernighan's"]
+    F --> K["Use DP with bitmask"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef patterns fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef techniques fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    class A,B,C,D,E,F patterns
+    class G,H,I,J,K techniques
+```
+
+### Problem Categories
+
+```cpp
+// 1. Single Number Variants
+int singleNumber(vector<int>& nums) {
+    int result = 0;
+    for (int num : nums) result ^= num;
+    return result;
+}
+
+// 2. Subset Sum using Bitmask
+bool canPartition(vector<int>& nums) {
+    int sum = accumulate(nums.begin(), nums.end(), 0);
+    if (sum % 2) return false;
+    
+    int target = sum / 2;
+    vector<bool> dp(target + 1, false);
+    dp[0] = true;
+    
+    for (int num : nums) {
+        for (int j = target; j >= num; j--) {
+            dp[j] = dp[j] || dp[j - num];
+        }
+    }
+    return dp[target];
+}
+
+// 3. Count Set Bits in Range
+int countBits(int n) {
+    vector<int> result(n + 1);
+    for (int i = 1; i <= n; i++) {
+        result[i] = result[i >> 1] + (i & 1);
+    }
+    return result[n];
+}
+
+// 4. Maximum XOR
+int findMaximumXOR(vector<int>& nums) {
+    int maxXor = 0, mask = 0;
+    
+    for (int i = 30; i >= 0; i--) {
+        mask |= (1 << i);
+        unordered_set<int> prefixes;
+        
+        for (int num : nums) {
+            prefixes.insert(num & mask);
+        }
+        
+        int candidate = maxXor | (1 << i);
+        for (int prefix : prefixes) {
+            if (prefixes.count(candidate ^ prefix)) {
+                maxXor = candidate;
+                break;
+            }
+        }
+    }
+    return maxXor;
 }
 ```
 
 ---
 
-### Pattern 3: DP with Bitmask
+## Best Practices
+
+### Optimization Guidelines
+
+```mermaid
+flowchart TD
+    A["Best Practices"] --> B["Performance Tips"]
+    A --> C["Readability Guidelines"]
+    A --> D["Common Pitfalls"]
+    A --> E["Testing Strategies"]
+    
+    B --> F["Use bit ops for hot paths"]
+    B --> G["Prefer shifts over multiply/divide"]
+    B --> H["Cache bit manipulation results"]
+    
+    C --> I["Comment complex operations"]
+    C --> J["Use meaningful variable names"]
+    C --> K["Explain bit tricks"]
+    
+    D --> L["Watch for integer overflow"]
+    D --> M["Handle negative numbers"]
+    D --> N["Consider endianness"]
+    
+    E --> O["Test edge cases"]
+    E --> P["Verify with small examples"]
+    E --> Q["Check boundary conditions"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef category fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef performance fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef readability fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef pitfalls fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef testing fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A category
+    class B,F,G,H performance
+    class C,I,J,K readability
+    class D,L,M,N pitfalls
+    class E,O,P,Q testing
+```
+
+### Do's and Don'ts
+
+**✅ Do's:**
+- Use bit manipulation for performance-critical code
+- Prefer `(n & 1)` over `(n % 2)` for even/odd checks
+- Use `(1 << k)` instead of `pow(2, k)`
+- Comment complex bit operations clearly
+- Test with edge cases (0, negative numbers, overflow)
+
+**❌ Don'ts:**
+- Don't overuse for simple operations where readability matters
+- Avoid unclear bit tricks without proper documentation
+- Don't assume fixed integer sizes (32-bit vs 64-bit)
+- Avoid bit manipulation in code that prioritizes readability
+- Don't forget to handle signed integer edge cases
+
+### Code Examples
 
 ```cpp
-int dp[1 << n];  // State compression
-// Each bit represents inclusion/exclusion
+// ✅ Good: Clear and documented
+bool isPowerOfTwo(int n) {
+    // A power of 2 has exactly one bit set
+    // n & (n-1) removes the rightmost set bit
+    return n > 0 && (n & (n - 1)) == 0;
+}
+
+// ❌ Bad: Unclear without comments
+bool check(int n) {
+    return n > 0 && !(n & (n - 1));
+}
+
+// ✅ Good: Handles edge cases
+int countSetBits(int n) {
+    if (n < 0) return -1; // Handle negative input
+    
+    int count = 0;
+    while (n) {
+        n &= (n - 1); // Remove rightmost set bit
+        count++;
+    }
+    return count;
+}
 ```
 
 ---
 
-## 🏆 Interview Problems
+## Summary
 
-### ✅ Easy Level
+Bit manipulation provides ultra-efficient solutions for many programming problems:
 
-1. **Single Number** (LeetCode 136)
-2. **Number of 1 Bits** (LeetCode 191)
-3. **Power of Two** (LeetCode 231)
-4. **Reverse Bits** (LeetCode 190)
-5. **Missing Number** (LeetCode 268)
+**Core Operations**: Master AND, OR, XOR, NOT, and shift operators for fundamental bit operations  
+**XOR Magic**: Leverage XOR properties for elegant solutions to unique element problems  
+**Essential Tricks**: Use `n & (n-1)` for power of 2 checks and bit counting algorithms  
+**Practical Applications**: Apply to system programming, graphics, cryptography, and competitive programming  
+**Performance**: Achieve O(1) time complexity for most operations with hardware-level efficiency  
 
-### ✅ Medium Level
-
-6. **Single Number II** (LeetCode 137)
-7. **Single Number III** (LeetCode 260)
-8. **Bitwise AND of Numbers Range** (LeetCode 201)
-9. **Maximum XOR of Two Numbers** (LeetCode 421)
-10. **Subsets** (LeetCode 78)
-
-### ✅ Hard Level
-
-11. **Maximum XOR Queries** (LeetCode 1707)
-12. **Minimum XOR Sum** (LeetCode 1879)
-13. **Shortest Path Visiting All Nodes** (LeetCode 847)
-
----
-
-## ⏱️ Complexity Analysis
-
-### Time Complexity
-
-| Operation | Complexity |
-|:----------|:-----------|
-| AND, OR, XOR, NOT | O(1) |
-| Left/Right Shift | O(1) |
-| Count Set Bits | O(log n) or O(set bits) |
-| Check Power of 2 | O(1) |
-| Generate Subsets | O(2^n × n) |
-
-### Space Complexity
-
-- Most operations: **O(1)**
-- Extremely memory efficient
-- No extra data structures needed
-
----
-
-## 💎 Best Practices
-
-### ✅ Do's
-
-```
-✓ Use bit manipulation for performance-critical code
-✓ Prefer (n & 1) over (n % 2) for even/odd checks
-✓ Use (1 << k) instead of pow(2, k)
-✓ Comment complex bit operations
-✓ Test with edge cases (0, negative numbers)
-```
-
-### ❌ Don'ts
-
-```
-✗ Don't overuse for simple operations
-✗ Avoid unclear bit tricks without comments
-✗ Don't assume 32-bit integers always
-✗ Avoid bit manipulation for readability-critical code
-```
-
----
-
-## 🎓 Key Takeaways
-
-<div align="center">
-
-### 🌟 Master These Concepts
-
-</div>
-
-```
-1. 🔥 n & (n-1) removes rightmost set bit
-2. 🎯 XOR properties: a^a=0, a^0=a
-3. ⚡ Left shift multiplies, right shift divides by 2
-4. 🎪 Bit masking for state representation
-5. 💡 Check power of 2: n>0 && (n&(n-1))==0
-6. 🚀 Count bits: Brian Kernighan's algorithm
-7. 🎭 Generate subsets using bitmask
-8. 🔐 AND for checking, OR for setting, XOR for toggling
-```
-
----
-
-## 📚 Practice Resources
-
-- **LeetCode**: Bit Manipulation tag
-- **Codeforces**: Bitmask DP problems
-- **GeeksforGeeks**: Bit tricks articles
-- **HackerRank**: Bit manipulation challenges
-
----
-
-## 🎯 Interview Tips
-
-1. **Recognize Patterns**: XOR for unique elements, bitmask for subsets
-2. **Explain Logic**: Always explain the bit operation reasoning
-3. **Test Edge Cases**: 0, negative numbers, overflow
-4. **Optimize**: Mention bit manipulation as optimization
-5. **Practice**: Solve 20+ problems to build intuition
+**Key Insight**: "Bit manipulation transforms complex problems into elegant solutions using the fundamental language of computers"
 
 ---
 
 <div align="center">
 
-### 🔥 One-Line Summary
+**Master Bits, Master Efficiency**
 
-**Bit Manipulation = Ultra-fast, memory-efficient operations using binary magic for elegant problem solving**
-
----
-
-**💻 Master bits, master efficiency!**
-
-*"In the world of computing, everything is just 0s and 1s. Master them, and you master everything."*
+*Where binary operations meet algorithmic elegance*
 
 </div>
