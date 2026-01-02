@@ -1,10 +1,10 @@
-# 🌲 Fenwick Tree (Binary Indexed Tree) — Complete Guide
+# 🌲 Fenwick Tree — Complete Professional Guide
 
 <div align="center">
 
-![Fenwick Tree](https://img.shields.io/badge/Fenwick_Tree-Binary_Indexed_Tree-4ECDC4?style=for-the-badge&logo=tree&logoColor=white)
+![Fenwick Tree](https://img.shields.io/badge/Fenwick_Tree-Binary_Indexed_Tree-FF6B6B?style=for-the-badge&logo=tree&logoColor=white)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Advanced-red?style=for-the-badge)
-![Importance](https://img.shields.io/badge/Importance-High-red?style=for-the-badge)
+![Importance](https://img.shields.io/badge/Importance-High-darkred?style=for-the-badge)
 
 **Master space-efficient data structure for dynamic prefix sum queries**
 
@@ -14,26 +14,26 @@
 
 ## 📑 Table of Contents
 
-1. [Introduction](#-introduction)
-2. [Core Concepts](#-core-concepts)
-3. [Basic Operations](#-basic-operations)
-4. [Implementation](#-implementation)
-5. [Advanced Variants](#-advanced-variants)
-6. [Applications](#-applications)
-7. [Interview Problems](#-interview-problems)
-8. [Best Practices](#-best-practices)
+1. [Introduction](#introduction)
+2. [Core Concepts](#core-concepts)
+3. [Basic Operations](#basic-operations)
+4. [Implementation](#implementation)
+5. [Advanced Variants](#advanced-variants)
+6. [Applications](#applications)
+7. [Interview Problems](#interview-problems)
+8. [Best Practices](#best-practices)
 
 ---
 
-## 🎯 Introduction
-
-<div align="center">
-<img src="https://www.scaler.com/topics/images/frenwich_tree_thumbnail.webp" alt="Fenwick Tree Overview" width="600" height="350"/>
-</div>
+## Introduction
 
 **Fenwick Tree (Binary Indexed Tree - BIT)** is a space-efficient data structure that supports prefix sum queries and point updates in O(log n) time, making it ideal for dynamic array problems with frequent updates and range queries.
 
-### 🔑 Key Features
+<div align="center">
+<img src="https://www.scaler.com/topics/images/frenwich_tree_thumbnail.webp" alt="Fenwick Tree Overview" width="650" height="400"/>
+</div>
+
+### Key Features
 
 ```mermaid
 flowchart TD
@@ -57,9 +57,21 @@ flowchart TD
     E --> O["Range queries"]
     E --> P["Frequency counting"]
     E --> Q["Inversion counting"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef concept fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef operations fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef space fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef implementation fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef applications fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A concept
+    class B,F,G,H operations
+    class C,I,J,K space
+    class D,L,M,N implementation
+    class E,O,P,Q applications
 ```
 
-### 🌟 When to Use Fenwick Tree
+### When to Use Fenwick Tree
 
 ```mermaid
 flowchart TD
@@ -78,17 +90,27 @@ flowchart TD
     I --> K["Frequency counting"]
     I --> L["Inversion counting"]
     I --> M["Range sum queries"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef analysis fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef solution fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef applications fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A analysis
+    class B,C,E decision
+    class G solution
+    class I,J,K,L,M applications
 ```
 
 ---
 
-## 🧩 Core Concepts
+## Core Concepts
+
+### Binary Index Manipulation
 
 <div align="center">
 <img src="https://scaler.com/topics/images/different_operations_of_fenwick_tree.webp" alt="Fenwick Tree Operations" width="650" height="400"/>
 </div>
-
-### 🔢 Binary Index Manipulation
 
 ```mermaid
 flowchart TD
@@ -107,9 +129,19 @@ flowchart TD
     D --> K["Implicit tree structure"]
     D --> L["Parent-child relationships"]
     D --> M["Efficient traversal"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef concept fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef lsb fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef responsibility fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef structure fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A concept
+    class B,E,F,G lsb
+    class C,H,I,J responsibility
+    class D,K,L,M structure
 ```
 
-### 💻 LSB Demonstration
+### LSB Demonstration
 
 ```cpp
 class BinaryIndexConcepts {
@@ -151,13 +183,52 @@ public:
 
 ---
 
-## ⚙️ Basic Operations
+## Basic Operations
+
+### Standard Fenwick Tree Implementation
 
 <div align="center">
-<img src="https://scaler.com/topics/images/binary_representation_of_number.webp" alt="Binary Representation in Fenwick Tree" width="700" height="300"/>
+<img src="https://scaler.com/topics/images/binary_representation_of_number.webp" alt="Binary Representation in Fenwick Tree" width="650" height="400"/>
 </div>
 
-### 🔄 Standard Fenwick Tree Implementation
+```mermaid
+flowchart TD
+    A["Fenwick Tree Operations"] --> B["Update Operation"]
+    A --> C["Query Operation"]
+    A --> D["Range Query"]
+    
+    B --> E["Start at index i"]
+    E --> F["Add value to BIT[i]"]
+    F --> G["i += i & (-i)"]
+    G --> H{"i <= n?"}
+    H -->|Yes| F
+    H -->|No| I["Done"]
+    
+    C --> J["Start at index i"]
+    J --> K["Add BIT[i] to sum"]
+    K --> L["i -= i & (-i)"]
+    L --> M{"i > 0?"}
+    M -->|Yes| K
+    M -->|No| N["Return sum"]
+    
+    D --> O["query(r) - query(l-1)"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef operation fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef update fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef query fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef range fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A operation
+    class B,E,F,G,H,I update
+    class C,J,K,L,M,N query
+    class D,O range
+```
+
+---
+
+## Implementation
+
+### Complete Fenwick Tree Class
 
 ```cpp
 class FenwickTree {
@@ -216,30 +287,35 @@ public:
 };
 ```
 
-### 📊 Operation Visualization
+---
+
+## Advanced Variants
+
+### Range Update Point Query (RUPQ)
 
 ```mermaid
 flowchart TD
-    A[Update Operation] --> B[Start at index i]
-    B --> C[Add value to BIT i]
-    C --> D[i += i & -i]
-    D --> E{i <= n?}
-    E -->|Yes| C
-    E -->|No| F[Done]
+    A["RUPQ Fenwick Tree"] --> B["Difference Array Approach"]
+    B --> C["Range Update"]
+    B --> D["Point Query"]
     
-    G[Query Operation] --> H[Start at index i]
-    H --> I[Add BIT i to sum]
-    I --> J[i -= i & -i]
-    J --> K{i > 0?}
-    K -->|Yes| I
-    K -->|No| L[Return sum]
+    C --> E["Add val at start"]
+    C --> F["Subtract val at end+1"]
+    C --> G["Lazy propagation effect"]
+    
+    D --> H["Query prefix sum"]
+    D --> I["Get accumulated difference"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef concept fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef approach fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef update fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef query fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A concept
+    class B approach
+    class C,E,F,G update
+    class D,H,I query
 ```
-
----
-
-## 🎆 Advanced Variants
-
-### 🔄 Range Update Point Query (RUPQ)
 
 ```cpp
 class FenwickTreeRUPQ {
@@ -262,7 +338,7 @@ public:
 };
 ```
 
-### 📊 2D Fenwick Tree
+### 2D Fenwick Tree
 
 ```cpp
 class FenwickTree2D {
@@ -302,9 +378,38 @@ public:
 
 ---
 
-## 🎯 Applications
+## Applications
 
-### 📊 Frequency Counting
+### Frequency Counting
+
+```mermaid
+flowchart TD
+    A["Frequency Counting Applications"] --> B["Coordinate Compression"]
+    A --> C["Dynamic Frequency Updates"]
+    A --> D["Range Frequency Queries"]
+    
+    B --> E["Map large values to indices"]
+    B --> F["Maintain sorted unique values"]
+    B --> G["Enable BIT usage"]
+    
+    C --> H["Add/Remove elements"]
+    C --> I["Update frequencies"]
+    C --> J["Real-time processing"]
+    
+    D --> K["Count elements ≤ value"]
+    D --> L["Count in range"]
+    D --> M["Percentile queries"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef application fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef compression fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef updates fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef queries fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A application
+    class B,E,F,G compression
+    class C,H,I,J updates
+    class D,K,L,M queries
+```
 
 ```cpp
 class FrequencyCounter {
@@ -345,7 +450,7 @@ public:
 };
 ```
 
-### 🔄 Inversion Count
+### Inversion Count
 
 ```cpp
 class InversionCounter {
@@ -377,9 +482,9 @@ public:
 
 ---
 
-## 🏆 Interview Problems
+## Interview Problems
 
-### ✅ Problem 1: Count Smaller Numbers After Self
+### Count Smaller Numbers After Self
 
 ```cpp
 class CountSmallerAfterSelf {
@@ -411,7 +516,7 @@ public:
 };
 ```
 
-### ✅ Problem 2: Range Sum Query - Mutable
+### Range Sum Query - Mutable
 
 ```cpp
 class NumArray {
@@ -440,41 +545,47 @@ public:
 
 ---
 
-## 💪 Best Practices
+## Best Practices
 
-### ✅ Implementation Guidelines
+### Implementation Guidelines
 
-```cpp
-class FenwickTreeBestPractices {
-public:
-    void implementationTips() {
-        cout << "Fenwick Tree Best Practices:" << endl;
-        cout << "============================" << endl;
-        
-        cout << "1. Always use 1-based indexing" << endl;
-        cout << "2. LSB calculation: i & (-i)" << endl;
-        cout << "3. Update: while (i <= n) { BIT[i] += val; i += i & (-i); }" << endl;
-        cout << "4. Query: while (i > 0) { sum += BIT[i]; i -= i & (-i); }" << endl;
-        cout << "5. Range query: query(r) - query(l-1)" << endl;
-    }
+```mermaid
+flowchart TD
+    A["Fenwick Tree Best Practices"] --> B["Index Management"]
+    A --> C["Common Patterns"]
+    A --> D["Optimization Tips"]
+    A --> E["Error Prevention"]
     
-    void commonMistakes() {
-        cout << "\nCommon Mistakes:" << endl;
-        cout << "=================" << endl;
-        
-        cout << "❌ Using 0-based indexing" << endl;
-        cout << "✅ Use 1-based indexing for BIT" << endl;
-        
-        cout << "❌ Forgetting coordinate compression" << endl;
-        cout << "✅ Compress large values before using BIT" << endl;
-        
-        cout << "❌ Wrong range calculation" << endl;
-        cout << "✅ Remember: query(r) - query(l-1)" << endl;
-    }
-};
+    B --> F["Always use 1-based indexing"]
+    B --> G["Convert input to 1-based"]
+    B --> H["Handle range queries correctly"]
+    
+    C --> I["LSB calculation: i & (-i)"]
+    C --> J["Update: i += i & (-i)"]
+    C --> K["Query: i -= i & (-i)"]
+    
+    D --> L["Coordinate compression"]
+    D --> M["Use appropriate data types"]
+    D --> N["Consider 2D variants"]
+    
+    E --> O["Check bounds"]
+    E --> P["Validate input ranges"]
+    E --> Q["Handle edge cases"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef practice fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef index fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef patterns fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef optimization fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef prevention fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A practice
+    class B,F,G,H index
+    class C,I,J,K patterns
+    class D,L,M,N optimization
+    class E,O,P,Q prevention
 ```
 
-### 📊 Performance Comparison
+### Performance Comparison
 
 | Data Structure | Update | Range Query | Space | Implementation |
 |----------------|--------|-------------|-------|----------------|
@@ -483,26 +594,83 @@ public:
 | **Fenwick Tree** | O(log n) | O(log n) | O(n) | Medium |
 | **Segment Tree** | O(log n) | O(log n) | O(4n) | Hard |
 
+### Common Pitfalls and Solutions
+
+```cpp
+class FenwickTreeBestPractices {
+public:
+    // ✅ Correct: 1-based indexing
+    void correctImplementation() {
+        FenwickTree ft(n);
+        ft.update(1, value);  // 1-based
+        int sum = ft.query(5); // 1-based
+    }
+    
+    // ❌ Wrong: 0-based indexing
+    void wrongImplementation() {
+        FenwickTree ft(n);
+        ft.update(0, value);  // Wrong!
+    }
+    
+    // ✅ Correct: Range query
+    int correctRangeQuery(FenwickTree& ft, int l, int r) {
+        return ft.query(r) - ft.query(l - 1);
+    }
+    
+    // ❌ Wrong: Direct range calculation
+    int wrongRangeQuery(FenwickTree& ft, int l, int r) {
+        return ft.query(r) - ft.query(l); // Wrong!
+    }
+    
+    // ✅ Correct: Coordinate compression for large values
+    void handleLargeValues(vector<int>& nums) {
+        vector<int> sorted = nums;
+        sort(sorted.begin(), sorted.end());
+        sorted.erase(unique(sorted.begin(), sorted.end()), sorted.end());
+        
+        unordered_map<int, int> compressed;
+        for (int i = 0; i < sorted.size(); i++) {
+            compressed[sorted[i]] = i + 1;
+        }
+        
+        FenwickTree ft(sorted.size());
+        // Use compressed[nums[i]] as index
+    }
+};
+```
+
 ---
 
-## 🎓 Summary
+## Summary
 
-Fenwick Tree is a powerful data structure for dynamic prefix operations:
+**Fenwick Tree** is a powerful and elegant data structure for dynamic range operations. Key insights:
 
-✅ **Efficient Operations**: O(log n) updates and queries  
-✅ **Space Efficient**: O(n) space complexity  
-✅ **Simple Implementation**: Elegant bit manipulation  
-✅ **Versatile**: Multiple variants for different needs  
-✅ **Interview Favorite**: Common in competitive programming  
+### Essential Concepts
+- **Binary Index Magic**: LSB operation (x & -x) drives the efficiency
+- **1-Based Indexing**: Critical for correct implementation
+- **Implicit Tree Structure**: Array-based with parent-child relationships
+- **Range Responsibility**: Each index covers a specific range
 
-**Next Steps**: Practice with range sum problems and learn coordinate compression techniques.
+### Core Operations
+- **Update**: O(log n) point updates using LSB traversal
+- **Query**: O(log n) prefix sum queries
+- **Range Query**: query(r) - query(l-1) for range sums
+- **Space Efficiency**: O(n) space vs O(4n) for segment trees
+
+### Best Practices
+- Always use 1-based indexing for BIT operations
+- Apply coordinate compression for large value ranges
+- Consider 2D variants for matrix problems
+- Use appropriate data types to prevent overflow
+
+> **Master's Insight**: Fenwick Tree's elegance lies in its bit manipulation foundation. The LSB operation creates an implicit tree structure that enables logarithmic operations with minimal space overhead.
 
 ---
 
 <div align="center">
 
-**🌲 Master Fenwick Trees, Master Efficient Range Operations**
+**🌲 Master Fenwick Trees • Optimize Range Operations • Build Efficient Solutions**
 
-*Where bit manipulation meets algorithmic elegance*
+*From Theory to Practice • Bit Manipulation to Implementation • Understanding to Mastery*
 
 </div>
