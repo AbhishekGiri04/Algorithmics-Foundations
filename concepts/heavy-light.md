@@ -1,22 +1,12 @@
-# ⚖️ Heavy-Light Decomposition — Complete Professional Guide
+# 🔗 Heavy-Light Decomposition — Complete Professional Guide
 
 <div align="center">
 
 ![Heavy-Light Decomposition](https://img.shields.io/badge/Heavy_Light_Decomposition-Tree_Optimization-FF6B6B?style=for-the-badge&logo=tree&logoColor=white)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Advanced-red?style=for-the-badge)
-![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
+![Importance](https://img.shields.io/badge/Importance-High-darkred?style=for-the-badge)
 
-<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/hld1.png" alt="Heavy-Light Decomposition Concept" width="600" height="400"/>
-
-<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/hld2.png" alt="HLD Tree Structure" width="650" height="350"/>
-
-<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/hld321.png" alt="HLD Chain Formation" width="700" height="400"/>
-
-<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Heavy-Light-Decompostion.png" alt="Complete HLD Process" width="750" height="450"/>
-
-<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/hld8.png" alt="HLD Query Processing" width="600" height="350"/>
-
-*Master advanced tree decomposition for lightning-fast path queries and competitive programming excellence*
+**Master advanced tree decomposition for efficient path queries**
 
 </div>
 
@@ -24,329 +14,338 @@
 
 ## 📑 Table of Contents
 
-1. [Introduction](#-introduction)
-2. [Core Concepts](#-core-concepts)
-3. [Heavy vs Light Edges](#-heavy-vs-light-edges)
-4. [Algorithm Implementation](#-algorithm-implementation)
-5. [Segment Tree Integration](#-segment-tree-integration)
-6. [Query Processing](#-query-processing)
-7. [Update Operations](#-update-operations)
-8. [Complexity Analysis](#-complexity-analysis)
-9. [Applications](#-applications)
-10. [Advanced Techniques](#-advanced-techniques)
-11. [Interview Problems](#-interview-problems)
-12. [Best Practices](#-best-practices)
+1. [Introduction](#introduction)
+2. [Core Concepts](#core-concepts)
+3. [Decomposition Process](#decomposition-process)
+4. [Implementation](#implementation)
+5. [Path Queries](#path-queries)
+6. [Advanced Applications](#advanced-applications)
+7. [Optimization Techniques](#optimization-techniques)
+8. [Best Practices](#best-practices)
 
 ---
 
-## 🎯 Introduction
+## Introduction
 
-**Heavy-Light Decomposition (HLD)** is an advanced tree decomposition technique that breaks down a tree into chains, enabling efficient path queries and updates in O(log²n) time using segment trees.
+**Heavy-Light Decomposition (HLD)** is an advanced tree algorithm technique that decomposes a tree into a set of chains, enabling efficient path queries and updates in O(log²n) time. It's particularly useful for problems involving path operations on trees.
 
-### 🔑 Key Innovation
+<div align="center">
+<img src="https://camo.githubusercontent.com/c1d811672d665bcb1b08153e031058b85392cf2c947e200c48c9b8fc2838cb92/68747470733a2f2f6d656469612e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f63646e2d75706c6f6164732f48656176792d4c696768742d4465636f6d706f7374696f6e2e706e67" alt="Heavy-Light Decomposition" width="650" height="400"/>
+</div>
 
-```
-Normal Tree Path Query: O(n)
-HLD + Segment Tree: O(log²n)
-
-Speedup: From linear to logarithmic!
-```
-
-### 💡 Core Idea
+### Core Principle
 
 ```mermaid
 flowchart TD
-    A["🌳 Original Tree"] --> B["⚖️ Classify Edges"]
-    B --> C["🔗 Form Chains"]
-    C --> D["📊 Map to Segment Tree"]
-    D --> E["⚡ Fast Queries"]
+    A["🔗 Heavy-Light Decomposition"] --> B["Heavy Edges"]
+    A --> C["Light Edges"]
+    A --> D["Chain Formation"]
     
-    B --> F["Heavy: Largest subtree"]
-    B --> G["Light: All others"]
+    B --> E["Connect to largest subtree"]
+    B --> F["At most one per node"]
     
-    C --> H["Chain heavy edges"]
-    C --> I["At most log n chains"]
+    C --> G["All other edges"]
+    C --> H["At most log n on any path"]
     
-    D --> J["Contiguous indices"]
-    D --> K["Range operations"]
+    D --> I["Heavy chains"]
+    D --> J["Efficient segment trees"]
     
-    E --> L["O(log²n) path queries"]
-    
-    style A fill:#e3f2fd
-    style E fill:#c8e6c9
-    style L fill:#c8e6c9
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef decomposition fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef heavy fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef light fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef chain fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A decomposition
+    class B,E,F heavy
+    class C,G,H light
+    class D,I,J chain
 ```
-
-- **Decompose** tree into heavy and light edges
-- **Chain** heavy edges together
-- **Map** chains to segment tree indices
-- **Query** paths by traversing chains
 
 ---
 
-## 🏗️ Core Concepts
+## Core Concepts
 
-### 🎯 Definitions
+### Heavy and Light Edges
+
+<div align="center">
+<img src="https://camo.githubusercontent.com/8fb207a5ba9a36af1c1a213dc1b61f4c3b7004f78bd510a190d8843113e17196/68747470733a2f2f6d656469612e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f63646e2d75706c6f6164732f686c64312e706e67" alt="Heavy and Light Edges" width="650" height="400"/>
+</div>
+
+### Edge Classification
 
 ```mermaid
 flowchart TD
-    A["Tree Node u"] --> B["Find All Children"]
-    B --> C["Calculate Subtree Sizes"]
-    C --> D["Identify Heavy Child"]
-    D --> E["Heavy Child = Max Subtree Size"]
+    A["Edge Classification"] --> B["Heavy Edge"]
+    A --> C["Light Edge"]
     
-    F["Edge Classification"] --> G["Heavy Edge: u → heavy_child"]
-    F --> H["Light Edge: u → other_children"]
+    B --> D["Connects parent to child"]
+    B --> E["Child has largest subtree"]
+    B --> F["Exactly one per node (except leaves)"]
     
-    I["Chain Formation"] --> J["Maximal Heavy Edge Sequence"]
-    I --> K["Each Chain has Head Node"]
+    C --> G["All other parent-child edges"]
+    C --> H["Smaller subtree connections"]
+    C --> I["Multiple per node possible"]
     
-    style A fill:#e3f2fd
-    style E fill:#c8e6c9
-    style G fill:#fff3e0
-    style H fill:#ffcdd2
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef classification fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef heavy fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef light fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A classification
+    class B,D,E,F heavy
+    class C,G,H,I light
 ```
 
-#### Heavy Child
-```cpp
-For node u with children v1, v2, ..., vk:
-Heavy child = child with maximum subtree size
-```
+### Chain Formation
 
-#### Heavy Edge
-```cpp
-Edge u → v is heavy if:
-v is the heavy child of u
-```
+<div align="center">
+<img src="https://camo.githubusercontent.com/8461dba1715fefa8ae34c86805b9b4eb5bb043653a047dfbe44fb852be6706a0/68747470733a2f2f6d656469612e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f63646e2d75706c6f6164732f686c64322e706e67" alt="Chain Formation" width="650" height="400"/>
+</div>
 
-#### Light Edge
-```cpp
-All other edges (non-heavy edges)
-```
+---
 
-#### Chain
-```cpp
-Maximal sequence of heavy edges
-Each chain has a head (topmost node)
-```
+## Decomposition Process
 
-### 📊 Key Property
+### Algorithm Steps
 
 ```mermaid
-flowchart LR
-    A["Root to Leaf Path"] --> B["At most log n light edges"]
-    B --> C["Each light edge halves subtree"]
-    C --> D["Logarithmic bound guaranteed"]
+flowchart TD
+    A["HLD Process"] --> B["DFS for Subtree Sizes"]
+    B --> C["Identify Heavy Edges"]
+    C --> D["Form Heavy Chains"]
+    D --> E["Assign Chain IDs"]
+    E --> F["Build Segment Trees"]
     
-    E["Path Query Complexity"] --> F["Traverse ≤ log n chains"]
-    F --> G["Each chain: O(log n) segment tree"]
-    G --> H["Total: O(log²n)"]
+    B --> G["Calculate subtree[v]"]
+    C --> H["For each node, pick largest child"]
+    D --> I["Connect heavy edges into chains"]
+    E --> J["Map tree positions to array indices"]
+    F --> K["One segment tree per chain"]
     
-    style A fill:#e3f2fd
-    style D fill:#c8e6c9
-    style H fill:#c8e6c9
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef dfs fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef heavy fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef chain fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef segment fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A process
+    class B,G dfs
+    class C,H heavy
+    class D,I,E,J chain
+    class F,K segment
 ```
 
-**Logarithmic Light Edges**: On any root-to-leaf path, there are at most **log n** light edges.
+### Decomposition Example
 
-**Proof**: Each light edge reduces subtree size by at least half.
+<div align="center">
+<img src="https://camo.githubusercontent.com/cabe40dc80c4d0817114d13fa10f182b68386a93470a3533ee378e82beeec2e5/68747470733a2f2f6d656469612e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f63646e2d75706c6f6164732f686c643332312e706e67" alt="Decomposition Example" width="650" height="400"/>
+</div>
 
 ---
 
-## ⚖️ Heavy vs Light Edges
+## Implementation
 
-### 🔍 Classification Algorithm
-
-```cpp
-void classifyEdges(int u, int parent, vector<vector<int>>& adj, 
-                   vector<int>& subtreeSize, vector<bool>& isHeavy) {
-    int maxSize = 0;
-    int heavyChild = -1;
-    
-    // Find heavy child
-    for (int v : adj[u]) {
-        if (v != parent && subtreeSize[v] > maxSize) {
-            maxSize = subtreeSize[v];
-            heavyChild = v;
-        }
-    }
-    
-    // Mark heavy edge
-    for (int v : adj[u]) {
-        if (v != parent) {
-            if (v == heavyChild) {
-                isHeavy[v] = true;  // Heavy edge u → v
-            }
-            classifyEdges(v, u, adj, subtreeSize, isHeavy);
-        }
-    }
-}
-```
-
-### 📈 Example Classification
-
-```
-Tree:
-        1(7)
-       /    \
-    2(4)    3(2)
-   /   \      \
- 4(2)  5(1)   6(1)
- /
-7(1)
-
-Subtree sizes in parentheses
-Heavy edges: 1→2, 2→4, 4→7
-Light edges: 1→3, 3→6, 2→5
-```
-
----
-
-## 💻 Algorithm Implementation
-
-### 🔧 Step 1: Calculate Subtree Sizes
-
-<div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/HLD-Subtree-Calculation.webp" alt="HLD Subtree Size Calculation" width="600" height="350"/>
-</div>
-
-```cpp
-int calculateSubtreeSize(int u, int parent, vector<vector<int>>& adj, 
-                        vector<int>& subtreeSize) {
-    subtreeSize[u] = 1;
-    
-    for (int v : adj[u]) {
-        if (v != parent) {
-            subtreeSize[u] += calculateSubtreeSize(v, u, adj, subtreeSize);
-        }
-    }
-    
-    return subtreeSize[u];
-}
-```
-
-### 🔧 Step 2: Heavy-Light Decomposition
-
-<div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/HLD-Chain-Formation.webp" alt="HLD Chain Formation Process" width="650" height="350"/>
-</div>
+### Heavy-Light Decomposition Class
 
 ```cpp
 class HeavyLightDecomposition {
 private:
     int n, timer;
     vector<vector<int>> adj;
-    vector<int> subtreeSize, parent, depth;
-    vector<int> chainHead, chainPos, chainIndex;
+    vector<int> parent, depth, subtree_size, heavy_child;
+    vector<int> chain_head, chain_id, pos_in_chain;
+    vector<vector<int>> chains;
     
-    void dfs1(int u, int p, int d) {
-        parent[u] = p;
-        depth[u] = d;
-        subtreeSize[u] = 1;
+public:
+    HeavyLightDecomposition(int size) : n(size), timer(0) {
+        adj.resize(n);
+        parent.resize(n);
+        depth.resize(n);
+        subtree_size.resize(n);
+        heavy_child.assign(n, -1);
+        chain_head.resize(n);
+        chain_id.resize(n);
+        pos_in_chain.resize(n);
+    }
+    
+    void addEdge(int u, int v) {
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    
+    void decompose(int root = 0) {
+        dfs1(root, -1);
+        dfs2(root, root);
+    }
+    
+private:
+    void dfs1(int v, int p) {
+        parent[v] = p;
+        subtree_size[v] = 1;
         
-        for (int v : adj[u]) {
-            if (v != p) {
-                dfs1(v, u, d + 1);
-                subtreeSize[u] += subtreeSize[v];
+        for (int u : adj[v]) {
+            if (u != p) {
+                depth[u] = depth[v] + 1;
+                dfs1(u, v);
+                subtree_size[v] += subtree_size[u];
+                
+                // Find heavy child (child with largest subtree)
+                if (heavy_child[v] == -1 || subtree_size[u] > subtree_size[heavy_child[v]]) {
+                    heavy_child[v] = u;
+                }
             }
         }
     }
     
-    void dfs2(int u, int p, int head) {
-        chainHead[u] = head;
-        chainPos[u] = timer++;
-        chainIndex[chainPos[u]] = u;
+    void dfs2(int v, int head) {
+        chain_head[v] = head;
+        chain_id[v] = chains.size();
         
-        // Find heavy child
-        int heavyChild = -1;
-        for (int v : adj[u]) {
-            if (v != p && (heavyChild == -1 || subtreeSize[v] > subtreeSize[heavyChild])) {
-                heavyChild = v;
-            }
+        if (chains.empty() || chain_head[v] != chain_head[chains.back().back()]) {
+            chains.push_back(vector<int>());
         }
         
-        // Continue heavy chain
-        if (heavyChild != -1) {
-            dfs2(heavyChild, u, head);
+        pos_in_chain[v] = chains[chain_id[v]].size();
+        chains[chain_id[v]].push_back(v);
+        
+        // Process heavy child first
+        if (heavy_child[v] != -1) {
+            dfs2(heavy_child[v], head);
         }
         
-        // Start new chains for light children
-        for (int v : adj[u]) {
-            if (v != p && v != heavyChild) {
-                dfs2(v, u, v);
+        // Process light children
+        for (int u : adj[v]) {
+            if (u != parent[v] && u != heavy_child[v]) {
+                dfs2(u, u); // Start new chain
             }
         }
     }
     
 public:
-    HeavyLightDecomposition(int n, vector<vector<int>>& tree) : 
-        n(n), timer(0), adj(tree) {
-        subtreeSize.resize(n);
-        parent.resize(n);
-        depth.resize(n);
-        chainHead.resize(n);
-        chainPos.resize(n);
-        chainIndex.resize(n);
+    // Query path from u to v
+    vector<pair<int, pair<int, int>>> getPathChains(int u, int v) {
+        vector<pair<int, pair<int, int>>> result;
         
-        dfs1(0, -1, 0);
-        dfs2(0, -1, 0);
+        while (chain_head[u] != chain_head[v]) {
+            if (depth[chain_head[u]] < depth[chain_head[v]]) {
+                swap(u, v);
+            }
+            
+            result.push_back({chain_id[u], {pos_in_chain[chain_head[u]], pos_in_chain[u]}});
+            u = parent[chain_head[u]];
+        }
+        
+        // Same chain
+        if (depth[u] > depth[v]) swap(u, v);
+        result.push_back({chain_id[u], {pos_in_chain[u], pos_in_chain[v]}});
+        
+        return result;
     }
     
-    // Get LCA of two nodes
     int lca(int u, int v) {
-        while (chainHead[u] != chainHead[v]) {
-            if (depth[chainHead[u]] > depth[chainHead[v]]) {
-                u = parent[chainHead[u]];
-            } else {
-                v = parent[chainHead[v]];
+        while (chain_head[u] != chain_head[v]) {
+            if (depth[chain_head[u]] < depth[chain_head[v]]) {
+                swap(u, v);
             }
+            u = parent[chain_head[u]];
         }
         return depth[u] < depth[v] ? u : v;
     }
     
-    // Get path from u to v as list of chain segments
-    vector<pair<int, int>> getPath(int u, int v) {
-        vector<pair<int, int>> pathU, pathV;
-        int lca_node = lca(u, v);
-        
-        // Path from u to LCA
-        int curr = u;
-        while (chainHead[curr] != chainHead[lca_node]) {
-            pathU.push_back({chainPos[chainHead[curr]], chainPos[curr]});
-            curr = parent[chainHead[curr]];
+    int distance(int u, int v) {
+        return depth[u] + depth[v] - 2 * depth[lca(u, v)];
+    }
+    
+    // Debug functions
+    void printChains() {
+        for (int i = 0; i < chains.size(); i++) {
+            cout << "Chain " << i << ": ";
+            for (int v : chains[i]) {
+                cout << v << " ";
+            }
+            cout << endl;
         }
-        pathU.push_back({chainPos[lca_node], chainPos[curr]});
-        
-        // Path from v to LCA
-        curr = v;
-        while (chainHead[curr] != chainHead[lca_node]) {
-            pathV.push_back({chainPos[chainHead[curr]], chainPos[curr]});
-            curr = parent[chainHead[curr]];
+    }
+    
+    void printHeavyEdges() {
+        cout << "Heavy edges: ";
+        for (int v = 0; v < n; v++) {
+            if (heavy_child[v] != -1) {
+                cout << "(" << v << "," << heavy_child[v] << ") ";
+            }
         }
-        if (curr != lca_node) {
-            pathV.push_back({chainPos[lca_node] + 1, chainPos[curr]});
-        }
-        
-        // Combine paths
-        reverse(pathV.begin(), pathV.end());
-        pathU.insert(pathU.end(), pathV.begin(), pathV.end());
-        
-        return pathU;
+        cout << endl;
     }
 };
 ```
 
 ---
 
-## 📊 Segment Tree Integration
+## Path Queries
 
-### 🔧 Segment Tree for HLD
+### Segment Tree Integration
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240731124259/Segment-Tree-HLD-Integration.webp" alt="Segment Tree HLD Integration" width="700" height="400"/>
+<img src="https://camo.githubusercontent.com/bd77c3f594830ace277f00fdff2e17ef2551fc90d454b0314f98a43a48b6e6fc/68747470733a2f2f6d656469612e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f63646e2d75706c6f6164732f686c64382e706e67" alt="Segment Tree Integration" width="650" height="400"/>
 </div>
 
+### Path Query Implementation
+
 ```cpp
+class HLDWithQueries {
+private:
+    HeavyLightDecomposition hld;
+    vector<SegmentTree> segment_trees;
+    
+public:
+    HLDWithQueries(int n) : hld(n) {}
+    
+    void addEdge(int u, int v) {
+        hld.addEdge(u, v);
+    }
+    
+    void build(vector<int>& values) {
+        hld.decompose();
+        
+        // Create segment tree for each chain
+        for (int i = 0; i < hld.chains.size(); i++) {
+            vector<int> chain_values;
+            for (int v : hld.chains[i]) {
+                chain_values.push_back(values[v]);
+            }
+            segment_trees.push_back(SegmentTree(chain_values));
+        }
+    }
+    
+    // Query sum on path from u to v
+    long long queryPath(int u, int v) {
+        long long result = 0;
+        auto path_chains = hld.getPathChains(u, v);
+        
+        for (auto& [chain_id, range] : path_chains) {
+            result += segment_trees[chain_id].query(range.first, range.second);
+        }
+        
+        return result;
+    }
+    
+    // Update value at node v
+    void updateNode(int v, int new_value) {
+        int chain = hld.chain_id[v];
+        int pos = hld.pos_in_chain[v];
+        segment_trees[chain].update(pos, new_value);
+    }
+    
+    // Update path from u to v
+    void updatePath(int u, int v, int delta) {
+        auto path_chains = hld.getPathChains(u, v);
+        
+        for (auto& [chain_id, range] : path_chains) {
+            segment_trees[chain_id].updateRange(range.first, range.second, delta);
+        }
+    }
+};
+
+// Simple Segment Tree for demonstration
 class SegmentTree {
 private:
     vector<long long> tree, lazy;
@@ -363,19 +362,19 @@ private:
         }
     }
     
-    void updateRange(int node, int start, int end, int l, int r, long long val) {
+    void updateRange(int node, int start, int end, int l, int r, int delta) {
         push(node, start, end);
         if (start > r || end < l) return;
         
         if (start >= l && end <= r) {
-            lazy[node] += val;
+            lazy[node] += delta;
             push(node, start, end);
             return;
         }
         
         int mid = (start + end) / 2;
-        updateRange(2 * node, start, mid, l, r, val);
-        updateRange(2 * node + 1, mid + 1, end, l, r, val);
+        updateRange(2 * node, start, mid, l, r, delta);
+        updateRange(2 * node + 1, mid + 1, end, l, r, delta);
         
         push(2 * node, start, mid);
         push(2 * node + 1, mid + 1, end);
@@ -394,13 +393,29 @@ private:
     }
     
 public:
-    SegmentTree(int size) : n(size) {
-        tree.resize(4 * n, 0);
-        lazy.resize(4 * n, 0);
+    SegmentTree(vector<int>& arr) : n(arr.size()) {
+        tree.resize(4 * n);
+        lazy.resize(4 * n);
+        build(arr, 1, 0, n - 1);
     }
     
-    void update(int l, int r, long long val) {
-        updateRange(1, 0, n - 1, l, r, val);
+    void build(vector<int>& arr, int node, int start, int end) {
+        if (start == end) {
+            tree[node] = arr[start];
+        } else {
+            int mid = (start + end) / 2;
+            build(arr, 2 * node, start, mid);
+            build(arr, 2 * node + 1, mid + 1, end);
+            tree[node] = tree[2 * node] + tree[2 * node + 1];
+        }
+    }
+    
+    void update(int pos, int value) {
+        updateRange(1, 0, n - 1, pos, pos, value - query(pos, pos));
+    }
+    
+    void updateRange(int l, int r, int delta) {
+        updateRange(1, 0, n - 1, l, r, delta);
     }
     
     long long query(int l, int r) {
@@ -409,477 +424,357 @@ public:
 };
 ```
 
-### 🔧 HLD + Segment Tree Integration
+---
+
+## Advanced Applications
+
+### LCA with HLD
 
 ```cpp
-class HLDWithSegmentTree {
+class LCAWithHLD {
 private:
     HeavyLightDecomposition hld;
-    SegmentTree segTree;
     
 public:
-    HLDWithSegmentTree(int n, vector<vector<int>>& tree) : 
-        hld(n, tree), segTree(n) {}
+    LCAWithHLD(int n) : hld(n) {}
     
-    void updatePath(int u, int v, long long val) {
-        vector<pair<int, int>> path = hld.getPath(u, v);
-        for (auto& segment : path) {
-            segTree.update(segment.first, segment.second, val);
-        }
+    void addEdge(int u, int v) {
+        hld.addEdge(u, v);
     }
     
-    long long queryPath(int u, int v) {
-        vector<pair<int, int>> path = hld.getPath(u, v);
-        long long result = 0;
-        for (auto& segment : path) {
-            result += segTree.query(segment.first, segment.second);
-        }
-        return result;
+    void build() {
+        hld.decompose();
     }
     
-    void updateSubtree(int u, long long val) {
-        int start = hld.chainPos[u];
-        int end = start + hld.subtreeSize[u] - 1;
-        segTree.update(start, end, val);
+    int lca(int u, int v) {
+        return hld.lca(u, v);
     }
     
-    long long querySubtree(int u) {
-        int start = hld.chainPos[u];
-        int end = start + hld.subtreeSize[u] - 1;
-        return segTree.query(start, end);
+    int distance(int u, int v) {
+        return hld.distance(u, v);
+    }
+    
+    bool isAncestor(int u, int v) {
+        return hld.lca(u, v) == u;
     }
 };
 ```
 
----
-
-## 🔍 Query Processing
-
-### 🎯 Path Query Algorithm
+### Subtree Queries with HLD
 
 ```cpp
-long long queryPath(int u, int v) {
-    long long result = 0;
-    
-    // Move u and v to same chain
-    while (chainHead[u] != chainHead[v]) {
-        // Ensure u is deeper
-        if (depth[chainHead[u]] < depth[chainHead[v]]) {
-            swap(u, v);
-        }
-        
-        // Query from chainHead[u] to u
-        result += segTree.query(chainPos[chainHead[u]], chainPos[u]);
-        
-        // Move u up
-        u = parent[chainHead[u]];
-    }
-    
-    // Both in same chain now
-    if (depth[u] > depth[v]) swap(u, v);
-    result += segTree.query(chainPos[u], chainPos[v]);
-    
-    return result;
-}
-```
-
-### 📊 Query Complexity Analysis
-
-```
-Path u → v crosses at most log n chains
-Each chain query: O(log n) in segment tree
-Total: O(log n × log n) = O(log²n)
-```
-
----
-
-## 🔄 Update Operations
-
-### 🎯 Path Update
-
-```cpp
-void updatePath(int u, int v, long long val) {
-    while (chainHead[u] != chainHead[v]) {
-        if (depth[chainHead[u]] < depth[chainHead[v]]) {
-            swap(u, v);
-        }
-        
-        segTree.update(chainPos[chainHead[u]], chainPos[u], val);
-        u = parent[chainHead[u]];
-    }
-    
-    if (depth[u] > depth[v]) swap(u, v);
-    segTree.update(chainPos[u], chainPos[v], val);
-}
-```
-
-### 🌳 Subtree Update
-
-```cpp
-void updateSubtree(int u, long long val) {
-    // Subtree of u is contiguous in DFS order
-    int start = chainPos[u];
-    int end = start + subtreeSize[u] - 1;
-    segTree.update(start, end, val);
-}
-```
-
----
-
-## ⏱️ Complexity Analysis
-
-### 📊 Time Complexity
-
-| Operation | Complexity | Explanation |
-|:----------|:-----------|:------------|
-| **Preprocessing** | O(n) | DFS traversals |
-| **Path Query** | O(log²n) | log n chains × log n per query |
-| **Path Update** | O(log²n) | log n chains × log n per update |
-| **Subtree Query** | O(log n) | Single segment tree query |
-| **Subtree Update** | O(log n) | Single segment tree update |
-
-### 💾 Space Complexity
-
-| Component | Space | Description |
-|:----------|:------|:------------|
-| **Tree Storage** | O(n) | Adjacency list |
-| **HLD Arrays** | O(n) | Chain info, positions |
-| **Segment Tree** | O(n) | Tree and lazy arrays |
-| **Total** | **O(n)** | Linear space |
-
----
-
-## 🎯 Applications
-
-### 🌐 Real-World Applications
-
-#### 1️⃣ Network Routing
-```cpp
-class NetworkRouter {
-    HLDWithSegmentTree hld;
-    
-public:
-    void updateBandwidth(int u, int v, int bandwidth) {
-        hld.updatePath(u, v, bandwidth);
-    }
-    
-    int getPathCapacity(int u, int v) {
-        return hld.queryPath(u, v);
-    }
-};
-```
-
-#### 2️⃣ Corporate Hierarchy
-```cpp
-class CorporateHierarchy {
-    HLDWithSegmentTree hld;
-    
-public:
-    void promoteSalary(int manager, int amount) {
-        hld.updateSubtree(manager, amount);
-    }
-    
-    long long getTotalSalary(int u, int v) {
-        return hld.queryPath(u, v);
-    }
-};
-```
-
-#### 3️⃣ File System Operations
-```cpp
-class FileSystem {
-    HLDWithSegmentTree hld;
-    
-public:
-    void updateDirectorySize(int dir, long long size) {
-        hld.updateSubtree(dir, size);
-    }
-    
-    long long getPathSize(int file1, int file2) {
-        return hld.queryPath(file1, file2);
-    }
-};
-```
-
----
-
-## 🎓 Advanced Techniques
-
-### 🔥 Edge-Based Queries
-
-```cpp
-class EdgeBasedHLD {
+class SubtreeQueries {
 private:
-    // Map each edge to its child node
-    vector<int> edgeToNode;
+    HeavyLightDecomposition hld;
+    SegmentTree seg_tree;
+    vector<int> tin, tout;
+    int timer;
+    
+    void dfs(int v, int p, vector<int>& values, vector<int>& euler_tour) {
+        tin[v] = timer++;
+        euler_tour.push_back(values[v]);
+        
+        for (int u : hld.adj[v]) {
+            if (u != p) {
+                dfs(u, v, values, euler_tour);
+            }
+        }
+        
+        tout[v] = timer - 1;
+    }
     
 public:
-    void updateEdge(int u, int v, long long val) {
-        // Ensure v is child of u
+    SubtreeQueries(int n) : hld(n), timer(0) {
+        tin.resize(n);
+        tout.resize(n);
+    }
+    
+    void build(vector<int>& values) {
+        vector<int> euler_tour;
+        dfs(0, -1, values, euler_tour);
+        seg_tree = SegmentTree(euler_tour);
+    }
+    
+    long long querySubtree(int v) {
+        return seg_tree.query(tin[v], tout[v]);
+    }
+    
+    void updateSubtree(int v, int delta) {
+        seg_tree.updateRange(tin[v], tout[v], delta);
+    }
+};
+```
+
+---
+
+## Optimization Techniques
+
+### Performance Optimizations
+
+```mermaid
+flowchart TD
+    A["HLD Optimizations"] --> B["Memory Layout"]
+    A --> C["Cache Efficiency"]
+    A --> D["Lazy Propagation"]
+    A --> E["Path Compression"]
+    
+    B --> F["Contiguous chain storage"]
+    C --> G["Sequential access patterns"]
+    D --> H["Batch range updates"]
+    E --> I["Reduce tree traversals"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef optimization fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef memory fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef cache fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef lazy fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef compression fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A optimization
+    class B,F memory
+    class C,G cache
+    class D,H lazy
+    class E,I compression
+```
+
+### Optimized Implementation
+
+```cpp
+class OptimizedHLD {
+private:
+    int n, timer;
+    vector<vector<int>> adj;
+    vector<int> parent, depth, subtree_size, heavy_child;
+    vector<int> chain_head, pos;
+    
+public:
+    OptimizedHLD(int size) : n(size), timer(0) {
+        adj.resize(n);
+        parent.resize(n);
+        depth.resize(n);
+        subtree_size.resize(n);
+        heavy_child.assign(n, -1);
+        chain_head.resize(n);
+        pos.resize(n);
+    }
+    
+    void decompose(int root = 0) {
+        dfs1(root, -1);
+        dfs2(root, root);
+    }
+    
+private:
+    void dfs1(int v, int p) {
+        parent[v] = p;
+        subtree_size[v] = 1;
+        
+        for (int& u : adj[v]) {
+            if (u != p) {
+                depth[u] = depth[v] + 1;
+                dfs1(u, v);
+                subtree_size[v] += subtree_size[u];
+                
+                if (heavy_child[v] == -1 || subtree_size[u] > subtree_size[heavy_child[v]]) {
+                    heavy_child[v] = u;
+                }
+            }
+        }
+        
+        // Move heavy child to front for better cache performance
+        if (heavy_child[v] != -1) {
+            for (int i = 0; i < adj[v].size(); i++) {
+                if (adj[v][i] == heavy_child[v]) {
+                    swap(adj[v][0], adj[v][i]);
+                    break;
+                }
+            }
+        }
+    }
+    
+    void dfs2(int v, int head) {
+        chain_head[v] = head;
+        pos[v] = timer++;
+        
+        if (heavy_child[v] != -1) {
+            dfs2(heavy_child[v], head);
+        }
+        
+        for (int u : adj[v]) {
+            if (u != parent[v] && u != heavy_child[v]) {
+                dfs2(u, u);
+            }
+        }
+    }
+    
+public:
+    template<typename F>
+    void processPath(int u, int v, F&& func) {
+        while (chain_head[u] != chain_head[v]) {
+            if (depth[chain_head[u]] < depth[chain_head[v]]) {
+                swap(u, v);
+            }
+            
+            func(pos[chain_head[u]], pos[u]);
+            u = parent[chain_head[u]];
+        }
+        
         if (depth[u] > depth[v]) swap(u, v);
-        
-        // Update the edge u→v (mapped to node v)
-        segTree.update(chainPos[v], chainPos[v], val);
+        func(pos[u], pos[v]);
     }
     
-    long long queryPathEdges(int u, int v) {
-        // Similar to node queries but exclude LCA
-        // Implementation details...
+    int lca(int u, int v) {
+        while (chain_head[u] != chain_head[v]) {
+            if (depth[chain_head[u]] < depth[chain_head[v]]) {
+                swap(u, v);
+            }
+            u = parent[chain_head[u]];
+        }
+        return depth[u] < depth[v] ? u : v;
     }
 };
 ```
 
-### 🎪 Multiple Values per Node
+---
+
+## Best Practices
+
+### Implementation Guidelines
+
+```mermaid
+flowchart TD
+    A["HLD Best Practices"] --> B["Tree Preprocessing"]
+    A --> C["Chain Management"]
+    A --> D["Query Optimization"]
+    A --> E["Memory Management"]
+    
+    B --> F["Single DFS for subtree sizes"]
+    B --> G["Efficient heavy child selection"]
+    
+    C --> H["Minimize chain count"]
+    C --> I["Contiguous chain storage"]
+    
+    D --> J["Batch similar queries"]
+    D --> K["Use lazy propagation"]
+    
+    E --> L["Reuse data structures"]
+    E --> M["Minimize memory allocations"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef practices fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef preprocessing fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef management fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef optimization fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef memory fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A practices
+    class B,F,G preprocessing
+    class C,H,I management
+    class D,J,K optimization
+    class E,L,M memory
+```
+
+### Common Pitfalls and Solutions
 
 ```cpp
-class MultiValueHLD {
-private:
-    vector<SegmentTree> segTrees;  // Multiple segment trees
-    
+class HLDBestPractices {
 public:
-    void updatePath(int u, int v, int valueType, long long val) {
-        vector<pair<int, int>> path = hld.getPath(u, v);
-        for (auto& segment : path) {
-            segTrees[valueType].update(segment.first, segment.second, val);
+    // ❌ Incorrect heavy child selection
+    void badHeavyChild(int v) {
+        int maxSize = 0;
+        for (int u : adj[v]) {
+            if (subtree_size[u] > maxSize) {
+                heavy_child[v] = u; // Missing parent check!
+                maxSize = subtree_size[u];
+            }
         }
     }
     
-    long long queryPath(int u, int v, int valueType) {
-        vector<pair<int, int>> path = hld.getPath(u, v);
+    // ✅ Correct heavy child selection
+    void goodHeavyChild(int v, int p) {
+        int maxSize = 0;
+        for (int u : adj[v]) {
+            if (u != p && subtree_size[u] > maxSize) {
+                heavy_child[v] = u;
+                maxSize = subtree_size[u];
+            }
+        }
+    }
+    
+    // ❌ Inefficient path processing
+    long long badPathQuery(int u, int v) {
         long long result = 0;
-        for (auto& segment : path) {
-            result += segTrees[valueType].query(segment.first, segment.second);
+        while (u != v) {
+            result += getValue(u);
+            u = parent[u]; // O(n) in worst case
         }
         return result;
     }
-};
-```
-
----
-
-## 🏆 Interview Problems
-
-### ✅ Common Problem Types
-
-1. **Path Sum Queries** - Sum of values on path u to v
-2. **Path Maximum** - Maximum value on path u to v
-3. **Subtree Updates** - Update all nodes in subtree
-4. **LCA with Values** - LCA with additional computations
-5. **Dynamic Tree Queries** - Online queries and updates
-
-### 🔥 Sample Problem: Path Sum with Updates
-
-```cpp
-class PathSumHLD {
-private:
-    HLDWithSegmentTree hld;
     
-public:
-    PathSumHLD(int n, vector<vector<int>>& tree, vector<long long>& values) : 
-        hld(n, tree) {
-        // Initialize segment tree with node values
-        for (int i = 0; i < n; i++) {
-            hld.segTree.update(hld.chainPos[i], hld.chainPos[i], values[i]);
+    // ✅ Efficient HLD path processing
+    long long goodPathQuery(int u, int v) {
+        long long result = 0;
+        while (chain_head[u] != chain_head[v]) {
+            if (depth[chain_head[u]] < depth[chain_head[v]]) {
+                swap(u, v);
+            }
+            // Query entire chain segment at once
+            result += queryChain(chain_head[u], u);
+            u = parent[chain_head[u]];
         }
+        // Final segment in same chain
+        if (depth[u] > depth[v]) swap(u, v);
+        result += queryChain(u, v);
+        return result;
     }
     
-    void updateNode(int u, long long val) {
-        hld.segTree.update(hld.chainPos[u], hld.chainPos[u], val);
-    }
+private:
+    vector<vector<int>> adj;
+    vector<int> parent, subtree_size, heavy_child, chain_head, depth;
     
-    void updatePath(int u, int v, long long val) {
-        hld.updatePath(u, v, val);
-    }
-    
-    long long queryPath(int u, int v) {
-        return hld.queryPath(u, v);
-    }
-    
-    long long querySubtree(int u) {
-        return hld.querySubtree(u);
-    }
+    long long getValue(int v) { return 0; } // Placeholder
+    long long queryChain(int u, int v) { return 0; } // Placeholder
 };
 ```
 
-### 🎯 Usage Example
+### Performance Comparison
 
-```cpp
-int main() {
-    int n = 7;
-    vector<vector<int>> tree(n);
-    
-    // Build tree
-    tree[0] = {1, 2};
-    tree[1] = {0, 3, 4};
-    tree[2] = {0, 5};
-    tree[3] = {1};
-    tree[4] = {1, 6};
-    tree[5] = {2};
-    tree[6] = {4};
-    
-    vector<long long> values = {1, 2, 3, 4, 5, 6, 7};
-    
-    PathSumHLD hld(n, tree, values);
-    
-    // Query path sum from node 3 to node 6
-    cout << hld.queryPath(3, 6) << endl;  // Sum along path 3→1→4→6
-    
-    // Update path from node 3 to node 5
-    hld.updatePath(3, 5, 10);
-    
-    // Query subtree sum of node 1
-    cout << hld.querySubtree(1) << endl;
-    
-    return 0;
-}
-```
+| Operation | Naive | LCA + Segment Tree | HLD |
+|-----------|-------|-------------------|-----|
+| **Preprocessing** | O(1) | O(n log n) | O(n) |
+| **Path Query** | O(n) | O(log n) per LCA | O(log²n) |
+| **Path Update** | O(n) | Not efficient | O(log²n) |
+| **Space** | O(n) | O(n log n) | O(n) |
 
 ---
 
-## 💎 Best Practices
+## Summary
 
-### ✅ Implementation Guidelines
+**Heavy-Light Decomposition** transforms tree path operations from linear to logarithmic complexity. Key insights:
 
-```
-✓ Always calculate subtree sizes first
-✓ Use 0-based indexing consistently
-✓ Handle parent pointers carefully
-✓ Test with small trees first
-✓ Verify chain decomposition manually
-✓ Use lazy propagation for range updates
-```
+### Essential Concepts
+- **Heavy Edges**: Connect to largest subtree child
+- **Light Edges**: All other parent-child connections
+- **Chain Formation**: Heavy edges form efficient query chains
+- **Logarithmic Guarantee**: At most O(log n) light edges on any path
 
-### 🔧 Optimization Tips
+### Core Applications
+- **Path Queries**: Sum, maximum, minimum on tree paths
+- **Path Updates**: Range updates on tree paths
+- **LCA Queries**: Efficient lowest common ancestor
+- **Subtree Operations**: Combined with Euler tour technique
 
-```cpp
-// Memory optimization: Use arrays instead of vectors for better cache
-int subtreeSize[MAXN], chainHead[MAXN], chainPos[MAXN];
+### Best Practices
+- Preprocess tree structure efficiently in single DFS
+- Use segment trees with lazy propagation for chain queries
+- Optimize memory layout for better cache performance
+- Handle edge cases in path processing carefully
 
-// Speed optimization: Avoid recursion in segment tree
-class IterativeSegmentTree {
-    // Iterative implementation for better performance
-};
-
-// Debugging: Visualize chain decomposition
-void printChains() {
-    for (int i = 0; i < n; i++) {
-        cout << "Node " << i << ": chain " << chainHead[i] 
-             << ", pos " << chainPos[i] << endl;
-    }
-}
-```
-
-### 🚫 Common Pitfalls
-
-```
-✗ Forgetting to handle parent pointers
-✗ Incorrect chain head assignment
-✗ Off-by-one errors in segment tree
-✗ Not handling single-node paths
-✗ Mixing 0-based and 1-based indexing
-```
-
----
-
-## 📊 Performance Comparison
-
-### 🆚 HLD vs Other Techniques
-
-<table>
-<thead>
-<tr>
-<th>Technique</th>
-<th>Path Query</th>
-<th>Path Update</th>
-<th>Subtree Query</th>
-<th>Space</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Naive DFS</strong></td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td><strong>LCA + Preprocessing</strong></td>
-<td>O(log n)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(n log n)</td>
-</tr>
-<tr>
-<td><strong>Heavy-Light Decomposition</strong></td>
-<td>O(log²n)</td>
-<td>O(log²n)</td>
-<td>O(log n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td><strong>Link-Cut Tree</strong></td>
-<td>O(log n)</td>
-<td>O(log n)</td>
-<td>O(log n)</td>
-<td>O(n)</td>
-</tr>
-</tbody>
-</table>
-
----
-
-## 🎓 Key Takeaways
-
-<div align="center">
-
-### 🌟 Master These Concepts
-
-</div>
-
-```
-1. ⚖️ HLD = Tree decomposition into heavy/light chains
-2. 🔗 Heavy edge = connects to largest subtree child
-3. 📊 At most log n light edges on any path
-4. 🌳 Combine with segment tree for fast queries
-5. ⚡ O(log²n) path operations vs O(n) naive
-6. 🎯 Perfect for competitive programming
-7. 🔧 Requires careful implementation
-8. 💡 Essential for advanced tree problems
-```
-
----
-
-## 📚 Practice Resources
-
-- **Codeforces**: HLD tag problems
-- **AtCoder**: Tree DP and query problems
-- **SPOJ**: Classical HLD problems
-- **CodeChef**: Advanced tree algorithms
-
----
-
-## 🎯 Interview Tips
-
-1. **Explain Intuition**: Why decompose into chains?
-2. **Draw Examples**: Visualize heavy/light edges
-3. **Analyze Complexity**: Prove log²n bound
-4. **Handle Edge Cases**: Single nodes, linear trees
-5. **Optimize Implementation**: Discuss iterative vs recursive
-6. **Connect Applications**: Real-world use cases
+> **Master's Insight**: HLD bridges the gap between tree algorithms and array-based data structures, enabling efficient path operations that would otherwise require complex tree-specific solutions.
 
 ---
 
 <div align="center">
 
-### 🔥 One-Line Summary
+**🔗 Master Heavy-Light Decomposition • Optimize Tree Queries • Build Efficient Solutions**
 
-**Heavy-Light Decomposition = Advanced tree technique enabling O(log²n) path queries through strategic chain decomposition and segment tree integration**
-
----
-
-**💻 Master HLD, master competitive programming!**
-
-*"In the realm of tree algorithms, Heavy-Light Decomposition is the bridge between theory and lightning-fast practice."*
+*From Theory to Practice • Trees to Arrays • Understanding to Mastery*
 
 </div>
