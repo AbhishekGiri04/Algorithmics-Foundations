@@ -1,4 +1,4 @@
-# ⚖️ Amortized Analysis — Complete Professional Guide
+# Amortized Analysis — Complete Professional Guide
 
 <div align="center">
 
@@ -6,329 +6,415 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Advanced-red?style=for-the-badge)
 ![Importance](https://img.shields.io/badge/Importance-Critical-darkred?style=for-the-badge)
 
-*Master advanced performance analysis techniques for guaranteed algorithmic efficiency*
+**Master advanced performance analysis techniques for guaranteed algorithmic efficiency**
 
 </div>
 
 ---
 
-## 🔄 Amortized Analysis Overview
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Core Concepts](#core-concepts)
+3. [Analysis Methods Overview](#analysis-methods-overview)
+4. [Aggregate Method](#aggregate-method)
+5. [Accounting Method](#accounting-method)
+6. [Potential Method](#potential-method)
+7. [Dynamic Array Analysis](#dynamic-array-analysis)
+8. [Stack Operations](#stack-operations)
+9. [Binary Counter](#binary-counter)
+10. [Advanced Applications](#advanced-applications)
+11. [Best Practices](#best-practices)
+
+---
+
+## Introduction
 
 <div align="center">
 <img src="https://i0.wp.com/vijinimallawaarachchi.com/wp-content/uploads/2017/05/capture31.png?fit=1200%2C794&ssl=1" alt="Amortized Analysis Visualization" width="700" height="400"/>
 </div>
 
-```mermaid
-mindmap
-  root((Amortized<br/>Analysis))
-    Methods
-      Aggregate Method
-        Total cost over n operations
-        Simple calculation
-        Direct approach
-      Accounting Method
-        Credit system
-        Prepay operations
-        Bankers method
-      Potential Method
-        Energy function
-        Mathematical rigor
-        State based analysis
-    Applications
-      Dynamic Arrays
-        Resize operations
-        Amortized insertion
-      Stack Operations
-        Multipop analysis
-        Credit per push
-      Binary Counter
-        Bit flip analysis
-        Amortized increment
-      Advanced Structures
-        Splay Trees
-        Fibonacci Heaps
-        Disjoint Sets
+**Amortized Analysis** is a technique for analyzing the average time per operation over a sequence of operations, providing guaranteed performance bounds without probabilistic assumptions.
 
-%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#2E86AB', 'primaryTextColor':'#ffffff', 'primaryBorderColor':'#ffffff', 'lineColor':'#4A4A4A', 'secondaryColor':'#A23B72', 'tertiaryColor':'#F18F01', 'background':'#C73E1D', 'mainBkg':'#2E86AB', 'secondBkg':'#A23B72', 'tertiaryBkg':'#F18F01'}}}%%
-```
-
-### 📊 Analysis Types Comparison
+### Why Amortized Analysis?
 
 ```mermaid
 flowchart TD
-    A["Analysis Types"] --> B["Worst-Case Analysis"]
+    A["Performance Analysis Types"] --> B["Worst-Case Analysis"]
     A --> C["Average-Case Analysis"]
     A --> D["Amortized Analysis"]
     
-    B --> E["Maximum cost<br/>Single operation<br/>Often pessimistic"]
-    C --> F["Expected cost<br/>Random inputs<br/>Probabilistic"]
-    D --> G["Average over sequence<br/>Guaranteed bounds<br/>No assumptions"]
+    B --> E["Maximum cost per operation"]
+    B --> F["Often too pessimistic"]
+    B --> G["Example: Array resize O(n)"]
     
-    E --> H["Example: Array resize O(n)"]
-    F --> I["Example: Quicksort O(n log n)"]
-    G --> J["Example: Array insert O(1)"]
+    C --> H["Expected cost over random inputs"]
+    C --> I["Requires probability assumptions"]
+    C --> J["May not guarantee performance"]
     
-    style A fill:#ff6b6b
-    style D fill:#4ecdc4
-    style G fill:#4ecdc4
-    style J fill:#4ecdc4
+    D --> K["Average cost over operation sequence"]
+    D --> L["Guaranteed performance bounds"]
+    D --> M["No probabilistic assumptions"]
+    D --> N["Example: Array insertion O(1)"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef worstCase fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef averageCase fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef amortized fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class B,E,F,G worstCase
+    class C,H,I,J averageCase
+    class D,K,L,M,N amortized
 ```
 
-## 📑 Table of Contents
-
-1. [🎯 Introduction](#-introduction)
-2. [🧩 Core Concepts](#-core-concepts)
-3. [📈 Aggregate Method](#-aggregate-method)
-4. [💰 Accounting Method](#-accounting-method)
-5. [⚡ Potential Method](#-potential-method)
-6. [📊 Dynamic Array Analysis](#-dynamic-array-analysis)
-7. [📚 Stack Operations](#-stack-operations)
-8. [🔢 Binary Counter](#-binary-counter)
-9. [🌳 Splay Trees](#-splay-trees)
-10. [🔥 Fibonacci Heap](#-fibonacci-heap)
-11. [🎯 Interview Problems](#-interview-problems)
-12. [💡 Best Practices](#-best-practices)
-
----
-
-## 🎯 Introduction
-
-**Amortized Analysis** is a technique for analyzing the average time per operation over a sequence of operations, providing guaranteed performance bounds without probabilistic assumptions.
-
-### 🔑 Key Principles
-- **Average Performance**: Analyze cost over sequence of operations
-- **Worst-Case Guarantee**: No probabilistic assumptions needed
-- **Cost Distribution**: Expensive operations balanced by cheap ones
-- **Practical Bounds**: More realistic than pure worst-case analysis
-
-### 🌟 Why Amortized Analysis?
-- **Realistic Performance**: Better than pessimistic worst-case
-- **Guaranteed Bounds**: Unlike probabilistic average-case
-- **Design Insight**: Helps optimize data structure operations
-- **Interview Relevance**: Common in technical discussions
-
----
-
-## 🧩 Core Concepts
-
-### 📊 Amortized vs Other Analysis Types
-
-```cpp
-class AnalysisComparison {
-public:
-    void compareAnalysisTypes() {
-        cout << "Analysis Type Comparison:" << endl;
-        cout << "========================" << endl;
-        
-        cout << "Worst-Case Analysis:" << endl;
-        cout << "  - Maximum cost of any single operation" << endl;
-        cout << "  - Often too pessimistic" << endl;
-        cout << "  - Example: Dynamic array resize O(n)" << endl;
-        
-        cout << "Average-Case Analysis:" << endl;
-        cout << "  - Expected cost assuming input distribution" << endl;
-        cout << "  - Requires probabilistic assumptions" << endl;
-        cout << "  - May not guarantee performance" << endl;
-        
-        cout << "Amortized Analysis:" << endl;
-        cout << "  - Average cost over sequence of operations" << endl;
-        cout << "  - Guaranteed performance bounds" << endl;
-        cout << "  - No probabilistic assumptions" << endl;
-        cout << "  - Example: Dynamic array insertion O(1)" << endl;
-    }
-    
-    // Demonstrate the difference with dynamic array
-    void demonstrateDynamicArray() {
-        vector<int> arr;
-        int operations = 1000;
-        
-        auto start = chrono::high_resolution_clock::now();
-        
-        for (int i = 0; i < operations; i++) {
-            arr.push_back(i);
-        }
-        
-        auto end = chrono::high_resolution_clock::now();
-        auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
-        
-        cout << "Dynamic Array Performance:" << endl;
-        cout << "Operations: " << operations << endl;
-        cout << "Total time: " << duration.count() << " microseconds" << endl;
-        cout << "Amortized time per operation: " 
-             << (double)duration.count() / operations << " microseconds" << endl;
-        cout << "Worst-case single operation: O(n) for resize" << endl;
-        cout << "Amortized per operation: O(1)" << endl;
-    }
-};
-```
-
----
-
-## 📈 Aggregate Method
-
-### 📝 Definition
-Calculate total cost of n operations, then divide by n.
-
-**Formula**: Amortized Cost = Total Cost of n operations / n
-
-### 🔄 Aggregate Method Process
+### Key Benefits
 
 ```mermaid
 flowchart TD
-    A["Sequence of n Operations"] --> B["Calculate Total Cost"]
-    B --> C["Sum all operation costs"]
-    C --> D["Include expensive operations"]
-    D --> E["Divide by n"]
-    E --> F["Amortized Cost per Operation"]
+    A["Amortized Analysis Benefits"] --> B["Realistic Performance Bounds"]
+    A --> C["Design Optimization"]
+    A --> D["Guaranteed Efficiency"]
+    A --> E["Practical Applications"]
     
-    G["Example: Dynamic Array"] --> H["n insertions"]
-    H --> I["Insert costs: n × 1 = n"]
-    I --> J["Resize costs: 1+2+4+...+n/2 < 2n"]
-    J --> K["Total cost < 3n"]
-    K --> L["Amortized cost < 3"]
+    B --> F["Better than worst-case pessimism"]
+    C --> G["Optimize data structure operations"]
+    D --> H["No probabilistic assumptions"]
+    E --> I["Real-world data structures"]
     
-    style A fill:#ff6b6b
-    style F fill:#4ecdc4
-    style G fill:#ffa500
-    style L fill:#4ecdc4
+    F --> J["Dynamic arrays, hash tables"]
+    G --> K["Balance expensive operations"]
+    H --> L["Worst-case guarantees maintained"]
+    I --> M["std::vector, ArrayList, etc."]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef benefit fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef detail fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef example fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class B,C,D,E benefit
+    class F,G,H,I detail
+    class J,K,L,M example
 ```
 
-```cpp
-class AggregateMethod {
-public:
-    // Dynamic Array using Aggregate Method
-    class DynamicArrayAnalysis {
-    public:
-        // Analyze n insertions with doubling strategy
-        double analyzeInsertions(int n) {
-            int totalCost = 0;
-            int capacity = 1;
-            int size = 0;
-            
-            for (int i = 0; i < n; i++) {
-                if (size == capacity) {
-                    // Resize operation: copy all elements
-                    totalCost += size; // Cost of copying
-                    capacity *= 2;
-                }
-                
-                totalCost += 1; // Cost of insertion
-                size++;
-            }
-            
-            cout << "Aggregate Method Analysis:" << endl;
-            cout << "Total operations: " << n << endl;
-            cout << "Total cost: " << totalCost << endl;
-            cout << "Amortized cost per operation: " << (double)totalCost / n << endl;
-            
-            return (double)totalCost / n;
-        }
-        
-        // Theoretical analysis
-        double theoreticalAnalysis(int n) {
-            // Resizes happen at sizes: 1, 2, 4, 8, ..., largest power of 2 ≤ n
-            int totalResizeCost = 0;
-            
-            for (int capacity = 1; capacity < n; capacity *= 2) {
-                totalResizeCost += capacity;
-            }
-            
-            int totalInsertCost = n; // Each insertion costs 1
-            int totalCost = totalInsertCost + totalResizeCost;
-            
-            cout << "Theoretical Aggregate Analysis:" << endl;
-            cout << "Insert cost: " << totalInsertCost << endl;
-            cout << "Resize cost: " << totalResizeCost << endl;
-            cout << "Total cost: " << totalCost << endl;
-            cout << "Amortized: " << (double)totalCost / n << endl;
-            
-            // Total resize cost ≤ 2n, so amortized cost ≤ 3
-            return (double)totalCost / n;
-        }
-    };
+---
+
+## Core Concepts
+
+### Fundamental Principles
+
+**Amortized Analysis** distributes the cost of expensive operations across multiple operations in a sequence.
+
+```mermaid
+flowchart TD
+    A["Operation Sequence"] --> B["Cheap Operations"]
+    A --> C["Expensive Operations"]
     
-    // Binary Counter using Aggregate Method
-    class BinaryCounterAnalysis {
-    public:
-        int countBitFlips(int n) {
-            int totalFlips = 0;
-            
-            // Count flips for each bit position
-            for (int bit = 0; bit < 32; bit++) {
-                // Bit i flips every 2^i operations
-                int flipFrequency = 1 << bit;
-                totalFlips += n / flipFrequency;
-            }
-            
-            cout << "Binary Counter Aggregate Analysis:" << endl;
-            cout << "Operations: " << n << endl;
-            cout << "Total bit flips: " << totalFlips << endl;
-            cout << "Amortized flips per increment: " << (double)totalFlips / n << endl;
-            
-            return totalFlips;
-        }
+    B --> D["Low individual cost"]
+    B --> E["Frequent occurrence"]
+    
+    C --> F["High individual cost"]
+    C --> G["Rare occurrence"]
+    
+    D --> H["Amortized Cost Balance"]
+    E --> H
+    F --> H
+    G --> H
+    
+    H --> I["Average cost per operation"]
+    H --> J["Guaranteed upper bound"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef cheap fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef expensive fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef balance fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    class B,D,E cheap
+    class C,F,G expensive
+    class H,I,J balance
+```
+
+### Mathematical Foundation
+
+```cpp
+class AmortizedConcepts {
+public:
+    void explainBasicConcepts() {
+        cout << "Amortized Analysis Fundamentals:" << endl;
+        cout << "===============================" << endl;
         
-        // Simulate actual counting
-        int simulateCounter(int n) {
-            int counter = 0;
-            int totalFlips = 0;
-            
-            for (int i = 0; i < n; i++) {
-                int oldCounter = counter;
-                counter++;
-                
-                // Count bit flips
-                int xorResult = oldCounter ^ counter;
-                totalFlips += __builtin_popcount(xorResult);
-            }
-            
-            cout << "Simulated Binary Counter:" << endl;
-            cout << "Final counter value: " << counter << endl;
-            cout << "Total flips: " << totalFlips << endl;
-            cout << "Average flips per increment: " << (double)totalFlips / n << endl;
-            
-            return totalFlips;
-        }
-    };
+        cout << "Key Idea:" << endl;
+        cout << "- Analyze average cost over sequence of operations" << endl;
+        cout << "- Expensive operations are balanced by cheap ones" << endl;
+        cout << "- Provides guaranteed bounds without probability" << endl;
+        
+        cout << "\nMathematical Definition:" << endl;
+        cout << "If T(n) is total cost of n operations, then:" << endl;
+        cout << "Amortized cost = T(n) / n" << endl;
+        
+        cout << "\nExample - Dynamic Array:" << endl;
+        cout << "- Individual insertions: mostly O(1), occasionally O(n)" << endl;
+        cout << "- Sequence of n insertions: total cost O(n)" << endl;
+        cout << "- Amortized cost per insertion: O(1)" << endl;
+    }
+    
+    void compareWithOtherAnalysis() {
+        cout << "\nComparison with Other Analysis Types:" << endl;
+        cout << "====================================" << endl;
+        
+        cout << "Analysis Type    | Guarantees | Assumptions | Use Case" << endl;
+        cout << "-----------------|------------|-------------|----------" << endl;
+        cout << "Worst-Case       | Yes        | None        | Safety-critical" << endl;
+        cout << "Average-Case     | No         | Input dist. | Typical performance" << endl;
+        cout << "Amortized        | Yes        | None        | Sequence analysis" << endl;
+        
+        cout << "\nWhen to Use Amortized Analysis:" << endl;
+        cout << "- Operations have varying costs" << endl;
+        cout << "- Expensive operations are infrequent" << endl;
+        cout << "- Need guaranteed bounds over sequences" << endl;
+        cout << "- Designing efficient data structures" << endl;
+    }
 };
 ```
 
 ---
 
-## 💰 Accounting Method (Banker's Method)
+## Analysis Methods Overview
 
-### 📝 Definition
-Assign artificial costs to operations and store extra cost as credit for future expensive operations.
+### Three Main Approaches
 
-### 🏦 Accounting Method Flow
+```mermaid
+flowchart TD
+    A["Amortized Analysis Methods"] --> B["Aggregate Method"]
+    A --> C["Accounting Method"]
+    A --> D["Potential Method"]
+    
+    B --> E["Calculate total cost"]
+    B --> F["Divide by operations"]
+    B --> G["Simple and direct"]
+    
+    C --> H["Assign artificial costs"]
+    C --> I["Store credits for future"]
+    C --> J["Intuitive cost model"]
+    
+    D --> K["Use potential function"]
+    D --> L["Track stored work"]
+    D --> M["Mathematically rigorous"]
+    
+    E --> N["Best for: Simple analysis"]
+    H --> O["Best for: Cost relationships"]
+    K --> P["Best for: Complex structures"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef aggregate fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef accounting fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef potential fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class B,E,F,G,N aggregate
+    class C,H,I,J,O accounting
+    class D,K,L,M,P potential
+```
+
+### Method Selection Guide
+
+```cpp
+class MethodSelection {
+public:
+    string selectMethod(ProblemCharacteristics problem) {
+        cout << "Method Selection Guide:" << endl;
+        cout << "======================" << endl;
+        
+        if (problem.hasSimpleCostStructure && problem.uniformOperations) {
+            cout << "Recommended: Aggregate Method" << endl;
+            cout << "Reason: Simple total cost calculation" << endl;
+            return "Aggregate";
+        }
+        
+        if (problem.hasClearCostRelationships && problem.intuitiveCredits) {
+            cout << "Recommended: Accounting Method" << endl;
+            cout << "Reason: Natural credit/debit model" << endl;
+            return "Accounting";
+        }
+        
+        if (problem.complexStateChanges || problem.needsRigorousProof) {
+            cout << "Recommended: Potential Method" << endl;
+            cout << "Reason: Mathematical precision required" << endl;
+            return "Potential";
+        }
+        
+        cout << "Default: Start with Aggregate Method" << endl;
+        return "Aggregate";
+    }
+    
+    void compareMethodComplexity() {
+        cout << "\nMethod Complexity Comparison:" << endl;
+        cout << "============================" << endl;
+        
+        cout << "Method      | Difficulty | Intuition | Rigor | Flexibility" << endl;
+        cout << "------------|------------|-----------|-------|------------" << endl;
+        cout << "Aggregate   | Easy       | High      | Low   | Low" << endl;
+        cout << "Accounting  | Medium     | High      | Medium| Medium" << endl;
+        cout << "Potential   | Hard       | Low       | High  | High" << endl;
+    }
+};
+```
+
+---
+
+## Aggregate Method
+
+### Definition and Process
+
+**Aggregate Method** calculates the total cost of n operations and divides by n to get the amortized cost.
+
+```mermaid
+flowchart TD
+    A["Start Analysis"] --> B["Identify Operation Sequence"]
+    B --> C["Calculate Total Cost"]
+    C --> D["Count All Operations"]
+    D --> E["Include Expensive Operations"]
+    E --> F["Sum All Costs"]
+    F --> G["Divide by Number of Operations"]
+    G --> H["Amortized Cost Result"]
+    
+    I["Example Process"] --> J["n Array Insertions"]
+    J --> K["Normal Insertions: n × 1"]
+    K --> L["Resize Operations: 1+2+4+..."]
+    L --> M["Total Cost: n + (2n-1)"]
+    M --> N["Amortized: 3n/n = 3"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef example fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef result fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class B,C,D,E,F,G process
+    class I,J,K,L,M example
+    class H,N result
+```
+
+### Implementation Examples
+
+#### Dynamic Array Analysis
+```cpp
+class AggregateMethodExamples {
+public:
+    // Dynamic Array with Doubling Strategy
+    double analyzeDynamicArray(int n) {
+        cout << "Aggregate Method - Dynamic Array Analysis:" << endl;
+        cout << "=========================================" << endl;
+        
+        // Calculate insertion costs
+        int insertionCost = n; // Each insertion costs 1
+        
+        // Calculate resize costs
+        int resizeCost = 0;
+        cout << "Resize costs at capacities: ";
+        for (int capacity = 1; capacity < n; capacity *= 2) {
+            resizeCost += capacity;
+            cout << capacity << " ";
+        }
+        cout << endl;
+        
+        int totalCost = insertionCost + resizeCost;
+        double amortizedCost = (double)totalCost / n;
+        
+        cout << "Analysis Results:" << endl;
+        cout << "- Insertion costs: " << insertionCost << endl;
+        cout << "- Resize costs: " << resizeCost << endl;
+        cout << "- Total cost: " << totalCost << endl;
+        cout << "- Operations: " << n << endl;
+        cout << "- Amortized cost: " << amortizedCost << endl;
+        
+        // Theoretical bound
+        cout << "Theoretical bound: resize cost ≤ 2n" << endl;
+        cout << "Therefore: amortized cost ≤ 3" << endl;
+        
+        return amortizedCost;
+    }
+    
+    // Binary Counter Analysis
+    double analyzeBinaryCounter(int n) {
+        cout << "\nAggregate Method - Binary Counter Analysis:" << endl;
+        cout << "==========================================" << endl;
+        
+        int totalFlips = 0;
+        
+        // Bit i flips every 2^i operations
+        cout << "Bit flip frequencies:" << endl;
+        for (int bit = 0; bit < 32 && (1 << bit) <= n; bit++) {
+            int frequency = 1 << bit;
+            int flips = n / frequency;
+            totalFlips += flips;
+            
+            cout << "Bit " << bit << ": flips every " << frequency 
+                 << " ops, total flips = " << flips << endl;
+        }
+        
+        double amortizedFlips = (double)totalFlips / n;
+        
+        cout << "Analysis Results:" << endl;
+        cout << "- Total operations: " << n << endl;
+        cout << "- Total bit flips: " << totalFlips << endl;
+        cout << "- Amortized flips per increment: " << amortizedFlips << endl;
+        cout << "- Theoretical bound: < 2 flips per increment" << endl;
+        
+        return amortizedFlips;
+    }
+    
+    // Stack with Multipop Analysis
+    void analyzeStackMultipop() {
+        cout << "\nAggregate Method - Stack with Multipop:" << endl;
+        cout << "======================================" << endl;
+        
+        cout << "Key Insight:" << endl;
+        cout << "- Each element can be pushed at most once" << endl;
+        cout << "- Each element can be popped at most once" << endl;
+        cout << "- Total cost for n operations ≤ 2n" << endl;
+        cout << "- Amortized cost per operation = O(1)" << endl;
+        
+        cout << "\nExample sequence:" << endl;
+        cout << "Push(1), Push(2), Push(3), Multipop(2), Push(4)" << endl;
+        cout << "Costs: 1 + 1 + 1 + 2 + 1 = 6" << endl;
+        cout << "Operations: 5" << endl;
+        cout << "Amortized: 6/5 = 1.2" << endl;
+    }
+};
+```
+
+---
+
+## Accounting Method
+
+### Definition and Process
+
+**Accounting Method** assigns artificial costs to operations and stores excess cost as credit for future expensive operations.
 
 ```mermaid
 flowchart TD
     A["Operation Request"] --> B["Assign Artificial Cost"]
     B --> C["Pay Actual Cost"]
     C --> D{"Excess Credit?"}
-    D -->|Yes| E["Store as Credit"]
+    D -->|Yes| E["Store Credit"]
     D -->|No| F["Use Stored Credit"]
     E --> G["Credit Bank"]
     F --> H["Deduct from Bank"]
-    G --> I["Ready for Future"]
+    G --> I["Ready for Future Operations"]
     H --> I
     
-    J["Example: Dynamic Array"] --> K["Charge 3 per insert"]
-    K --> L["Pay 1 for insertion"]
-    L --> M["Store 2 as credit"]
-    M --> N["Use credit for resize"]
+    J["Credit Management Rules"] --> K["Credits never negative"]
+    J --> L["Sufficient for all operations"]
+    J --> M["Artificial cost ≥ actual cost"]
     
-    style A fill:#ff6b6b
-    style I fill:#4ecdc4
-    style J fill:#ffa500
-    style N fill:#4ecdc4
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef credit fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef rules fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A,B,C,I process
+    class D,E,F,G,H credit
+    class J,K,L,M rules
 ```
 
+### Implementation Examples
+
+#### Dynamic Array with Accounting
 ```cpp
-class AccountingMethod {
+class AccountingMethodExamples {
 public:
-    // Dynamic Array with Accounting Method
     class DynamicArrayAccounting {
     private:
         vector<int> arr;
@@ -341,21 +427,24 @@ public:
         }
         
         void insert(int value) {
+            cout << "\nInserting " << value << ":" << endl;
+            
             // Charge 3 units per insertion
-            double chargedCost = 3.0;
-            double actualCost = 1.0; // Normal insertion cost
+            double artificialCost = 3.0;
+            double actualCost = 1.0; // Base insertion cost
             
             if (arr.size() == capacity) {
                 // Resize needed
-                actualCost += capacity; // Cost of copying elements
+                double resizeCost = capacity; // Cost of copying elements
+                actualCost += resizeCost;
                 
-                // Use stored credit for resize
-                double resizeCost = capacity;
+                cout << "  Resize needed, copying " << capacity << " elements" << endl;
+                cout << "  Using " << resizeCost << " credits for resize" << endl;
+                
                 if (totalCredit >= resizeCost) {
                     totalCredit -= resizeCost;
-                    cout << "Resize cost " << resizeCost << " paid from credit" << endl;
                 } else {
-                    cout << "Insufficient credit for resize!" << endl;
+                    cout << "  ERROR: Insufficient credits!" << endl;
                 }
                 
                 capacity *= 2;
@@ -364,24 +453,28 @@ public:
             
             arr.push_back(value);
             
-            // Store excess charge as credit
-            double excessCredit = chargedCost - 1.0; // 1.0 is base insertion cost
+            // Store excess as credit
+            double excessCredit = artificialCost - 1.0; // 1.0 is base cost
             totalCredit += excessCredit;
             
-            cout << "Insert " << value << ": Charged=" << chargedCost 
-                 << ", Actual=" << actualCost << ", Credit=" << totalCredit << endl;
+            cout << "  Artificial cost: " << artificialCost << endl;
+            cout << "  Actual cost: " << actualCost << endl;
+            cout << "  Credit stored: " << excessCredit << endl;
+            cout << "  Total credit: " << totalCredit << endl;
         }
         
         void analyzeCredits() {
-            cout << "Accounting Method Analysis:" << endl;
+            cout << "\nAccounting Analysis:" << endl;
+            cout << "===================" << endl;
             cout << "Current size: " << arr.size() << endl;
             cout << "Current capacity: " << capacity << endl;
             cout << "Available credit: " << totalCredit << endl;
-            cout << "Amortized cost per insertion: 3 units" << endl;
+            cout << "Credit per element: " << totalCredit / arr.size() << endl;
+            cout << "Amortized cost: 3 units per insertion" << endl;
         }
     };
     
-    // Stack with Multipop using Accounting Method
+    // Stack with Multipop Accounting
     class StackAccounting {
     private:
         stack<int> st;
@@ -392,89 +485,120 @@ public:
         
         void push(int value) {
             // Charge 2 units per push
-            double chargedCost = 2.0;
-            double actualCost = 1.0; // Actual push cost
+            double artificialCost = 2.0;
+            double actualCost = 1.0;
             
             st.push(value);
             
-            // Store 1 unit as credit for future pop
+            // Store 1 unit as credit
             totalCredit += 1.0;
             
-            cout << "Push " << value << ": Charged=" << chargedCost 
-                 << ", Credit=" << totalCredit << endl;
+            cout << "Push " << value << ": charged " << artificialCost 
+                 << ", stored 1 credit, total credit = " << totalCredit << endl;
         }
         
         void pop() {
             if (st.empty()) return;
             
-            // Use 1 unit of credit for pop
-            double actualCost = 1.0;
+            // Use 1 unit of credit
             totalCredit -= 1.0;
             
             int value = st.top();
             st.pop();
             
-            cout << "Pop " << value << ": Used 1 credit, Remaining=" << totalCredit << endl;
+            cout << "Pop " << value << ": used 1 credit, remaining = " 
+                 << totalCredit << endl;
         }
         
         void multipop(int k) {
             cout << "Multipop " << k << " elements:" << endl;
-            
             for (int i = 0; i < k && !st.empty(); i++) {
                 pop();
             }
         }
         
-        void analyzeCredits() {
-            cout << "Stack Accounting Analysis:" << endl;
+        void verifyInvariant() {
+            cout << "\nInvariant Check:" << endl;
             cout << "Stack size: " << st.size() << endl;
             cout << "Available credit: " << totalCredit << endl;
-            cout << "Credit should equal stack size: " << (totalCredit == st.size()) << endl;
+            cout << "Invariant (credit = stack size): " 
+                 << (abs(totalCredit - st.size()) < 0.001) << endl;
         }
     };
+    
+    void demonstrateAccounting() {
+        cout << "Accounting Method Demonstration:" << endl;
+        cout << "===============================" << endl;
+        
+        // Dynamic Array Example
+        DynamicArrayAccounting dynArr;
+        for (int i = 1; i <= 8; i++) {
+            dynArr.insert(i);
+        }
+        dynArr.analyzeCredits();
+        
+        cout << "\n" << string(50, '-') << endl;
+        
+        // Stack Example
+        StackAccounting stack;
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.verifyInvariant();
+        
+        stack.multipop(2);
+        stack.verifyInvariant();
+    }
 };
 ```
 
 ---
 
-## ⚡ Potential Method
+## Potential Method
 
-### 📝 Definition
-Uses a potential function Φ that maps data structure state to a number representing stored work.
+### Definition and Process
+
+**Potential Method** uses a potential function Φ that maps data structure state to a number representing stored work.
 
 **Formula**: Amortized Cost = Actual Cost + (Φ_after - Φ_before)
 
-### ⚡ Potential Method Visualization
-
 ```mermaid
 flowchart TD
-    A["Initial State<br/>Φ(D₀) = 0"] --> B["Operation i"]
+    A["Initial State Φ(D₀) = 0"] --> B["Operation i"]
     B --> C["Actual Cost: cᵢ"]
-    B --> D["State Change<br/>Dᵢ₋₁ → Dᵢ"]
-    D --> E["Potential Change<br/>Φ(Dᵢ) - Φ(Dᵢ₋₁)"]
-    C --> F["Amortized Cost<br/>âᵢ = cᵢ + ΔΦᵢ"]
+    B --> D["State Change: Dᵢ₋₁ → Dᵢ"]
+    D --> E["Potential Change: ΔΦᵢ"]
+    C --> F["Amortized Cost: âᵢ = cᵢ + ΔΦᵢ"]
     E --> F
     
     G["Potential Function Properties"] --> H["Φ(D₀) = 0"]
     G --> I["Φ(Dᵢ) ≥ 0 for all i"]
     G --> J["Reflects stored work"]
+    G --> K["Decreases with expensive ops"]
     
-    style A fill:#ff6b6b
-    style F fill:#4ecdc4
-    style G fill:#ffa500
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef operation fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef potential fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef properties fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A,B,C,D,F operation
+    class E,J,K potential
+    class G,H,I properties
 ```
 
+### Implementation Examples
+
+#### Dynamic Array with Potential Method
 ```cpp
-class PotentialMethod {
+class PotentialMethodExamples {
 public:
-    // Dynamic Array with Potential Method
     class DynamicArrayPotential {
     private:
         vector<int> arr;
         int capacity;
         
         // Potential function: Φ = 2 * size - capacity
-        double potential() {
+        double potential() const {
             return 2.0 * arr.size() - capacity;
         }
         
@@ -487,34 +611,44 @@ public:
             double potentialBefore = potential();
             double actualCost = 1.0; // Base insertion cost
             
+            cout << "\nInserting " << value << ":" << endl;
+            cout << "  Size before: " << arr.size() << ", Capacity: " << capacity << endl;
+            cout << "  Potential before: " << potentialBefore << endl;
+            
             if (arr.size() == capacity) {
                 // Resize operation
                 actualCost += capacity; // Cost of copying
                 capacity *= 2;
                 arr.reserve(capacity);
+                cout << "  Resize: copied " << (capacity/2) << " elements" << endl;
+                cout << "  New capacity: " << capacity << endl;
             }
             
             arr.push_back(value);
             double potentialAfter = potential();
+            double potentialChange = potentialAfter - potentialBefore;
+            double amortizedCost = actualCost + potentialChange;
             
-            double amortizedCost = actualCost + (potentialAfter - potentialBefore);
-            
-            cout << "Insert " << value << ":" << endl;
             cout << "  Actual cost: " << actualCost << endl;
-            cout << "  Potential before: " << potentialBefore << endl;
             cout << "  Potential after: " << potentialAfter << endl;
-            cout << "  Potential change: " << (potentialAfter - potentialBefore) << endl;
+            cout << "  Potential change: " << potentialChange << endl;
             cout << "  Amortized cost: " << amortizedCost << endl;
             
             return amortizedCost;
         }
         
-        void analyzePotential() {
-            cout << "Potential Method Analysis:" << endl;
-            cout << "Size: " << arr.size() << endl;
-            cout << "Capacity: " << capacity << endl;
+        void analyzePotentialFunction() {
+            cout << "\nPotential Function Analysis:" << endl;
+            cout << "===========================" << endl;
+            cout << "Function: Φ = 2 * size - capacity" << endl;
+            cout << "Current size: " << arr.size() << endl;
+            cout << "Current capacity: " << capacity << endl;
             cout << "Current potential: " << potential() << endl;
-            cout << "Potential function: Φ = 2 * size - capacity" << endl;
+            
+            cout << "\nWhy this function works:" << endl;
+            cout << "- Φ(empty array) = 2*0 - 1 = -1, but we set Φ₀ = 0" << endl;
+            cout << "- Normal insertion: ΔΦ = +2, amortized = 1 + 2 = 3" << endl;
+            cout << "- Resize insertion: ΔΦ = 2 - size, amortized = (1+size) + (2-size) = 3" << endl;
         }
     };
     
@@ -524,7 +658,7 @@ public:
         int counter;
         
         // Potential function: number of 1 bits
-        double potential() {
+        double potential() const {
             return __builtin_popcount(counter);
         }
         
@@ -541,124 +675,107 @@ public:
             double actualCost = bitFlips;
             
             double potentialAfter = potential();
-            double amortizedCost = actualCost + (potentialAfter - potentialBefore);
+            double potentialChange = potentialAfter - potentialBefore;
+            double amortizedCost = actualCost + potentialChange;
             
-            cout << "Increment to " << counter << ":" << endl;
-            cout << "  Bit flips (actual cost): " << actualCost << endl;
-            cout << "  Potential before: " << potentialBefore << endl;
-            cout << "  Potential after: " << potentialAfter << endl;
+            cout << "Increment " << oldCounter << " → " << counter << ":" << endl;
+            cout << "  Binary: " << bitset<4>(oldCounter) << " → " << bitset<4>(counter) << endl;
+            cout << "  Bit flips: " << bitFlips << endl;
+            cout << "  Potential: " << potentialBefore << " → " << potentialAfter << endl;
             cout << "  Amortized cost: " << amortizedCost << endl;
             
             return amortizedCost;
         }
         
-        void analyzePotential() {
-            cout << "Binary Counter Potential Analysis:" << endl;
-            cout << "Counter value: " << counter << endl;
+        void analyzePotentialFunction() {
+            cout << "\nBinary Counter Potential Analysis:" << endl;
+            cout << "=================================" << endl;
+            cout << "Function: Φ = number of 1 bits" << endl;
+            cout << "Current value: " << counter << endl;
             cout << "Binary: " << bitset<8>(counter) << endl;
-            cout << "Current potential (1-bits): " << potential() << endl;
+            cout << "Current potential: " << potential() << endl;
+            
+            cout << "\nWhy this function works:" << endl;
+            cout << "- Each increment flips rightmost 0 and some 1s" << endl;
+            cout << "- Flipping 0→1 increases potential by 1" << endl;
+            cout << "- Flipping 1→0 decreases potential by 1" << endl;
+            cout << "- Net effect: amortized cost ≤ 2" << endl;
         }
     };
     
-    // Splay Tree with Potential Method
-    class SplayTreePotential {
-    private:
-        struct Node {
-            int key;
-            Node* left;
-            Node* right;
-            int size; // Subtree size
-            
-            Node(int k) : key(k), left(nullptr), right(nullptr), size(1) {}
-        };
+    void demonstratePotentialMethod() {
+        cout << "Potential Method Demonstration:" << endl;
+        cout << "==============================" << endl;
         
-        Node* root;
-        
-        // Potential function: sum of log(size) for all nodes
-        double potential(Node* node) {
-            if (!node) return 0;
-            return log2(node->size) + potential(node->left) + potential(node->right);
+        // Dynamic Array Example
+        DynamicArrayPotential dynArr;
+        for (int i = 1; i <= 5; i++) {
+            dynArr.insert(i);
         }
+        dynArr.analyzePotentialFunction();
         
-        void updateSize(Node* node) {
-            if (!node) return;
-            node->size = 1;
-            if (node->left) node->size += node->left->size;
-            if (node->right) node->size += node->right->size;
+        cout << "\n" << string(50, '-') << endl;
+        
+        // Binary Counter Example
+        BinaryCounterPotential counter;
+        for (int i = 0; i < 8; i++) {
+            counter.increment();
         }
-        
-        Node* rotateRight(Node* y) {
-            Node* x = y->left;
-            y->left = x->right;
-            x->right = y;
-            updateSize(y);
-            updateSize(x);
-            return x;
-        }
-        
-        Node* rotateLeft(Node* x) {
-            Node* y = x->right;
-            x->right = y->left;
-            y->left = x;
-            updateSize(x);
-            updateSize(y);
-            return y;
-        }
-        
-    public:
-        SplayTreePotential() : root(nullptr) {}
-        
-        double splay(int key) {
-            double potentialBefore = potential(root);
-            int rotations = 0;
-            
-            // Simplified splay operation (actual implementation more complex)
-            root = splayHelper(root, key, rotations);
-            
-            double potentialAfter = potential(root);
-            double actualCost = rotations;
-            double amortizedCost = actualCost + (potentialAfter - potentialBefore);
-            
-            cout << "Splay " << key << ":" << endl;
-            cout << "  Rotations (actual cost): " << actualCost << endl;
-            cout << "  Potential change: " << (potentialAfter - potentialBefore) << endl;
-            cout << "  Amortized cost: " << amortizedCost << endl;
-            
-            return amortizedCost;
-        }
-        
-    private:
-        Node* splayHelper(Node* node, int key, int& rotations) {
-            // Simplified splay implementation
-            if (!node || node->key == key) return node;
-            
-            if (key < node->key && node->left) {
-                rotations++;
-                node = rotateRight(node);
-            } else if (key > node->key && node->right) {
-                rotations++;
-                node = rotateLeft(node);
-            }
-            
-            return node;
-        }
-    };
+        counter.analyzePotentialFunction();
+    }
 };
 ```
 
 ---
 
-## 📊 Dynamic Array Analysis
+## Dynamic Array Analysis
 
-### 🔄 Complete Analysis Using All Three Methods
+### Complete Analysis Using All Three Methods
+
+```mermaid
+flowchart TD
+    A["Dynamic Array Operations"] --> B["Normal Insertion"]
+    A --> C["Resize Insertion"]
+    
+    B --> D["Cost: 1"]
+    B --> E["Frequency: Most operations"]
+    
+    C --> F["Cost: 1 + n (copy)"]
+    C --> G["Frequency: Powers of 2"]
+    
+    D --> H["Analysis Methods"]
+    E --> H
+    F --> H
+    G --> H
+    
+    H --> I["Aggregate: Total/n"]
+    H --> J["Accounting: Credits"]
+    H --> K["Potential: Φ function"]
+    
+    I --> L["Result: O(1) amortized"]
+    J --> L
+    K --> L
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef normal fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef resize fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    classDef methods fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef result fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    class B,D,E normal
+    class C,F,G resize
+    class H,I,J,K methods
+    class L result
+```
+
+### Comprehensive Implementation
 
 ```cpp
-class DynamicArrayComplete {
+class DynamicArrayCompleteAnalysis {
 public:
-    // Comprehensive analysis of dynamic array operations
     void completeAnalysis(int n) {
-        cout << "=== DYNAMIC ARRAY AMORTIZED ANALYSIS ===" << endl;
-        cout << "Analyzing " << n << " insertions with doubling strategy" << endl;
+        cout << "DYNAMIC ARRAY COMPLETE AMORTIZED ANALYSIS" << endl;
+        cout << "=========================================" << endl;
+        cout << "Analyzing " << n << " insertions with doubling strategy\n" << endl;
         
         // Method 1: Aggregate Analysis
         aggregateAnalysis(n);
@@ -672,393 +789,477 @@ public:
         potentialAnalysis(n);
         cout << endl;
         
-        // Comparison
-        compareResults();
+        // Comparison and Insights
+        compareAllMethods();
     }
     
 private:
     void aggregateAnalysis(int n) {
-        cout << "1. AGGREGATE METHOD:" << endl;
-        cout << "-------------------" << endl;
+        cout << "1. AGGREGATE METHOD" << endl;
+        cout << "==================" << endl;
         
-        // Calculate total cost
+        // Calculate costs
         int insertCost = n; // Each insertion costs 1
         int resizeCost = 0;
         
-        // Sum of resize costs: 1 + 2 + 4 + 8 + ... < 2n
-        for (int capacity = 1; capacity < n; capacity *= 2) {
-            resizeCost += capacity;
+        cout << "Resize operations occur at sizes: ";
+        for (int size = 1; size < n; size *= 2) {
+            resizeCost += size;
+            cout << size << " ";
         }
+        cout << endl;
         
+        // Geometric series sum: 1 + 2 + 4 + ... + n/2 < 2n
         int totalCost = insertCost + resizeCost;
         double amortizedCost = (double)totalCost / n;
         
-        cout << "Insert cost: " << insertCost << endl;
-        cout << "Resize cost: " << resizeCost << endl;
-        cout << "Total cost: " << totalCost << endl;
-        cout << "Amortized cost: " << amortizedCost << " ≤ 3" << endl;
+        cout << "Cost breakdown:" << endl;
+        cout << "- Normal insertions: " << insertCost << endl;
+        cout << "- Resize operations: " << resizeCost << " (< 2n)" << endl;
+        cout << "- Total cost: " << totalCost << " (< 3n)" << endl;
+        cout << "- Amortized per operation: " << amortizedCost << " (< 3)" << endl;
     }
     
     void accountingAnalysis(int n) {
-        cout << "2. ACCOUNTING METHOD:" << endl;
-        cout << "--------------------" << endl;
+        cout << "2. ACCOUNTING METHOD" << endl;
+        cout << "===================" << endl;
         
-        cout << "Charge 3 units per insertion:" << endl;
-        cout << "- 1 unit for actual insertion" << endl;
-        cout << "- 2 units saved as credit" << endl;
-        cout << "When resize happens:" << endl;
-        cout << "- Use accumulated credit to pay for copying" << endl;
-        cout << "- Credit available = 2 * (size/2) = size" << endl;
-        cout << "- Resize cost = size (exactly matches credit)" << endl;
-        cout << "Amortized cost: 3 units per insertion" << endl;
+        cout << "Credit scheme:" << endl;
+        cout << "- Charge 3 units per insertion" << endl;
+        cout << "- Pay 1 unit for actual insertion" << endl;
+        cout << "- Store 2 units as credit" << endl;
+        
+        cout << "\nCredit usage:" << endl;
+        cout << "- When array has size k, total credit = 2k" << endl;
+        cout << "- Resize at size k costs k units (copying)" << endl;
+        cout << "- Available credit = 2k ≥ k (sufficient)" << endl;
+        
+        cout << "\nResult: 3 units per insertion guarantees all costs covered" << endl;
     }
     
     void potentialAnalysis(int n) {
-        cout << "3. POTENTIAL METHOD:" << endl;
-        cout << "-------------------" << endl;
+        cout << "3. POTENTIAL METHOD" << endl;
+        cout << "==================" << endl;
         
-        cout << "Potential function: Φ = 2 * size - capacity" << endl;
-        cout << "Normal insertion:" << endl;
-        cout << "- Actual cost = 1" << endl;
-        cout << "- Potential change = +2" << endl;
-        cout << "- Amortized cost = 1 + 2 = 3" << endl;
+        cout << "Potential function: Φ = 2 × size - capacity" << endl;
         
-        cout << "Resize insertion:" << endl;
-        cout << "- Actual cost = 1 + size (copy cost)" << endl;
-        cout << "- Potential before = 2*size - size = size" << endl;
-        cout << "- Potential after = 2*(size+1) - 2*size = 2" << endl;
-        cout << "- Potential change = 2 - size" << endl;
-        cout << "- Amortized cost = (1 + size) + (2 - size) = 3" << endl;
+        cout << "\nNormal insertion analysis:" << endl;
+        cout << "- Actual cost: 1" << endl;
+        cout << "- Size increases by 1, capacity unchanged" << endl;
+        cout << "- Potential change: +2" << endl;
+        cout << "- Amortized cost: 1 + 2 = 3" << endl;
+        
+        cout << "\nResize insertion analysis:" << endl;
+        cout << "- Actual cost: 1 + size (copying)" << endl;
+        cout << "- Before resize: Φ = 2×size - size = size" << endl;
+        cout << "- After resize: Φ = 2×(size+1) - 2×size = 2" << endl;
+        cout << "- Potential change: 2 - size" << endl;
+        cout << "- Amortized cost: (1 + size) + (2 - size) = 3" << endl;
     }
     
-    void compareResults() {
-        cout << "COMPARISON OF METHODS:" << endl;
-        cout << "=====================" << endl;
+    void compareAllMethods() {
+        cout << "COMPARISON OF ALL METHODS" << endl;
+        cout << "========================" << endl;
         
-        cout << "Method          | Amortized Cost | Difficulty | Insight" << endl;
-        cout << "----------------|----------------|------------|--------" << endl;
-        cout << "Aggregate       | ≤ 3           | Easy       | Total cost bound" << endl;
-        cout << "Accounting      | = 3           | Medium     | Credit mechanism" << endl;
-        cout << "Potential       | = 3           | Hard       | Energy function" << endl;
+        cout << "Method      | Amortized Cost | Complexity | Insight" << endl;
+        cout << "------------|----------------|------------|--------" << endl;
+        cout << "Aggregate   | ≤ 3           | Easy       | Total cost bound" << endl;
+        cout << "Accounting  | = 3           | Medium     | Credit mechanism" << endl;
+        cout << "Potential   | = 3           | Hard       | Energy function" << endl;
         
-        cout << "\nAll methods prove O(1) amortized cost per insertion!" << endl;
+        cout << "\nKey Insights:" << endl;
+        cout << "- All methods prove O(1) amortized insertion cost" << endl;
+        cout << "- Expensive resize operations are rare (powers of 2)" << endl;
+        cout << "- Cost is distributed across many cheap operations" << endl;
+        cout << "- Doubling strategy is optimal for amortized performance" << endl;
+        
+        cout << "\nPractical Impact:" << endl;
+        cout << "- std::vector, ArrayList use this strategy" << endl;
+        cout << "- Provides predictable performance for sequences" << endl;
+        cout << "- Better than increment-by-constant strategies" << endl;
     }
 };
 ```
 
 ---
 
-## 📚 Stack Operations
+## Stack Operations
 
-### 🔄 Stack with Multipop Analysis
+### Stack with Multipop Analysis
+
+```mermaid
+flowchart TD
+    A["Stack Operations"] --> B["Push"]
+    A --> C["Pop"]
+    A --> D["Multipop(k)"]
+    
+    B --> E["Cost: 1"]
+    C --> F["Cost: 1"]
+    D --> G["Cost: min(k, stack_size)"]
+    
+    E --> H["Key Insight"]
+    F --> H
+    G --> H
+    
+    H --> I["Each element pushed ≤ 1 time"]
+    H --> J["Each element popped ≤ 1 time"]
+    
+    I --> K["Total cost ≤ 2n for n operations"]
+    J --> K
+    
+    K --> L["Amortized cost: O(1) per operation"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef operations fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef costs fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef insight fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef result fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class B,C,D operations
+    class E,F,G costs
+    class H,I,J insight
+    class K,L result
+```
+
+### Implementation and Analysis
 
 ```cpp
-class StackMultipop {
+class StackMultipopAnalysis {
 private:
     stack<int> st;
-    
-public:
-    void push(int x) {
-        st.push(x);
-    }
-    
-    int pop() {
-        if (st.empty()) return -1;
-        int val = st.top();
-        st.pop();
-        return val;
-    }
-    
-    vector<int> multipop(int k) {
-        vector<int> result;
-        for (int i = 0; i < k && !st.empty(); i++) {
-            result.push_back(pop());
-        }
-        return result;
-    }
-    
-    // Amortized analysis of stack operations
-    void analyzeOperations() {
-        cout << "STACK WITH MULTIPOP ANALYSIS:" << endl;
-        cout << "=============================" << endl;
-        
-        // Aggregate Method
-        cout << "Aggregate Method:" << endl;
-        cout << "- Each element pushed at most once" << endl;
-        cout << "- Each element popped at most once" << endl;
-        cout << "- Total cost for n operations ≤ 2n" << endl;
-        cout << "- Amortized cost = O(1) per operation" << endl;
-        
-        // Accounting Method
-        cout << "\nAccounting Method:" << endl;
-        cout << "- Charge 2 units for push operation" << endl;
-        cout << "- 1 unit for actual push, 1 unit as credit" << endl;
-        cout << "- Pop operations use stored credit" << endl;
-        cout << "- Amortized cost: Push = 2, Pop = 0" << endl;
-        
-        // Potential Method
-        cout << "\nPotential Method:" << endl;
-        cout << "- Potential function: Φ = stack size" << endl;
-        cout << "- Push: actual cost = 1, potential change = +1" << endl;
-        cout << "- Amortized push cost = 1 + 1 = 2" << endl;
-        cout << "- Pop: actual cost = 1, potential change = -1" << endl;
-        cout << "- Amortized pop cost = 1 + (-1) = 0" << endl;
-    }
-    
-    // Demonstrate with actual operations
-    void demonstrateOperations() {
-        cout << "\nDEMONSTRATION:" << endl;
-        cout << "==============" << endl;
-        
-        // Push operations
-        for (int i = 1; i <= 5; i++) {
-            push(i);
-            cout << "Push " << i << ", stack size: " << st.size() << endl;
-        }
-        
-        // Multipop operation
-        cout << "\nMultipop 3 elements:" << endl;
-        vector<int> popped = multipop(3);
-        cout << "Popped: ";
-        for (int x : popped) cout << x << " ";
-        cout << "\nStack size after multipop: " << st.size() << endl;
-        
-        // Analysis
-        cout << "\nTotal operations: 5 pushes + 1 multipop(3)" << endl;
-        cout << "Total actual cost: 5 (pushes) + 3 (pops) = 8" << endl;
-        cout << "Amortized analysis: 5 * 2 (push) + 3 * 0 (pop) = 10" << endl;
-        cout << "Amortized bound holds: 10 ≥ 8" << endl;
-    }
-};
-```
-
----
-
-## 🎯 Interview Problems
-
-### Problem 1: Implement Dynamic Array with Analysis
-```cpp
-class AnalyzedDynamicArray {
-private:
-    int* arr;
-    int size;
-    int capacity;
     int totalOperations;
     int totalCost;
     
 public:
-    AnalyzedDynamicArray() : size(0), capacity(1), totalOperations(0), totalCost(0) {
-        arr = new int[capacity];
-    }
+    StackMultipopAnalysis() : totalOperations(0), totalCost(0) {}
     
-    ~AnalyzedDynamicArray() {
-        delete[] arr;
-    }
-    
-    void push_back(int value) {
+    void push(int value) {
+        st.push(value);
         totalOperations++;
-        int operationCost = 1; // Base insertion cost
+        totalCost += 1;
         
-        if (size == capacity) {
-            // Resize needed
-            int* newArr = new int[capacity * 2];
-            
-            // Copy elements (additional cost)
-            for (int i = 0; i < size; i++) {
-                newArr[i] = arr[i];
-                operationCost++; // Cost of copying each element
-            }
-            
-            delete[] arr;
-            arr = newArr;
-            capacity *= 2;
-            
-            cout << "Resize at operation " << totalOperations 
-                 << ", cost: " << operationCost << endl;
-        }
-        
-        arr[size++] = value;
-        totalCost += operationCost;
-        
-        if (operationCost > 1) {
-            cout << "Operation " << totalOperations << ": cost = " << operationCost << endl;
-        }
+        cout << "Push " << value << " (cost: 1, stack size: " << st.size() << ")" << endl;
     }
     
-    void printAnalysis() {
-        cout << "\nDynamic Array Analysis:" << endl;
-        cout << "Total operations: " << totalOperations << endl;
-        cout << "Total cost: " << totalCost << endl;
-        cout << "Amortized cost: " << (double)totalCost / totalOperations << endl;
-        cout << "Current size: " << size << endl;
-        cout << "Current capacity: " << capacity << endl;
+    int pop() {
+        if (st.empty()) return -1;
+        
+        int value = st.top();
+        st.pop();
+        totalOperations++;
+        totalCost += 1;
+        
+        cout << "Pop " << value << " (cost: 1, stack size: " << st.size() << ")" << endl;
+        return value;
     }
     
-    // Test with different growth strategies
-    void compareGrowthStrategies() {
-        cout << "Growth Strategy Comparison:" << endl;
-        cout << "==========================" << endl;
+    vector<int> multipop(int k) {
+        vector<int> result;
+        int actualPops = min(k, (int)st.size());
         
-        // Doubling strategy
-        cout << "Doubling (×2): Amortized O(1)" << endl;
-        cout << "- Resize costs: 1, 2, 4, 8, ..., n/2" << endl;
-        cout << "- Total resize cost ≤ 2n" << endl;
+        cout << "Multipop(" << k << ") - will pop " << actualPops << " elements:" << endl;
         
-        // Increment strategy
-        cout << "Increment (+k): Amortized O(n)" << endl;
-        cout << "- Resize costs: k, 2k, 3k, ..., nk" << endl;
-        cout << "- Total resize cost = O(n²)" << endl;
+        for (int i = 0; i < actualPops; i++) {
+            result.push_back(pop());
+        }
         
-        // Golden ratio strategy
-        cout << "Golden ratio (×φ): Amortized O(1)" << endl;
-        cout << "- φ = (1+√5)/2 ≈ 1.618" << endl;
-        cout << "- Better space utilization than doubling" << endl;
+        // Adjust operation count (multipop counts as 1 operation)
+        totalOperations -= actualPops - 1;
+        
+        return result;
+    }
+    
+    void analyzeAllMethods() {
+        cout << "\nSTACK WITH MULTIPOP - ALL ANALYSIS METHODS" << endl;
+        cout << "==========================================" << endl;
+        
+        // Aggregate Method
+        cout << "1. AGGREGATE METHOD:" << endl;
+        cout << "- Each element can be pushed at most once" << endl;
+        cout << "- Each element can be popped at most once" << endl;
+        cout << "- For n operations, total cost ≤ 2n" << endl;
+        cout << "- Amortized cost per operation ≤ 2" << endl;
+        
+        // Accounting Method
+        cout << "\n2. ACCOUNTING METHOD:" << endl;
+        cout << "- Charge 2 units for each push" << endl;
+        cout << "- 1 unit pays for push, 1 unit stored as credit" << endl;
+        cout << "- Pop operations use stored credit (charge 0)" << endl;
+        cout << "- Multipop uses accumulated credits" << endl;
+        cout << "- Amortized: Push = 2, Pop = 0, Multipop = 0" << endl;
+        
+        // Potential Method
+        cout << "\n3. POTENTIAL METHOD:" << endl;
+        cout << "- Potential function: Φ = stack size" << endl;
+        cout << "- Push: actual cost = 1, ΔΦ = +1, amortized = 2" << endl;
+        cout << "- Pop: actual cost = 1, ΔΦ = -1, amortized = 0" << endl;
+        cout << "- Multipop(k): actual cost = k, ΔΦ = -k, amortized = 0" << endl;
+        
+        cout << "\nCurrent Statistics:" << endl;
+        cout << "- Total operations: " << totalOperations << endl;
+        cout << "- Total actual cost: " << totalCost << endl;
+        cout << "- Average cost per operation: " << (double)totalCost / totalOperations << endl;
+        cout << "- Stack size: " << st.size() << endl;
+    }
+    
+    void demonstrateOperations() {
+        cout << "STACK MULTIPOP DEMONSTRATION" << endl;
+        cout << "============================" << endl;
+        
+        // Push several elements
+        for (int i = 1; i <= 6; i++) {
+            push(i);
+        }
+        
+        cout << "\nPerforming multipop(3):" << endl;
+        vector<int> popped = multipop(3);
+        cout << "Popped elements: ";
+        for (int x : popped) cout << x << " ";
+        cout << endl;
+        
+        cout << "\nPush more elements:" << endl;
+        push(7);
+        push(8);
+        
+        cout << "\nPerforming multipop(10) (more than stack size):" << endl;
+        popped = multipop(10);
+        cout << "Popped elements: ";
+        for (int x : popped) cout << x << " ";
+        cout << endl;
+        
+        analyzeAllMethods();
     }
 };
 ```
 
-### Problem 2: Fibonacci Heap Operations
-```cpp
-class FibonacciHeapAnalysis {
-public:
-    // Simplified Fibonacci Heap for analysis
-    struct Node {
-        int key;
-        int degree;
-        bool marked;
-        Node* parent;
-        Node* child;
-        Node* left;
-        Node* right;
-        
-        Node(int k) : key(k), degree(0), marked(false), 
-                     parent(nullptr), child(nullptr), left(this), right(this) {}
-    };
+---
+
+## Binary Counter
+
+### Bit Flip Analysis
+
+```mermaid
+flowchart TD
+    A["Binary Counter Increment"] --> B["Bit Pattern Analysis"]
+    B --> C["Bit 0: flips every operation"]
+    B --> D["Bit 1: flips every 2 operations"]
+    B --> E["Bit 2: flips every 4 operations"]
+    B --> F["Bit i: flips every 2^i operations"]
     
+    C --> G["Total flips for bit 0: n"]
+    D --> H["Total flips for bit 1: n/2"]
+    E --> I["Total flips for bit 2: n/4"]
+    F --> J["Total flips for bit i: n/2^i"]
+    
+    G --> K["Sum of all flips"]
+    H --> K
+    I --> K
+    J --> K
+    
+    K --> L["Total = n(1 + 1/2 + 1/4 + ...) < 2n"]
+    L --> M["Amortized cost per increment < 2"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef analysis fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef flips fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef total fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef result fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class B analysis
+    class C,D,E,F,G,H,I,J flips
+    class K,L total
+    class M result
+```
+
+### Complete Implementation
+
+```cpp
+class BinaryCounterAnalysis {
 private:
-    Node* minNode;
-    int numNodes;
-    
-    // Potential function: Φ = trees + 2 * marked_nodes
-    int potential() {
-        return countTrees() + 2 * countMarkedNodes();
-    }
-    
-    int countTrees() {
-        if (!minNode) return 0;
-        
-        int count = 1;
-        Node* current = minNode->right;
-        while (current != minNode) {
-            count++;
-            current = current->right;
-        }
-        return count;
-    }
-    
-    int countMarkedNodes() {
-        // Simplified counting (actual implementation would traverse all nodes)
-        return 0; // Placeholder
-    }
+    int counter;
+    int totalIncrements;
+    int totalFlips;
     
 public:
-    FibonacciHeapAnalysis() : minNode(nullptr), numNodes(0) {}
+    BinaryCounterAnalysis() : counter(0), totalIncrements(0), totalFlips(0) {}
     
-    // Insert operation analysis
-    double insert(int key) {
-        int potentialBefore = potential();
+    int increment() {
+        int oldCounter = counter;
+        counter++;
+        totalIncrements++;
         
-        Node* newNode = new Node(key);
+        // Count bit flips
+        int flips = __builtin_popcount(oldCounter ^ counter);
+        totalFlips += flips;
         
-        if (!minNode) {
-            minNode = newNode;
-        } else {
-            // Add to root list
-            newNode->right = minNode->right;
-            newNode->left = minNode;
-            minNode->right->left = newNode;
-            minNode->right = newNode;
-            
-            if (key < minNode->key) {
-                minNode = newNode;
-            }
+        cout << "Increment " << setw(2) << oldCounter << " → " << setw(2) << counter 
+             << " | Binary: " << bitset<4>(oldCounter) << " → " << bitset<4>(counter)
+             << " | Flips: " << flips << endl;
+        
+        return flips;
+    }
+    
+    void analyzeAllMethods(int n) {
+        cout << "\nBINARY COUNTER - ALL ANALYSIS METHODS" << endl;
+        cout << "====================================" << endl;
+        
+        // Aggregate Method
+        cout << "1. AGGREGATE METHOD:" << endl;
+        cout << "Bit flip frequencies:" << endl;
+        int theoreticalFlips = 0;
+        for (int bit = 0; bit < 8 && (1 << bit) <= n; bit++) {
+            int frequency = 1 << bit;
+            int flips = n / frequency;
+            theoreticalFlips += flips;
+            cout << "  Bit " << bit << ": flips every " << setw(2) << frequency 
+                 << " operations, total = " << setw(3) << flips << endl;
+        }
+        cout << "Total theoretical flips: " << theoreticalFlips << endl;
+        cout << "Amortized flips per increment: " << (double)theoreticalFlips / n << endl;
+        
+        // Accounting Method
+        cout << "\n2. ACCOUNTING METHOD:" << endl;
+        cout << "- Charge 2 units per increment" << endl;
+        cout << "- 1 unit pays for setting rightmost 0 to 1" << endl;
+        cout << "- 1 unit stored as credit on the new 1 bit" << endl;
+        cout << "- When 1 bit flips to 0, use its stored credit" << endl;
+        cout << "- Result: 2 units per increment covers all costs" << endl;
+        
+        // Potential Method
+        cout << "\n3. POTENTIAL METHOD:" << endl;
+        cout << "- Potential function: Φ = number of 1 bits" << endl;
+        cout << "- Each increment flips rightmost 0 and some 1s" << endl;
+        cout << "- Setting 0→1: +1 potential, cost paid by operation" << endl;
+        cout << "- Setting 1→0: -1 potential, cost paid by potential decrease" << endl;
+        cout << "- Net amortized cost ≤ 2 per increment" << endl;
+        
+        cout << "\nActual Results:" << endl;
+        cout << "- Total increments: " << totalIncrements << endl;
+        cout << "- Total bit flips: " << totalFlips << endl;
+        cout << "- Average flips per increment: " << (double)totalFlips / totalIncrements << endl;
+        cout << "- Current counter value: " << counter << endl;
+        cout << "- Current 1-bits (potential): " << __builtin_popcount(counter) << endl;
+    }
+    
+    void demonstrateIncrement(int n) {
+        cout << "BINARY COUNTER DEMONSTRATION" << endl;
+        cout << "============================" << endl;
+        cout << "Incrementing from 0 to " << n-1 << ":" << endl;
+        
+        for (int i = 0; i < n; i++) {
+            increment();
         }
         
-        numNodes++;
-        
-        int potentialAfter = potential();
-        int actualCost = 1; // O(1) actual work
-        double amortizedCost = actualCost + (potentialAfter - potentialBefore);
-        
-        cout << "Insert " << key << ":" << endl;
-        cout << "  Actual cost: " << actualCost << endl;
-        cout << "  Potential change: " << (potentialAfter - potentialBefore) << endl;
-        cout << "  Amortized cost: " << amortizedCost << endl;
-        
-        return amortizedCost;
+        analyzeAllMethods(n);
     }
     
-    // Extract-min operation analysis
-    double extractMin() {
-        if (!minNode) return 0;
+    void showBitFlipPattern() {
+        cout << "\nBIT FLIP PATTERN ANALYSIS:" << endl;
+        cout << "=========================" << endl;
         
-        int potentialBefore = potential();
+        cout << "Operation | Binary | Flips | Pattern" << endl;
+        cout << "----------|--------|-------|--------" << endl;
         
-        // Actual work: O(D(n)) where D(n) is max degree
-        int actualCost = log2(numNodes) + 1; // Simplified
-        
-        // Simplified extract-min (actual implementation more complex)
-        Node* oldMin = minNode;
-        
-        // Add children to root list and find new minimum
-        // ... complex consolidation process ...
-        
-        numNodes--;
-        
-        int potentialAfter = potential();
-        double amortizedCost = actualCost + (potentialAfter - potentialBefore);
-        
-        cout << "Extract-min:" << endl;
-        cout << "  Actual cost: " << actualCost << endl;
-        cout << "  Potential change: " << (potentialAfter - potentialBefore) << endl;
-        cout << "  Amortized cost: " << amortizedCost << endl;
-        
-        return amortizedCost;
-    }
-    
-    void analyzeComplexity() {
-        cout << "Fibonacci Heap Amortized Analysis:" << endl;
-        cout << "==================================" << endl;
-        cout << "Operation     | Actual    | Amortized" << endl;
-        cout << "--------------|-----------|----------" << endl;
-        cout << "Insert        | O(1)      | O(1)" << endl;
-        cout << "Find-min      | O(1)      | O(1)" << endl;
-        cout << "Extract-min   | O(n)      | O(log n)" << endl;
-        cout << "Decrease-key  | O(n)      | O(1)" << endl;
-        cout << "Delete        | O(n)      | O(log n)" << endl;
-        
-        cout << "\nPotential function: Φ = trees + 2 * marked_nodes" << endl;
-        cout << "Key insight: Expensive operations reduce potential" << endl;
+        int tempCounter = 0;
+        for (int i = 0; i < 16; i++) {
+            int oldCounter = tempCounter;
+            tempCounter++;
+            int flips = __builtin_popcount(oldCounter ^ tempCounter);
+            
+            cout << setw(9) << i << " | " << bitset<4>(tempCounter) 
+                 << " | " << setw(5) << flips << " | ";
+            
+            // Show which bits flipped
+            for (int bit = 0; bit < 4; bit++) {
+                if ((oldCounter ^ tempCounter) & (1 << bit)) {
+                    cout << "bit" << bit << " ";
+                }
+            }
+            cout << endl;
+        }
     }
 };
 ```
 
-### Problem 3: Disjoint Set Union with Path Compression
+---
+
+## Advanced Applications
+
+### Splay Trees
+
+```mermaid
+flowchart TD
+    A["Splay Tree Operations"] --> B["Access Operation"]
+    B --> C["Splay to Root"]
+    C --> D["Rotation Sequence"]
+    D --> E["Zig, Zig-Zig, Zig-Zag"]
+    
+    F["Potential Function"] --> G["Φ = Σ log(size(v)) for all nodes v"]
+    G --> H["Rank of node = log(subtree size)"]
+    H --> I["Amortized cost ≤ 3(rank(root) - rank(x)) + 1"]
+    
+    E --> J["Amortized Analysis Result"]
+    I --> J
+    J --> K["O(log n) amortized per operation"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef operation fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef potential fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef result fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A,B,C,D,E operation
+    class F,G,H,I potential
+    class J,K result
+```
+
+### Fibonacci Heap
+
+```mermaid
+flowchart TD
+    A["Fibonacci Heap Operations"] --> B["Insert"]
+    A --> C["Extract-Min"]
+    A --> D["Decrease-Key"]
+    A --> E["Delete"]
+    
+    B --> F["O(1) actual, O(1) amortized"]
+    C --> G["O(n) actual, O(log n) amortized"]
+    D --> H["O(n) actual, O(1) amortized"]
+    E --> I["O(n) actual, O(log n) amortized"]
+    
+    J["Potential Function"] --> K["Φ = trees + 2 × marked_nodes"]
+    K --> L["Expensive operations reduce potential"]
+    L --> M["Cascading cuts create new trees"]
+    M --> N["Consolidation reduces tree count"]
+    
+    F --> O["Excellent for graph algorithms"]
+    G --> O
+    H --> O
+    I --> O
+    N --> O
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef operations fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef complexity fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef potential fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef result fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    class A,B,C,D,E operations
+    class F,G,H,I complexity
+    class J,K,L,M,N potential
+    class O result
+```
+
+### Disjoint Set Union
+
 ```cpp
-class DisjointSetAnalysis {
+class DisjointSetAmortizedAnalysis {
 private:
     vector<int> parent;
     vector<int> rank;
-    int numSets;
     
 public:
-    DisjointSetAnalysis(int n) : parent(n), rank(n, 0), numSets(n) {
+    DisjointSetAmortizedAnalysis(int n) : parent(n), rank(n, 0) {
         for (int i = 0; i < n; i++) {
             parent[i] = i;
         }
     }
     
-    // Find with path compression
     int find(int x) {
         if (parent[x] != x) {
             parent[x] = find(parent[x]); // Path compression
@@ -1066,12 +1267,12 @@ public:
         return parent[x];
     }
     
-    // Union by rank
     void unionSets(int x, int y) {
         int rootX = find(x);
         int rootY = find(y);
         
         if (rootX != rootY) {
+            // Union by rank
             if (rank[rootX] < rank[rootY]) {
                 parent[rootX] = rootY;
             } else if (rank[rootX] > rank[rootY]) {
@@ -1080,165 +1281,176 @@ public:
                 parent[rootY] = rootX;
                 rank[rootX]++;
             }
-            numSets--;
         }
     }
     
     void analyzeComplexity() {
-        cout << "Disjoint Set Union Analysis:" << endl;
-        cout << "============================" << endl;
+        cout << "DISJOINT SET UNION AMORTIZED ANALYSIS" << endl;
+        cout << "====================================" << endl;
         
-        cout << "Without optimization:" << endl;
-        cout << "- Find: O(n) worst case" << endl;
+        cout << "Without optimizations:" << endl;
+        cout << "- Find: O(n) worst case (degenerate tree)" << endl;
         cout << "- Union: O(n) worst case" << endl;
         
-        cout << "\nWith Union by Rank:" << endl;
+        cout << "\nWith Union by Rank only:" << endl;
         cout << "- Tree height ≤ log n" << endl;
         cout << "- Find: O(log n)" << endl;
         cout << "- Union: O(log n)" << endl;
         
-        cout << "\nWith Path Compression:" << endl;
-        cout << "- Flattens paths during find" << endl;
-        cout << "- Amortized analysis needed" << endl;
+        cout << "\nWith Path Compression only:" << endl;
+        cout << "- Amortized analysis complex" << endl;
+        cout << "- Find: O(log n) amortized" << endl;
         
-        cout << "\nWith Both Optimizations:" << endl;
-        cout << "- Amortized time: O(α(n)) per operation" << endl;
-        cout << "- α(n) is inverse Ackermann function" << endl;
-        cout << "- Practically constant: α(n) ≤ 4 for all practical n" << endl;
+        cout << "\nWith both optimizations:" << endl;
+        cout << "- Uses inverse Ackermann function α(n)" << endl;
+        cout << "- Find: O(α(n)) amortized" << endl;
+        cout << "- Union: O(α(n)) amortized" << endl;
+        cout << "- α(n) ≤ 4 for all practical values of n" << endl;
         
-        cout << "\nInverse Ackermann Growth:" << endl;
-        cout << "α(16) = 3, α(65536) = 4, α(2^65536) = 5" << endl;
-    }
-    
-    // Demonstrate path compression effect
-    void demonstratePathCompression() {
-        cout << "\nPath Compression Demonstration:" << endl;
-        cout << "===============================" << endl;
-        
-        // Create a chain: 0 -> 1 -> 2 -> 3 -> 4
-        for (int i = 1; i < 5; i++) {
-            parent[i] = i - 1;
-        }
-        
-        cout << "Initial chain: 4 -> 3 -> 2 -> 1 -> 0" << endl;
-        cout << "Find(4) traverses 4 nodes" << endl;
-        
-        int root = find(4);
-        cout << "After find(4), path compressed:" << endl;
-        cout << "All nodes point directly to root " << root << endl;
-        
-        cout << "Subsequent find operations: O(1)" << endl;
+        cout << "\nInverse Ackermann growth:" << endl;
+        cout << "- α(16) = 3" << endl;
+        cout << "- α(65536) = 4" << endl;
+        cout << "- α(2^65536) = 5" << endl;
+        cout << "- Practically constant!" << endl;
     }
 };
 ```
 
 ---
 
-## 💡 Best Practices
+## Best Practices
 
-### 🎯 Choosing the Right Method
+### Method Selection Guidelines
+
+```mermaid
+flowchart TD
+    A["Choose Analysis Method"] --> B{"Simple cost structure?"}
+    B -->|Yes| C["Use Aggregate Method"]
+    B -->|No| D{"Clear cost relationships?"}
+    D -->|Yes| E["Use Accounting Method"]
+    D -->|No| F["Use Potential Method"]
+    
+    C --> G["Easy calculation"]
+    C --> H["Quick rough bounds"]
+    
+    E --> I["Intuitive credit model"]
+    E --> J["Good for explanation"]
+    
+    F --> K["Mathematical rigor"]
+    F --> L["Complex state changes"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef decision fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef aggregate fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef accounting fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef potential fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A,B,D decision
+    class C,G,H aggregate
+    class E,I,J accounting
+    class F,K,L potential
+```
+
+### Common Pitfalls and Solutions
+
 ```cpp
 class AmortizedAnalysisBestPractices {
 public:
-    void chooseMethod() {
-        cout << "Choosing Amortized Analysis Method:" << endl;
-        cout << "==================================" << endl;
-        
-        cout << "Use Aggregate Method when:" << endl;
-        cout << "- Simple total cost calculation" << endl;
-        cout << "- All operations have similar structure" << endl;
-        cout << "- Quick rough analysis needed" << endl;
-        
-        cout << "\nUse Accounting Method when:" << endl;
-        cout << "- Operations have clear cost relationships" << endl;
-        cout << "- Intuitive credit/debit model applies" << endl;
-        cout << "- Need to explain cost distribution" << endl;
-        
-        cout << "\nUse Potential Method when:" << endl;
-        cout << "- Complex data structure state changes" << endl;
-        cout << "- Need rigorous mathematical proof" << endl;
-        cout << "- Other methods are insufficient" << endl;
-    }
-    
     void commonPitfalls() {
-        cout << "\nCommon Pitfalls:" << endl;
-        cout << "================" << endl;
+        cout << "COMMON PITFALLS IN AMORTIZED ANALYSIS" << endl;
+        cout << "====================================" << endl;
         
-        cout << "1. Negative potential:" << endl;
-        cout << "   - Ensure Φ(initial) = 0 and Φ(any state) ≥ 0" << endl;
+        cout << "1. NEGATIVE POTENTIAL:" << endl;
+        cout << "Problem: Φ(state) < 0 violates potential method requirements" << endl;
+        cout << "Solution: Ensure Φ(initial) = 0 and Φ(any state) ≥ 0" << endl;
+        cout << "Example: Use Φ = max(0, 2×size - capacity) instead of 2×size - capacity" << endl;
         
-        cout << "2. Insufficient credits:" << endl;
-        cout << "   - Credits must never go negative" << endl;
-        cout << "   - Verify credit balance for all operation sequences" << endl;
+        cout << "\n2. INSUFFICIENT CREDITS:" << endl;
+        cout << "Problem: Credit balance goes negative in accounting method" << endl;
+        cout << "Solution: Verify credit sufficiency for all operation sequences" << endl;
+        cout << "Example: Stack needs 1 credit per element, not per operation" << endl;
         
-        cout << "3. Wrong potential function:" << endl;
-        cout << "   - Must reflect actual work stored in structure" << endl;
-        cout << "   - Should decrease when expensive operations occur" << endl;
+        cout << "\n3. WRONG POTENTIAL FUNCTION:" << endl;
+        cout << "Problem: Potential doesn't reflect actual stored work" << endl;
+        cout << "Solution: Potential should increase with stored work, decrease with expensive ops" << endl;
+        cout << "Example: Binary counter Φ = 1-bits, not total bits" << endl;
         
-        cout << "4. Confusing amortized with average:" << endl;
-        cout << "   - Amortized: guaranteed bound over any sequence" << endl;
-        cout << "   - Average: expected over random inputs" << endl;
+        cout << "\n4. CONFUSING AMORTIZED WITH AVERAGE:" << endl;
+        cout << "Problem: Thinking amortized = expected over random inputs" << endl;
+        cout << "Solution: Amortized provides worst-case guarantees over any sequence" << endl;
+        cout << "Example: Dynamic array O(1) amortized ≠ O(1) expected" << endl;
     }
     
     void designGuidelines() {
-        cout << "\nDesign Guidelines:" << endl;
-        cout << "==================" << endl;
+        cout << "\nDESIGN GUIDELINES" << endl;
+        cout << "=================" << endl;
         
-        cout << "1. Identify expensive operations" << endl;
-        cout << "2. Find what makes them expensive" << endl;
+        cout << "1. Identify expensive operations and their frequency" << endl;
+        cout << "2. Find what makes operations expensive" << endl;
         cout << "3. Determine how to 'pay' for expensive operations" << endl;
         cout << "4. Choose appropriate analysis method" << endl;
-        cout << "5. Verify bounds hold for all sequences" << endl;
+        cout << "5. Verify bounds hold for all possible sequences" << endl;
         
-        cout << "\nPotential Function Design:" << endl;
+        cout << "\nPOTENTIAL FUNCTION DESIGN:" << endl;
         cout << "- Should be 0 initially" << endl;
         cout << "- Should be non-negative always" << endl;
         cout << "- Should increase with 'stored work'" << endl;
         cout << "- Should decrease when work is 'released'" << endl;
+        cout << "- Should make expensive operations have low amortized cost" << endl;
+        
+        cout << "\nACCOUNTING METHOD DESIGN:" << endl;
+        cout << "- Assign costs that never make credits negative" << endl;
+        cout << "- Store credits on data structure elements" << endl;
+        cout << "- Use credits to pay for expensive operations" << endl;
+        cout << "- Verify invariant: credits ≥ 0 always" << endl;
+    }
+    
+    void practicalApplications() {
+        cout << "\nPRACTICAL APPLICATIONS" << endl;
+        cout << "=====================" << endl;
+        
+        cout << "Data Structures using Amortized Analysis:" << endl;
+        cout << "- std::vector (dynamic array)" << endl;
+        cout << "- std::unordered_map (hash table with resizing)" << endl;
+        cout << "- Splay trees (self-adjusting BST)" << endl;
+        cout << "- Fibonacci heaps (priority queues)" << endl;
+        cout << "- Disjoint set union (union-find)" << endl;
+        
+        cout << "\nAlgorithms using Amortized Analysis:" << endl;
+        cout << "- Incremental garbage collection" << endl;
+        cout << "- Dynamic programming with memoization" << endl;
+        cout << "- Online algorithms with competitive analysis" << endl;
+        cout << "- Cache replacement policies" << endl;
+        
+        cout << "\nInterview Relevance:" << endl;
+        cout << "- Explains why std::vector.push_back() is O(1)" << endl;
+        cout << "- Justifies hash table performance claims" << endl;
+        cout << "- Demonstrates advanced algorithmic thinking" << endl;
+        cout << "- Shows understanding of practical vs theoretical complexity" << endl;
     }
 };
 ```
 
 ---
 
-## 📊 Complexity Analysis
+## Summary
 
-### ⏰ Time Complexity Summary
-- **Dynamic Array**: O(1) amortized insertion
-- **Stack with Multipop**: O(1) amortized per operation
-- **Binary Counter**: O(1) amortized increment
-- **Splay Trees**: O(log n) amortized access
-- **Fibonacci Heap**: O(1) amortized insert/decrease-key
+Amortized analysis provides powerful techniques for understanding the true performance of algorithms and data structures:
 
-### 💾 Space Complexity
-- **Analysis overhead**: O(1) additional space
-- **Potential tracking**: Usually implicit in data structure
-- **Credit storage**: Conceptual, no actual storage needed
+**Core Methods**: Master aggregate, accounting, and potential methods for different scenarios  
+**Guaranteed Bounds**: Provides worst-case guarantees over operation sequences without probabilistic assumptions  
+**Practical Relevance**: Explains performance of real-world data structures like dynamic arrays and hash tables  
+**Design Tool**: Helps optimize data structure operations by balancing expensive and cheap operations  
+**Interview Skills**: Demonstrates advanced algorithmic thinking and understanding of performance analysis  
+**Mathematical Rigor**: Potential method provides formal framework for complex amortized analysis  
 
-### 🎯 Practical Applications
-- **Dynamic arrays**: std::vector, ArrayList
-- **Hash tables**: Resizing operations
-- **Garbage collection**: Mark-and-sweep analysis
-- **Database systems**: B-tree operations
+**Key Insight**: "Expensive operations are rare and balanced by many cheap operations, providing better practical bounds than pure worst-case analysis"
 
 ---
 
-## 🌟 Key Takeaways
+<div align="center">
 
-1. **Guaranteed Performance**: Amortized analysis provides worst-case guarantees over sequences
-2. **Three Methods**: Aggregate, Accounting, and Potential each have their strengths
-3. **Real-World Relevance**: Many practical data structures rely on amortized bounds
-4. **Design Tool**: Helps optimize data structure operations
-5. **Interview Importance**: Common topic in technical interviews
+**Master Amortized Analysis, Master Performance Optimization**
 
-### 🎯 Interview Quick Reference
-- **Amortized Analysis**: Average cost over sequence of operations
-- **Aggregate Method**: Total cost divided by number of operations
-- **Accounting Method**: Prepay cheap operations for expensive ones
-- **Potential Method**: Use potential function to track stored work
-- **Dynamic Array**: Classic example with O(1) amortized insertion
-- **Key Insight**: Expensive operations are rare and balanced by cheap ones
+*Where mathematical rigor meets practical efficiency*
 
----
-
-*Master amortized analysis to understand and design efficient data structures with guaranteed performance! ⚖️*
+</div>
