@@ -1,4 +1,4 @@
-# Algorithm Design Techniques — Complete Professional Guide
+# Algorithm Design Techniques — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

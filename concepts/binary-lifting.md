@@ -1,4 +1,4 @@
-# Binary Lifting — Complete Professional Guide
+# Binary Lifting — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

@@ -1,4 +1,4 @@
-# 🧩 NP-Completeness — Complete Professional Guide
+# 🧩 NP-Completeness — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

@@ -1,4 +1,4 @@
-# 🕸️ Graphs — Complete Professional Guide
+# 🕸️ Graphs — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

@@ -1,4 +1,4 @@
-# 🔴⚫ Red-Black Trees — Complete Professional Guide
+# 🔴⚫ Red-Black Trees — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

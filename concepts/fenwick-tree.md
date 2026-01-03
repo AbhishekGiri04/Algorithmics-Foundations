@@ -1,4 +1,4 @@
-# 🌲 Fenwick Tree — Complete Professional Guide
+# 🌲 Fenwick Tree — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

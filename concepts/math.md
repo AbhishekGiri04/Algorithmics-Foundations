@@ -1,4 +1,4 @@
-# 🧮 Mathematical Algorithms — Complete Professional Guide
+# 🧮 Mathematical Algorithms — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

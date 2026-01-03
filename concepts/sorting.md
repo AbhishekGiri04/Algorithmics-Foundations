@@ -1,4 +1,4 @@
-# 🔃 Sorting Algorithms — Complete Professional Guide
+# 🔃 Sorting Algorithms — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

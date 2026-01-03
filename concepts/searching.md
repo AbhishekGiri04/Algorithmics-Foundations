@@ -1,4 +1,4 @@
-# 🔍 Searching Algorithms — Complete Professional Guide
+# 🔍 Searching Algorithms — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

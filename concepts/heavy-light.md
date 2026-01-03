@@ -1,4 +1,4 @@
-# 🔗 Heavy-Light Decomposition — Complete Professional Guide
+# 🔗 Heavy-Light Decomposition — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

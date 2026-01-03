@@ -1,4 +1,4 @@
-# 🌲 Tries (Prefix Tree) — Complete Professional Guide
+# 🌲 Tries (Prefix Tree) — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

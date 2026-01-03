@@ -1,4 +1,4 @@
-# 🎲 Randomized Algorithms — Complete Professional Guide
+# 🎲 Randomized Algorithms — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

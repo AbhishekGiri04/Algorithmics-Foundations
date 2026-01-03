@@ -1,4 +1,4 @@
-# Trees — Complete Professional Guide
+# Trees — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

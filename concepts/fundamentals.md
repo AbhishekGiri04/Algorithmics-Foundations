@@ -1,4 +1,4 @@
-# 🎯 DSA Fundamentals — Complete Professional Guide
+# 🎯 DSA Fundamentals — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 

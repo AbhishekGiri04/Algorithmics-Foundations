@@ -1,4 +1,4 @@
-# Topological Sort — Complete Professional Guide
+# Topological Sort — Complete Professional <div align="center">Guide</div>
 
 <div align="center">
 
