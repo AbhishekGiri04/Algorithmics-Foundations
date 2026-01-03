@@ -1,4 +1,8 @@
+<div align="center">
+
 # 📊 Mo's Algorithm — Complete Professional <div align="center">Guide</div>
+
+</div>
 
 <div align="center">
 

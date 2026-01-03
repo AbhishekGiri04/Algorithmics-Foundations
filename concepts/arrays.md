@@ -1,4 +1,8 @@
+<div align="center">
+
 # Arrays — Complete Professional <div align="center">Guide</div>
+
+</div>
 
 <div align="center">
 
@@ -120,12 +124,20 @@ vector<int> arr(5, 10);        // Size 5, all elements = 10
 ```
 
 ```python
+<div align="center">
+
 # Python Lists (Dynamic Arrays)
+
+</div>
 arr = [1, 2, 3, 4, 5]         # Initialized list
 arr = [0] * 5                 # Size 5, all zeros
 arr = list(range(1, 6))       # [1, 2, 3, 4, 5]
 
+<div align="center">
+
 # NumPy Arrays (for numerical computing)
+
+</div>
 import numpy as np
 arr = np.array([1, 2, 3, 4, 5])  # NumPy array
 arr = np.zeros(5)                # Array of zeros

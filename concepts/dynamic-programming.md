@@ -1,4 +1,8 @@
+<div align="center">
+
 # 🧠 Dynamic Programming — Complete Professional <div align="center">Guide</div>
+
+</div>
 
 <div align="center">
 
