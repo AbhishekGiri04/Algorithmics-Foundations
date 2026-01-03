@@ -1,10 +1,10 @@
-# 📌 Topological DP — Complete Professional Guide
+# Topological DP — Complete Professional Guide
 
 <div align="center">
 
-![Topological DP](https://img.shields.io/badge/Topological_DP-DAG_Optimization-9c27b0?style=for-the-badge&logo=graph&logoColor=white)
-![Difficulty](https://img.shields.io/badge/Difficulty-Advanced-red?style=for-the-badge)
-![Importance](https://img.shields.io/badge/Importance-Critical-red?style=for-the-badge)
+![Topological DP](https://img.shields.io/badge/Topological_DP-DAG_Optimization-FF6B6B?style=for-the-badge&logo=databricks&logoColor=white)
+![Difficulty](https://img.shields.io/badge/Difficulty-Advanced-4ECDC4?style=for-the-badge)
+![Importance](https://img.shields.io/badge/Importance-Critical-darkred?style=for-the-badge)
 
 **Master Dynamic Programming on Directed Acyclic Graphs**
 
@@ -12,99 +12,113 @@
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-1. [Introduction](#-introduction)
-2. [Core Concepts](#-core-concepts)
-3. [Algorithm Framework](#-algorithm-framework)
-4. [Common DP Types](#-common-dp-types)
-5. [Implementation Examples](#-implementation-examples)
-6. [Interview Problems](#-interview-problems)
-7. [Best Practices](#-best-practices)
+1. [Introduction](#introduction)
+2. [Core Concepts](#core-concepts)
+3. [Algorithm Framework](#algorithm-framework)
+4. [Common DP Types](#common-dp-types)
+5. [Implementation Examples](#implementation-examples)
+6. [Interview Problems](#interview-problems)
+7. [Best Practices](#best-practices)
 
 ---
 
-## 🎯 Introduction
+## Introduction
+
+**Topological DP** is a powerful technique that combines Dynamic Programming with Directed Acyclic Graphs (DAGs) using Topological Sorting to ensure optimal substructure and dependency resolution. This approach is essential for solving complex optimization problems on graphs.
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20231016113524/example.png" alt="Topological DP Example" width="700" height="400"/>
+<img src="https://camo.githubusercontent.com/86574a9fe26ea0d2ba98a0b637db0aaabaf734c0f9f4cc050593035ed53d054a/68747470733a2f2f6d656469612e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f32303233313031363131333532342f6578616d706c652e706e67" alt="Topological DP Example" width="650" height="400"/>
 </div>
 
-**Topological DP** is a technique where Dynamic Programming is applied on a Directed Acyclic Graph (DAG) using Topological Sorting to ensure states are computed before they are needed.
-
-### 🔑 Why Topological Order?
+### Core Concept
 
 ```mermaid
 flowchart TD
-    A["🎯 DP Dependencies"] --> B["Current state depends on previous states"]
-    A --> C["Topological order guarantees correct processing"]
+    A["📌 Topological DP"] --> B["DAG Structure"]
+    A --> C["Topological Order"]
+    A --> D["DP State Definition"]
+    A --> E["Dependency Resolution"]
     
-    B --> D["If edge u → v exists"]
-    D --> E["u must be processed before v"]
-    
-    C --> F["No cycles allowed"]
-    C --> G["DAG structure required"]
-    
-    style A fill:#e3f2fd
-    style E fill:#c8e6c9
-    style G fill:#fff3e0
-```
-
-### 🔧 When to Use Topological DP
-
-```mermaid
-flowchart TD
-    A["Problem Analysis"] --> B{"Is it a Graph?"}
-    B -->|No| C["Not Topological DP"]
-    B -->|Yes| D{"Is it Directed?"}
-    
-    D -->|No| E["Consider other approaches"]
-    D -->|Yes| F{"Has Cycles?"}
-    
-    F -->|Yes| G["Cannot use Topological DP"]
-    F -->|No| H{"DP Dependencies exist?"}
-    
-    H -->|No| I["Use regular graph algorithms"]
-    H -->|Yes| J["✅ Use Topological DP"]
-    
-    style J fill:#c8e6c9
-    style G fill:#ffcdd2
-```
-
----
-
-## 🧩 Core Concepts
-
-### 🎯 Essential Requirements
-
-```mermaid
-flowchart TD
-    A["📌 Topological DP Requirements"] --> B["📊 DAG Structure"]
-    A --> C["🔄 Topological Order"]
-    A --> D["💡 DP State Definition"]
-    A --> E["🔗 State Transitions"]
-    
-    B --> F["Directed Graph"]
-    B --> G["No Cycles"]
+    B --> F["Directed edges"]
+    B --> G["No cycles"]
     B --> H["Finite vertices"]
     
     C --> I["Process dependencies first"]
-    C --> J["Kahn's or DFS-based"]
+    C --> J["Kahn's algorithm"]
+    C --> K["DFS-based sorting"]
     
-    D --> K["dp[node] = optimal value at node"]
-    D --> L["Base cases defined"]
+    D --> L["State at each node"]
+    D --> M["Base cases"]
+    D --> N["Transition function"]
     
-    E --> M["dp[v] = f(dp[u], edge(u,v))"]
-    E --> N["Relaxation-based updates"]
+    E --> O["Correct processing order"]
+    E --> P["Optimal substructure"]
+    E --> Q["Memoization benefits"]
     
-    style A fill:#e3f2fd
-    style B fill:#c8e6c9
-    style C fill:#fff3e0
-    style D fill:#fce4ec
-    style E fill:#f3e5f5
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef topodp fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef structure fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef order fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef state fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef dependency fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A topodp
+    class B,F,G,H structure
+    class C,I,J,K order
+    class D,L,M,N state
+    class E,O,P,Q dependency
 ```
 
-### 💻 Core Algorithm Template
+---
+
+## Core Concepts
+
+### Algorithm Requirements
+
+<div align="center">
+<img src="https://camo.githubusercontent.com/c8b5f3e72448e3f22e8b1f2b69849678283ea6ec9ca565761aa1092d51375833/68747470733a2f2f6d656469612e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f73686f72746573747061746873746172742e6a7067" alt="Shortest Path in DAG" width="650" height="400"/>
+</div>
+
+### Essential Requirements
+
+```mermaid
+flowchart TD
+    A["Topological DP Requirements"] --> B["DAG Structure"]
+    A --> C["Dependency Order"]
+    A --> D["State Definition"]
+    A --> E["Transition Function"]
+    
+    B --> F["Directed graph"]
+    B --> G["Acyclic property"]
+    B --> H["Finite vertices"]
+    
+    C --> I["Process prerequisites first"]
+    C --> J["Topological ordering"]
+    C --> K["Dependency resolution"]
+    
+    D --> L["dp[node] = optimal value"]
+    D --> M["Base cases defined"]
+    D --> N["State space bounded"]
+    
+    E --> O["dp[v] = f(dp[u], edge)"]
+    E --> P["Relaxation updates"]
+    E --> Q["Optimal substructure"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef requirements fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef structure fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef order fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef state fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef transition fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A requirements
+    class B,F,G,H structure
+    class C,I,J,K order
+    class D,L,M,N state
+    class E,O,P,Q transition
+```
+
+### Core Algorithm Template
 
 ```cpp
 class TopologicalDP {
@@ -113,7 +127,6 @@ public:
         int n = graph.size();
         vector<int> indegree(n, 0);
         
-        // Calculate indegrees
         for (int u = 0; u < n; u++) {
             for (int v : graph[u]) {
                 indegree[v]++;
@@ -143,56 +156,79 @@ public:
         
         return topoOrder.size() == n ? topoOrder : vector<int>();
     }
-    
-    // Generic DP on DAG template
-    vector<int> dpOnDAG(vector<vector<pair<int, int>>>& graph, int source) {
-        int n = graph.size();
-        vector<int> dp(n, INT_MIN);
-        dp[source] = 0;
-        
-        vector<int> topoOrder = getTopologicalOrder(graph);
-        
-        for (int u : topoOrder) {
-            if (dp[u] != INT_MIN) {
-                for (auto& edge : graph[u]) {
-                    int v = edge.first;
-                    int weight = edge.second;
-                    dp[v] = max(dp[v], dp[u] + weight);
-                }
-            }
-        }
-        
-        return dp;
-    }
 };
 ```
 
 ---
 
-## 🎯 Common DP Types
+## Algorithm Framework
+
+### Topological Sorting Applications
 
 <div align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/shortestpathstart.jpg" alt="Shortest Path in DAG" width="650" height="350"/>
+<img src="https://camo.githubusercontent.com/0ca87d9de119ecef215d9bb25ae7c80dae4aca9180a1e248c6e0b5899de2a709/68747470733a2f2f7363616c65722e636f6d2f746f706963732f696d616765732f70726163746963652d70726f626c656d2d62617365642d6f6e2d746f706f6c6f676963616c2d736f72742d6164646974696f6e2d736576656e2e77656270" alt="Topological Sort Applications" width="650" height="400"/>
 </div>
 
-### 🔧 DP Problem Categories
+### Step-by-Step Process
 
 ```mermaid
 flowchart TD
-    A["📌 Topological DP Types"] --> B["🛣️ Path Problems"]
-    A --> C["🔢 Counting Problems"]
-    A --> D["📊 Optimization Problems"]
-    A --> E["🔗 Dependency Problems"]
+    A["Topological DP Algorithm"] --> B["Step 1: Validate DAG"]
+    B --> C["Step 2: Topological Sort"]
+    C --> D["Step 3: Initialize DP"]
+    D --> E["Step 4: Process in Order"]
+    E --> F["Step 5: Extract Result"]
     
-    B --> F["Longest Path in DAG"]
-    B --> G["Shortest Path in DAG"]
+    B --> G["Check for cycles"]
+    G --> H["Verify directed edges"]
+    
+    C --> I["Kahn's Algorithm"]
+    C --> J["DFS-based approach"]
+    
+    D --> K["Set base cases"]
+    D --> L["Initialize states"]
+    
+    E --> M["For each node u"]
+    M --> N["Update neighbors v"]
+    N --> O["dp[v] = f(dp[u], edge)"]
+    
+    F --> P["Return optimal value"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef algorithm fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef validate fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef sort fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef process fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef result fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A algorithm
+    class B,G,H validate
+    class C,I,J sort
+    class D,E,K,L,M,N,O process
+    class F,P result
+```
+
+---
+
+## Common DP Types
+
+### Problem Categories
+
+```mermaid
+flowchart TD
+    A["Topological DP Types"] --> B["Path Problems"]
+    A --> C["Counting Problems"]
+    A --> D["Optimization Problems"]
+    A --> E["Dependency Problems"]
+    
+    B --> F["Longest path in DAG"]
+    B --> G["Shortest path in DAG"]
     B --> H["Path with constraints"]
     
     C --> I["Number of paths"]
-    C --> J["Ways to reach destination"]
+    C --> J["Ways to reach target"]
     C --> K["Path counting variants"]
     
-    D --> L["Maximum/Minimum cost"]
+    D --> L["Maximum/minimum cost"]
     D --> M["Resource optimization"]
     D --> N["Weighted problems"]
     
@@ -200,20 +236,29 @@ flowchart TD
     E --> P["Task dependencies"]
     E --> Q["Build systems"]
     
-    style A fill:#e3f2fd
-    style B fill:#c8e6c9
-    style C fill:#fff3e0
-    style D fill:#fce4ec
-    style E fill:#f3e5f5
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef types fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef path fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef counting fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef optimization fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    classDef dependency fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#000
+    class A types
+    class B,F,G,H path
+    class C,I,J,K counting
+    class D,L,M,N optimization
+    class E,O,P,Q dependency
 ```
 
-### 💻 Implementation Examples
+---
 
-#### 1️⃣ Longest Path in DAG
+## Implementation Examples
+
+### Core Algorithms
 
 ```cpp
-class LongestPathDAG {
+class TopologicalDPSolver {
 public:
+    // Longest path in DAG
     int longestPath(vector<vector<pair<int, int>>>& graph, int source) {
         int n = graph.size();
         vector<int> dp(n, INT_MIN);
@@ -233,41 +278,8 @@ public:
         
         return *max_element(dp.begin(), dp.end());
     }
-};
-```
-
-#### 2️⃣ Shortest Path in DAG
-
-```cpp
-class ShortestPathDAG {
-public:
-    vector<int> shortestPath(vector<vector<pair<int, int>>>& graph, int source) {
-        int n = graph.size();
-        vector<int> dp(n, INT_MAX);
-        dp[source] = 0;
-        
-        vector<int> topoOrder = topologicalSort(graph);
-        
-        for (int u : topoOrder) {
-            if (dp[u] != INT_MAX) {
-                for (auto& edge : graph[u]) {
-                    int v = edge.first;
-                    int weight = edge.second;
-                    dp[v] = min(dp[v], dp[u] + weight);
-                }
-            }
-        }
-        
-        return dp;
-    }
-};
-```
-
-#### 3️⃣ Counting Paths in DAG
-
-```cpp
-class CountPathsDAG {
-public:
+    
+    // Count paths in DAG
     long long countPaths(vector<vector<int>>& graph, int source, int target) {
         int n = graph.size();
         vector<long long> dp(n, 0);
@@ -283,62 +295,10 @@ public:
         
         return dp[target];
     }
-};
-```
-
----
-
-## 🎯 Algorithm Framework
-
-<div align="center">
-<img src="https://scaler.com/topics/images/practice-problem-based-on-topological-sort-addition-seven.webp" alt="Topological Sort Practice" width="700" height="400"/>
-</div>
-
-### 🔧 Step-by-Step Process
-
-```mermaid
-flowchart TD
-    A["📌 Topological DP Algorithm"] --> B["Step 1: Validate DAG"]
-    B --> C["Step 2: Topological Sort"]
-    C --> D["Step 3: Initialize DP"]
-    D --> E["Step 4: Process in Topo Order"]
-    E --> F["Step 5: Return Result"]
     
-    B --> G["Check for cycles"]
-    G --> H["Ensure directed graph"]
-    
-    C --> I["Kahn's Algorithm (BFS)"]
-    C --> J["DFS-based approach"]
-    
-    D --> K["Set base cases"]
-    D --> L["Initialize other states"]
-    
-    E --> M["For each node u in order"]
-    M --> N["Update all neighbors v"]
-    N --> O["dp[v] = f(dp[u], edge)"]
-    
-    style A fill:#e3f2fd
-    style F fill:#c8e6c9
-```
-
-### 💻 Complete Implementation
-
-```cpp
-class TopologicalDPSolver {
 private:
-    vector<vector<pair<int, int>>> graph;
-    int n;
-    
-public:
-    TopologicalDPSolver(int vertices) : n(vertices) {
-        graph.resize(n);
-    }
-    
-    void addEdge(int u, int v, int weight = 1) {
-        graph[u].push_back({v, weight});
-    }
-    
-    vector<int> topologicalSort() {
+    vector<int> topologicalSort(vector<vector<pair<int, int>>>& graph) {
+        int n = graph.size();
         vector<int> indegree(n, 0);
         
         for (int u = 0; u < n; u++) {
@@ -361,114 +321,37 @@ public:
             topoOrder.push_back(u);
             
             for (auto& edge : graph[u]) {
-                int v = edge.first;
-                indegree[v]--;
-                if (indegree[v] == 0) {
-                    q.push(v);
+                indegree[edge.first]--;
+                if (indegree[edge.first] == 0) {
+                    q.push(edge.first);
                 }
             }
         }
         
-        return topoOrder.size() == n ? topoOrder : vector<int>();
-    }
-    
-    // Longest path from source
-    int longestPath(int source) {
-        vector<int> dp(n, INT_MIN);
-        dp[source] = 0;
-        
-        vector<int> topoOrder = topologicalSort();
-        if (topoOrder.empty()) return -1; // Cycle detected
-        
-        for (int u : topoOrder) {
-            if (dp[u] != INT_MIN) {
-                for (auto& edge : graph[u]) {
-                    int v = edge.first;
-                    int weight = edge.second;
-                    dp[v] = max(dp[v], dp[u] + weight);
-                }
-            }
-        }
-        
-        return *max_element(dp.begin(), dp.end());
-    }
-    
-    // Count all paths from source to target
-    long long countPaths(int source, int target) {
-        vector<long long> dp(n, 0);
-        dp[source] = 1;
-        
-        vector<int> topoOrder = topologicalSort();
-        if (topoOrder.empty()) return 0;
-        
-        for (int u : topoOrder) {
-            for (auto& edge : graph[u]) {
-                int v = edge.first;
-                dp[v] += dp[u];
-            }
-        }
-        
-        return dp[target];
+        return topoOrder;
     }
 };
 ```
 
 ---
 
-## 🏆 Interview Problems
+## Interview Problems
 
-### ✅ Common Problem Types
-
-```mermaid
-flowchart TD
-    A["📌 Interview Problems"] --> B["🎓 Course Schedule"]
-    A --> C["📋 Job Scheduling"]
-    A --> D["🔗 Longest Chain"]
-    A --> E["🏗️ Build Systems"]
-    
-    B --> F["Course Schedule II"]
-    B --> G["Parallel Courses"]
-    B --> H["Course Prerequisites"]
-    
-    C --> I["Task Dependencies"]
-    C --> J["Project Scheduling"]
-    C --> K["Resource Allocation"]
-    
-    D --> L["Longest Increasing Path"]
-    D --> M["Chain of Pairs"]
-    D --> N["Sequence Problems"]
-    
-    E --> O["Build Order"]
-    E --> P["Dependency Resolution"]
-    E --> Q["Package Management"]
-    
-    style A fill:#e3f2fd
-    style B fill:#c8e6c9
-    style C fill:#fff3e0
-    style D fill:#fce4ec
-    style E fill:#f3e5f5
-```
-
-### 💻 Sample Problems
-
-#### Problem 1: Course Schedule II
+### Common Problem Patterns
 
 ```cpp
-class CourseSchedule {
+class InterviewProblems {
 public:
+    // Course Schedule II
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
         vector<vector<int>> graph(numCourses);
         vector<int> indegree(numCourses, 0);
         
-        // Build graph
         for (auto& prereq : prerequisites) {
-            int course = prereq[0];
-            int pre = prereq[1];
-            graph[pre].push_back(course);
-            indegree[course]++;
+            graph[prereq[1]].push_back(prereq[0]);
+            indegree[prereq[0]]++;
         }
         
-        // Topological sort
         queue<int> q;
         for (int i = 0; i < numCourses; i++) {
             if (indegree[i] == 0) {
@@ -492,120 +375,166 @@ public:
         
         return order.size() == numCourses ? order : vector<int>();
     }
-};
-```
-
-#### Problem 2: Longest Path in Matrix
-
-```cpp
-class LongestPathMatrix {
-public:
-    int longestIncreasingPath(vector<vector<int>>& matrix) {
-        if (matrix.empty()) return 0;
+    
+    // Parallel Courses
+    int minimumSemesters(int n, vector<vector<int>>& relations) {
+        vector<vector<int>> graph(n + 1);
+        vector<int> indegree(n + 1, 0);
         
-        int m = matrix.size(), n = matrix[0].size();
-        vector<vector<int>> dp(m, vector<int>(n, 0));
+        for (auto& relation : relations) {
+            graph[relation[0]].push_back(relation[1]);
+            indegree[relation[1]]++;
+        }
         
-        function<int(int, int)> dfs = [&](int i, int j) -> int {
-            if (dp[i][j] != 0) return dp[i][j];
-            
-            dp[i][j] = 1;
-            vector<pair<int, int>> dirs = {{0,1}, {1,0}, {0,-1}, {-1,0}};
-            
-            for (auto& dir : dirs) {
-                int x = i + dir.first;
-                int y = j + dir.second;
-                
-                if (x >= 0 && x < m && y >= 0 && y < n && 
-                    matrix[x][y] > matrix[i][j]) {
-                    dp[i][j] = max(dp[i][j], 1 + dfs(x, y));
-                }
-            }
-            
-            return dp[i][j];
-        };
-        
-        int maxPath = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                maxPath = max(maxPath, dfs(i, j));
+        queue<int> q;
+        for (int i = 1; i <= n; i++) {
+            if (indegree[i] == 0) {
+                q.push(i);
             }
         }
         
-        return maxPath;
+        int semesters = 0;
+        int studied = 0;
+        
+        while (!q.empty()) {
+            int size = q.size();
+            semesters++;
+            
+            for (int i = 0; i < size; i++) {
+                int course = q.front();
+                q.pop();
+                studied++;
+                
+                for (int next : graph[course]) {
+                    indegree[next]--;
+                    if (indegree[next] == 0) {
+                        q.push(next);
+                    }
+                }
+            }
+        }
+        
+        return studied == n ? semesters : -1;
     }
 };
 ```
 
 ---
 
-## 💪 Best Practices
+## Best Practices
 
-### ✅ Do's
+### Algorithm Selection Guidelines
 
-```cpp
-// 1. Always validate DAG structure
-bool isDAG(vector<vector<int>>& graph) {
-    vector<int> topoOrder = topologicalSort(graph);
-    return topoOrder.size() == graph.size();
-}
-
-// 2. Handle base cases properly
-void initializeDP(vector<int>& dp, int source, int defaultValue) {
-    fill(dp.begin(), dp.end(), defaultValue);
-    dp[source] = 0; // or appropriate base value
-}
-
-// 3. Use appropriate data types
-class SafeTopologicalDP {
-private:
-    vector<long long> dp; // Prevent overflow
+```mermaid
+flowchart TD
+    A["Choose Topological DP Approach"] --> B{"Graph Properties?"}
+    B -->|"Dense Graph"| C["Adjacency Matrix"]
+    B -->|"Sparse Graph"| D["Adjacency List"]
     
+    A --> E{"Problem Type?"}
+    E -->|"Path Optimization"| F["Longest/Shortest Path DP"]
+    E -->|"Counting"| G["Path Counting DP"]
+    E -->|"Dependencies"| H["Topological Sort + DP"]
+    
+    A --> I{"Memory Constraints?"}
+    I -->|"Limited"| J["Space-optimized DP"]
+    I -->|"Abundant"| K["Standard DP"]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    classDef selection fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    classDef properties fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    classDef type fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#000
+    classDef memory fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px,color:#000
+    class A selection
+    class B,C,D properties
+    class E,F,G,H type
+    class I,J,K memory
+```
+
+### Common Pitfalls and Solutions
+
+```cpp
+class BestPractices {
 public:
-    long long solve(vector<vector<pair<int, int>>>& graph, int source) {
-        // Implementation with overflow protection
-        return 0;
+    // ✅ Always validate DAG
+    bool isDAG(vector<vector<int>>& graph) {
+        int n = graph.size();
+        vector<int> color(n, 0);
+        
+        function<bool(int)> dfs = [&](int u) {
+            color[u] = 1;
+            for (int v : graph[u]) {
+                if (color[v] == 1) return false;
+                if (color[v] == 0 && !dfs(v)) return false;
+            }
+            color[u] = 2;
+            return true;
+        };
+        
+        for (int i = 0; i < n; i++) {
+            if (color[i] == 0 && !dfs(i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    // ✅ Handle unreachable nodes
+    vector<int> robustDP(vector<vector<pair<int, int>>>& graph, int source) {
+        int n = graph.size();
+        vector<int> dp(n, INT_MIN);
+        dp[source] = 0;
+        
+        vector<int> topoOrder = topologicalSort(graph);
+        
+        for (int u : topoOrder) {
+            if (dp[u] != INT_MIN) {
+                for (auto& edge : graph[u]) {
+                    int v = edge.first;
+                    int weight = edge.second;
+                    dp[v] = max(dp[v], dp[u] + weight);
+                }
+            }
+        }
+        
+        return dp;
     }
 };
 ```
 
-### ❌ Don'ts
-
-```cpp
-// Don't: Forget to check for cycles
-// Don't: Use on undirected graphs
-// Don't: Ignore integer overflow in counting problems
-// Don't: Process nodes in wrong order
-```
-
-### 📊 Complexity Analysis
-
-| Operation | Time Complexity | Space Complexity |
-|-----------|----------------|------------------|
-| **Topological Sort** | O(V + E) | O(V) |
-| **DP Processing** | O(V + E) | O(V) |
-| **Total** | O(V + E) | O(V) |
-
 ---
 
-## 🎓 Summary
+## Summary
 
-Topological DP combines graph theory with dynamic programming:
+**Topological DP** combines the power of dynamic programming with graph theory to solve complex optimization problems on DAGs. Key insights:
 
-✅ **DAG Required**: Only works on Directed Acyclic Graphs  
-✅ **Dependency Order**: Topological sort ensures correct processing  
-✅ **Efficient**: O(V + E) time complexity  
-✅ **Versatile**: Handles paths, counting, and optimization problems  
-✅ **Interview Favorite**: Common in system design and scheduling problems  
+### Essential Concepts
+- **DAG Requirement**: Directed Acyclic Graphs are mandatory for topological ordering
+- **Dependency Resolution**: Topological sort ensures correct processing order
+- **State Definition**: Clear DP state definition at each vertex
+- **Optimal Substructure**: Problems must exhibit optimal substructure property
 
-**Key Insight**: "Topological DP = DP + Graph Traversal with dependency resolution"
+### Core Applications
+- **Path Optimization**: Longest and shortest path problems in DAGs
+- **Counting Problems**: Number of paths, ways to reach destinations
+- **Scheduling**: Course scheduling, task dependencies, project planning
+- **Resource Allocation**: Optimal resource distribution with dependencies
+
+### Best Practices
+- Always validate that the graph is a DAG before applying topological DP
+- Choose appropriate topological sorting algorithm based on graph properties
+- Handle unreachable nodes and edge cases properly
+- Consider space optimization for large sparse graphs
+- Use memoization when subproblems overlap
+
+> **Master's Insight**: Topological DP transforms complex dependency problems into manageable sequential computations. The key is recognizing when dependencies form a DAG structure and leveraging topological ordering for optimal solution computation.
 
 ---
 
 <div align="center">
 
-**📌 Master Dependencies, Master Solutions**
+**📌 Master Topological DP • Solve Dependency Problems • Optimize Graph Computations**
 
-*Where graph structure meets optimal subproblems*
+*From Theory to Practice • Dependencies to Solutions • Understanding to Mastery*
 
 </div>
