@@ -39,7 +39,7 @@
 
 - **📚 36 Comprehensive Guides**: Complete coverage from fundamentals to advanced topics
 - **💻 Multi-Language Implementation**: C++, Python, and Java solutions with detailed explanations
-- **🧠 17 LeetCode Problems**: Real interview questions with step-by-step solutions
+- **🧠 18 LeetCode Problems**: Real interview questions with step-by-step solutions
 - **📊 Complexity Analysis**: Time and space complexity analysis for every solution
 - **🔄 Structured Learning Path**: Progressive difficulty from beginner to expert level
 - **📖 Interview Ready**: Optimized for coding interviews and competitive programming
@@ -92,7 +92,7 @@ Algorithmics-Foundations/
 │   ├── 📈 huffman.md                # Huffman coding algorithm
 │   └── 🧩 np-completeness.md        # NP-Complete problems
 │
-├── 💻 leetcode-problems/              # Practical Problem Solutions (17 Problems)
+├── 💻 leetcode-problems/              # Practical Problem Solutions (18 Problems)
 │   ├── 📊 array/ (9 problems)        # Array-based problems
 │   │   ├── leetcode-1.cpp            # Two Sum (Easy)
 │   │   ├── leetcode-33.cpp           # Search in Rotated Array (Medium)
@@ -104,9 +104,10 @@ Algorithmics-Foundations/
 │   │   ├── leetcode-3623.java        # Count Trapezoids (Medium)
 │   │   └── leetcode-3625.java        # Count Trapezoids II (Hard)
 │   │
-│   ├── 🔤 string/ (2 problems)       # String manipulation problems
+│   ├── 🔤 string/ (3 problems)       # String manipulation problems
 │   │   ├── leetcode-344.cpp          # Reverse String (Easy)
 │   │   └── leetcode-2211.py          # Count Collisions (Medium)
+│   │   └── leetcode-3713.cpp         # Longest Balanced Substring I (Medium)
 │   │
 │   ├── 🌳 tree/ (1 problem)          # Tree-based problems
 │   │   └── leetcode-3721.cpp         # Longest Balanced Subarray II (Hard)
@@ -225,7 +226,7 @@ find . -name "leetcode-*.cpp" -o -name "leetcode-*.py" -o -name "leetcode-*.java
 |------------|------------|-------------|
 | **📚 36 Complete Guides** | Fundamentals to advanced topics | Comprehensive DSA mastery |
 | **💻 Multi-Language Solutions** | C++, Python, Java implementations | Language flexibility & comparison |
-| **🧠 17 LeetCode Problems** | Easy to Hard difficulty levels | Interview preparation |
+| **🧠 18 LeetCode Problems** | Easy to Hard difficulty levels | Interview preparation |
 | **📊 Complexity Analysis** | Time & space analysis for every solution | Optimization skills |
 | **🔄 Progressive Learning** | Structured 12-week roadmap | Systematic skill development |
 | **📖 Interview Focus** | Real coding interview questions | Job readiness |
