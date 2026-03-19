@@ -3,7 +3,7 @@
 # 🎯 Algorithmics Foundations
 ### *Complete Data Structures and Algorithms Mastery Program*
 
-<img src="https://thebrainspot.org/wp-content/uploads/2024/05/dsalogo.png" alt="Data Structures and Algorithms Mastery" width="600" height="400"/>
+<img src="assets/AlgorithmicsFoundations.png" alt="Algorithmics Foundations" width="600" height="400"/>
 
 [![Data Structures](https://img.shields.io/badge/Data_Structures-FF6B6B?style=for-the-badge&logo=databricks&logoColor=white)](https://github.com/AbhishekGiri04/Algorithmics-Foundations)
 [![Algorithms](https://img.shields.io/badge/Algorithms-4ECDC4?style=for-the-badge&logo=algolia&logoColor=white)](https://github.com/AbhishekGiri04/Algorithmics-Foundations)
@@ -50,6 +50,9 @@
 
 ```
 Algorithmics-Foundations/
+├── 🖼️ assets/
+│   └── AlgorithmicsFoundations.png    # Project banner image
+│
 ├── 📚 concepts/                       # Data Structures & Algorithms Theory (36 Guides)
 │   ├── 🎯 fundamentals.md            # DSA fundamentals & complexity
 │   │
@@ -106,7 +109,7 @@ Algorithmics-Foundations/
 │   │
 │   ├── 🔤 string/ (3 problems)       # String manipulation problems
 │   │   ├── leetcode-344.cpp          # Reverse String (Easy)
-│   │   └── leetcode-2211.py          # Count Collisions (Medium)
+│   │   ├── leetcode-2211.py          # Count Collisions (Medium)
 │   │   └── leetcode-3713.cpp         # Longest Balanced Substring I (Medium)
 │   │
 │   ├── 🌳 tree/ (1 problem)          # Tree-based problems
@@ -119,7 +122,7 @@ Algorithmics-Foundations/
 │       ├── leetcode-202.cpp          # Happy Number (Easy)
 │       └── leetcode-1492.cpp         # Kth Factor (Medium)
 │
-└── 📚 references/                     # Learning Resources & References
+├── 📚 references/                     # Learning Resources & References
 │   └── learning-resources.md          # Curated books, courses, websites
 │
 ├── 📄 LICENSE                         # MIT License
