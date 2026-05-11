@@ -1,54 +1,47 @@
-"""
+/*
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                          LEETCODE PROBLEM SOLUTION                           ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║ Problem ID    : 2211                                                         ║
 ║ Problem Name  : Count Collisions on a Road                                   ║
 ║ Difficulty    : Medium                                                       ║
-║ Topic         : String, Simulation, Greedy                                   ║
-║ Company Tags  : Amazon, Google                                               ║
+║ Topic         : String, Stack, Simulation                                    ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📋 PROBLEM STATEMENT:
-Given a string representing car directions ('L', 'R', 'S'), count total collisions.
-- 'L': moving left
-- 'R': moving right  
-- 'S': stationary
+Count total collisions among cars moving Left (L), Right (R), or Stationary (S).
 
-Collision rules:
-- Opposite directions: +2 collisions
-- Moving hits stationary: +1 collision
+⏰ TIME COMPLEXITY: O(n)
+💾 SPACE COMPLEXITY: O(1)
+*/
 
-📝 EXAMPLES:
-Input:  directions = "RLRSLL"
-Output: 5
-Explanation: Multiple collisions occur as cars meet.
+class Solution:
+    def countCollisions(self, directions: str) -> int:
 
-Input:  directions = "LLRR"
-Output: 0
-Explanation: No cars collide (all moving away).
+        stack = []
+        collisions = 0
 
-🎯 CONSTRAINTS:
-- 1 <= directions.length <= 10^5
-- directions[i] is 'L', 'R', or 'S'
+        for c in directions:
 
-💡 APPROACH:
-Greedy String Processing
-1. Remove leading 'L' (cars moving left from start - no collision)
-2. Remove trailing 'R' (cars moving right to end - no collision)
-3. Count remaining non-'S' cars (all will collide and become stationary)
+            if c == 'R':
+                stack.append('R')
 
-Key Insight: After removing edge cases, all moving cars in middle will collide.
+            elif c == 'S':
+                while stack and stack[-1] == 'R':
+                    stack.pop()
+                    collisions += 1
+                stack.append('S')
 
-⏰ TIME COMPLEXITY:  O(n) - Single pass through string
-💾 SPACE COMPLEXITY: O(n) - String operations create new strings
-"""
+            else:  
+                while stack and stack[-1] == 'R':
+                    stack.pop()
+                    collisions += 2
 
-def countCollisions(directions):
-    directions = directions.lstrip('L').rstrip('R')
-    return sum(c != 'S' for c in directions)
+                if stack and stack[-1] == 'S':
+                    collisions += 1
+                else:
+                    collisions += len(stack)
 
-if __name__ == "__main__":
-    directions = "RLRSLL"
-    result = countCollisions(directions)
-    print(result)
+                stack = ['S']
+
+        return collisions

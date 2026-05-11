@@ -6,45 +6,32 @@
 ║ Problem Name  : Longest Balanced Subarray II                                 ║
 ║ Difficulty    : Hard                                                         ║
 ║ Topic         : Segment Tree, Array, Hash Map                                ║
-║ Company Tags  : Premium Problem                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📋 PROBLEM STATEMENT:
 You are given an integer array nums.
-A subarray is called balanced if the number of distinct even numbers 
+
+A subarray is called balanced if the number of distinct even numbers
 in the subarray is equal to the number of distinct odd numbers.
+
 Return the length of the longest balanced subarray.
 
 📝 EXAMPLES:
-Input:  nums = [2,5,4,3]
+Input: nums = [2,5,4,3]
 Output: 4
-Explanation: The longest balanced subarray is [2, 5, 4, 3].
-It has 2 distinct even numbers [2, 4] and 2 distinct odd numbers [5, 3].
 
-Input:  nums = [3,2,2,5,4]
+Input: nums = [3,2,2,5,4]
 Output: 5
-Explanation: The longest balanced subarray is [3, 2, 2, 5, 4].
-It has 2 distinct even numbers [2, 4] and 2 distinct odd numbers [3, 5].
 
-Input:  nums = [1,2,3,2]
+Input: nums = [1,2,3,2]
 Output: 3
-Explanation: The longest balanced subarray is [2, 3, 2].
-It has 1 distinct even number [2] and 1 distinct odd number [3].
 
 🎯 CONSTRAINTS:
 - 1 <= nums.length <= 10^5
 - 1 <= nums[i] <= 10^5
 
-💡 APPROACH:
-Segment Tree with Lazy Propagation
-1. Use segment tree to track difference between distinct odd and even numbers
-2. For each position, maintain det = +1 for odd, -1 for even
-3. Track last occurrence of each number to handle duplicates
-4. Query segment tree to find leftmost position where balance equals current
-5. Maximum length is current position minus leftmost position
-
-⏰ TIME COMPLEXITY:  O(n log n) - n iterations with log n segment tree operations
-💾 SPACE COMPLEXITY: O(n) - segment tree and hash map storage
+⏰ TIME COMPLEXITY: O(n log n)
+💾 SPACE COMPLEXITY: O(n)
 */
 
 class Node {
@@ -69,10 +56,19 @@ public:
             apply(u, v);
             return;
         }
+
         pushdown(u);
+
         int mid = (tr[u]->l + tr[u]->r) >> 1;
-        if (l <= mid) modify(u << 1, l, r, v);
-        if (r > mid) modify(u << 1 | 1, l, r, v);
+
+        if (l <= mid) {
+            modify(u << 1, l, r, v);
+        }
+
+        if (r > mid) {
+            modify(u << 1 | 1, l, r, v);
+        }
+
         pushup(u);
     }
 
@@ -80,11 +76,16 @@ public:
         if (tr[u]->l == tr[u]->r) {
             return tr[u]->l;
         }
+
         pushdown(u);
-        int lc = u << 1, rc = u << 1 | 1;
+
+        int lc = u << 1;
+        int rc = u << 1 | 1;
+
         if (tr[lc]->mn <= target && target <= tr[lc]->mx) {
             return query(lc, target);
         }
+
         return query(rc, target);
     }
 
@@ -94,10 +95,16 @@ private:
     void build(int u, int l, int r) {
         tr[u]->l = l;
         tr[u]->r = r;
-        tr[u]->mn = tr[u]->mx = 0;
+        tr[u]->mn = 0;
+        tr[u]->mx = 0;
         tr[u]->lazy = 0;
-        if (l == r) return;
+
+        if (l == r) {
+            return;
+        }
+
         int mid = (l + r) >> 1;
+
         build(u << 1, l, mid);
         build(u << 1 | 1, mid + 1, r);
     }
@@ -126,13 +133,18 @@ class Solution {
 public:
     int longestBalanced(vector<int>& nums) {
         int n = nums.size();
+
         SegmentTree st(n);
+
         unordered_map<int, int> last;
+
         int now = 0;
         int ans = 0;
 
         for (int i = 1; i <= n; ++i) {
+
             int x = nums[i - 1];
+
             int det = (x & 1) ? 1 : -1;
 
             if (last.count(x)) {
@@ -141,15 +153,16 @@ public:
             }
 
             last[x] = i;
+
             st.modify(1, i, n, det);
+
             now += det;
 
             int pos = st.query(1, now);
+
             ans = max(ans, i - pos);
         }
 
         return ans;
     }
 };
-
-
