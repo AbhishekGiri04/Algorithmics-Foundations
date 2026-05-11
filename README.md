@@ -112,6 +112,9 @@ Algorithmics-Foundations/
 │   │   ├── leetcode-2211.py          # Count Collisions (Medium)
 │   │   └── leetcode-3713.cpp         # Longest Balanced Substring I (Medium)
 │   │
+│   ├── 🔗 linkedlist/ (1 problem)    # Linked List problems
+│   │   └── leetcode-237.cpp          # Delete Node in a Linked List (Medium)
+│   │
 │   ├── 🌳 tree/ (1 problem)          # Tree-based problems
 │   │   └── leetcode-3721.cpp         # Longest Balanced Subarray II (Hard)
 │   │
