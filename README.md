@@ -260,9 +260,9 @@ After completing this program, you will:
 
 ---
 
-## 📞 Contact
-
 <div align="center">
+
+## 📞 Contact
 
 **👤 Abhishek Giri**
 
