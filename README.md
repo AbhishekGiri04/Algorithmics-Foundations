@@ -96,7 +96,7 @@ Algorithmics-Foundations/
 │   └── 🧩 np-completeness.md        # NP-Complete problems
 │
 ├── 💻 leetcode-problems/              # Practical Problem Solutions (18 Problems)
-│   ├── 📊 array/ (10 problems)       # Array-based problems
+│   ├── 📊 array/ (11 problems)       # Array-based problems
 │   │   ├── leetcode-1.cpp            # Two Sum (Easy)
 │   │   ├── leetcode-33.cpp           # Search in Rotated Array (Medium)
 │   │   ├── leetcode-74.cpp           # Search 2D Matrix (Medium)
@@ -105,6 +105,7 @@ Algorithmics-Foundations/
 │   │   ├── leetcode-1480.cpp         # Running Sum (Easy)
 │   │   ├── leetcode-1752.cpp         # Check if Array Is Sorted and Rotated (Easy)
 │   │   ├── leetcode-2141.py          # Maximum Running Time (Hard)
+│   │   ├── leetcode-3507.cpp         # Minimum Pair Removal to Sort Array I (Medium)
 │   │   ├── leetcode-3623.java        # Count Trapezoids (Medium)
 │   │   └── leetcode-3625.java        # Count Trapezoids II (Hard)
 │   │
