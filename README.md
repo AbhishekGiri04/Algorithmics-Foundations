@@ -114,7 +114,7 @@ Algorithmics-Foundations/
 │   │   ├── leetcode-2211.py          # Count Collisions (Medium)
 │   │   └── leetcode-3713.cpp         # Longest Balanced Substring I (Medium)
 │   │
-│   ├── 🔗 linkedlist/ (18 problems)  # Linked List problems
+│   ├── 🔗 linkedlist/ (19 problems)  # Linked List problems
 │   │   ├── leetcode-19.cpp           # Remove Nth Node From End (Medium)
 │   │   ├── leetcode-21.cpp           # Merge Two Sorted Lists (Easy)
 │   │   ├── leetcode-24.cpp           # Swap Nodes in Pairs (Medium)
@@ -132,7 +132,8 @@ Algorithmics-Foundations/
 │   │   ├── leetcode-328.cpp          # Odd Even Linked List (Medium)
 │   │   ├── leetcode-876.cpp          # Middle of the Linked List (Easy)
 │   │   ├── leetcode-1721.cpp         # Swapping Nodes in a Linked List (Medium)
-│   │   └── leetcode-2095.cpp         # Delete the Middle Node of a Linked List (Medium)
+│   │   ├── leetcode-2095.cpp         # Delete the Middle Node of a Linked List (Medium)
+│   │   └── leetcode-3510.cpp         # Minimum Pair Removal to Sort Array II (Medium)
 │   │
 │   ├── 🌳 tree/ (1 problem)          # Tree-based problems
 │   │   └── leetcode-3721.cpp         # Longest Balanced Subarray II (Hard)
