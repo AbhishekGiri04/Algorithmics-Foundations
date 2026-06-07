@@ -138,8 +138,9 @@ Algorithmics-Foundations/
 │   │   ├── leetcode-2095.cpp         # Delete the Middle Node of a Linked List (Medium)
 │   │   └── leetcode-3510.cpp         # Minimum Pair Removal to Sort Array II (Medium)
 │   │
-│   ├── 🌳 tree/ (2 problems)          # Tree-based problems
+│   ├── 🌳 tree/ (3 problems)          # Tree-based problems
 │   │   ├── leetcode-110.cpp          # Balanced Binary Tree (Easy)
+│   │   ├── leetcode-865.cpp          # Smallest Subtree with all the Deepest Nodes (Medium)
 │   │   └── leetcode-3721.cpp         # Longest Balanced Subarray II (Hard)
 │   │
 │   └── 🧮 math/ (5 problems)         # Mathematical & number problems
