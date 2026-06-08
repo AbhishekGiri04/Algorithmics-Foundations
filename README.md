@@ -96,12 +96,13 @@ Algorithmics-Foundations/
 │   └── 🧩 np-completeness.md        # NP-Complete problems
 │
 ├── 💻 leetcode-problems/              # Practical Problem Solutions (18 Problems)
-│   ├── 📊 array/ (14 problems)       # Array-based problems
+│   ├── 📊 array/ (15 problems)       # Array-based problems
 │   │   ├── leetcode-1.cpp            # Two Sum (Easy)
 │   │   ├── leetcode-33.cpp           # Search in Rotated Array (Medium)
 │   │   ├── leetcode-34.cpp           # Find First and Last Position (Medium)
 │   │   ├── leetcode-35.cpp           # Search Insert Position (Easy)
 │   │   ├── leetcode-42.cpp           # Trapping Rain Water (Hard)
+│   │   ├── leetcode-48.cpp           # Rotate Image (Medium)
 │   │   ├── leetcode-74.cpp           # Search 2D Matrix (Medium)
 │   │   ├── leetcode-75.cpp           # Sort Colors (Medium)
 │   │   ├── leetcode-540.cpp          # Single Element (Medium)
