@@ -113,7 +113,8 @@ Algorithmics-Foundations/
 │   │   ├── leetcode-3623.java        # Count Trapezoids (Medium)
 │   │   └── leetcode-3625.java        # Count Trapezoids II (Hard)
 │   │
-│   ├── 🔤 string/ (3 problems)       # String manipulation problems
+│   ├── 🔤 string/ (4 problems)       # String manipulation problems
+│   │   ├── leetcode-20.cpp           # Valid Parentheses (Easy)
 │   │   ├── leetcode-344.cpp          # Reverse String (Easy)
 │   │   ├── leetcode-2211.py          # Count Collisions (Medium)
 │   │   └── leetcode-3713.cpp         # Longest Balanced Substring I (Medium)
