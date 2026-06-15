@@ -96,7 +96,7 @@ Algorithmics-Foundations/
 │   └── 🧩 np-completeness.md        # NP-Complete problems
 │
 ├── 💻 leetcode-problems/              # Practical Problem Solutions (18 Problems)
-│   ├── 📊 array/ (20 problems)       # Array-based problems
+│   ├── 📊 array/ (21 problems)       # Array-based problems
 │   │   ├── leetcode-1.cpp            # Two Sum (Easy)
 │   │   ├── leetcode-33.cpp           # Search in Rotated Array (Medium)
 │   │   ├── leetcode-34.cpp           # Find First and Last Position (Medium)
@@ -110,6 +110,7 @@ Algorithmics-Foundations/
 │   │   ├── leetcode-81.cpp           # Search in Rotated Sorted Array II (Medium)
 │   │   ├── leetcode-85.cpp           # Maximal Rectangle (Hard)
 │   │   ├── leetcode-136.cpp          # Single Number (Easy)
+│   │   ├── leetcode-137.cpp          # Single Number II (Medium)
 │   │   ├── leetcode-540.cpp          # Single Element (Medium)
 │   │   ├── leetcode-1480.cpp         # Running Sum (Easy)
 │   │   ├── leetcode-1752.cpp         # Check if Array Is Sorted and Rotated (Easy)
