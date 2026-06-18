@@ -127,6 +127,9 @@ Algorithmics-Foundations/
 │   │   ├── leetcode-2211.py          # Count Collisions (Medium)
 │   │   └── leetcode-3713.cpp         # Longest Balanced Substring I (Medium)
 │   │
+│   ├── 📦 heap/ (1 problem)           # Heap-based problems
+│   │   └── leetcode-215.cpp          # Kth Largest Element in an Array (Medium)
+│   │
 │   ├── 🔗 linkedlist/ (19 problems)  # Linked List problems
 │   │   ├── leetcode-19.cpp           # Remove Nth Node From End (Medium)
 │   │   ├── leetcode-21.cpp           # Merge Two Sorted Lists (Easy)
